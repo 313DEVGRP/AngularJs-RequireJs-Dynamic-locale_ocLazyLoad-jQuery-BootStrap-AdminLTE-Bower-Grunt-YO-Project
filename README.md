@@ -321,6 +321,9 @@ along with a CI service (in Jenkins) hosted that will run unit and end to end te
 
 For more information on AngularJS please check out http://angularjs.org/
 
+## Committer
+Lee ChangYong (lcy0202@icloud.com)
+
 [git]: http://git-scm.com/
 [bower]: http://bower.io
 [npm]: https://www.npmjs.org/

@@ -10,7 +10,7 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
 ## Changes & Notes
 
 * Removed `index-async.html` and all the related logic & tasks. Original seed project offers a way to asynchroneusly load initial set of js files using a custom loader.
-* Bootstraping file (`require-config.js`) is used for both unit testing and bootstraping on the actual page. If you don't plan to build your sources using `r.js`, you should consider removing logic related to Karma before using this file in production. 
+* Bootstraping file (`require-config.js`) is used for both unit testing and bootstraping on the actual page. If you don't plan to build your sources using `r.js`, you should consider removing logic related to Karma before using this file in production.
 
 ## Installation
 
@@ -322,8 +322,9 @@ along with a CI service (in Jenkins) hosted that will run unit and end to end te
 For more information on AngularJS please check out http://angularjs.org/
 
 ## Committer
-Lee ChangYong (lcy0202@icloud.com)
-Kwon GiBeom
+Lee ChangYong (lcy0202@icloud.com)  
+Kwon GiBeom  
+Jang Jiwon <jangji1@gmail.com>  
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io

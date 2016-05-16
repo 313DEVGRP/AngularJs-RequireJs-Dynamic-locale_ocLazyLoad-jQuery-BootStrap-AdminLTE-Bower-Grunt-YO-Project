@@ -33,7 +33,7 @@ This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but wi
 Documentation from the original repo untouched
 ----------------------------------------------
 
-# angular-seed �� the seed for AngularJS apps
+# angular-seed—the seed for AngularJS apps
 
 This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
@@ -324,7 +324,7 @@ For more information on AngularJS please check out http://angularjs.org/
 ## Committer
 Lee ChangYong (lcy0202@icloud.com)  
 Kwon GiBeom  
-Jang Jiwon <jangji1@gmail.com>  
+Jang Jiwon (jangji1@gmail.com)  
 Choi SeHoon (sehoon1989@gmail.com)  
 Jung kiuk   (falhed7418@naver.com)  
 Lee YoonJi (katrina12033@gmail.com)  

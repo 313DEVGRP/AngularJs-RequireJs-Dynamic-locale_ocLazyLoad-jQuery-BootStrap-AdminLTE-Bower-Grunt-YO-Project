@@ -327,6 +327,7 @@ Kwon GiBeom
 Jang Jiwon <jangji1@gmail.com>  
 Choi SeHoon (sehoon1989@gmail.com)
 Jung kiuk   (falhed7418@naver.com)
+Lee YoonJi (katrina12033@gmail.com)
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io

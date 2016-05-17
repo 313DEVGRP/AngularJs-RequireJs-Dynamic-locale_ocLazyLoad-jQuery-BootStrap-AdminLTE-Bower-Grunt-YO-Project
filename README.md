@@ -329,7 +329,7 @@ Choi SeHoon (sehoon1989@gmail.com)
 Jung kiuk   (falhed7418@naver.com)  
 Lee YoonJi (katrina12033@gmail.com)  
 Jang JinYoung (expitly90@gmail.com)  
-Kang TaeHo (gopae02@gmail.com) <br>
+Kang TaeHo (gopae02@gmail.com)
 Ham Su-won (endband1978@gmail.com)  
 Kwon SeulKi (rock1191.good@gmail.com)
 Shin Youngjun (cringerabbit@naver.com)

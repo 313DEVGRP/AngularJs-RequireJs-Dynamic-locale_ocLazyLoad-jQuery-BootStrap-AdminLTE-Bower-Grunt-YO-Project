@@ -332,7 +332,6 @@ Jang JinYoung (expitly90@gmail.com)
 Kang TaeHo (gopae02@gmail.com) <br>
 Ham Su-won (endband1978@gmail.com)
 
-
 [git]: http://git-scm.com/
 [bower]: http://bower.io
 [npm]: https://www.npmjs.org/

@@ -332,8 +332,8 @@ Jang JinYoung (expitly90@gmail.com)
 Kang TaeHo (gopae02@gmail.com)  
 Ham Su-won (endband1978@gmail.com)  
 Kwon SeulKi (rock1191.good@gmail.com)  
-Shin Youngjun (cringerabbit@naver.com)
-Jung JaeHo	(jungho461@gmail.com)
+Shin Youngjun (cringerabbit@naver.com)  
+Jung JaeHo	(jungho461@gmail.com)  
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io

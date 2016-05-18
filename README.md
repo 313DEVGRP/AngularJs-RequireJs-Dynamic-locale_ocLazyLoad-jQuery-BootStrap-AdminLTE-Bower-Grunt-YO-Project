@@ -334,6 +334,7 @@ Ham Su-won (endband1978@gmail.com)
 Kwon SeulKi (rock1191.good@gmail.com)  
 Shin Youngjun (cringerabbit@naver.com)  
 Jung JaeHo	(jungho461@gmail.com)  
+Kim Minyoung  (mykim35@gmail.com)
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io

@@ -334,9 +334,9 @@ Ham Su-won (endband1978@gmail.com)
 Kwon SeulKi (rock1191.good@gmail.com)  
 Shin Youngjun (cringerabbit@naver.com)  
 Jung JaeHo	(jungho461@gmail.com)  
-Kim Minyoung  (mykim35@gmail.com)
-Yun Bongtae  (ybt8901@naver.com)
-Park Sunghyun (sunghyungd@gmail.com)
+Kim Minyoung  (mykim35@gmail.com)<br/>
+Yun Bongtae  (ybt8901@naver.com)<br/>
+Park Sunghyun (sunghyungd@gmail.com)  
  
 
 [git]: http://git-scm.com/

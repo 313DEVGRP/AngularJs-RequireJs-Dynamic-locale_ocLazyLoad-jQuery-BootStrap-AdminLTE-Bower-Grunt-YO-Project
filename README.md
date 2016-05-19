@@ -339,7 +339,7 @@ Yun Bongtae  (ybt8901@naver.com)<br/>
 Park Sunghyun (sunghyungd@gmail.com)   
 Ban Misun (jjaq88777@hanmail.net)  
 Sung JeeHye (wlgprk@gmail.com)
-Kim JiYoon (yoonssl.h@gmail.com)
+Kim JiYoon (yoonssl.h@gmail.com)  
 
 
 [git]: http://git-scm.com/

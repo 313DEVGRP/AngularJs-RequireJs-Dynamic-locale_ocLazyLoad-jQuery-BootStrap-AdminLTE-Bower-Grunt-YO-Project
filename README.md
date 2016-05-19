@@ -336,8 +336,9 @@ Shin Youngjun (cringerabbit@naver.com)
 Jung JaeHo	(jungho461@gmail.com)  
 Kim Minyoung  (mykim35@gmail.com)<br/>
 Yun Bongtae  (ybt8901@naver.com)<br/>
-Park Sunghyun (sunghyungd@gmail.com)  
- 
+Park Sunghyun (sunghyungd@gmail.com)   
+Ban Misun (jjaq88777@hanmail.net)  
+
 
 [git]: http://git-scm.com/
 [bower]: http://bower.io

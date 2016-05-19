@@ -338,6 +338,7 @@ Kim Minyoung  (mykim35@gmail.com)<br/>
 Yun Bongtae  (ybt8901@naver.com)<br/>
 Park Sunghyun (sunghyungd@gmail.com)   
 Ban Misun (jjaq88777@hanmail.net)  
+Sung JeeHye (wlgprk@gmail.com)
 
 
 [git]: http://git-scm.com/

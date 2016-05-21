@@ -322,24 +322,25 @@ along with a CI service (in Jenkins) hosted that will run unit and end to end te
 For more information on AngularJS please check out http://angularjs.org/
 
 ## Committer
-Lee ChangYong (lcy0202@icloud.com)  
-Kwon GiBeom (gibeom3@gmail.com)  
-Jang Jiwon (jangji1@gmail.com)  
-Choi SeHoon (sehoon1989@gmail.com)  
-Jung kiuk   (falhed7418@naver.com)  
-Lee YoonJi (katrina12033@gmail.com)  
-Jang JinYoung (expitly90@gmail.com)  
-Kang TaeHo (gopae02@gmail.com)  
-Ham Su-won (endband1978@gmail.com)  
-Kwon SeulKi (rock1191.good@gmail.com)  
-Shin Youngjun (cringerabbit@naver.com)  
-Jung JaeHo	(jungho461@gmail.com)  
+Lee ChangYong (lcy0202@icloud.com)  <br/>
+Kwon GiBeom (gibeom3@gmail.com)  <br/>
+Jang Jiwon (jangji1@gmail.com)  <br/>
+Choi SeHoon (sehoon1989@gmail.com)  <br/>
+Jung kiuk   (falhed7418@naver.com)  <br/>
+Lee YoonJi (katrina12033@gmail.com)  <br/>
+Jang JinYoung (expitly90@gmail.com)  <br/>
+Kang TaeHo (gopae02@gmail.com)  <br/>
+Ham Su-won (endband1978@gmail.com)  <br/>
+Kwon SeulKi (rock1191.good@gmail.com)  <br/>
+Shin Youngjun (cringerabbit@naver.com)  <br/>
+Jung JaeHo	(jungho461@gmail.com)  <br/>
 Kim Minyoung  (mykim35@gmail.com)<br/>
 Yun Bongtae  (ybt8901@naver.com)<br/>
-Park Sunghyun (sunghyungd@gmail.com)   
-Ban Misun (jjaq88777@hanmail.net)  
-Sung JeeHye (wlgprk@gmail.com)
-Kim JiYoon (yoonssl.h@gmail.com)  
+Park Sunghyun (sunghyungd@gmail.com)   <br/>
+Ban Misun (jjaq88777@hanmail.net)  <br/>
+Sung JeeHye (wlgprk@gmail.com)<br/>
+Kim JiYoon (yoonssl.h@gmail.com)  <br/>
+Chung SooYoung(soorichu@gmail.com)<br/>
 
 
 [git]: http://git-scm.com/

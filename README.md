@@ -342,6 +342,7 @@ Sung JeeHye (wlgprk@gmail.com)<br/>
 Kim JiYoon (yoonssl.h@gmail.com)  <br/>
 Chung SooYoung(soorichu@gmail.com)<br/>
 Jeong Wongi (beryu82@gmail.com)<br/>
+Lee Hye Jin (atelier.jiny@gmail.com) <br/>
 
 
 [git]: http://git-scm.com/

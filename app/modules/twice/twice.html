@@ -29,21 +29,23 @@
 
     <ul class="list-unstyled">
     	<li ng-repeat="todo in todo.todoList" >  
-    		 <input type="checkbox" ng-model="todo.done"> {{todo.title}}
+    		 <input type="checkbox" > {{todo.title}}
     	</li>
     </ul>
 	
-    <!--
-    <form name="newItemForm" class="form-inline" action="">
-    form submit이 되면서 날라간다...왜그럴까 ??????
-    </form> -->
-
-    	<div class="form-group">
+    
+    <form name="newItemForm" class="form-inline" >
+        
+        <div class="form-group">
 	    	<label class="sr-only" for="newItemText">새로운 할일</label>
-	    	<input type="text" class="form-control" name="newItemText" ng-model="newTitle" placeholder="새로운할 일" >
+	    	<input type="text" class="form-control" name="newItemText"  placeholder="새로운할 일" >
     	</div>
 
-    	<button  class="btn btn-default" ng-click="todo.addNewTodo(newTitle)">추가</button>
+    	<button  class="btn btn-default" >추가</button>
+
+    </form>
+
+    	
     
 	
     <h2>member</h2>

@@ -1,7 +1,7 @@
 'use strict';
 
 define(['angular', 'components/version/version-directive', 'components/version/interpolate-filter'],
-	function(angular, versionDirective, interpolateFilter) {
+	function(angular) {
 		angular.module('projectWeb.version', [
 		  'projectWeb.version.interpolate-filter',
 		  'projectWeb.version.version-directive'

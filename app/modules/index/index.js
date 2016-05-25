@@ -5,7 +5,7 @@ define([
 	'angularRoute',
 	'view1/view1',
 	'view2/view2'
-], function(angular, angularRoute, view1, view2) {
+], function(angular) {
 	// Declare app level module which depends on views, and components
 	return angular.module('projectWeb', [
 		'ngRoute',

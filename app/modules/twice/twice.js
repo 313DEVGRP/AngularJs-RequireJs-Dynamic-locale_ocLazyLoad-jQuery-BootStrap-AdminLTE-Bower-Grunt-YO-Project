@@ -1,4 +1,3 @@
-
 //var myModule = angular.module("todoApp",[]); // create module 
 
 angular.module('myApp', []).controller('todoCtrl',todoCtrl);
@@ -15,8 +14,14 @@ function todoCtrl($scope){
 
 	// 추가(보관도 가능)
 	$scope.addNewTodo = function(newTitle){
+
+		if($scope.newTitle==null){
+			alert("새로운 할 일을 입력해주세요");
+		}
+
 		todoList.push({done:false, title:newTitle});
 		$scope.newTitle = "";
+
 	}
 
 	// 업데이트

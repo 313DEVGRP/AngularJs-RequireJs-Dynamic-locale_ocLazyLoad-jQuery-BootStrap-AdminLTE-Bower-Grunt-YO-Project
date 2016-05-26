@@ -13,13 +13,13 @@ function todoCtrl($scope){
 	$scope.appName = 'AngularJS To do App';
 	$scope.todoList = todoList;
 
-	// 추가
+	// 추가(보관도 가능)
 	$scope.addNewTodo = function(newTitle){
 		todoList.push({done:false, title:newTitle});
 		$scope.newTitle = "";
 	}
 
-	// 업데이트(삭제)
+	// 업데이트
 	$scope.archive = function(){
 		for(var i=$scope.todoList.length-1; i>=0; i--){
 			//console.log(i);
@@ -41,5 +41,6 @@ function todoCtrl($scope){
 	}
 
 }
+
 
 

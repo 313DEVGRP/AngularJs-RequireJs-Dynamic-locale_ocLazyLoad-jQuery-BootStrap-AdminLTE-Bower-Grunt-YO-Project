@@ -1,1 +1,32 @@
-test1
+<!DOCTYPE html>
+	<html lang="ko" ng-app="firstApp" ng-controller="todoCtrl">
+	<head>
+		<meta charset="utf-8">
+		<title>TODO App Demo</title>
+		<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
+		<script type="text/javascript" src="beeer.js"></script>
+	</head>
+	<body class="well" ng-controller="todoCtrl">
+		<h1>{{appName}}</h1>
+		<p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은 
+		<strong>{{remain()}}</strong>개  <a href="" ng-click="deleteTodo()" ng-show="hasDone()">보관하기</a></p>
+		
+		<div ng-show="showAllCheck()">
+          <input id="toggle-all" type="checkbox" ng-model="markAll"
+            ng-click="toggleAll()"/>
+          <label for="toggle-all">전체선택</label>
+        </div>
+		
+		<ul style="padding-left:25px;">
+			<li class="checkbox" ng-repeat="item in todoList">
+				<input type="checkbox" ng-model="item.done">{{item.title}}</li>
+		</ul>
+		
+		<div class="form-group form-inline">
+			<input class="form-controll" type="text" name="name" ng-model="newTitle"
+			placeholder="새로운일 추가" ng-keyup="keyAddTodo()"/>
+			<button type="button" name="button" ng-click="buttonAddTodo()">추가</button>
+		</div>
+	</body>
+</html>

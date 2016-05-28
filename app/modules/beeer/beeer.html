@@ -51,7 +51,7 @@
 		<div ng-controller="mainCtrl">
 
 			<h1>메뉴판</h1>
-			<h2>메뉴 목록</h2>
+			<h3>메뉴 목록</h3>
 
 				<table>
 					<thread>
@@ -70,10 +70,12 @@
 					</tbody>
 
 					<button ng-click="buy()"> 구매</button>
+					<button ng-click="reset()"> 처음으로</button>
 				</table>
 			<br>
 			<div>
-				가격 : {{totalPrice}}
+				가격 : {{totalPrice}} <br>
+				산 목록 : {{totalText}} <br>
 			</div>
 
 	</body>

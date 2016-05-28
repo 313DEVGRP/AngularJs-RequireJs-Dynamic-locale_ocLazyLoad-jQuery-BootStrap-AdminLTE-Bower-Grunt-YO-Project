@@ -23,11 +23,13 @@ var menuList = [
     {itemId: 2, itemName: '아메리카노', itemPrice:1000, itemCount:0},
     {itemId: 3, itemName: '카푸치노', itemPrice: 1500, itemCount: 0}
 ];
-angular.module('firstApp', []).controller('todoCtrl', function($scope) {
+var app = angular.module('firstApp', []);
+
+app.controller('todoCtrl', function($scope) {
     $scope.appName = 'AngularJS TODO APP';
     $scope.todoList = todoList;
-    $scope.person = person;
-    $scope.menuList = menuList;
+//    $scope.person = person;
+//    $scope.menuList = menuList;
 
     $scope.buttonAddTodo = function() {
     	if($scope.newTitle=='' || $scope.newTitle==null){
@@ -76,7 +78,7 @@ angular.module('firstApp', []).controller('todoCtrl', function($scope) {
 	
     $scope.showAllCheck = function(){
         return $scope.todoList.length > 0;  
-    }
+    };
     
     $scope.toggleAll = function() {
         angular.forEach($scope.todoList, function(todo) {
@@ -85,8 +87,8 @@ angular.module('firstApp', []).controller('todoCtrl', function($scope) {
     };
     $scope.hasDone = function() {
         return ($scope.todoList.length != $scope.remain());
-    }
-
+    };
+/*
     //메뉴판에서 쓰는 함수들
     var menuListTpl = $("#menuListTpl").html();
     var invoiceTpl = $("#invoiceTpl").html();
@@ -102,10 +104,23 @@ angular.module('firstApp', []).controller('todoCtrl', function($scope) {
 
             $itemEl = $("item-id-"+menuList[i].itemId);
             var price = menuList[i].itemPrice;
-            var count= $itemEl.find(".item-count").val();
-            totalPrice += (price * Number(count));
+            var count= $itemEl.find("#item-count").val();
+            totalPrice = totalPrice + (price * Number(count));
         };
         invoiceEl.html(Mustache.render(invoiceTpl, {totalPrice:totalPrice}));
     });
+*/
 
+});
+
+app.controller('mainCtrl', function($scope) {
+    $scope.menuList = menuList;
+    $scope.totalPrice = 0;
+    $scope.buy = function(){
+      $scope.totalPrice = 0;
+        angular.forEach($scope.menuList, function(menu, idx){
+            $scope.totalPrice += (menu.itemPrice * Number(menu.itemCount));
+        });
+
+    };
 });

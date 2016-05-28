@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ko" ng-app="firstApp" ng-controller="todoCtrl">
+<html lang="ko" ng-app="firstApp">
 	<head>
 		<meta charset="utf-8">
 		<title>TODO App Demo</title>
 		<link rel="stylesheet" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css" />
+		<style type="text/css" src="beeer.css"></style>
 		<script type="text/javascript" src="../../bower_components/angular/angular.min.js"></script>
 <!-- for 예2.7
 		<script type="text/javascript" src="../../jquery_plugins/jnotify_v2.1/jquery/jquery.js"></script>
@@ -11,6 +12,7 @@
 -->
 		<script type="text/javascript" src="beeer.js"></script>
 	</head>
+
 	<body class="well">
 	<div ng-controller="todoCtrl">
 		<h1>{{appName}}</h1>
@@ -47,15 +49,16 @@
 			<p> scope에 없는 객체 접근을 하면? {{car.type.name}}</p>
 		</div>
 -->
-		<hr>
+		<hr/>
 		<div ng-controller="mainCtrl">
 
 			<h1>메뉴판</h1>
-			<h2>메뉴 목록</h2>
+			<h3>메뉴 목록</h3>
 
 				<table>
 					<thread>
 						<tr>
+							<th>순</th>
 							<th>메뉴</th>
 							<th>가격</th>
 							<th>갯수</th>
@@ -63,6 +66,7 @@
 					</thread>
 					<tbody>
 						<tr ng-repeat="menu in menuList">
+							<td>[{{$index +1}}]</td>
 							<td>{{menu.itemName}}</td>
 							<td>{{menu.itemPrice}}</td>
 							<td><input type="text" ng-model="menu.itemCount"></td>
@@ -70,11 +74,55 @@
 					</tbody>
 
 					<button ng-click="buy()"> 구매</button>
+					<button ng-click="reset()"> 처음으로</button>
 				</table>
-			<br>
+			<br/>
 			<div>
-				가격 : {{totalPrice}}
+				가격 : {{totalPrice}}원 <br/>
+				산 목록 : {{totalText}} <br/>
 			</div>
+		</div>
+		<hr/>
+			<!--칼라 바꾸기가 잘 안 되네요. from 수영-->
+			<div>
+				<h1>칼라 바꾸기</h1>
+				<input type="radio" ng-model="color" value="red"/>빨간색<br/>
+				<input type="radio" ng-model="color" value="green"/>녹색<br/>
+				<input type="radio" ng-model="color" value="blue"/>파란색<br/>
+				<div ng-switch="color">
+					<div ng-switch-when="red" class="box red"></div>
+					<div ng-switch-when="green" class="box green"></div>
+					<div ng-switch-when="blue" class="box blue"></div>
+					<div ng-switch-default class="box black"></div>
+				</div>
+				<hr/>
+				<div>
+					<h1>회원 가입</h1>
+					<form name="sampleForm" ng-init="name='홍길동'">
+						이름 : <input type="text" name="name" ng-model="name" ng-maxlength="3" ng-required="true">
+						<span class="error" ng-show="sampleForm.name.$error.required">필수입력</span><br/>
+						휴대폰 : <input type="text" name="tel" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/">
+						<span class="error" ng-show="sampleForm.tel.$error.pattern">000-0000-0000</span><br/><br/>
+	<!--
+						<p>사용자 정보 : {{name}}/{{tel}}</p>
+						<p>sampleForm.name.$valid = {{sampleForm.name.$valid}}</p>
+						<p>sampleForm.name.$error = {{sampleForm.name.$error}}</p>
+						<p>sampleForm.tel.$valid = {{sampleForm.tel.$valid}}</p>
+						<p>sampleForm.tel.$error = {{sampleForm.tel.$error}}</p>
+						<p>sampleForm.$valid = {{sampleForm.$valid}}</p>
+						<p>sampleForm.$error.required = {{!!sampleForm.$error.required}}</p>
+	-->
 
+					</form>
+				</div>
+
+				<div>
+
+					<p><input type="checkbox" ng-model="checked" ng-init="checked=false" />약관에 동의</p>
+					<p ng-show="!checked">약관에 동의하면 다음으로 진행됩니다.</p>
+					<button ng-if="checked">다음</button>
+				</div>
+
+			</div>
 	</body>
 </html>

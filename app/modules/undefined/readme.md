@@ -2,5 +2,5 @@
 
 ###member
 Sung JeeHye (wlgprk@gmail.com)  
-Jeong Wongi (beryu82@gmail.com) </br>
+Jeong Wongi (beryu82@gmail.com)
 Kang TaeHo (gopae02@gmail.com)    

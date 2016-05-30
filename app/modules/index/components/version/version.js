@@ -6,5 +6,5 @@ define(['angular', 'components/version/version-directive', 'components/version/i
 		  'projectWeb.version.interpolate-filter',
 		  'projectWeb.version.version-directive'
 		])
-		.value('version', '0.3');
+		.value('version', '0.31');
 });

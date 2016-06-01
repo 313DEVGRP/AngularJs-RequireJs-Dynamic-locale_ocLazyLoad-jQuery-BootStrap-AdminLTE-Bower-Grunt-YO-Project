@@ -20,7 +20,7 @@ app.controller('todoCtrl', function($scope){
     $scope.todoList.push({done:false, title:$scope.newTitle});
     $scope.newTitle="";
   };
-  $scope.archive=function(){  
+  $scope.archive=function(){
     for(var i=$scope.todoList.length-1; i>=0; i--){
       if($scope.todoList[i].done)
       $scope.todoList.splice(i,1);

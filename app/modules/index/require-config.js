@@ -1,9 +1,10 @@
 'use strict';
 
+
 require.config({
 	
 	paths: {
-		
+		jquery: '../../bower_components/jquery/dist/jquery',
 
 		angular: '../../bower_components/angular/angular',
 		angularRoute: '../../bower_components/angular-route/angular-route',
@@ -19,14 +20,10 @@ require.config({
 		'angularRoute': {
 			deps:['angular']
 		},
-		'angularMocks': {
-			deps:['angular'],
-			'exports':'angular.mock'
-		},
-		'index': {
+		'jquery': {
 			deps:['angular']
-		}
-	},
+		},
+	}
 	
 
 });
@@ -34,12 +31,16 @@ require.config({
 
 require([
 	'angular',
-	'index'
-	], function(angular) {
-		//var $html = angular.element(document.getElementsByTagName('html')[0]);
+	'jquery',
+	'text',
+	'index',
+	'angularRoute'
+	], function(angular, $, text) {
 		angular.element().ready(function() {
-			// bootstrap the index manually
-			angular.bootstrap(document, ['projectWeb'], { strictDi: true });
+			angular.bootstrap(document, ['projectWeb']);
+		});
+		$(document).ready(function () {
+			alert('jquery Fire~!');
 		});
 	}
 );

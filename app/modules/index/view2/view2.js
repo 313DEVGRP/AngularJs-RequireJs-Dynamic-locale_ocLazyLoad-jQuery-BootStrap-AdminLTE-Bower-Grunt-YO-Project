@@ -3,7 +3,8 @@
 define([
 	'angular',
 	'angularRoute',
-	'components/version/version'
+	'components/version/version',
+	'view2/ctrl2'
 ], function(angular) {
 	angular.module('projectWeb.view2', ['ngRoute', 'projectWeb.version'])
 	.config(['$routeProvider', function($routeProvider) {

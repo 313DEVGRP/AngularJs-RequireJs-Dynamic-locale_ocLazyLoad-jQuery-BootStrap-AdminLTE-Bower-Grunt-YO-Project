@@ -1,8 +1,10 @@
 'use strict';
 define([
 	'angular',
+	'jquery',
+	'text',
 	'angularRoute'
-], function(angular) {
+], function(angular, $) {
 	angular.module('projectWeb.view1', ['ngRoute'])
 	.config(['$routeProvider', function($routeProvider) {
 		$routeProvider.when('/view1', {
@@ -11,7 +13,7 @@ define([
 		});
 	}])
 	.controller('View1Ctrl', [function() {
-		
+		$('.menu').append('<div>hj</div>')
 	}]);
 });
 

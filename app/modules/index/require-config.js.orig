@@ -40,11 +40,7 @@ require([
 			angular.bootstrap(document, ['projectWeb']);
 		});
 		$(document).ready(function () {
-<<<<<<< HEAD
-			alert('jquery Fire~!');
-=======
 			console.log('jquery Fire~!');
->>>>>>> 3d3d2f379db66cb48324337f02c5b7959360eee9
 		});
 	}
 );

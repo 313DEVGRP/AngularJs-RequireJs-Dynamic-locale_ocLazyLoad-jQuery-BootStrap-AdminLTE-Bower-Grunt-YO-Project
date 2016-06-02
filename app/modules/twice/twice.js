@@ -18,7 +18,7 @@ function todoCtrl($scope){
 		$scope.newTitle = "";
 	}
 
-	// 업데이트(삭제)
+	// 보관
 	$scope.archive = function(){
 		for(var i=$scope.todoList.length-1; i>=0; i--){
 			//console.log(i);
@@ -39,4 +39,20 @@ function todoCtrl($scope){
 		return remainCount;
 	}
 
+	// 보관중인 목록
+	// $scope.doneTodo = function(){	
+	// 	for(var i=$scope.todoList.length-1; i>=0; i--){
+	// 		//console.log(i);
+	// 		if($scope.todoList[i].done == true){
+	// 			var add = $scope.todoList[i];
+	// 			var doneArray = $scope.doneList.splice(i,0,add);
+	// 			console.log(doneArray);
+	// 		}
+	// 		return doneArray;
+	// 	}
+	// }
+
 }
+
+
+

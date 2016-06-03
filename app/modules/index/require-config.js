@@ -44,10 +44,9 @@ require([
      	'jquery',
      	'text',
      	'require',
-     	'cssLoader',
      	'index',
      	'angularRoute'
-     	], function(angular, $, text, require, cssLoader) {
+     	], function(angular, $, text, require) {
   //Q5. 상단 배열의 값을 인자로 받는 함수 인듯합니다. angular, jquery, text모듈의 로딩이 완료되면 실행되는 거지요?
   //    여기서는 angular를 먼저 부트스트랩하고 jquery를 불러오는데 함수 순서를 바꿔놓으면 jquery가 먼저 실행되나요?
 		angular.element().ready(function() {

@@ -1,12 +1,10 @@
-'use strict';
-
 define([
 	'angular',
 	'require',
 	'angularRoute',
 	'view1/view1',
 	'view2/view2'
-], function(angular, require) {
+], function(angular, require, jQuery) {
 	
 	// Declare app level module which depends on views, and components
 	return angular.module('projectWeb', [
@@ -17,5 +15,9 @@ define([
 	config(['$routeProvider', function($routeProvider) {
 		$routeProvider.otherwise({redirectTo: '/view1'});
 	}]);
+	
+	$(document).ready(function () {
+		console.log('index jquery Fire');
+	});
 });
 

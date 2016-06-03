@@ -14,13 +14,14 @@ require.config({
 // Q3. 모듈의 단축경로와 이름을 지정하는 것이라고 알고 있습니다. 하단 require([...])부분에 들어가는 이름을 정의해주는건가요?
 // 하단 경로들은 require-config.js를 기준으로 한 상대 경로들인가요?
 	paths: {
-		jquery: '../../bower_components/jquery/dist/jquery',
+		text: '../../bower_components/requirejs-text/text',
 
 		angular: '../../bower_components/angular/angular',
 		angularRoute: '../../bower_components/angular-route/angular-route',
 		angularMocks: '../../bower_components/angular-mocks/angular-mocks',
-
-		text: '../../bower_components/requirejs-text/text'
+		
+		jquery: '../../bower_components/jquery/dist/jquery',
+		require: '../../bower_components/requirejs/require',
 	},
 	//이부분은 당장은 넘어가도 된다고 하셔서 ^^;;
 	shim: {
@@ -32,7 +33,7 @@ require.config({
 		},
 		'jquery': {
 			deps:['angular']
-		},
+		}
 	}
 
 

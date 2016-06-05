@@ -1,0 +1,29 @@
+<!doctype html>
+<html ng-app>
+    <head>
+        <meta charset="UTF-8">
+        <script src="../../../bower_components/angular/angular.js"></script>
+    </head>
+    <body>
+        <div ng-init="customerList = [{name:'지혜', age:20}, {name:'태호', age:19}, {name:'원기', age:20}]">
+			고객 목록
+      		<ul>
+      			<!--track by는 리스트 생성시, 각 노드의 키를 지정
+      			 	아래와 같이 지정하면 리스트가 표시되지 않음. age를 키로 지정했기 때문에 키가 겹치기 때문
+      			<li ng-repeat="customer in customerList track by customer.age">
+      			-->
+        		<li ng-repeat="customer in customerList track by $index">
+          			[{{$index + 1}}] 고객 이름 : {{customer.name}}, 고객 나이 : {{customer.age}}
+        		</li>
+      		</ul>
+    	</div>
+    	<div ng-init="myFriend = {name:'중기', age:32, hobby: '알게뭐야'}">
+      		내 친구 소개
+      		<ul>
+        		<li ng-repeat="(attr, value) in myFriend">
+          			<p>{{attr}} : {{value}}</p>
+        		</li>
+      		</ul>
+    	</div>
+  	</body>
+</html>

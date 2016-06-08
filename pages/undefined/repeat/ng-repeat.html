@@ -20,8 +20,9 @@
     	<div ng-init="myFriend = {name:'중기', age:32, hobby: '알게뭐야'}">
       		내 친구 소개
       		<ul>
-        		<li ng-repeat="(attr, value) in myFriend">
-          			<p>{{attr}} : {{value}}</p>
+      		    <!-- 이름지정은 아무거나 해도 된다. 책에 써있는말은 참고나 하자. -->
+        		<li ng-repeat="(haha, hoho) in myFriend">
+          			<p>{{haha}} : {{hoho}}</p>
         		</li>
       		</ul>
     	</div>

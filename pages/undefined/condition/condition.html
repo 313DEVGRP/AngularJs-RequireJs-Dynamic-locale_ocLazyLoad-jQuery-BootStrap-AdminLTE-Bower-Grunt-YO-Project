@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app>
+  	<head>
+    	<meta charset="UTF-8">
+	    <script src="../../../plugins/angular/angular.js"></script>
+	    <style type="text/css">
+      		.box{
+        		width:100px;
+        		height:100px;
+      		}
+      		.red {
+        		background-color:red;
+      		}
+      		.green {
+        		background-color:green;
+      		}
+      		.blue {
+        		background-color:blue;
+      		}
+      		.black {
+        		background-color:black;
+      		}
+    	</style>
+  	</head>
+  	<body>
+    	<div>
+    		<!-- 
+    			마들은 바인딩 대상 변수.
+    			color 변수를 지정하고 switch에서 해당 변수를 사용.
+    			값에따라 해당 줄만 사용하고 나머지는 냅둔다.
+    		-->
+      		<input type="radio" ng-model="color" value="red">  빨간색 <br/>
+      		<input type="radio" ng-model="color" value="green"> 녹색 <br/>
+      		<input type="radio" ng-model="color" value="blue"> 파란색 <br/>
+
+      		<div ng-switch="color">
+        		<div ng-switch-when="red"   class="box red"></div>
+        		<div ng-switch-when="green" class="box green"></div>
+        		<div ng-switch-when="blue"  class="box blue"></div>
+        		<div ng-switch-default      class="box black"></div>
+      		</div>
+    	</div>
+    	<br/>
+    	<br/>
+    	<!-- 
+    		체크박스 사용.
+    		이닛은 마들=값 으로 안하면 작동안한다. ex) ng-init="true"는 안됨
+    		급 궁금증!! 여기서 color를 조작해보면 어떨까? - 안됨
+    		if나 show나 똑같아 보이지만 if는 소스 자체가 없어지고 show는 display상태만 변한다.
+    	 -->
+    	약관에 동의: <input type="checkbox" ng-model="next" ng-init="next=false" />
+    	<br/>
+    	동의하면 다음으로 진행됩니다.
+    	<button ng-if="next">다음</button>
+    	<br/>
+    	<br/>
+    	<div>
+      		<span ng-show="next">
+        		(show)다음으로 진행합니다. <button>계속</button>
+      		</span>
+    	</div>
+    	<div>
+      		<span ng-hide="next">
+        		(hide)다음으로 진행할 수 없습니다.
+     		</span>
+    	</div>
+  	</body>
+</html>

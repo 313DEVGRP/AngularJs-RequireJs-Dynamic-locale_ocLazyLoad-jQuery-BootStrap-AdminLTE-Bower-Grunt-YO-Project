@@ -20,20 +20,14 @@ app.config(function($stateProvider, $urlRouterProvider) {
         
 });
 app.controller('indexCtrl', ['$scope', function($scope){
-	  $scope.appName="AngularJS TODO APP";
-	  $scope.$on('$includeContentLoaded', function(event) {
-		  var dashboardApp = document.createElement('script');
-		  dashboardApp.src = "dist/js/pages/dashboard2.js";
-		  document.getElementsByTagName('body')[0].appendChild(dashboardApp);
-		  console.log('$includeContentLoaded');
-	  });
-	  $(document).ready(function () {
-		  var lteApp = document.createElement('script');
-		  lteApp.src = "dist/js/app.js";
-		  document.getElementsByTagName('head')[0].appendChild(lteApp);
-		  var demoApp = document.createElement('script');
-		  demoApp.src = "dist/js/demo.js";
-		  document.getElementsByTagName('head')[0].appendChild(demoApp);
-		  console.log('jquery Fire');
-	  });
-	}]); 
+	$scope.appName="AngularJS TODO APP";
+	$scope.$on('$includeContentLoaded', function(event) {
+		console.log('$includeContentLoaded');
+		var dashboardApp = document.createElement('script');
+		dashboardApp.src = "dist/js/pages/dashboard2.js";
+		document.getElementsByTagName('head')[0].appendChild(dashboardApp);
+	});
+	$(document).ready(function () {
+		console.log('jquery Fire');
+	});
+}]);

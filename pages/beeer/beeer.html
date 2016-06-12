@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="firstApp" ng-controller="todoCtrl">
+<head>
+  <meta charset="utf-8">
+  <title>TODO App Demo</title>
+  <link rel="stylesheet" href="../../plugins/bootstrap/dist/css/bootstrap.min.css" />
+  <!-- script 경로는 </body> 위에다 해주세요 -->
+  <!-- for 예2.7
+  <script type="text/javascript" src="../../jquery_plugins/jnotify_v2.1/jquery/jquery.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"></script>
+  -->
+</head>
+<body class="well">
+  <div ng-controller="todoCtrl">
+    <h1>{{appName}}</h1>
+    <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은
+      <strong>{{remain()}}</strong>개  <a href="" ng-click="deleteTodo()" ng-show="hasDone()">보관하기</a>
+    </p>
+
+    <div ng-show="showAllCheck()">
+      <input id="toggle-all" type="checkbox" ng-model="markAll" ng-click="toggleAll()"/>
+      <label for="toggle-all">전체선택</label>
+    </div>
+
+    <ul style="padding-left:25px;">
+      <li class="checkbox" ng-repeat="item in todoList">
+        <input type="checkbox" ng-model="item.done">{{item.title}}
+      </li>
+    </ul>
+
+    <div class="form-group form-inline">
+      <input class="form-controll" type="text" name="name" ng-model="newTitle" placeholder="새로운일 추가" ng-keyup="keyAddTodo()"/>
+      <button type="button" name="button" ng-click="buttonAddTodo()">추가</button>
+    </div>
+  </div>
+    <!-- >>>>>>> b5c5231325d2e7837c85af1bbc707d0a42662d4c -->
+    <!--
+    <hr>
+    <div>
+    <p>예제 2.5</p>
+    <h1> Hello {{person.name}}</h1>
+    <p>좋아하는 과일의 개수 : {{numberOfFavorite = person.favorite.length}}</p>
+    <p>과일 갯수 * $100 = {{numberOfFavorite*100 | currency}}</p>
+    <p>beeer가 맞나요 {{person.name == 'beeer'}}</p>
+    <p>좋아하는 과일의 수가 4개보다 많나요? {{numberOfFavorite > 4}}</p>
+    <p> scope에 없는 객체 접근을 하면? {{car.type.name}}</p>
+    </div>
+    -->
+  <hr>
+  <div ng-controller="mainCtrl">
+    <h1>메뉴판</h1>
+    <h3>메뉴 목록</h3>
+    <table>
+      <thread>
+        <tr>
+          <th>메뉴</th>
+          <th>가격</th>
+          <th>갯수</th>
+        </tr>
+      </thread>
+      <tbody>
+        <tr ng-repeat="menu in menuList">
+          <td>{{menu.itemName}}</td>
+          <td>{{menu.itemPrice}}</td>
+          <td><input type="text" ng-model="menu.itemCount"></td>
+        </tr>
+      </tbody>
+    </table>
+    <button ng-click="buy()"> 구매</button>
+    <button ng-click="reset()"> 처음으로</button>
+    <br>
+    <div>
+      <p>가격 : {{totalPrice}}</p>
+      <p>산 목록 : {{totalText}}</p>
+    </div>
+  </div>
+  <script type="text/javascript" src="../../plugins/angular/angular.min.js"></script>
+  <script type="text/javascript" src="./beeer.js"></script>
+</body>
+</html>

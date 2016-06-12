@@ -1,357 +1,235 @@
-# About
+**I apologize to everyone for my slow rate of response and development recently.** This is my final semester and I am very busy. Although I usually work on AdminLTE a few hours a week, there are weeks full of exams and assignments. Thanks for your understanding.
+Introduction
+============
 
-This is a fork of [Angular Seed](https://github.com/angular/angular-seed) but with full RequireJS support.
+**AdminLTE** -- is a fully responsive admin template. Based on **[Bootstrap 3](https://github.com/twbs/bootstrap)** framework. Highly customizable and easy to use. Fits many screen resolutions from small mobile devices to large desktops. Check out the live preview now and see for yourself.
 
-* AngularJS 1.4.x
-* RequireJS 2.1.x
-* Full support for unit tests using Karma
-* Full support for e2e tests using Protractor
+**Download & Preview on [Almsaeed Studio](https://almsaeedstudio.com)**
 
-## Changes & Notes
-
-* Removed `index-async.html` and all the related logic & tasks. Original seed project offers a way to asynchroneusly load initial set of js files using a custom loader.
-* Bootstraping file (`require-config.js`) is used for both unit testing and bootstraping on the actual page. If you don't plan to build your sources using `r.js`, you should consider removing logic related to Karma before using this file in production.
-
-## Installation
-
-    git clone git@github.com:tnajdek/angular-requirejs-seed.git
-    cd angular-requirejs-seed
-    npm install
-
-## Running
-
-    npm start
-
-## Testing
-
-    # Run unit tests automatically whenever app changes
-    npm test
-
-    # Run end to end tests (requires web server to be running)
-    npm run protractor
-
-Documentation from the original repo untouched
-----------------------------------------------
-
-# angular-seed — the seed for AngularJS apps
-
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
-You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the Angular
-framework and a bunch of development and testing tools for instant web development gratification.
-
-The seed app doesn't do much, just shows how to wire two controllers and views together.
+Looking for Premium Templates?
+------------------------------
+**Almsaeed studio just opened a new premium templates page. Hand picked to insure the best quality and the most affordable prices. Visit https://almsaeedstudio.com/premium for more information.**
 
 
-## Getting Started
+!["AdminLTE Presentation"] (https://almsaeedstudio.com/AdminLTE2.png "AdminLTE Presentation")
 
-To get you started you can simply clone the angular-seed repository and install the dependencies:
+**AdminLTE** has been carefully coded with clear comments in all of its JS, LESS and HTML files. LESS has been used to increase code customizability.
 
-### Prerequisites
+Installation
+------------
+There are multiple ways to install AdminLTE.
 
-You need git to clone the angular-seed repository. You can get git from
-[http://git-scm.com/](http://git-scm.com/).
+####Download:
 
-We also use a number of node.js tools to initialize and test angular-seed. You must have node.js and
-its package manager (npm) installed.  You can get them from [http://nodejs.org/](http://nodejs.org/).
+Download from Github or [visit Almsaeed Studio](https://almsaeedstudio.com) and download the latest release.
 
-### Clone angular-seed
+####Using The Command Line:
 
-Clone the angular-seed repository using [git][git]:
+**Github**
 
+- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
+- Clone to your machine
 ```
-git clone https://github.com/angular/angular-seed.git
-cd angular-seed
+git clone https://github.com/YOUR_USERNAME/AdminLTE.git
 ```
 
-If you just want to start a new project without the angular-seed commit history then you can do:
-
-```bash
-git clone --depth=1 https://github.com/angular/angular-seed.git <your-project-name>
-```
-
-The `depth=1` tells git to only pull down one commit worth of historical data.
-
-### Install Dependencies
-
-We have two kinds of dependencies in this project: tools and angular framework code.  The tools help
-us manage and test the application.
-
-* We get the tools we depend upon via `npm`, the [node package manager][npm].
-* We get the angular code via `bower`, a [client-side code package manager][bower].
-
-We have preconfigured `npm` to automatically run `bower` so we can simply do:
+**Bower**
 
 ```
-npm install
+bower install admin-lte
 ```
 
-Behind the scenes this will also call `bower install`.  You should find that you have two new
-folders in your project.
-
-* `node_modules` - contains the npm packages for the tools we need
-* `app/bower_components` - contains the angular framework files
-
-*Note that the `bower_components` folder would normally be installed in the root folder but
-angular-seed changes this location through the `.bowerrc` file.  Putting it in the app folder makes
-it easier to serve the files by a webserver.*
-
-### Run the Application
-
-We have preconfigured the project with a simple development web server.  The simplest way to start
-this server is:
+**npm**
 
 ```
-npm start
+npm install --save admin-lte
 ```
 
-Now browse to the app at `http://localhost:8000/app/index.html`.
-
-
-
-## Directory Layout
+**Composer**
 
 ```
-app/                    --> all of the source files for the application
-  app.css               --> default stylesheet
-  components/           --> all app specific modules
-    version/              --> version related components
-      version.js                 --> version module declaration and basic "version" value service
-      version_test.js            --> "version" value service tests
-      version-directive.js       --> custom directive that returns the current app version
-      version-directive_test.js  --> version directive tests
-      interpolate-filter.js      --> custom interpolation filter
-      interpolate-filter_test.js --> interpolate filter tests
-  view1/                --> the view1 view template and logic
-    view1.html            --> the partial template
-    view1.js              --> the controller logic
-    view1_test.js         --> tests of the controller
-  view2/                --> the view2 view template and logic
-    view2.html            --> the partial template
-    view2.js              --> the controller logic
-    view2_test.js         --> tests of the controller
-  app.js                --> main application module
-  index.html            --> app layout file (the main html template file of the app)
-  index-async.html      --> just like index.html, but loads js files asynchronously
-karma.conf.js         --> config file for running unit tests with Karma
-e2e-tests/            --> end-to-end tests
-  protractor-conf.js    --> Protractor config file
-  scenarios.js          --> end-to-end scenarios to be run by Protractor
+composer require "almasaeed2010/adminlte=~2.0"
 ```
 
-## Testing
-
-There are two kinds of tests in the angular-seed application: Unit tests and End to End tests.
-
-### Running Unit Tests
-
-The angular-seed app comes preconfigured with unit tests. These are written in
-[Jasmine][jasmine], which we run with the [Karma Test Runner][karma]. We provide a Karma
-configuration file to run them.
-
-* the configuration is found at `karma.conf.js`
-* the unit tests are found next to the code they are testing and are named as `..._test.js`.
-
-The easiest way to run the unit tests is to use the supplied npm script:
-
-```
-npm test
-```
-
-This script will start the Karma test runner to execute the unit tests. Moreover, Karma will sit and
-watch the source and test files for changes and then re-run the tests whenever any of them change.
-This is the recommended strategy; if your unit tests are being run every time you save a file then
-you receive instant feedback on any changes that break the expected code functionality.
-
-You can also ask Karma to do a single run of the tests and then exit.  This is useful if you want to
-check that a particular version of the code is operating as expected.  The project contains a
-predefined script to do this:
-
-```
-npm run test-single-run
-```
-
-
-### End to end testing
-
-The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
-are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
-special features for Angular applications.
-
-* the configuration is found at `e2e-tests/protractor-conf.js`
-* the end-to-end tests are found in `e2e-tests/scenarios.js`
-
-Protractor simulates interaction with our web app and verifies that the application responds
-correctly. Therefore, our web server needs to be serving up the application, so that Protractor
-can interact with it.
-
-```
-npm start
-```
-
-In addition, since Protractor is built upon WebDriver we need to install this.  The angular-seed
-project comes with a predefined script to do this:
-
-```
-npm run update-webdriver
-```
-
-This will download and install the latest version of the stand-alone WebDriver tool.
-
-Once you have ensured that the development web server hosting our application is up and running
-and WebDriver is updated, you can run the end-to-end tests using the supplied npm script:
-
-```
-npm run protractor
-```
-
-This script will execute the end-to-end tests against the application being hosted on the
-development server.
-
-
-## Updating Angular
-
-Previously we recommended that you merge in changes to angular-seed into your own fork of the project.
-Now that the angular framework library code and tools are acquired through package managers (npm and
-bower) you can use these tools instead to update the dependencies.
-
-You can update the tool dependencies by running:
-
-```
-npm update
-```
-
-This will find the latest versions that match the version ranges specified in the `package.json` file.
-
-You can update the Angular dependencies by running:
-
-```
-bower update
-```
-
-This will find the latest versions that match the version ranges specified in the `bower.json` file.``
-
-
-## Loading Angular Asynchronously
-
-The angular-seed project supports loading the framework and application scripts asynchronously.  The
-special `index-async.html` is designed to support this style of loading.  For it to work you must
-inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
-do this.
-
-```
-npm run update-index-async
-```
-
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html` page.
-You can run this every time you update the version of Angular that you are using.
-
-
-## Serving the Application Files
-
-While angular is client-side-only technology and it's possible to create angular webapps that
-don't require a backend server at all, we recommend serving the project files using a local
-webserver during development to avoid issues with security restrictions (sandbox) in browsers. The
-sandbox implementation varies between browsers, but quite often prevents things like cookies, xhr,
-etc to function properly when an html page is opened via `file://` scheme instead of `http://`.
-
-
-### Running the App during Development
-
-The angular-seed project comes preconfigured with a local development webserver.  It is a node.js
-tool called [http-server][http-server].  You can start this webserver with `npm start` but you may choose to
-install the tool globally:
-
-```
-sudo npm install -g http-server
-```
-
-Then you can start your own development web server to serve static files from a folder by
-running:
-
-```
-http-server -a localhost -p 8000
-```
-
-Alternatively, you can choose to configure your own webserver, such as apache or nginx. Just
-configure your server to serve the files under the `app/` directory.
-
-
-### Running the App in Production
-
-This really depends on how complex your app is and the overall infrastructure of your system, but
-the general rule is that all you need in production are all the files under the `app/` directory.
-Everything else should be omitted.
-
-Angular apps are really just a bunch of static html, css and js files that just need to be hosted
-somewhere they can be accessed by browsers.
-
-If your Angular app is talking to the backend server via xhr or other means, you need to figure
-out what is the best way to host the static files to comply with the same origin policy if
-applicable. Usually this is done by hosting the files by the backend server or through
-reverse-proxying the backend server(s) and webserver(s).
-
-
-## Continuous Integration
-
-### Travis CI
-
-[Travis CI][travis] is a continuous integration service, which can monitor GitHub for new commits
-to your repository and execute scripts such as building the app or running tests. The angular-seed
-project contains a Travis configuration file, `.travis.yml`, which will cause Travis to run your
-tests when you push to GitHub.
-
-You will need to enable the integration between Travis and GitHub. See the Travis website for more
-instruction on how to do this.
-
-### CloudBees
-
-CloudBees have provided a CI/deployment setup:
-
-<a href="https://grandcentral.cloudbees.com/?CB_clickstart=https://raw.github.com/CloudBees-community/angular-js-clickstart/master/clickstart.json">
-<img src="https://d3ko533tu1ozfq.cloudfront.net/clickstart/deployInstantly.png"/></a>
-
-If you run this, you will get a cloned version of this repo to start working on in a private git repo,
-along with a CI service (in Jenkins) hosted that will run unit and end to end tests in both Firefox and Chrome.
-
-
-## Contact
-
-For more information on AngularJS please check out http://angularjs.org/
-
-## Committer
-Lee ChangYong (lcy0202@icloud.com)  <br/>
-Kwon GiBeom (gibeom3@gmail.com)  <br/>
-Jang Jiwon (jangji1@gmail.com)  <br/>
-Choi SeHoon (sehoon1989@gmail.com)  <br/>
-Jung kiuk   (falhed7418@naver.com)  <br/>
-Lee YoonJi (katrina12033@gmail.com)  <br/>
-Jang JinYoung (expitly90@gmail.com)  <br/>
-Kang TaeHo (gopae02@gmail.com)  <br/>
-Ham Su-won (endband1978@gmail.com)  <br/>
-Kwon SeulKi (rock1191.good@gmail.com)  <br/>
-Shin Youngjun (cringerabbit@naver.com)  <br/>
-Jung JaeHo	(jungho461@gmail.com)  <br/>
-Kim Minyoung  (mykim35@gmail.com)<br/>
-Yun Bongtae  (ybt8901@naver.com)<br/>
-Park Sunghyun (sunghyungd@gmail.com)   <br/>
-Ban Misun (jjaq88777@hanmail.net)  <br/>
-Sung JeeHye (wlgprk@gmail.com)<br/>
-Kim JiYoon (yoonssl.h@gmail.com)  <br/>
-Chung SooYoung(soorichu@gmail.com)<br/>
-Jeong Wongi (beryu82@gmail.com)<br/>
-Lee Hye Jin (atelier.jiny@gmail.com) <br/>
-Yu JungWoo (dreamsaspire7@gmail.com) <br/>
-
-
-[git]: http://git-scm.com/
-[bower]: http://bower.io
-[npm]: https://www.npmjs.org/
-[node]: http://nodejs.org
-[protractor]: https://github.com/angular/protractor
-[jasmine]: http://jasmine.github.io
-[karma]: http://karma-runner.github.io
-[travis]: https://travis-ci.org/
-[http-server]: https://github.com/nodeapps/http-server
+Documentation
+-------------
+Visit the [online documentation](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html) for the most
+updated guide. Information will be added on a weekly basis.
+
+Browser Support
+---------------
+- IE 9+
+- Firefox (latest)
+- Chrome (latest)
+- Safari (latest)
+- Opera (latest)
+
+Contribution
+------------
+Contribution are always **welcome and recommended**! Here is how:
+
+- Fork the repository ([here is the guide](https://help.github.com/articles/fork-a-repo/)).
+- Clone to your machine ```git clone https://github.com/YOUR_USERNAME/AdminLTE.git```
+- Make your changes
+- Create a pull request
+
+#### Contribution Requirements:
+
+- When you contribute, you agree to give a non-exclusive license to Almsaeed Studio to use that contribution in any context as we (Almsaeed Studio) see appropriate.
+- If you use content provided by another party, it must be appropriately licensed using an [open source](http://opensource.org/licenses) license.
+- Contributions are only accepted through Github pull requests.
+- Finally, contributed code must work in all supported browsers (see above for browser support).
+
+License
+-------
+AdminLTE is an open source project by [Almsaeed Studio](https://almsaeedstudio.com) that is licensed under [MIT](http://opensource.org/licenses/MIT). Almsaeed Studio
+reserves the right to change the license of future releases.
+
+Todo List
+---------
+- ~~Light sidebar colors~~ (Done v2.1.0)
+- ~~Right sidebar~~ (Done v2.1.0)
+- ~~Minified main-sidebar~~ (Done v2.1.0)
+- Right to left support
+- ~~Custom pace style~~ (Done v2.3.1)
+
+Legacy Releases
+----------------
+AdminLTE 1.x can be easily upgraded to 2.x using [this guide](https://almsaeedstudio.com/themes/AdminLTE/documentation/index.html#upgrade), but if you intend to keep using AdminLTE 1.x, you can download the latest release from the [releases](https://github.com/almasaeed2010/AdminLTE/releases) section above.
+
+Change log
+----------
+**v2.3.1:**
+- Fix sidebar issue #676
+- Fix BootLint warnings and errors
+- Minor bug fixes and code reformat
+- Added Pace page
+
+**v2.3.0:**
+- Added social widgets (found in the widgets page)
+- Added profile page
+- Fix issue #430 (requires ```.hold-transition``` to be added to ```<body>```)
+- Fix issue #578
+- Fix issue #579
+
+**v2.2.1:**
+- Bug Fixes
+- Removed many ```!important``` statements in css
+- Activate boxWidget automatically when created after the page has loaded
+- Activate sidebar menu treeview links automatically when created after the page has loaded
+- Updated Font Awesome thanks to @Dennis14e
+- Added JSHint to Grunt tasks (Find JS errors)
+- Added CSSLint to Grunt tasks (Find CSS errors)
+- Added Image to Grunt tasks (compress images)
+- Added Clean to Grunt tasks (remove unwanted files like uncompressed images)
+- Updated Bootstrap to 3.3.5
+
+**v2.2.0:**
+- Bug fixes
+- Added support for [Select2](https://select2.github.io/)
+- Updated ChartJS
+
+**v2.1.2:**
+- Added explicit BoxWidget activation function issue #450
+- Crushed some bugs
+
+**v2.1.1:**
+- Fix version error
+
+**v2.1.0:**
+- Update Ion Icons
+- Added right sidebar ```.control-sidebar```
+- Control sidebar has 2 open effects: slide over content and push content
+- Control sidebar converts to always slide over content on small screens
+- Added 6 new light sidebar skins
+- Updated demo menu
+- Added ChartJS preview page
+- Fixed some minor bugs
+- Added light control sidebar skin
+- Added expand on hover option for sidebar mini
+- Added fixed control sidebar layout
+
+**v2.0.5:**
+- Fixed issue #288
+
+**v2.0.4:**
+- Fixed bower.json to pick up newest release.
+
+**v2.0.3**
+- Bug fixes
+- Fixed extra page when printing issue #264
+- Updated documentation and fixed links scrolling issue
+- Created print.less file (this makes it easier if you want to create a seperate CSS file for printing)
+- Fixed sidebar stretching issue #275
+- Fixed checkbox out of bounds issue in WYSIHTML5 editor.
+
+**v2.0.2:**
+- Solved issue with hidden arrow in select inputs.
+
+**v2.0.1:**
+- Updated README.md
+- Fixed versioning issue in CSS, LESS, and JS
+- Updated box-shadow for boxes
+- Updated docs
+
+**v2.0.0:**
+
+- Major layout bug fixes
+- Change in layout mark up
+- Added transitions to the sidebar
+- New skins and modified previous skins
+- Change in color scheme to a more complementing scheme
+- Added footer support
+- Removed pace.js from the main app.js
+- Added support for collapsed sidebar as an initial state (add .sidebar-collapse to the body tag)
+- Added boxed layout (.layout-boxed)
+- Enhanced consistency in padding and margining
+- Updated Bootstrap to 3.3.2
+- Fixed navbar dropdown menu on small screens positioning issues.
+- Updated Ion Icons to 2.0.0
+- Updated FontAwesome to 4.3.0
+- Added ChartJS 1.0.1
+- Removed iCheck dependency
+- Created Dashboard 2.0
+- Created new Chat widget (DirectChat)
+- Added transitions to DirectChat
+- Added contacts pane to DirectChat
+- Changed .right-side to .content-wrapper
+- Changed .navbar-right to .navbar-custom-menu
+- Removed unused files
+- Updated lockscreen style (HTML markup changed!)
+- Updated Login & Registration pages (HTML markup changed!)
+- Updated buttons style.
+- Enhanced border-radius consistency
+- Added mailbox: inbox, read, and compose pages
+- Bootstrap & jQuery are now hosted locally
+- Created documentation.
+
+**ver 1.2.0:**
+
+- Fixed the sidebar scroll issue when using the fixed layout.
+- Added [Bootstrap Social Buttons](http://lipis.github.io/bootstrap-social/ "Bootstrap Social") plugin.
+- Fixed RequireJS bug. Thanks to [StaticSphere](https://github.com/StaticSphere "github user").
+
+**ver 1.1.0:**
+
+- Added new skin. class: .skin-black
+- Added [pace](http://github.hubspot.com/pace/docs/welcome/ "pace") plugin.
+
+Image Credits
+-------------
+[Pixeden](http://www.pixeden.com/psd-web-elements/flat-responsive-showcase-psd)
+
+[Graphicsfuel](http://www.graphicsfuel.com/2013/02/13-high-resolution-blur-backgrounds/)
+
+[Pickaface](http://pickaface.net/)
+
+[Unsplash](https://unsplash.com/)
+
+[Uifaces](http://uifaces.com/)
+
+Donations
+---------
+Donations are **greatly appreciated!**
+
+[![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif "AdminLTE Presentation")](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=629XCUSXBHCBC "Donate")

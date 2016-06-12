@@ -21,7 +21,7 @@ module.exports = function (grunt) {
 
   // Configurable paths for the application
   var appConfig = {
-    app: require('./bower.json').appPath || 'app',
+    app: require('./bower.json').appPath || './',
     dist: 'dist'
   };
 
@@ -72,8 +72,8 @@ module.exports = function (grunt) {
       options: {
         port: 9000,
         // Change this to '0.0.0.0' to access the server from outside.
-        hostname: 'localhost',
-        livereload: 35729
+        hostname: '0.0.0.0',
+        livereload: 8800
       },
       livereload: {
         options: {
@@ -82,8 +82,8 @@ module.exports = function (grunt) {
             return [
               connect.static('.tmp'),
               connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
+                '/plugins',
+                connect.static('./plugins')
               ),
               connect().use(
                 '/app/styles',

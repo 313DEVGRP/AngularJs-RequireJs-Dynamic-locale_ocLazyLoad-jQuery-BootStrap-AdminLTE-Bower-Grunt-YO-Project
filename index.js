@@ -14,18 +14,42 @@ app.config(function($stateProvider, $urlRouterProvider) {
         })
         
         // ABOUT PAGE AND MULTIPLE NAMED VIEWS =================================
-        .state('about', {
+        .state('dev', {
             // we'll get to this in a bit       
+        	url: '/dev',
+            templateUrl: 'pages/dev/partial-index.html'
         });
         
 });
 app.controller('indexCtrl', ['$scope', function($scope){
-	$scope.appName="AngularJS TODO APP";
+  $scope.appName="AngularJS TODO APP";
+  $scope.$on('$includeContentLoaded', function(event) {
+	  console.log('$includeContentLoaded');
+  });
+  $(document).ready(function () {
+	  console.log('jquery Fire');
+  });
+}]);
+app.controller('headerCtrl', ['$scope', function($scope){
 	$scope.$on('$includeContentLoaded', function(event) {
+		var lteApp = document.createElement('script');
+		lteApp.src = "dist/js/app.js";
+		document.getElementsByTagName('head')[0].appendChild(lteApp);
 		console.log('$includeContentLoaded');
+	});
+	$(document).ready(function () {
+		var demoApp = document.createElement('script');
+		demoApp.src = "dist/js/demo.js";
+		document.getElementsByTagName('head')[0].appendChild(demoApp);
+		console.log('jquery Fire');
+	});
+}]);
+app.controller('contentsCtrl', ['$scope', function($scope){
+	$scope.$on('$includeContentLoaded', function(event) {
 		var dashboardApp = document.createElement('script');
 		dashboardApp.src = "dist/js/pages/dashboard2.js";
-		document.getElementsByTagName('head')[0].appendChild(dashboardApp);
+		document.getElementsByTagName('body')[0].appendChild(dashboardApp);
+		console.log('$includeContentLoaded');
 	});
 	$(document).ready(function () {
 		console.log('jquery Fire');

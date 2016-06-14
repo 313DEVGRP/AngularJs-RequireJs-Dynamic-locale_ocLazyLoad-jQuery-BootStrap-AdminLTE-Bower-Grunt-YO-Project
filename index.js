@@ -18,7 +18,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
             // we'll get to this in a bit       
         	url: '/dev',
             templateUrl: 'pages/dev/partial-index.html'
-        });
+        })
         
 });
 app.controller('indexCtrl', ['$scope', function($scope){

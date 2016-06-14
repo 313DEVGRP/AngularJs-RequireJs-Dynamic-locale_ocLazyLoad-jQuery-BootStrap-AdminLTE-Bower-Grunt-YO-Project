@@ -22,9 +22,9 @@ app.config(function($stateProvider, $urlRouterProvider) {
         
 });
 app.controller('indexCtrl', ['$scope', function($scope){
-  $scope.appName="AngularJS TODO APP";
+  $scope.appName="projectWeb";
   $scope.$on('$includeContentLoaded', function(event) {
-	  console.log('$includeContentLoaded');
+	  console.log('indexCtrl $includeContentLoaded');
   });
   $(document).ready(function () {
 	  console.log('jquery Fire');
@@ -38,18 +38,12 @@ app.controller('headerCtrl', ['$scope', function($scope){
 		console.log('$includeContentLoaded');
 	});
 	$(document).ready(function () {
-		var demoApp = document.createElement('script');
-		demoApp.src = "pages/common/js/demo.js";
-		document.getElementsByTagName('head')[0].appendChild(demoApp);
 		console.log('jquery Fire');
 	});
 }]);
 app.controller('contentsCtrl', ['$scope', function($scope){
 	$scope.$on('$includeContentLoaded', function(event) {
-		var dashboardApp = document.createElement('script');
-		dashboardApp.src = "pages/common/js/pages/dashboard2.js";
-		document.getElementsByTagName('body')[0].appendChild(dashboardApp);
-		console.log('$includeContentLoaded');
+		console.log('contentsCtrl $includeContentLoaded');
 	});
 	$(document).ready(function () {
 		console.log('jquery Fire');

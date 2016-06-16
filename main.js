@@ -44,7 +44,7 @@ require.config({
     'ocLazyLoad': ['angular'],
     'text': ['angular'],
     'projectWeb': ['ocLazyLoad'],
-    'js/lazymodule': ['projectWeb', 'text'],
+    'lazymodule': ['projectWeb', 'text'],
     'ngGrid': ['angular']
   }
 });

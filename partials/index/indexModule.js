@@ -12,7 +12,7 @@ testModule.controller('mainController', ['$scope', '$ocLazyLoad', function($scop
     $scope.partialUrl = '';
 
     $scope.load = function() {
-        $ocLazyLoad.load('js/lazymodule').then(function() {
+        $ocLazyLoad.load('lazymodule').then(function() {
             $scope.partialUrl = 'partials/grid.html';
         }, function(e) {
             console.log(e);

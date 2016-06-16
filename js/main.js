@@ -32,8 +32,7 @@ require.config({
     'angular': 'lib/angular/angular.min',
     "text": "lib/requirejs-text/text",
     'ocLazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
-    'projectWeb': 'js/testmodule',
-    'ngGrid': 'js/ng-grid-2.0.11.debug'
+    'projectWeb': 'partials/index/indexModule'
   },
 /*
 	shim:
@@ -44,8 +43,8 @@ require.config({
     'angular': ['jquery'],
     'ocLazyLoad': ['angular'],
     'text': ['angular'],
-    'js/lazymodule': ['projectWeb', 'text', 'ngGrid'],
     'projectWeb': ['ocLazyLoad'],
+    'js/lazymodule': ['projectWeb', 'text'],
     'ngGrid': ['angular']
   }
 });

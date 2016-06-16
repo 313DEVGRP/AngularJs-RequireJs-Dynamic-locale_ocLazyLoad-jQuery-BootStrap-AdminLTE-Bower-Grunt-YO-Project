@@ -1,4 +1,0 @@
-#wrap{counter-reset:app_num;padding:10px 30px;}
-a[href="#wrap"]{position:fixed;top:50%;right:20px;}
-.page-header small:before{counter-increment:app_num;content:"< 예제 "counter(app_num)" > ";margin-right:15px;}
-.box_wrap > div{display:table-cell;width:100px;height:100px;vertical-align:middle;text-align:center;border:1px solid #333;}

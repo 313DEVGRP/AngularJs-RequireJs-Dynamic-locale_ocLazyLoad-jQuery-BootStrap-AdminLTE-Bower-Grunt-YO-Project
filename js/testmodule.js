@@ -1,4 +1,4 @@
-var testModule = angular.module('test', ['oc.lazyLoad']);
+var testModule = angular.module('projectWeb', ['oc.lazyLoad']);
 
 testModule.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
     $ocLazyLoadProvider.config({

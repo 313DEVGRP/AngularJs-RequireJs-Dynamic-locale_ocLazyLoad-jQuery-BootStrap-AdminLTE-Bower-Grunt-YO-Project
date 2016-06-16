@@ -2,12 +2,95 @@
 <html>
     <head>
         <title></title>
-        <meta http-equiv="content-type" content="text/html; charset=UTF8"/>
-        <script type="text/javascript" data-main="main" src="lib/requirejs/require.js" charset="UTF8"></script>
+        <meta charset="UTF-8">
+		<meta http-equiv="Expire" content="-1"/>
+		<meta http-equiv="Keywords" content="Standard Development, JsTree Architecture, 313 DEV GRP"/>
+		<meta http-equiv="Reply-to" content="313@313.co.kr"/>
+		<meta http-equiv="Content-Language" content="Korean"/>
+		<meta http-equiv="Last-Modified" content="Wed 15 Sep 2010 23:59:59"/>
+		<meta http-equiv="Organization" content="www.313.co.kr"/>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+		<meta http-equiv="Cache-Control" content="no-cache"/>
+		<meta http-equiv="Pragma" content="no-cache"/>
+		<meta http-equiv="imagetoolbar" content="no" />
+		<meta http-equiv="content-Script-type" content="text/javascript"/>
+		<meta http-equiv="content-Style-type" content="text/css"/>
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<!-- Tell the browser to be responsive to screen width -->
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		
+		<meta name="robots" content="ALL, INDEX, FOLLOW"/>
+		<meta name="Subject" content="Frontside Web Project"/>
+		<meta name="Filename" content="index.html"/>
+		<meta name="Author-Date" content="15 Sep 10"/>
+		<meta name="Date" content="15 Sep 10"/>
+		<meta name="Author" content="313 DEV GRP"/>
+		<meta name="Other Agent" content="LeeDongMin"/>
+		<meta name="Email" content="313@313.co.kr"/>
+		<meta name="Reply-To" content="313@313.co.kr"/>
+		<meta name="Project" content="Frontside AngularJs RequireJs Bootstrap Grunt Bower Karma Nodejs Web Project"/>
+		<meta name="Status" content="Draft"/>
+		<meta name="Location" content="South Korea"/>
+		<meta name="Distribution" content="313 DEV GRP"/>
+		<meta name="Description" content="Standard Web Project"/>
+		<meta name="verify-v1" content="Eal6+fiCjgKAZb5A6pRvSLmsh9NLF2AsqxqJrLuFoAs=" />
+		<meta name="Revision" content="1.9"/>
+		<meta name="Generator" content="eclipse 3.6.1"/>
+		<meta name="Classification" content="Development,Deployment"/>
+		<meta name="Copyright" content="CopyRight @ 313 Developer Group. All Rights Reserved"/>
+		<meta name="title" content="313 DEV GRP Project Support Standard System" />
+		<meta name="revisit-after" content="7 days" />
+		<meta name="siteinfo" content="http://www.313.co.kr/robots.txt" /> 
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"> -->
+		<!-- <meta name="description" content="dongmin.lee" /> -->
+		<!-- <meta name="keywords" content="" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="MobileOptimized" content="320" />
+		<meta property="og:type" content="website">
+		<meta property="og:title" content="313 DEV GRP Project Support Standard System">
+		<meta property="og:url" content="http://www.313.co.kr/">
+		<meta property="og:site_name" content="313 DEV GRP Project Support Standard System">
+        
+        <script type="text/javascript" data-main="index" src="lib/requirejs/require.js" charset="UTF8"></script>
     </head>
-    <body data-ng-controller="mainController">
+    <body data-ng-controller="mainController" class="hold-transition skin-blue sidebar-mini">
+
+		<div class="wrapper" ui-view>
+		
+		  <!-- Add the sidebar's background. This div must be placed
+		       immediately after the control sidebar -->
+		  <div class="control-sidebar-bg"></div>
+		</div>
         <span>{{test}}</span>
         <button ng-click="load()">Load Module That Uses ngGrid</button>
         <div ng-include="partialUrl"></div>
+        
+        <!-- ANALYTICS START -->
+		<!-- https://www.google.com/analytics/settings/home?scid=18527803 web log Analyzer  -->
+		<script type="text/javascript">
+			//<![CDATA[
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-18527803-1']);
+			_gaq.push(['_trackPageview']);
+			_gaq.push(['_trackPageLoadTime']);
+			(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+			//]]>
+		</script>
+		<!-- ANALYTICS END -->
+		<!-- NAVER ANALYTICS START -->
+		<script type="text/javascript" src="http://wcs.naver.net/wcslog.js"></script>
+		<script type="text/javascript">
+			if(!wcs_add) var wcs_add = {};
+			wcs_add["wa"] = "1244b972beb34c";
+			wcs_do();
+		</script>
+		<!-- NAVER ANALYTICS END -->
     </body>
 </html>

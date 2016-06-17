@@ -1,15 +1,16 @@
 'use strict';
-var indexModule = angular.module('projectWeb', ['ngRoute', 'ui.router', 'oc.lazyLoad']);
+var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 
 indexModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
-	$urlRouterProvider.otherwise("/");
-    $locationProvider.hashPrefix('standardDevelopment#');
     
-	$ocLazyLoadProvider.config({
-        jsLoader: requirejs,
-        debug: true
-    });
+	$urlRouterProvider.otherwise("/dev");
+	$locationProvider.hashPrefix('standardDevelopment#');
 	
+      
+      $ocLazyLoadProvider.config({
+          jsLoader: requirejs,
+          debug: true
+      });
 }]);
 
 indexModule.controller('indexController', ['$scope', '$ocLazyLoad', function($scope, $ocLazyLoad) {
@@ -20,9 +21,8 @@ indexModule.controller('indexController', ['$scope', '$ocLazyLoad', function($sc
 	$ocLazyLoad.load('AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.css');
 	$ocLazyLoad.load('AdminLTE-2.3.3/dist/css/AdminLTE.css');
 	$ocLazyLoad.load('AdminLTE-2.3.3/dist/css/skins/_all-skins.min.css');
-	$ocLazyLoad.load('AdminLTE-2.3.3/dist/css/skins/_all-skins.min.css');
 	
-	$ocLazyLoad.load('AdminLTE-2.3.3/dist/js/pages/dashboard2.js');
+//	$ocLazyLoad.load('AdminLTE-2.3.3/dist/js/pages/dashboard2.js');
 	$ocLazyLoad.load('AdminLTE-2.3.3/dist/js/demo.js');
 	
 	$scope.mainHeader = 'partials/index/header.html';
@@ -32,9 +32,9 @@ indexModule.controller('indexController', ['$scope', '$ocLazyLoad', function($sc
 	$scope.controlSidebar = 'partials/index/sidebar.html';
 	
     
-    $scope.load = function() {
+    $scope.strutsiBatis = function() {
         $ocLazyLoad.load('lazymodule').then(function() {
-            $scope.partialUrl = 'partials/grid.html';
+            $scope.contentWrapper = 'partials/grid.html';
         }, function(e) {
             console.log(e);
         });

@@ -41,7 +41,6 @@ require.config({
     
     'angular': 'lib/angular/angular.min',
     'ngRoute': 'lib/angular-route/angular-route.min',
-    'text': 'lib/requirejs-text/text',
     'ocLazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
     'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
     'projectWeb': 'indexModule'
@@ -59,13 +58,12 @@ require.config({
 	'jvectormapWorld': ['jquery'],
 	'slimscroll': ['jquery'],
 	'chartjs': ['jquery'],
-	'lteAdmin': ['jquery', 'chartjs', 'slimscroll', 'jvectormapWorld', 'jvectormap', 'sparkline', 'fastclick'],
+	'lteAdmin': ['jquery', 'chartjs', 'slimscroll', 'jvectormap', 'jvectormapWorld', 'sparkline', 'fastclick'],
     'angular': ['jquery'],
     'ocLazyLoad': ['angular'],
-    'text': ['angular'],
     'ui.router': ['angular'],
     'ngRoute': ['angular'],
-    'projectWeb': ['twitterBootstrap', 'lteAdmin', 'ngRoute', 'ui.router', 'text', 'ocLazyLoad', 'twitterBootstrap'],
+    'projectWeb': ['twitterBootstrap', 'lteAdmin', 'ngRoute', 'ui.router', 'ocLazyLoad', 'twitterBootstrap'],
     'lazymodule': ['projectWeb']
   }
 });
@@ -74,7 +72,7 @@ require.config({
 // Start the main app logic.
 //requireJS를 활용하여 모듈 로드
 require([
-          	'projectWeb' //미리 선언해둔 path
+          	'projectWeb', //미리 선언해둔 path
           ], 
           //디펜던시 로드뒤 콜백함수
           function (projectWeb) {

@@ -27,7 +27,6 @@ indexModule.controller('indexController', ['$scope', '$ocLazyLoad', function($sc
 	    'AdminLTE-2.3.3/dist/js/app.min',
 	    'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
 	    'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
-	    'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
 	    'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
 	    'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
 		'AdminLTE-2.3.3/dist/js/demo.js']);

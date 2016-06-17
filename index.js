@@ -29,19 +29,14 @@ require.config({
 */
   paths: {
     'jquery': 'lib/jquery/dist/jquery.min',
-    'twitterBootstrap': 'lib/bootstrap/dist/js/bootstrap.min',
+    'jquery-ui': 'lib/jquery-ui/jquery-ui.min',
+    'jquery-migrate': 'lib/jquery-migrate/jquery-migrate.min',
     
-    'fastclick': 'AdminLTE-2.3.3/plugins/fastclick/fastclick',
-    'lteAdmin': 'AdminLTE-2.3.3/dist/js/app.min',
-    'sparkline': 'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
-    'jvectormap': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
-    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
-    'slimscroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
-    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
+    'twitterBootstrap': 'lib/bootstrap/dist/js/bootstrap.min',
     
     'angular': 'lib/angular/angular.min',
     'ngRoute': 'lib/angular-route/angular-route.min',
-    'ocLazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
+    'oc.lazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
     'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
     'projectWeb': 'indexModule'
   },
@@ -51,19 +46,14 @@ require.config({
 	참고 : http://gregfranko.com/blog/require-dot-js-2-dot-0-shim-configuration/
 */
   shim: {
+	'jquery-ui': ['jquery'],
+	'jquery-migrate': ['jquery'],
 	'twitterBootstrap': ['jquery'],
-	'fastclick': ['jquery'],
-	'sparkline': ['jquery'],
-	'jvectormap': ['jquery'],
-	'jvectormapWorld': ['jquery'],
-	'slimscroll': ['jquery'],
-	'chartjs': ['jquery'],
-	'lteAdmin': ['jquery', 'chartjs', 'slimscroll', 'jvectormap', 'jvectormapWorld', 'sparkline', 'fastclick'],
     'angular': ['jquery'],
-    'ocLazyLoad': ['angular'],
+    'oc.lazyLoad': ['angular'],
     'ui.router': ['angular'],
     'ngRoute': ['angular'],
-    'projectWeb': ['twitterBootstrap', 'lteAdmin', 'ngRoute', 'ui.router', 'ocLazyLoad', 'twitterBootstrap'],
+    'projectWeb': ['ngRoute', 'ui.router', 'oc.lazyLoad', 'twitterBootstrap', 'jquery-migrate', 'jquery-ui'],
     'lazymodule': ['projectWeb']
   }
 });

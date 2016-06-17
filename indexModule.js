@@ -15,15 +15,22 @@ indexModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider',
 
 indexModule.controller('indexController', ['$scope', '$ocLazyLoad', function($scope, $ocLazyLoad) {
 
-	$ocLazyLoad.load('lib/bootstrap/dist/css/bootstrap.min.css');
-	$ocLazyLoad.load('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css');
-	$ocLazyLoad.load('https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css');
-	$ocLazyLoad.load('AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.css');
-	$ocLazyLoad.load('AdminLTE-2.3.3/dist/css/AdminLTE.css');
-	$ocLazyLoad.load('AdminLTE-2.3.3/dist/css/skins/_all-skins.min.css');
+	$ocLazyLoad.load([
+		'lib/bootstrap/dist/css/bootstrap.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css',
+		'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.css',
+		'AdminLTE-2.3.3/dist/css/AdminLTE.custom.css',
+		'AdminLTE-2.3.3/dist/css/skins/_all-skins.min.css',
 	
-//	$ocLazyLoad.load('AdminLTE-2.3.3/dist/js/pages/dashboard2.js');
-	$ocLazyLoad.load('AdminLTE-2.3.3/dist/js/demo.js');
+		'AdminLTE-2.3.3/plugins/fastclick/fastclick',
+	    'AdminLTE-2.3.3/dist/js/app.min',
+	    'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
+	    'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
+	    'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
+	    'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
+	    'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
+		'AdminLTE-2.3.3/dist/js/demo.js']);
 	
 	$scope.mainHeader = 'partials/index/header.html';
 	$scope.mainSidebar = 'partials/index/aside.html';

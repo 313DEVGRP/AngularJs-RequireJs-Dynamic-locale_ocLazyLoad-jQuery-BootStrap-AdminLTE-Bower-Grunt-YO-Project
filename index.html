@@ -56,17 +56,29 @@
         
         <script type="text/javascript" data-main="index" src="lib/requirejs/require.js" charset="UTF8"></script>
     </head>
-    <body data-ng-controller="mainController" class="hold-transition skin-blue sidebar-mini">
+    <body data-ng-controller="indexController" class="hold-transition skin-blue sidebar-mini">
 
-		<div class="wrapper" ui-view>
+		<div class="wrapper">
+			  <!-- Main Header -->
+			  <header class="main-header"  ng-include="mainHeader"></header>
+			  <!-- Left side column. contains the logo and sidebar -->
+			  <aside class="main-sidebar" ng-include="main-sidebar"></aside>
+			
+			  <!-- Content Wrapper. Contains page content -->
+			  <div class="content-wrapper" ng-include="content-wrapper"></div>
+			  <!-- /.content-wrapper -->
+			
+			  <!-- Main Footer -->
+			  <footer class="main-footer" ng-include="main-footer"></footer>
+			
+			  <!-- Control Sidebar -->
+			  <aside class="control-sidebar control-sidebar-dark" ng-include="control-sidebar"></aside>
+			  <!-- /.control-sidebar -->
 		
 		  <!-- Add the sidebar's background. This div must be placed
 		       immediately after the control sidebar -->
 		  <div class="control-sidebar-bg"></div>
 		</div>
-        <span>{{test}}</span>
-        <button ng-click="load()">Load Module That Uses ngGrid</button>
-        <div ng-include="partialUrl"></div>
         
         <!-- ANALYTICS START -->
 		<!-- https://www.google.com/analytics/settings/home?scid=18527803 web log Analyzer  -->

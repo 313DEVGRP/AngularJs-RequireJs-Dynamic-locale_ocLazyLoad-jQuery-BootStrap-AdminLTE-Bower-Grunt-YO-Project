@@ -29,10 +29,13 @@ require.config({
 */
   paths: {
     'jquery': 'lib/jquery/dist/jquery',
+    'twitterBootstrap': 'lib/bootstrap/dist/js/bootstrap.min',
+    'fastclick': 'lib/fastclick/lib/fastclick',
     'angular': 'lib/angular/angular.min',
-    "text": "lib/requirejs-text/text",
+    'text': 'lib/requirejs-text/text',
     'ocLazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
-    'projectWeb': 'partials/index/indexModule'
+    'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
+    'projectWeb': 'indexModule'
   },
 /*
 	shim:
@@ -40,12 +43,14 @@ require.config({
 	참고 : http://gregfranko.com/blog/require-dot-js-2-dot-0-shim-configuration/
 */
   shim: {
+	'twitterBootstrap': ['jquery'],
+	'fastclick': ['jquery'],
     'angular': ['jquery'],
     'ocLazyLoad': ['angular'],
     'text': ['angular'],
-    'projectWeb': ['ocLazyLoad'],
-    'lazymodule': ['projectWeb', 'text'],
-    'ngGrid': ['angular']
+    'ui.router': ['angular'],
+    'projectWeb': ['ui.router', 'ocLazyLoad', 'twitterBootstrap'],
+    'lazymodule': ['projectWeb', 'text']
   }
 });
 
@@ -53,10 +58,12 @@ require.config({
 //requireJS를 활용하여 모듈 로드
 require([
          	'text', //미리 선언해둔 path, css나 html을 로드하기 위한 requireJS 플러그인
+         	'twitterBootstrap',
+         	'ui.router',
           	'projectWeb' //미리 선언해둔 path
           ], 
           //디펜던시 로드뒤 콜백함수
-          function (test) {
+          function (projectWeb, jquery) {
 		  //이 함수는 위에 명시된 모든 디펜던시들이 다 로드된 뒤에 호출된다.
 		  //주의해야할 것은, 디펜던시 로드 완료 시점이 페이지가 완전히 로드되기 전 일 수도 있다는 사실이다.
 	

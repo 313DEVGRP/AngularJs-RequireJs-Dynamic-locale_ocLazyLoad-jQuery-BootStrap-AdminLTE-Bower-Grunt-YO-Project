@@ -28,10 +28,19 @@ require.config({
   path는 또한 아래와 같이 특정 라이브러리 경로 선언을 위해 사용될 수 있는데, path 매핑 코드는 자동적으로 .js 확장자를 붙여서 모듈명을 매핑한다.
 */
   paths: {
-    'jquery': 'lib/jquery/dist/jquery',
+    'jquery': 'lib/jquery/dist/jquery.min',
     'twitterBootstrap': 'lib/bootstrap/dist/js/bootstrap.min',
-    'fastclick': 'lib/fastclick/lib/fastclick',
+    
+    'fastclick': 'AdminLTE-2.3.3/plugins/fastclick/fastclick',
+    'lteAdmin': 'AdminLTE-2.3.3/dist/js/app.min',
+    'sparkline': 'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
+    'jvectormap': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
+    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
+    'slimscroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
+    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
+    
     'angular': 'lib/angular/angular.min',
+    'ngRoute': 'lib/angular-route/angular-route.min',
     'text': 'lib/requirejs-text/text',
     'ocLazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
     'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
@@ -45,25 +54,30 @@ require.config({
   shim: {
 	'twitterBootstrap': ['jquery'],
 	'fastclick': ['jquery'],
+	'sparkline': ['jquery'],
+	'jvectormap': ['jquery'],
+	'jvectormapWorld': ['jquery'],
+	'slimscroll': ['jquery'],
+	'chartjs': ['jquery'],
+	'lteAdmin': ['jquery', 'chartjs', 'slimscroll', 'jvectormapWorld', 'jvectormap', 'sparkline', 'fastclick'],
     'angular': ['jquery'],
     'ocLazyLoad': ['angular'],
     'text': ['angular'],
     'ui.router': ['angular'],
-    'projectWeb': ['ui.router', 'ocLazyLoad', 'twitterBootstrap'],
-    'lazymodule': ['projectWeb', 'text']
+    'ngRoute': ['angular'],
+    'projectWeb': ['twitterBootstrap', 'lteAdmin', 'ngRoute', 'ui.router', 'text', 'ocLazyLoad', 'twitterBootstrap'],
+    'lazymodule': ['projectWeb']
   }
 });
+
 
 // Start the main app logic.
 //requireJS를 활용하여 모듈 로드
 require([
-         	'text', //미리 선언해둔 path, css나 html을 로드하기 위한 requireJS 플러그인
-         	'twitterBootstrap',
-         	'ui.router',
           	'projectWeb' //미리 선언해둔 path
           ], 
           //디펜던시 로드뒤 콜백함수
-          function (projectWeb, jquery) {
+          function (projectWeb) {
 		  //이 함수는 위에 명시된 모든 디펜던시들이 다 로드된 뒤에 호출된다.
 		  //주의해야할 것은, 디펜던시 로드 완료 시점이 페이지가 완전히 로드되기 전 일 수도 있다는 사실이다.
 	

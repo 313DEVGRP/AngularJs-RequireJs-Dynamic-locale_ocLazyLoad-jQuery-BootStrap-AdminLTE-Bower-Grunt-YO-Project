@@ -31,8 +31,5 @@
     "jquery-ui": "1.11.4",
     "jquery-migrate": "1.2.1",
     
-    "bower-jvectormap": "1.2.2",
-    "fastclick": "1.0.6"
-    
   }
 }

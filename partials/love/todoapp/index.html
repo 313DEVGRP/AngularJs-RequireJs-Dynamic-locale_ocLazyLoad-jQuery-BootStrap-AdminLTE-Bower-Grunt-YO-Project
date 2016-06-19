@@ -3,22 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>love</title>
-         <link href="../../../AdminLTE-2.3.3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../AdminLTE-2.3.3/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <script src="../../../Asample/lib/angular/angular.js"></script>
         <script src="../../../Asample/lib/angular/angular.min.js"></script>
         <script src="app.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
     <body class="well">
         <!--<div class="nav">
             <ul>
                 <li><a href="#none">todoapp</a></li>
                 <li><a href="#none">menulist</a></li>
+                <li><a href="#none">checkbox</a></li>
             </ul>
         </div>-->
-
         <!-- todoapp -->
-        <div id="" class="page-header">
+        <div id="num_01" class="page-header">
             <h1>1. todoapp exercise</h1>
         </div>
         <div ng-controller="todoCtrl">
@@ -39,7 +39,7 @@
         </div>
         <!-- menuList-->
         <hr/>
-        <div id="link02" class="page-header">
+        <div id="num_02" class="page-header">
             <h1>2. menulist exercise</h1>
         </div>
         <div ng-controller="mainCtrl">
@@ -71,5 +71,43 @@
                 구목록 : {{totalText}} <br/>
             </div>
         </div>
-    </body>
+        <hr/>
+        <!-- checkbox -->
+        <div id="num_03" class="page-header">
+            <h1>3. checkbox exercise</h1>
+        </div>
+        <form name="sampleForm" ng-init="value1=true; value2='좋다';">
+            선택 1 : <input type="checkbox" name="check1" ng-model="value1">
+            <br/>
+            <p>선택1의 바인딩된 값 : {{value1}}</p>
+            <p>선택2의 바인딩된 값 : {{value2}}</p>
+        </form>
+        <hr/>
+        <!-- select element-->
+        <div id="num_04" class="page-header">
+            <h1>4. select element exercise</h1>
+        </div>
+        <div ng-init="countryList = [{name:'한국', code:'KR', continent:'아시아'},
+            {name:'일본', code:'jr', continent:'아시아'}, {name:'미국', code:'en',}]">
+            <form name="myRouteForm">
+                <div>출발 국가 : <select ng-model="depCountry" ng-option="country.name for country in countryList" ng-required="true">
+                    <option value="">선택해 주세요</option>
+                </select>
+            </div>
+            <div>경유 국가 : <select ng-model="viaCountry" ng-options="contry.name as country.name for country in countryList">
+                <option value="">선택해 주세요</option>
+            </select>
+        </div>
+        <div>도착 국가(대륙 그룹별):<select ng-model="arrCountry" ng-options="country.name grout by country.continent for country in countyList" ng-required="true">
+            <option value="">선택해 주세요</option>
+        </select></div>
+    </form>
+    <div>
+        <p>출발 국가 : {{depCountry.name}}</p>
+        <p>경유 국가 : {{viaCountry}}</p>
+        <p>도착 국가 : {{arrCountry.name}}</p>
+    </div>
+    <div ng-show="myRouteForm.$invalid">출발 국가과 도착 국가를 필히 선택해주세요.</div>
+</div>
+</body>
 </html>

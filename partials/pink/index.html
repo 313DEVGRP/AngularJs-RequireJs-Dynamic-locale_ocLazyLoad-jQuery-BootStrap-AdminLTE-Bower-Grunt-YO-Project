@@ -28,8 +28,13 @@
       <a href="#link04" class="label label-primary">ng-switch</a>
       <a href="#link05" class="label label-primary">ng-if</a>
       <a href="#link06" class="label label-primary">ng-show / hide</a>
-      <a href="#link07" class="label label-primary"></a>
-      <a href="#link01" class="label label-primary"></a>
+      <a href="#link07" class="label label-primary">ng-controller</a>
+      <a href="#link08" class="label label-primary">폼/입력 지시자</a>
+      <a href="#link09" class="label label-primary">checkbox</a>
+      <a href="#link10" class="label label-primary">select</a>
+      <a href="#link11" class="label label-primary">css class 유효성 검증결과 표현</a>
+      <a href="#link12" class="label label-primary">mouse, keyboard 이벤트</a>
+      <a href="#link13" class="label label-primary">css, class동적처리</a>
     </div>
 
     <!-- todoApp -->
@@ -214,7 +219,6 @@
           <p>ng-init:{{star}}</p>
         </div>
       </div>
-
     </div>
     <!-- ng-repeat__e -->
 
@@ -249,11 +253,85 @@
     <input type="checkbox" id="agree2" ng-model="agree2" checked="false"> <label for="agree2">약관에 동의</label>
     <button class="btn btn-default" ng-show="agree2">다음</button>
     <p ng-hide="agree2">약관에 동의해주세요.</p>
-
     <!-- ng-show / hide __e -->
 
-    <!-- 97p~104p -->
-    <div id="link11" class="page-header">
+    <!-- ng-controller -->
+    <div id="link07" class="page-header">
+      <h1><small></small>ng-controller</h1>
+    </div>
+    <div ng-controller="customerCtrl">
+    	<div>
+    		고객 목록
+    	</div>
+    		<ul>
+    			<li ng-repeat="customer in customerList">
+    				[{{$index +1}} 고객 이름 : {{customer.name}}, 고객 나이 : {{customer.age}}]
+    			</li>
+    		</ul>
+    	<div>
+    		18세 미만 고객
+    		<ul>
+    			<li ng-repeat="youngCustomer in youngCusterList">
+    				[{{$index +1}} 고객 이름 : {{youngCustomer.name}}, 고객 나이 : {{youngCustomer.age}}]
+    			</li>
+    		</ul>
+    	</div>
+    </div>
+    <!-- ng-controller__e -->
+
+    <!-- form -->
+    <div id="link08" class="page-header">
+      <h1><small></small>폼/입력 지시자</h1>
+    </div>
+    <div ng-controller="formValidator">
+    	<form name="pinkForm" ng-init="name='핑크'" action="">
+    		<h3>93 ~ 95 표</h3>
+    		이름 : <input type="text" name="name" ng-model="name" ng-maxlength="3" ng-required="true">
+    		<span class="error" ng-show="pinkForm.name.$error.required">필수입력</span>
+    		<br/>
+
+    		핸드폰 번호 : <input type="text" name="tel" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/">
+    		<span class="error" ng-show="pinkForm.tel.$error.pattern">000-0000-0000</span>
+    		<br/>
+
+    		<p>사용자 정보 : {{name}} / {{tel}} </p>
+    		<p>pinkForm.name.$valid 	= {{pinkForm.name.$valid}}</p>
+    		<p>pinkForm.name.$error 	= {{pinkForm.name.$error}}</p>
+    		<p>pinkForm.tel.$valid 		= {{pinkForm.tel.$valid}}</p>
+    		<p>pinkForm.tel.$error 		= {{pinkForm.tel.$error}}</p>
+    		<p>pinkForm.$valid			= {{pinkForm.$valid}}</p>
+    		<p>pinkForm.$error.required = {{pinkForm.$error.required}}</p>
+
+    		<h3>표 2.1</h3>
+    		<p>이름 속성 : $pristine 			= {{pinkForm.name.$pristine}}</p>
+    		<p>이름 속성 : $dirty 			= {{pinkForm.name.$dirty}}</p>
+    		<p>이름 속성 : $valid 			= {{pinkForm.name.$valid}}</p>
+    		<p>이름 속성 : $invalid 			= {{pinkForm.name.$invalid}}</p>
+    		<p>이름 속성 : $error 			= {{pinkForm.name.$error}}</p>
+
+        <!-- <h3>표 2.2</h3>
+    		<p>이름 속성 : $viewValue 			= {{tel.name.$viewValue}}</p>
+    		<p>이름 속성 : $modelValue 			= {{pinkForm.name.$dirty}}</p>
+    		<p>이름 속성 : $parsers 			= {{pinkForm.name.$valid}}</p>
+    		<p>이름 속성 : $formatters 			= {{pinkForm.name.$invalid}}</p>
+    		<p>이름 속성 : $viewChangeListeners 			= {{pinkForm.name.$error}}</p>
+        <p>이름 속성 : $error 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $pristine 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $dirty 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $valid 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $invalid 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $render() 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $setValidity(validationErrorKey,isValid) 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $isEmpty 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $setPristine 			= {{pinkForm.name.$invalid}}</p>
+        <p>이름 속성 : $setViewValue(value) 			= {{pinkForm.name.$invalid}}</p> -->
+    	</form>
+    </div>
+    <!-- form__e -->
+
+
+    <!-- checkbox:97p~104p -->
+    <div id="link09" class="page-header">
       <h1><small></small>체크박스 타입</h1>
     </div>
     <form name="sampleForm" ng-init="value1 = true; value2 = '좋다';">
@@ -262,8 +340,10 @@
       <p>선택1의 바인딩된 값 : {{value1}}</p>
       <p>선택2의 바인딩된 값 : {{value2}}</p>
     </form>
+    <!-- checkbox:97p~104p__e -->
 
-    <div id="link12" class="page-header">
+    <!-- select -->
+    <div id="link10" class="page-header">
       <h1><small></small>&lt;select&gt; 요소 </h1>
     </div>
     <div ng-init="countryList = [{name:'한국', code:'KR', continent:'아시아'},
@@ -298,15 +378,127 @@
         출발 국가와 도착 국가는 필히 선택해주세요.
       </div>
     </div>
+    <!-- select__e -->
 
-    <div id="link13" class="page-header">
+    <!-- css_class -->
+    <div id="link11" class="page-header">
       <h1><small></small>CSS 클래스로 유효성 검증 결과 표현</h1>
     </div>
     <form name="sampleForm" ng-init="name = '철수'">
       이름 : <input type="text" name="name" ng-model="name" ng-maxlength="3" ng-required="true">
       핸드폰 번호: <input type="text" name="tel" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/">
     </form>
-    <!-- // 97p~104p -->
+    <!-- css_class:97p~104p__e -->
+
+    <!-- mouse_keyboard_evt -->
+    <div id="link12" class="page-header">
+      <h1><small></small>mouse, keyboard 이벤트</h1>
+    </div>
+  	<div ng-controller="evtCtrl">
+   		<ul class="list01">
+   			<li>
+  	 			<div>
+  					<div ng-click="handleEvt('click 이벤트')" class="box01"></div>
+  				</div>
+  				<p>click</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-dbclick="handleEvt('dbclick 이벤트')" class="box01"></div>
+  				</div>
+  				<p>dbclick</p>
+   			</li>
+   			<li>
+   				<div>
+  					<input ng-model="inputText1" ng-keydown="handleEvt('keydown 이벤트, 키코드 : '+$event.keyCode)" type="text">
+  				</div>
+  				<p>keydown</p>
+   			</li>
+   			<li>
+   				<div>
+  					<input ng-model="inputText2" ng-keypress="handleEvt('keypress 이벤트, 키코드 : '+$event.keyCode)" type="text">
+  				</div>
+  				<p>keypress</p>
+   			</li>
+   			<li>
+   				<div>
+  					<input ng-model="inputText3" ng-keyup="handleEvt('keyup 이벤트, 키코드 : '+$event.keyCode)" type="text">
+  				</div>
+  				<p>keyup</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-mousedown="handleEvt('mousedown 이벤트')" class="box01"></div>
+  				</div>
+  				<p>mousedown</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-mouseenter="handleEvt('mouseenter 이벤트')"  class="box01"></div>
+  				</div>
+  				<p>mouseenter</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-mouseleave="handleEvt('mouseleave 이벤트')" class="box01"></div>
+  				</div>
+  				<p>mouseleave</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-mousemove="handleEvt('mousemove 이벤트')" class="box01"></div>
+  				</div>
+  				<p>mousemove</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-mouseover="handleEvt('mouseover 이벤트')" class="box01"></div>
+  				</div>
+  				<p>mouseover</p>
+   			</li>
+   			<li>
+   				<div>
+  					<div ng-mouseup="handleEvt('mouseup 이벤트')" class="box01"></div>
+  				</div>
+  				<p>mouseup</p>
+   			</li>
+   			<li>
+   				<div>
+  					<input ng-model="inputText4" ng-change="handleEvt('change 이벤트')" type="text">
+  				</div>
+  				<p>change</p>
+   			</li>
+   			<li>
+   				<div>
+  					<input ng-model="inputText5" ng-blur="handleEvt('blur 이벤트')" type="text">
+  				</div>
+  				<p>blur</p>
+   			</li>
+   		</ul>
+   		<p>{{mes}} <br>count : {{eventCnt}}</p>
+    </div>
+    <!-- mouse_keyboard_evt__e -->
+
+    <!-- css_class -->
+    <div id="link13" class="page-header">
+      <h1><small></small>css, class동적처리</h1>
+    </div>
+    <div ng-controller="css_class">
+   		<div ng-init="colorList=['red','blue','yellow','green','darkgrey']">
+   			<ul>
+   				<li ng-repeat="color in colorList" ng-class="'{{color}}'">{{color}}</li>
+   			</ul>
+   			<ul>
+   				<li ng-repeat="color in colorList" ng-class="{'even':{{$index%2==0}}}">{{color}}</li>
+   			</ul>
+   		</div>
+   		<div>
+   			<div ng-style="bgStyle" class="box01">{{bgStyle.backgroundColor}}</div>
+   			<button type="button" ng-click="changeColor('yellow')">색 변경</button>
+   		</div>
+  	</div>
+    <!-- css_class__e -->
+
   </div>
   </body>
 </html>

@@ -57,7 +57,39 @@ app.controller('customer',function($scope){
     age:'32',
     job:'배우'
   };
+  $scope.customObj=customObj;
   var star=['이동현','우규민','박용택'];
   $scope.star=star;
 
+});
+app.controller("customerCtrl",function ($scope){
+  var customerList = [{name:"영희", age:10},{name:"철수", age:17},{name:"둘리", age:70}];
+  var youngCusterList = [];
+  angular.forEach(customerList, function(value, key){
+    if(value.age < 18){
+      youngCusterList.push(value);
+    }
+  });
+
+  $scope.customerList = customerList;
+  $scope.youngCusterList = youngCusterList;
+});
+//$addController 또는 $removeController() 선언 위치
+// 	}).removeContorller();
+app.controller("formValidator",function($scope){
+});
+app.controller('evtCtrl', function($scope) {
+	$scope.appName = '이벤트지시자';
+	$scope.mes = '';
+	$scope.eventCnt = 0;
+	$scope.handleEvt=function(mesage){
+		$scope.mes = mesage;
+		$scope.eventCnt++
+	}
+});
+app.controller('css_class', function($scope) {
+	$scope.bgStyle = {backgroundColor:'red'}
+	$scope.changeColor=function(color){
+		$scope.bgStyle.backgroundColor=color;
+	}
 });

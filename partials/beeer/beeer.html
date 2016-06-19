@@ -142,7 +142,7 @@
 
 <hr/>
 <h1>체크박스 예제</h1>
-<form name="sampleForm" ng-init="value1=true; value2='좋다;">
+<form name="sampleForm" ng-init="value1=true; value2='좋다';">
   선택 1 : <input type="checkbox" name="check1" ng-model="value1">
   <br/>
   <p>선택1의 바인딩된 값 : {{value1}}</p>
@@ -188,7 +188,7 @@
     <li ng-repeat="fruit in fruitList" ng-class="'{{fruit}}'">{{fruit}}</li>
   </ul>
   <ul>
-    <li ng-repeat="fruit in fruitList" ng-class="{'even':{{$index % 2 == 0}}}">{{fruit}}</li>
+    <li ng-repeat="fruit in fruitList" ng-class="{'even':{{$index%2==0}}}">{{fruit}}</li>
   </ul>
 </div>
 <hr/>

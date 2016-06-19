@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko" >
+<html lang="ko" ng-app="jsTree">
     <head>
         <meta charset="UTF-8">
         <title>love</title>
@@ -107,7 +107,42 @@
         <p>경유 국가 : {{viaCountry}}</p>
         <p>도착 국가 : {{arrCountry.name}}</p>
     </div>
-    <div ng-show="myRouteForm.$invalid">출발 국가과 도착 국가를 필히 선택해주세요.</div>
-</div>
+            <div ng-show="myRouteForm.$invalid">출발 국가과 도착 국가를 필히 선택해주세요.</div>
+        </div>
+        <hr/>
+        <!-- ng-repeat exercise-->
+        <div id="num_05" class="page-header">
+            <h1>5. ng-repeat exercise</h1>
+        </div>
+        <div ng-init="customerList = [{name:'봄이', age:1},{name:'여름이',age:2}]">고객목록
+            <ul>
+                <li ng-repeat="customer in customerList">
+                    [{{$index + 1}}] 고객 이름 : {{customer.name}}, 고객 나이 : {{customer.age}}
+                </li>
+            </ul>
+        </div>
+        <div ng-init="myFriend = {name:'가을이', age:'3', hobby:'축구'}">내 친구 소개
+            <ul>
+                <li ng-repeat="(attr, value) in myFriend">
+                    <p>{{attr}} : {{value}}</p>
+                </li>
+            </ul>
+        </div>
+        <hr/>
+        <!-- ng-switch exercise-->
+        <div id="num_06" class="page-header">
+            <h1>6. ng-switch exercise</h1>
+        </div>
+            <div>
+                <input type="radio" ng-model="color" value="red" name="colors" id="red">  빨간색 <br/>
+                <input type="radio" ng-model="color" value="green" name="colors" id="green"> 녹색 <br/>
+                <input type="radio" ng-model="color" value="blue" name="colors" id="blue"> 파란색 <br/>
+                <div ng-switch="color" class="boxscope">
+                    <div ng-switch-when="red" class="box red"></div>
+                    <div ng-switch-when="green" class="box green"></div>
+                    <div ng-switch-when="blue" class="box blue"></div>
+                    <div ng-switch-default class="box black"></div>
+                </div>
+            </div>
 </body>
 </html>

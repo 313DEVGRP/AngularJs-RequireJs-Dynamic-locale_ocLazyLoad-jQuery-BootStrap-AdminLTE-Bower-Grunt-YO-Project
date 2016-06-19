@@ -6,21 +6,56 @@
         <link href="../../../plugins/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
         <script src="../../../plugins/angular/angular.js"></script>
         <script src="app.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
     </head>
-    <body class="well" ng-controller="todoCtrl">
-        <h1>{{appName}}</h1>
-        <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은 <strong>{{remain()}}</strong>개 [ <a href="" ng-click="archive()">보관하기</a> ]</p>
-        <ul class="list-unstyled">
-            <li ng-repeat="todo in todoList" class="checkbox">
-                <input type="checkbox" ng-model="todo.done">{{todo.title}}
-            </li>
-        </ul>
-        <form name="newItemForm" class="form-inline" action="">
-            <div class="form-group">
-                <label class="sr-only" for="newItemText">새로운 할 일</label>
-                <input type="text" class="form-control" name="newItemText" id="newItemText" placeholder="새로운 할 일" ng-model="newTitle">
+    <body class="well">
+        <!-- todoapp -->
+        <div ng-controller="todoCtrl">
+            <h1>{{appName}}</h1>
+            <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은 <strong>{{remain()}}</strong>개 [ <a href="" ng-click="archive()">보관하기</a> ]</p>
+            <ul class="list-unstyled">
+                <li ng-repeat="todo in todoList" class="checkbox">
+                    <input type="checkbox" ng-model="todo.done">{{todo.title}}
+                </li>
+            </ul>
+            <form name="newItemForm" class="form-inline" action="">
+                <div class="form-group">
+                    <label class="sr-only" for="newItemText">새로운 할 일</label>
+                    <input type="text" class="form-control" name="newItemText" id="newItemText" placeholder="새로운 할 일" ng-model="newTitle">
+                </div>
+                <a href="#" class="btn btn-default" ng-click="addNewTodo(newTitle)">추가</a>
+            </form>
+        </div>
+        <!-- menuList-->
+        <hr/>
+        <div ng-controller="mainCtrl">
+            <h1>메뉴판</h1>
+            <h3>메뉴 목록</h3>
+            <table>
+                <thread>
+                    <tr>
+                        <th>순서</th>
+                        <th>메뉴</th>
+                        <th>가격</th>
+                        <th>개수</th>
+                    </tr>
+                </thread>
+                <tbody>
+                    <tr ng-repeat="menu in menuList">
+                        <td>[{{$index +1}}]</td>
+                        <td>{{menu.itemName}}</td>
+                        <td>{{menu.itemPrice}}</td>
+                        <td><input type="text" ng-model="menu.itemCount"></td>
+                    </tr>
+                </tbody>
+                <button ng-click="buy()"> 구매</button>
+                <button ng-click="reset()"> 처음으로</button>
+            </table>
+            <br/>
+            <div>
+                가격 : {{totalPrice}}원 <br/>
+                구목록 : {{totalText}} <br/>
             </div>
-            <a href="#" class="btn btn-default" ng-click="addNewTodo(newTitle)">추가</a>
-        </form>
+        </div>
     </body>
 </html>

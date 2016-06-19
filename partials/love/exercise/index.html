@@ -8,29 +8,8 @@
         <script src="../../../Asample/lib/angular/angular.min.js"></script>
         <script src=""></script>
     </head>
-    <body>
-        <div id="con-wrap">
-            <div id="link01" class="page-header">
-                <strong>test01</strong>
-            </div>
-            <div ng-controller="css_class">
-                <div ng-init="colorList=['red','blue','yellow','green','darkgrey']">
-                    <ul>
-                        <li ng-repeat="color in colorList" ng-class="'{{color}}'">{{color}}</li>
-                    </ul>
-                    <ul>
-                        <li ng-repeat="color in colorList" ng-class="{'even':{{$index%2==0}}}">{{color}}</li>
-                    </ul>
-                </div>
-                <div>
-                    <div ng-style="bgStyle" class="box01">{{bgStyle.backgroundColor}}</div>
-                    <button type="button" ng-click="changeColor('yellow')">색 변경</button>
-                </div>
-            </div>
-            <div id="link02" class="page-header">
-                <strong>test02</strong>
-            </div>
-
+    <body class="well">
+        <div id="wrap">
         </div>
     </body>
 </html>

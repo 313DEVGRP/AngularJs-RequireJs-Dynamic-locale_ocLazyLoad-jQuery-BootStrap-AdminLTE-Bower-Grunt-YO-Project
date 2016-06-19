@@ -1,2 +1,4 @@
-h1 { width: 10%;background: gray;color: #fff;text-align: center;font-size: 25px;}
+h1 { width: 15%;background: gray;color: #fff;text-align: center;font-size: 25px;}
 hr {border: 1px dashed #d4d4d4;}
+.nav ul {list-style-type: circle;}
+.nav ul li a{text-decoration: none;color: #000;}

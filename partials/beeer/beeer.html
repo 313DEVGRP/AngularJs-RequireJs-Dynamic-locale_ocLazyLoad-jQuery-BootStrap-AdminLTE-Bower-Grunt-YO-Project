@@ -188,17 +188,51 @@
     <li ng-repeat="fruit in fruitList" ng-class="'{{fruit}}'">{{fruit}}</li>
   </ul>
   <ul>
-    <li ng-repeat="fruit in fruitList" ng-class="{'even':{{$index%2==0}}}">{{fruit}}</li>
+    <li ng-repeat="fruit in fruitList" ng-class="{'even':{{$index % 2 == 0}}}">{{fruit}}</li>
   </ul>
 </div>
 <hr/>
 <!--ng-style 지시자 사용-->
-<div>
+<div ng-controller="mainCtrl3">
   <div ng-style="bgStyle">{{bgStyle.backgroundColor}}</div>
   <button ng-click="changeColor('yellow')">색 변경</button></div>
 </div>
+<hr/>
+<!-- 사용자 정의 이벤트 예제 코드 -->
+<div ng-controller="mainCtrl4">
 
+<input type="text" ng-model="noticeMsg">
+  <input type="button" value="공지 전송" ng-click="broadcast(noticeMsg)">
+  <div class="msg-list-area" ng-controller="charMsgListCtrl">
+    <ul>
+      <li ng-repeat="msg in msgList track by $index">{{msg}}</li>
+    </ul>
+  </div>
+  <div ng-controller="chatMsgInputCtrl">
+    <input type="text" ng-model="newMsg">
+    <input type="button" value="전송" ng-click="submit(newMsg)">
+  </div>
+</div>
 
+<hr/>
+<div ng-controller="bookmarkListCtrl">
+  <h1>북마크 목록</h1>
+  <div>
+    <ul>
+      <li ng-repeat="bookmark in bookmarkList">
+        <em>{{bookmark.name}}</em> : <span> {{bookmark.url}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
 
+<hr/>
+<div ng-controller="mainCtrl5">
+  <h1>Cookie 서비스 사용</h1>
+  <p>test키로 저장된 값 : {{value}}</p>
+  <button ng-click="getValue()">쿠키 가져오기</button>
+  <br>
+  <input type="text" ng-model="inValue"><button ng-click="putValue(iValue)">쿠키저장</button>
+</div>
 </body>
 </html>

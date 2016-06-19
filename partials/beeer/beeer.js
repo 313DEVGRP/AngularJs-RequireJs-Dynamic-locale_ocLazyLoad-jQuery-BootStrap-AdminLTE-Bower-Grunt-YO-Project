@@ -23,6 +23,8 @@ var menuList = [
   {itemId: 2, itemName: '아메리카노', itemPrice:1000, itemCount:0},
   {itemId: 3, itemName: '카푸치노', itemPrice: 1500, itemCount: 0}
 ];
+
+
 var app = angular.module('firstApp', []);
 
 app.controller('todoCtrl', function($scope) {
@@ -138,12 +140,7 @@ app.controller('mainCtrl', function($scope) {
     $scope.totalText = "구매한 것 없음"
   };
 
-  $scope.bgStyle={
-    backgroundColor: 'red'
-  };
-  $scope.changeColor = function(color){
-    $scope.bgStyle.backgroundColor = color;
-  };
+
 });
 
 app.controller('mainCtrl2', function($scope){
@@ -154,3 +151,56 @@ app.controller('mainCtrl2', function($scope){
     $scope.eventCnt++;
   }
 });
+
+app.controller('mainCtrl3', function($scope){
+
+  $scope.bgStyle={
+    backgroundColor: 'red'
+  };
+  $scope.changeColor = function(color){
+    $scope.bgStyle.backgroundColor = color;
+  };
+});
+
+
+app.contoller('mainCtrl4', function($scope){
+  $scope.broadcast = function(noticeMsg){
+    $scope.$broadcast("chat:noticeMsg", noticeMsg);
+    $scope.noticeMsg = "";
+  };
+
+  function chatMsgListCtrl($scope, $rootScope){
+    $scope.msgList = [];
+    $rootScope.$on("chat:newMsg", function(e, newMsg){
+      $scope.msgList.push(newMsg);
+    });
+    $scope.$on("chat:noticeMsg", function(e, noticeMsg){
+      $scope.msgList.push("[공지] "+noticeMsg);
+    });
+  }
+
+  function chatMsgInputCtrl($scope){
+   $scope.submit = function(newMsg){
+     $scope.$emit("chat:newMsg", newMsg);
+     $scope.newMsg = "";
+   };
+  }
+});
+
+angular.module('ngBookmark', []).controller("bookmarkListCtrl", ['$scope', function($scope){
+  $scope.bookmarkList=[
+    {id:"google", name:"구글", url:"www.google.com"},
+    {id:"naver", name:"네이버", url:"www.naver.com"},
+    {id:"daum", name:"다음", url:"www.daum.net"}
+  ];
+}])
+
+angular.module('cookieDemo', ['ngCookies']).controller("mainCtrl5", ['$scope', '$cookieStore', function($scope, $cookieStore){
+  $scope.value = $cookieStore.get("test") || "없음";
+  $scope.getValue = function(){
+    $scope.value = $cookieStore.get("test");
+  };
+  $scope.putValue = function(iV){
+    $cookieStore.put("test", iV);
+  };
+}]);

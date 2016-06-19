@@ -1,80 +1,238 @@
 <!DOCTYPE html>
-<html lang="ko" ng-app="firstApp" ng-controller="todoCtrl">
+<html lang="ko" ng-app="firstApp">
 <head>
   <meta charset="utf-8">
   <title>TODO App Demo</title>
-  <link rel="stylesheet" href="../../plugins/bootstrap/dist/css/bootstrap.min.css" />
-  <!-- script 경로는 </body> 위에다 해주세요 -->
-  <!-- for 예2.7
-  <script type="text/javascript" src="../../jquery_plugins/jnotify_v2.1/jquery/jquery.js"></script>
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.7.2/mustache.js"></script>
-  -->
+  <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="beeer.css" />
+  <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="beeer.js"></script>
 </head>
+
 <body class="well">
-  <div ng-controller="todoCtrl">
-    <h1>{{appName}}</h1>
-    <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은
-      <strong>{{remain()}}</strong>개  <a href="" ng-click="deleteTodo()" ng-show="hasDone()">보관하기</a>
-    </p>
+<!-- todoApp -->
+<div ng-controller="todoCtrl">
+  <h1>{{appName}}</h1>
+  <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은
+    <strong>{{remain()}}</strong>개  <a href="" ng-click="deleteTodo()" ng-show="hasDone()">보관하기</a></p>
 
-    <div ng-show="showAllCheck()">
-      <input id="toggle-all" type="checkbox" ng-model="markAll" ng-click="toggleAll()"/>
-      <label for="toggle-all">전체선택</label>
-    </div>
-
-    <ul style="padding-left:25px;">
-      <li class="checkbox" ng-repeat="item in todoList">
-        <input type="checkbox" ng-model="item.done">{{item.title}}
-      </li>
-    </ul>
-
-    <div class="form-group form-inline">
-      <input class="form-controll" type="text" name="name" ng-model="newTitle" placeholder="새로운일 추가" ng-keyup="keyAddTodo()"/>
-      <button type="button" name="button" ng-click="buttonAddTodo()">추가</button>
-    </div>
+  <div ng-show="showAllCheck()">
+    <input id="toggle-all" type="checkbox" ng-model="markAll"
+           ng-click="toggleAll()"/>
+    <label for="toggle-all">전체선택</label>
   </div>
-    <!-- >>>>>>> b5c5231325d2e7837c85af1bbc707d0a42662d4c -->
-    <!--
-    <hr>
-    <div>
-    <p>예제 2.5</p>
-    <h1> Hello {{person.name}}</h1>
-    <p>좋아하는 과일의 개수 : {{numberOfFavorite = person.favorite.length}}</p>
-    <p>과일 갯수 * $100 = {{numberOfFavorite*100 | currency}}</p>
-    <p>beeer가 맞나요 {{person.name == 'beeer'}}</p>
-    <p>좋아하는 과일의 수가 4개보다 많나요? {{numberOfFavorite > 4}}</p>
-    <p> scope에 없는 객체 접근을 하면? {{car.type.name}}</p>
-    </div>
-    -->
-  <hr>
-  <div ng-controller="mainCtrl">
-    <h1>메뉴판</h1>
-    <h3>메뉴 목록</h3>
-    <table>
-      <thread>
-        <tr>
-          <th>메뉴</th>
-          <th>가격</th>
-          <th>갯수</th>
-        </tr>
-      </thread>
-      <tbody>
-        <tr ng-repeat="menu in menuList">
-          <td>{{menu.itemName}}</td>
-          <td>{{menu.itemPrice}}</td>
-          <td><input type="text" ng-model="menu.itemCount"></td>
-        </tr>
-      </tbody>
-    </table>
+
+  <ul style="padding-left:25px;">
+    <li class="checkbox" ng-repeat="item in todoList">
+      <input type="checkbox" ng-model="item.done">{{item.title}}</li>
+  </ul>
+
+  <div class="form-group form-inline">
+    <input class="form-controll" type="text" name="name" ng-model="newTitle"
+           placeholder="새로운일 추가" ng-keyup="keyAddTodo()"/>
+    <button type="button" name="button" ng-click="buttonAddTodo()">추가</button>
+  </div>
+</div>
+<!-- >>>>>>> b5c5231325d2e7837c85af1bbc707d0a42662d4c -->
+<!--
+		<hr>
+		<div>
+			<p>예제 2.5</p>
+			<h1> Hello {{person.name}}</h1>
+			<p>좋아하는 과일의 개수 : {{numberOfFavorite = person.favorite.length}}</p>
+			<p>과일 갯수 * $100 = {{numberOfFavorite*100 | currency}}</p>
+			<p>beeer가 맞나요 {{person.name == 'beeer'}}</p>
+			<p>좋아하는 과일의 수가 4개보다 많나요? {{numberOfFavorite > 4}}</p>
+			<p> scope에 없는 객체 접근을 하면? {{car.type.name}}</p>
+		</div>
+-->
+<hr/>
+<!-- menuList-->
+<div ng-controller="mainCtrl">
+
+  <h1>메뉴판</h1>
+  <h3>메뉴 목록</h3>
+
+  <table>
+    <thread>
+      <tr>
+        <th>순</th>
+        <th>메뉴</th>
+        <th>가격</th>
+        <th>갯수</th>
+      </tr>
+    </thread>
+    <tbody>
+    <tr ng-repeat="menu in menuList">
+      <td>[{{$index +1}}]</td>
+      <td>{{menu.itemName}}</td>
+      <td>{{menu.itemPrice}}</td>
+      <td><input type="text" ng-model="menu.itemCount"></td>
+    </tr>
+    </tbody>
+
     <button ng-click="buy()"> 구매</button>
     <button ng-click="reset()"> 처음으로</button>
-    <br>
-    <div>
-      <p>가격 : {{totalPrice}}</p>
-      <p>산 목록 : {{totalText}}</p>
-    </div>
+  </table>
+  <br/>
+  <div>
+    가격 : {{totalPrice}}원 <br/>
+    산 목록 : {{totalText}} <br/>
   </div>
-  <script type="text/javascript" src="../../plugins/angular/angular.min.js"></script>
-  <script type="text/javascript" src="./beeer.js"></script>
+</div>
+<hr/>
+<!--change color-->
+<div>
+  <h1>칼라 바꾸기</h1>
+  <input type="radio" ng-model="color" value="red"/>빨간색<br/>
+  <input type="radio" ng-model="color" value="green"/>녹색<br/>
+  <input type="radio" ng-model="color" value="blue"/>파란색<br/>
+  <div ng-switch="color">
+    <div ng-switch-when="red" class="box red"></div>
+    <div ng-switch-when="green" class="box green"></div>
+    <div ng-switch-when="blue" class="box blue"></div>
+    <div ng-switch-default class="box black"></div>
+  </div>
+  <hr/>
+  <!-- 회원가입-->
+  <div>
+    <h1>회원 가입</h1>
+    <form name="sampleForm" ng-init="name='홍길동'">
+      이름 : <input type="text" name="name" ng-model="name" ng-maxlength="3" ng-required="true">
+      <span class="error" ng-show="sampleForm.name.$error.required">필수입력</span><br/>
+      휴대폰 : <input type="text" name="tel" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/">
+      <span class="error" ng-show="sampleForm.tel.$error.pattern">000-0000-0000</span><br/><br/>
+      <!--
+                            <p>사용자 정보 : {{name}}/{{tel}}</p>
+                            <p>sampleForm.name.$valid = {{sampleForm.name.$valid}}</p>
+                            <p>sampleForm.name.$error = {{sampleForm.name.$error}}</p>
+                            <p>sampleForm.tel.$valid = {{sampleForm.tel.$valid}}</p>
+                            <p>sampleForm.tel.$error = {{sampleForm.tel.$error}}</p>
+                            <p>sampleForm.$valid = {{sampleForm.$valid}}</p>
+                            <p>sampleForm.$error.required = {{!!sampleForm.$error.required}}</p>
+        -->
+
+    </form>
+  </div>
+
+  <div ng-init="checked=false; value1='동의'; value2='미동의';">
+    <p><input type="checkbox" ng-model="checked">약관에 동의</p>
+    <p ng-show="!checked">약관에 동의하면 다음으로 진행됩니다.</p>
+    <button ng-if="checked">다음</button>
+  </div>
+
+</div>
+
+<hr/>
+<--Mouse Keyboard Event-->
+<h1>마우스 키보드 이벤트</h1>
+<div ng-controller="mainCtrl2">
+  <div>
+    <div class="box ex2_17box" ng-click="handleEvt('박스가 클릭됨.')">click</div>
+    <div class="box ex2_17box" ng-mousedown="handleEvt('박스 mouse down 이벤트 발생')">mousedown</div>
+    <div class="box ex2_17box" ng-mouseenter="handleEvt('박스 mouse enter 이벤트 발생')">mouseenter</div>
+    <div class="box ex2_17box" ng-mousemove="handleEvt('박스 mouse move 이벤트 발생')">mousemove</div>
+    change : <input type="text" ng-model="inputText" ng-change="handleEvt('입력 박스의 값이 변경되었다')"><br/>
+    keydown : <input type="text" ng-model="inputText2" ng-keydown="handleEvt($event.keyCode+'키코드 눌러짐')">
+  </div>
+  <div>
+    <p>메시지 : {{message}}</p> <p>이벤트 카운트 : {{eventCnt}}</p>
+  </div>
+</div>
+
+<hr/>
+<h1>체크박스 예제</h1>
+<form name="sampleForm" ng-init="value1=true; value2='좋다;">
+  선택 1 : <input type="checkbox" name="check1" ng-model="value1">
+  <br/>
+  <p>선택1의 바인딩된 값 : {{value1}}</p>
+  <p>선택2의 바인딩된 값 : {{value2}}</p>
+ </form>
+
+<hr/>
+<!--select 요소 사용 예제-->
+<div ng-init="countryList = [{name:'한국', code:'KR', continent:'아시아'},
+{name:'일본', code:'jr', continent:'아시아'}, {name:'미국', code:'en',}]">
+
+  <form name="myRouteForm">
+    <div>출발 국가 : <select ng-model="depCountry" ng-option="country.name for country in countryList" ng-required="true">
+      <option value="">선택해 주세요</option>
+    </select>
+    </div>
+    <div>경유 국가 : <select ng-model="viaCountry" ng-options="contry.name as country.name for country in countryList">
+      <option value="">선택해 주세요</option>
+    </select>
+    </div>
+    <div>도착 국가(대륙 그룹별):<select ng-model="arrCountry" ng-options="country.name grout by country.continent for country in countyList" ng-required="true">
+      <option value="">선택해 주세요</option>
+    </select></div>
+  </form>
+  <div>
+    <p>출발 국가 : {{depCountry.name}}</p>
+    <p>경유 국가 : {{viaCountry}}</p>
+    <p>도착 국가 : {{arrCountry.name}}</p>
+  </div>
+  <div ng-show="myRouteForm.$invalid">출발 국가과 도착 국가를 필히 선택해주세요.</div>
+</div>
+
+<hr/>
+<!--CSS유효성 검사-->
+<form name="sampleForm" ng-init="name='철수'">
+  이름 : <input type="text" name="name" ng-model="name" ng-maxlength="3" ng-required="true">
+  휴대폰 번호 : <input type="text" name="tel" ng-model="tel" ng-pattern="/^\d{3}-\d{3,4}-\d{4}$/">
+</form>
+<hr/>
+<!--ng-class 사용예제-->
+<div ng-init="fruitList = ['apple', 'banana', 'tomato', 'lemon', 'grape']">
+  <ul>
+    <li ng-repeat="fruit in fruitList" ng-class="'{{fruit}}'">{{fruit}}</li>
+  </ul>
+  <ul>
+    <li ng-repeat="fruit in fruitList" ng-class="{'even':{{$index % 2 == 0}}}">{{fruit}}</li>
+  </ul>
+</div>
+<hr/>
+<!--ng-style 지시자 사용-->
+<div ng-controller="mainCtrl3">
+  <div ng-style="bgStyle">{{bgStyle.backgroundColor}}</div>
+  <button ng-click="changeColor('yellow')">색 변경</button></div>
+</div>
+<hr/>
+<!-- 사용자 정의 이벤트 예제 코드 -->
+<div ng-controller="mainCtrl4">
+
+<input type="text" ng-model="noticeMsg">
+  <input type="button" value="공지 전송" ng-click="broadcast(noticeMsg)">
+  <div class="msg-list-area" ng-controller="charMsgListCtrl">
+    <ul>
+      <li ng-repeat="msg in msgList track by $index">{{msg}}</li>
+    </ul>
+  </div>
+  <div ng-controller="chatMsgInputCtrl">
+    <input type="text" ng-model="newMsg">
+    <input type="button" value="전송" ng-click="submit(newMsg)">
+  </div>
+</div>
+
+<hr/>
+<div ng-controller="bookmarkListCtrl">
+  <h1>북마크 목록</h1>
+  <div>
+    <ul>
+      <li ng-repeat="bookmark in bookmarkList">
+        <em>{{bookmark.name}}</em> : <span> {{bookmark.url}}</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<hr/>
+<div ng-controller="mainCtrl5">
+  <h1>Cookie 서비스 사용</h1>
+  <p>test키로 저장된 값 : {{value}}</p>
+  <button ng-click="getValue()">쿠키 가져오기</button>
+  <br>
+  <input type="text" ng-model="inValue"><button ng-click="putValue(iValue)">쿠키저장</button>
+</div>
 </body>
 </html>

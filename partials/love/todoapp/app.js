@@ -4,8 +4,8 @@ var todoList = [
     {done: false,title: "개인 프로젝트 구성"}
 ];
 
-var app = angular.module('jsTree', []).controller('todoCtrl', function($scope) {
-//function todoCtrl($scope) {
+var app = angular.module('jsTree', []);
+app.controller('todoCtrl', function($scope) {
     $scope.appName = 'AngularJS TODO APP';
     $scope.todoList = todoList;
     $scope.addNewTodo = function (newTitle) {

@@ -4,8 +4,8 @@ var todoList = [
     {done: false,title: "개인 프로젝트 구성"}
 ];
 
-var app = angular.module('myApp', []).controller('todoCtrl', function($scope) {
-//function todoCtrl($scope) {
+var app = angular.module('jsTree', []);
+app.controller('todoCtrl', function($scope) {
     $scope.appName = 'AngularJS TODO APP';
     $scope.todoList = todoList;
     $scope.addNewTodo = function (newTitle) {
@@ -30,5 +30,31 @@ var app = angular.module('myApp', []).controller('todoCtrl', function($scope) {
             }
         });
         return remainCount;
+    };
+});
+
+app.controller('mainCtrl', function($scope) {
+    $scope.menuList = menuList;
+    $scope.totalPrice = 0;
+    $scope.totalText = "구매한 것 없음";
+    $scope.buy = function(){
+      $scope.totalPrice = 0;
+        $scope.totalText = "";
+        angular.forEach($scope.menuList, function(menu){
+            $scope.totalPrice += (menu.itemPrice * Number(menu.itemCount));
+            if(Number(menu.itemCount)>0){
+                if($scope.totalText.length >0){
+                    $scope.totalText += ", ";
+                }
+                $scope.totalText += menu.itemName+" "+menu.itemCount+"개";
+            }
+        });
+    };
+    $scope.reset = function(){
+        angular.forEach($scope.menuList, function(menu){
+            menu.itemCount = 0;
+        });
+        $scope.totalPrice = 0;
+        $scope.totalText = "구매한 것 없음"
     };
 });

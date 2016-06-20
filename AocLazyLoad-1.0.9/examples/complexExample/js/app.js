@@ -49,7 +49,7 @@ var App = angular.module('app', ['ui.router', 'oc.lazyLoad'])
           }],
 
           // resolve the sibling state and use the service lazy loaded
-          setModalBtn: ['loadOcModal', '$rootScope', '$ocModal', function(loadOcModal, $rootScope, $ocModal) {
+          setMrl odalBtn: ['loadOcModal', '$rootScope', '$ocModal', function(loadOcModal, $rootScope, $ocModal) {
             $rootScope.openModal = function() {
               $ocModal.open({
                 url: 'modal',

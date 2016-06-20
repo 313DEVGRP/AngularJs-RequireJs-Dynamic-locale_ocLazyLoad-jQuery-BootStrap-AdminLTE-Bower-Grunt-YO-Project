@@ -37,7 +37,7 @@ require.config({
     'angular': 'lib/angular/angular.min',
     'ngRoute': 'lib/angular-route/angular-route.min',
     'oc.lazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
-    'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
+    'ui.router': 'lib/angular-ui-router/release/angular-ui-router.min',
     'projectWeb': 'indexModule'
   },
 /*

@@ -32,20 +32,28 @@
         <div class="box">
             <h1>{{appName}}</h1>
             <hr>
-
-            <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할일은
-                <strong>{{remain()}}</strong>개  <a href="" ng-click="deleteTodo()" ng-show="hasDone()">보관하기</a></p>
+            <p> 전체 <strong>{{todoList.length}}</strong>개 중 <strong>{{remain()}}</strong>개 남음
+            </p>
             <hr>
+
             <div ng-show="showAllCheck()">
-                <input id="toggle-all" type="checkbox" ng-model="markAll" ng-click="toggleAll()"/>
+                <a href="" ng-click="deleteTodo()" ng-show="hasDone()"> 선택 보관하기 </a>
+                <input id="toggle-all" type="checkbox" ng-model="markAll" ng-click="toggleAll()">
+
                 <label for="toggle-all">전체선택</label>
             </div>
+
             <hr>
+            <table class="table table-striped table-bordered table-hover">
+                <tr>
+                <td>
             <ul style="padding-left:25px;">
-                <li class="checkbox" ng-repeat="item in todoList">
+                <li class="checkbox" ng-repeat="item in todoList" >
                     <input type="checkbox" ng-model="item.done">{{item.title}}</li>
             </ul>
-
+                </td>
+                </tr>
+            </table>
             <div class="someContainer">
                 <input class="form-controll" type="text" name="name" ng-model="newTitle"
                        placeholder="새로운일 추가" ng-keyup="keyAddTodo()"/>

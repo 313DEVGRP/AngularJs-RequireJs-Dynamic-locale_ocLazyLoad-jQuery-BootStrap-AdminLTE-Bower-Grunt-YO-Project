@@ -58,3 +58,15 @@ app.controller('mainCtrl', function($scope) {
         $scope.totalText = "구매한 것 없음"
     };
 });
+
+function customerCtrl ($scope){
+    var customerList = [{name:'봄이'},age:10},{name:'여름이',age:5}];
+    var youngCusterList = [];
+    angular.forEach(customerList, function(value,key){
+        if(value.age < 15){
+            youngCusterList.push(value);
+        }
+    });
+    $scope.customerList = customerList;
+    $scope.youngCusterList = youngCusterList;
+}

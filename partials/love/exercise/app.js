@@ -34,29 +34,20 @@ app.controller('todoCtrl', function($scope) {
 });
 
 app.controller('mainCtrl', function($scope) {
+    var menuList = [
+        {itemId : 1, itemName : '샌드위치', itemPrice: 2000, itemCount:0},
+        {itemId : 2, itmeName : '아메리카노', itemPrice: 1000, itemCount:0},
+        {itemId : 3, itemName : '카푸치노', itemPrice: 1500, itemCount:0}
+    ]
     $scope.menuList = menuList;
     $scope.totalPrice = 0;
-    $scope.totalText = "구매한 것 없음";
+
     $scope.buy = function(){
-      $scope.totalPrice = 0;
-        $scope.totalText = "";
-        angular.forEach($scope.menuList, function(menu){
-            $scope.totalPrice += (menu.itemPrice * Number(menu.itemCount));
-            if(Number(menu.itemCount)>0){
-                if($scope.totalText.length >0){
-                    $scope.totalText += ", ";
-                }
-                $scope.totalText += menu.itemName+" "+menu.itemCount+"개";
-            }
-        });
-    };
-    $scope.reset = function(){
-        angular.forEach($scope.menuList, function(menu){
-            menu.itemCount = 0;
-        });
         $scope.totalPrice = 0;
-        $scope.totalText = "구매한 것 없음"
-    };
+
+        angular.forEach($scope.menuList, function(menu, idx)
+            $scope.totalPrice = $scope.totalPrice + (menu.itemPrice * Number(menu.itemCount));
+        )};
 });
 
 function customerCtrl ($scope){

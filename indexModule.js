@@ -1,48 +1,56 @@
 'use strict';
-var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 
-indexModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider', function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+define(['projectWeb'], function () {
+	
+	var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
+
+	indexModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+        function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+			
+			$urlRouterProvider.otherwise("/");
+			$locationProvider.hashPrefix('!');
+			
+			$stateProvider
+		      .state('index', {
+		        url: "/index", // root route
+		        views: {
+		          "lazyLoadView": {
+		            controller: 'AppCtrl', // This view will use AppCtrl loaded below in the resolve
+		            templateUrl: 'partials/main.html'
+		          }
+		        },
+		        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
+		          loadMyCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+		            // you can lazy load files for an existing module
+		            return $ocLazyLoad.load('js/AppCtrl.js');
+		          }]
+		        }
+		      });
+	}]); //indexModule.config
+
+	indexModule.controller('indexController', ['$scope', '$ocLazyLoad', 
+        function($scope, $ocLazyLoad) {
+	
+			$scope.mainHeader = 'partials/index/header.html';
+			$scope.mainSidebar = 'partials/index/aside.html';
+			$scope.contentWrapper = 'partials/index/contents.html';
+			$scope.mainFooter = 'partials/index/footer.html';
+			$scope.controlSidebar = 'partials/index/sidebar.html';
+	
+			$ocLazyLoad.load([]);
     
-	$urlRouterProvider.otherwise("/dev");
-	$locationProvider.hashPrefix('standardDevelopment#');
+			$scope.strutsiBatis = function() {
+				$ocLazyLoad.load('lazymodule').then(function() {
+				$scope.contentWrapper = 'partials/grid.html';
+				}, function(e) {
+					console.log(e);
+				});
+			}
+	}]);//indexModule.controller
 	
-      
-      $ocLazyLoadProvider.config({
-          jsLoader: requirejs,
-          debug: true
-      });
-}]);
+	indexModule.bootstrap = function () {
+	    angular.bootstrap(document, ['indexModule']);
+	};
 
-indexModule.controller('indexController', ['$scope', '$ocLazyLoad', function($scope, $ocLazyLoad) {
-
-	$ocLazyLoad.load([
-		'lib/bootstrap/dist/css/bootstrap.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css',
-		'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.css',
-		'AdminLTE-2.3.3/dist/css/AdminLTE.custom.css',
-		'AdminLTE-2.3.3/dist/css/skins/_all-skins.min.css',
-	
-		'AdminLTE-2.3.3/plugins/fastclick/fastclick',
-	    'AdminLTE-2.3.3/dist/js/app.min',
-	    'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
-	    'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
-	    'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
-	    'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
-		'AdminLTE-2.3.3/dist/js/demo.js']);
-	
-	$scope.mainHeader = 'partials/index/header.html';
-	$scope.mainSidebar = 'partials/index/aside.html';
-	$scope.contentWrapper = 'partials/index/contents.html';
-	$scope.mainFooter = 'partials/index/footer.html';
-	$scope.controlSidebar = 'partials/index/sidebar.html';
-	
-    
-    $scope.strutsiBatis = function() {
-        $ocLazyLoad.load('lazymodule').then(function() {
-            $scope.contentWrapper = 'partials/grid.html';
-        }, function(e) {
-            console.log(e);
-        });
-    }
-}]);
+	return indexModule;
+});

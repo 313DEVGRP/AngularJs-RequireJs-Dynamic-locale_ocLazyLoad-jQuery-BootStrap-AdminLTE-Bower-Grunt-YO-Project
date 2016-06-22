@@ -20,14 +20,11 @@ require.config({
 	    
 	    //module
 	    'fastclick': 'AdminLTE-2.3.3/plugins/fastclick/fastclick',
-	    'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
 	    'sparkline': 'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
 	    'jvectormap': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
 	    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
 	    'slimScroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
 	    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
-	    'dashboard': 'AdminLTE-2.3.3/dist/js/pages/dashboard2',
-	    'demo': 'AdminLTE-2.3.3/dist/js/demo',
 	    'projectWeb': 'indexModule'
 	},
 
@@ -41,16 +38,13 @@ require.config({
 	    'oc.lazyLoad': ['ui.router'],
 
 	    'fastclick': ['oc.lazyLoad'],
-	    'adminLte': ['fastclick'],
-	    'sparkline': ['adminLte'],
+	    'sparkline': ['fastclick'],
 	    'jvectormap': ['sparkline'],
 	    'jvectormapWorld': ['jvectormap'],
 	    'slimScroll': ['jvectormapWorld'],
 	    'chartjs': ['slimScroll'],
-	    'demo': ['chartjs'],
-	    'dashboard': ['demo'],
 	    
-	    'projectWeb': ['demo'],
+	    'projectWeb': ['chartjs'],
 	    'lazymodule': ['projectWeb']
 	}
 });

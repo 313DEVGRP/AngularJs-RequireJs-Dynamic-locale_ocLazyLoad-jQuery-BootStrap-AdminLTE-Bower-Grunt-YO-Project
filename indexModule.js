@@ -2,20 +2,21 @@
 
 define(['projectWeb'], function () {
 	
-	var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
+	var indexModule = angular.module('projectWeb', ['ngRoute', 'ui.router', 'oc.lazyLoad']);
 
-	indexModule.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
-        function($stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
+	indexModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+        function($routeProvider, $stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 			
 			$urlRouterProvider.otherwise("/");
 			$locationProvider.hashPrefix("StandardDevelopment#");
+
 			
 			// You can also load via resolve
 		    $stateProvider
 		      .state('index', {
 		        url: "/", // root route
 		        views: {
-		          "indexView": {
+		          '': {
 		            controller: 'partialIndexController', // This view will use AppCtrl loaded below in the resolve
 		            templateUrl: 'partials/index/partial-index.html'
 		          }
@@ -28,23 +29,4 @@ define(['projectWeb'], function () {
 		        }
 		      });
 	}]); //indexModule.config
-
-	indexModule.controller('indexController', ['$scope', '$ocLazyLoad', 
-           function($scope, $ocLazyLoad) {
-   	
-   			$scope.mainHeader = 'partials/index/header.html';
-   			$scope.mainSidebar = 'partials/index/aside.html';
-   			$scope.contentWrapper = 'partials/index/contents.html';
-   			$scope.mainFooter = 'partials/index/footer.html';
-   			$scope.controlSidebar = 'partials/index/sidebar.html';
-   	
-   			$ocLazyLoad.load([]);
-       
-   	}]);//indexModule.controller
-   	
-   	indexModule.bootstrap = function () {
-   	    angular.bootstrap(document, ['indexModule']);
-   	};
-
-   	return indexModule;
 });

@@ -7,11 +7,11 @@ define(['projectWeb'], function () {
 	indexModule.controller('indexController', ['$scope', '$ocLazyLoad', 
 	        function($scope, $ocLazyLoad) {
 		
-				$scope.mainHeader = 'partials/index/header.html';
-				$scope.mainSidebar = 'partials/index/aside.html';
-				$scope.contentWrapper = 'partials/index/contents.html';
-				$scope.mainFooter = 'partials/index/footer.html';
-				$scope.controlSidebar = 'partials/index/sidebar.html';
+				$scope.mainHeader = 'partials/header/';
+				$scope.mainSidebar = 'partials/aside/';
+				$scope.contentWrapper = 'partials/contents/';
+				$scope.mainFooter = 'partials/footer/';
+				$scope.controlSidebar = 'partials/sidebar/';
 		
 				$ocLazyLoad.load({
 				  reconfig: true,

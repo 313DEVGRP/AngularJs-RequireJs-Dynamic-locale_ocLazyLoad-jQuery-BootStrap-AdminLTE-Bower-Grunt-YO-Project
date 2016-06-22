@@ -2,9 +2,9 @@
 
 define(['projectWeb'], function () {
 	
-	var indexModule = angular.module('projectWeb', ['ngRoute', 'ui.router', 'oc.lazyLoad']);
+	var routeModule = angular.module('projectWeb', ['ngRoute', 'ui.router', 'oc.lazyLoad']);
 
-	indexModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+	routeModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
         function($routeProvider, $stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 			
 			$urlRouterProvider.otherwise("/");

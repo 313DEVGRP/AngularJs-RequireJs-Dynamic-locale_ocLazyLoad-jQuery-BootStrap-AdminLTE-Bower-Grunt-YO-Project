@@ -7,11 +7,11 @@ define(['projectWeb'], function () {
 	indexModule.controller('indexController', ['$scope', '$ocLazyLoad', 
 	        function($scope, $ocLazyLoad) {
 		
-				$scope.mainHeader = 'partials/header/';
-				$scope.mainSidebar = 'partials/aside/';
-				$scope.contentWrapper = 'partials/contents/';
-				$scope.mainFooter = 'partials/footer/';
-				$scope.controlSidebar = 'partials/sidebar/';
+				$scope.mainHeader = 'partials/layout/header/';
+				$scope.mainSidebar = 'partials/layout/aside/';
+				$scope.contentWrapper = 'partials/layout/contents/';
+				$scope.mainFooter = 'partials/layout/footer/';
+				$scope.controlSidebar = 'partials/layout/sidebar/';
 		
 				$ocLazyLoad.load({
 				  reconfig: true,
@@ -24,16 +24,14 @@ define(['projectWeb'], function () {
 				
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{
-				        name: 'lazymodule',
-				        files: ['lazymodule.js']
-				    }]);
-				};
+				        name: 'strutsiBatisController',
+				        files: ['partials/layout/aside/strutsiBatis/controller.js']
+				    }]).then(function() {
+						$scope.contentWrapper = "partials/layout/aside/strutsiBatis/";
+					}, function(e) {
+						console.log(e);
+					});
+				}
 		}]);//indexModule.controller
-	
-	indexModule.bootstrap = function () {
-   	    angular.bootstrap(document, ['indexModule']);
-   	};
-
-   	return indexModule;
 	
 });

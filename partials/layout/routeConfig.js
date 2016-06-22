@@ -18,13 +18,13 @@ define(['projectWeb'], function () {
 		        views: {
 		          '': {
 		            controller: 'indexController', // This view will use AppCtrl loaded below in the resolve
-		            templateUrl: 'partials/index/'
+		            templateUrl: 'partials/layout/'
 		          }
 		        },
 		        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
 		          indexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 		            // you can lazy load files for an existing module
-		            return $ocLazyLoad.load('partials/index/controller/indexController.js');
+		            return $ocLazyLoad.load('partials/layout/controller.js');
 		          }]
 		        }
 		      });

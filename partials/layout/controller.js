@@ -26,12 +26,8 @@ define(['projectWeb'], function () {
 					$ocLazyLoad.load([{
 				        name: 'lazymodule',
 				        files: ['lazymodule.js']
-				    }]).then(function() {
-						$scope.contentWrapper = "partials/grid.html";
-					}, function(e) {
-						console.log(e);
-					});
-				}
+				    }]);
+				};
 		}]);//indexModule.controller
 	
 	indexModule.bootstrap = function () {

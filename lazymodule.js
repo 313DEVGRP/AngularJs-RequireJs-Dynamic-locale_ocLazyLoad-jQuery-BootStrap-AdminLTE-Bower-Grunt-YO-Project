@@ -7,7 +7,7 @@ define(['projectWeb'], function () {
 	lazyModule.controller('lazyController', ['$scope', '$ocLazyLoad', 
 	                                      	        function($scope, $ocLazyLoad) {
 		$scope.test = "lazymodule 로드 했음.";
-		
+		$scope.$parent.contentWrapper = "partials/grid.html";
 		$.AdminLTE.layout.activate();
 	}]);//lazyController.controller
 	

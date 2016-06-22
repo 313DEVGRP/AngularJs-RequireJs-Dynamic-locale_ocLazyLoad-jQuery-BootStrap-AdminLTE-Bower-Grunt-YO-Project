@@ -10,7 +10,6 @@ define(['projectWeb'], function () {
 			$urlRouterProvider.otherwise("/");
 			$locationProvider.hashPrefix("StandardDevelopment#");
 
-			
 			// You can also load via resolve
 		    $stateProvider
 		      .state('index', {

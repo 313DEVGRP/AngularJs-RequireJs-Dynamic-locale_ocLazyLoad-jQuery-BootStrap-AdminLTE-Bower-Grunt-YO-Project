@@ -4,7 +4,7 @@ define(['projectWeb'], function () {
 	
 	var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 	
-	indexModule.controller('partialIndexController', ['$scope', '$ocLazyLoad', 
+	indexModule.controller('indexController', ['$scope', '$ocLazyLoad', 
 	        function($scope, $ocLazyLoad) {
 		
 				$scope.mainHeader = 'partials/index/header.html';

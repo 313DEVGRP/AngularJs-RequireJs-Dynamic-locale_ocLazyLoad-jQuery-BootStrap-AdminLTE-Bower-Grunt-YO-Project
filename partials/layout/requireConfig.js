@@ -25,6 +25,9 @@ require.config({
 	    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
 	    'slimScroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
 	    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
+	    'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
+	    'demo': 'AdminLTE-2.3.3/dist/js/demo',
+	    
 	    'projectWeb': 'partials/layout/routeConfig'
 	},
 
@@ -44,7 +47,9 @@ require.config({
 	    'slimScroll': ['jvectormapWorld'],
 	    'chartjs': ['slimScroll'],
 	    
-	    'projectWeb': ['chartjs'],
+	    'adminLte': ['chartjs'],
+	    'demo': ['adminLte'],
+	    'projectWeb': ['demo'],
 	    'lazymodule': ['projectWeb']
 	}
 });

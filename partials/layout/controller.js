@@ -13,14 +13,29 @@ define(['projectWeb'], function () {
 				$scope.mainFooter = 'partials/layout/footer/';
 				$scope.controlSidebar = 'partials/layout/sidebar/';
 		
-				$ocLazyLoad.load({
-				  reconfig: true,
-				  cache: false,
-				  files: [
-							'AdminLTE-2.3.3/dist/js/app.min',
-							'AdminLTE-2.3.3/dist/js/demo'
-				         ]
-				});
+				$scope.$on('$includeContentLoaded', function(event, file) {
+					if(file === 'partials/layout/header/') {
+						console.log(file);
+				    }else if(file === 'partials/layout/aside/') {
+				        $.AdminLTE.layout.activate();
+				    }else if(file === 'partials/layout/contents/') {
+				        $.AdminLTE.layout.activate();
+				    }else if(file === 'partials/layout/footer/') {
+				        $.AdminLTE.layout.activate();
+				    }else if(file === 'partials/layout/sidebar/') {
+				    	console.log(file);
+				    };
+				  });
+				
+				$scope.loadBootstrap = function() {
+				    // use events to know when the files are loaded
+				    var unbind = $scope.$on('ocLazyLoad.fileLoaded', function(e, file) {
+				      if(file === 'bower_components/bootstrap/dist/css/bootstrap.css') {
+				        $scope.bootstrapLoaded = true;
+				        unbind();
+				      }
+				    });
+				  };
 				
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{

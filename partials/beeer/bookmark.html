@@ -4,19 +4,14 @@
     <meta charset="utf-8">
     <title>Beeer's App Demo</title>
     <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
-
     <link rel="stylesheet" href="beeersAngularCss.css" />
-
     <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="../../lib/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="beeersAngularJs.js"></script>
-    <script src="https://www.desmos.com/api/v0.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6">
-
-    </script>
 </head>
 
 <body>
-<header class="site-header"> &nbsp; &nbsp;LOVE BeeEr </header>
+<header class="site-header"> LOVE BeeEr </header>
 <br>
 <div >
     <div ng-controller="MainCtrl" class="navbar" align="left">
@@ -36,12 +31,17 @@
             </ul>
         </div>
     </div>
-    <section >
-        <div id="calculator" style="width: 1000px; height:600px; margin-right:10px;">
-            <script>        var elt = document.getElementById('calculator');
-            var calculator = Desmos.Calculator(elt);
-            calculator.setExpression({id:'graph1', latex:'y=x^2'});</script>
-            </div>
+    <section ng-controller="bookmarkList">
+        <h1>북마크 목록</h1>
+        <br>
+        <div>
+            <ul>
+                <li ng-repeat="bookmark in bookmarkList">
+                    <em>{{bookmark.name}}</em> : <span>{{bookmark.url}}</span>
+            </ul>
+        </div>
+
+
     </section>
 
 </div>

@@ -4,19 +4,14 @@
     <meta charset="utf-8">
     <title>Beeer's App Demo</title>
     <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
-
     <link rel="stylesheet" href="beeersAngularCss.css" />
-
     <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="../../lib/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="beeersAngularJs.js"></script>
-    <script src="https://www.desmos.com/api/v0.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6">
-
-    </script>
 </head>
 
 <body>
-<header class="site-header"> &nbsp; &nbsp;LOVE BeeEr </header>
+<header class="site-header"> LOVE BeeEr </header>
 <br>
 <div >
     <div ng-controller="MainCtrl" class="navbar" align="left">
@@ -36,12 +31,19 @@
             </ul>
         </div>
     </div>
-    <section >
-        <div id="calculator" style="width: 1000px; height:600px; margin-right:10px;">
-            <script>        var elt = document.getElementById('calculator');
-            var calculator = Desmos.Calculator(elt);
-            calculator.setExpression({id:'graph1', latex:'y=x^2'});</script>
-            </div>
+    <section>
+
+        <div ng-controller="cookiesCtrl">
+            <h1>Cookie 서비스 사용</h1>
+            <br>
+            <p>test 키로 저장된값: {{value}}</p>
+            <br>
+            <button ng-click="getValue()">쿠키 가져오기</button>
+
+            <br><br>
+            <input type="text" ng-model="iValue"><button ng-click="putValue(iValue)">쿠키저장</button>
+        </div>
+
     </section>
 
 </div>

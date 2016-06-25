@@ -4,19 +4,14 @@
     <meta charset="utf-8">
     <title>Beeer's App Demo</title>
     <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
-
     <link rel="stylesheet" href="beeersAngularCss.css" />
-
     <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
     <script type="text/javascript" src="../../lib/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="beeersAngularJs.js"></script>
-    <script src="https://www.desmos.com/api/v0.6/calculator.js?apiKey=dcb31709b452b1cf9dc26972add0fda6">
-
-    </script>
 </head>
 
 <body>
-<header class="site-header"> &nbsp; &nbsp;LOVE BeeEr </header>
+<header class="site-header"> LOVE BeeEr </header>
 <br>
 <div >
     <div ng-controller="MainCtrl" class="navbar" align="left">
@@ -36,12 +31,20 @@
             </ul>
         </div>
     </div>
-    <section >
-        <div id="calculator" style="width: 1000px; height:600px; margin-right:10px;">
-            <script>        var elt = document.getElementById('calculator');
-            var calculator = Desmos.Calculator(elt);
-            calculator.setExpression({id:'graph1', latex:'y=x^2'});</script>
-            </div>
+    <section class="beeer_content">
+        <hr>
+        <h2>3. 모듈과 각 컴포넌트의 물리적 파일 구조 </h2>
+        <hr>
+        재사용되는 코드의 단위를 좀 더 세세하게 쪼개서 여러 모듈로 만들고 싶을 때는 어떻게 하면 좋을까?<br><br>
+        <ul>
+            <li class="that">angular.module("ngBookmark", ["moduleA", "moduleB"]</li>
+        </ul>
+        <hr>
+        <ul>
+            <li class="that">오픈소스 모듈 개발사이트 : <a href="http://ngmodules.org" target="_blank">http://ngmodules.org</a></li>
+        </ul>
+
+        <hr>
     </section>
 
 </div>

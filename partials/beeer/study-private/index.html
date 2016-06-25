@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="store">
+<head>
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <script type="text/javascript" src="../../../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</head>
+<body class="container" ng-controller="StoreController as store">
+<div class="product row" ng-repeat="product in store.products">
+    <h3>{{product.name}}
+        <em class="pull-right">{{product.price | currency}}</em>
+    </h3>
+</div>
+<section ng-init="tab=1">
+    <ul class="nav nav-pills">
+        <li><a href ng-click="tab = 1">Description</a></li>
+        <li><a href ng-click="tab = 2">Specifications</a></li>
+        <li><a href ng-click="tab = 3">Reviews</a></li>
+
+    </ul>
+    <!-- 2-way data binding -->
+    {{tab}}
+</section>
+<div class="panel" ng-show="{active:tab==1}">
+    <h4>Descriptions</h4>
+    <blockquote>None yet</blockquote>
+</div>
+<div class="panel" ng-show="{active:tab==2}">
+    <h4>Specifications</h4>
+    <blockquote>None yet</blockquote>
+</div>
+<div class="panel" ng-show="{active:tab==3}">
+    <h4>Reviews</h4>
+    <blockquote>None yet</blockquote>
+</div>
+
+</body>

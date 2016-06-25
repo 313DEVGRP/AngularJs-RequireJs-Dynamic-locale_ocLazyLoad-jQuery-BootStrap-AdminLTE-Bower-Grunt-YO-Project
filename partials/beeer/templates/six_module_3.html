@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Beeer's App Demo</title>
-    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="beeersAngularCss.css" />
-    <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../../lib/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="beeersAngularJs.js"></script>
+    <link rel="stylesheet" href="../../../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/beeersAngularCss.css" />
+    <script type="text/javascript" src="../../../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-animate/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="../js/beeersAngularJs.js"></script>
 </head>
 
 <body>
@@ -20,13 +22,17 @@
                 <li><a href="welcome.html">홈</a></li>
                 <li><a href="six_module.html">1. 모듈이란</a></li>
                 <li><a href="six_module_2.html">2. 컨트롤러</a></li>
-                <li><a href="six_module_3.html">3. 파일구조</a></li>
-                <li><a href="bookmark.html"> 북마크</a></li>
-                <li><a href="cookies.html"> 쿠키데모</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li ><a href="userList.html">사용자 관리</a></li>
+                <li><a href="six_module_3.html">3. 다른모듈</a></li>
+                <li><a href="six_module_4.html">4. 파일구조</a></li>
+                <ul class="navbar-in">
+                    <li ><a href="six_module_5.html">레이어별</a></li>
+                    <li ><a href="six_module_6.html">기능별</a></li>
+
+                </ul>
+
                 <li><a href="todoApp.html">TODO APP</a></li>
                 <li><a href="mathApp.html">MATH APP</a></li>
+                <li><a href="login.html">로그인</a></li>
                 <li><a href="signUp.html">가입하기</a></li>
             </ul>
         </div>
@@ -34,7 +40,7 @@
     <section class="beeer_content">
 
         <hr>
-        <h2>3. 모듈과 각 컴포넌트의 물리적 파일 구조 </h2>
+        <h2>3. 다른 모듈의 사용 </h2>
         <hr>
         <h4>디렉토리 구조</h4>
       <pre>
@@ -228,11 +234,11 @@
         </ul>
         <hr>
         재사용되는 코드의 단위를 좀 더 세세하게 쪼개서 여러 모듈로 만들고 싶을 때는 어떻게 하면 좋을까?<br><br>
-        <ul>
-            <li class="that">angular.module("ngBookmark", ["moduleA", "moduleB"]</li>
-        </ul>
+
+            <code class="that">angular.module("ngBookmark", ["moduleA", "moduleB"]</code>
+
         <hr>
-        <iframe width="100%" height="400" src="//jsfiddle.net/soorichung/hbyhzqgc/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <iframe width="100%" height="300" src="//jsfiddle.net/soorichung/hbyhzqgc/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
         <hr>
         <ul>
             <li class="that">오픈소스 모듈 개발사이트 : <a href="http://ngmodules.org" target="_blank">http://ngmodules.org</a></li>

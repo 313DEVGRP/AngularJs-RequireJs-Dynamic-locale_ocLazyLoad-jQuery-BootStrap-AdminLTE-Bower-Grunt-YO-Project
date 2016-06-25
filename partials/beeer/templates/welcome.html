@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="beeersApp">
+<head>
+    <meta charset="utf-8">
+    <title>Beeer's App Demo</title>
+    <link rel="stylesheet" href="../../../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/beeersAngularCss.css" />
+    <script type="text/javascript" src="../../../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-animate/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="../js/beeersAngularJs.js"></script>
+</head>
+
+<body>
+<header class="site-header"> LOVE BeeEr </header>
+<br>
+<div >
+    <div ng-controller="MainCtrl" class="navbar" align="left">
+        <div class="navbar-inner">
+            <ul class="nav" ng-init="showing=false;">
+                <li><a href="welcome.html">홈</a></li>
+                <li><a href="six_module.html">1. 모듈이란</a></li>
+                <li><a href="six_module_2.html">2. 컨트롤러</a></li>
+                <li><a href="six_module_3.html">3. 다른모듈</a></li>
+                <li><a href="six_module_4.html" ng-click="showing=!showing;">4. 파일구조</a></li>
+                <ul class="navbar-in" ng-show="showing">
+                    <li ><a href="six_module_5.html">레이어별</a></li>
+                    <li ><a href="six_module_6.html">기능별</a></li>
+
+                </ul>
+
+                <li><a href="todoApp.html">TODO APP</a></li>
+                <li><a href="mathApp.html">MATH APP</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li><a href="signUp.html">가입하기</a></li>
+            </ul>
+        </div>
+    </div>
+    <section>
+        <h1> Welcome </h1>    <br/>
+        <h3> BEEER조</h3>           <br/>
+        <p>정수영, 권슬기, 함수원, 최세훈</p>
+
+    </section>
+
+</div>
+
+</body>
+
+</html>

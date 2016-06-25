@@ -3,11 +3,13 @@
 <head>
     <meta charset="utf-8">
     <title>Beeer's App Demo</title>
-    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="beeersAngularCss.css" />
-    <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
-    <script type="text/javascript" src="../../lib/angular-route/angular-route.min.js"></script>
-    <script type="text/javascript" src="beeersAngularJs.js"></script>
+    <link rel="stylesheet" href="../../../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../css/beeersAngularCss.css" />
+    <script type="text/javascript" src="../../../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="../../../lib/angular-animate/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src="../js/beeersAngularJs.js"></script>
 </head>
 
 <body>
@@ -37,15 +39,20 @@
     </div>
     <section class="beeer_content">
         <hr>
-        <h2>4. 모듈과 각 컴포넌트의 물리적 파일 구조</h2>
+        <h2>3. 다른 모듈의 사용 </h2>
         <hr>
-        <p class="that">Angluar-Seed 프로젝트의 파일구조</p>
+        재사용되는 코드의 단위를 좀 더 세세하게 쪼개서 여러 모듈로 만들고 싶을 때는 어떻게 하면 좋을까?<br><br>
+
+            <code class="that">angular.module("ngBookmark", ["moduleA", "moduleB"]</code>
+
+        <hr>
+        <iframe width="100%" height="300" src="//jsfiddle.net/soorichung/hbyhzqgc/embedded/js,html,result/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+        <hr>
         <ul>
-            <code>angular.module('myApp', ['myApp.filters, 'myApp.services', 'myApp.directives', 'myApp.controllers']) // app.js</code>
+            <li class="that">오픈소스 모듈 개발사이트 : <a href="http://ngmodules.org" target="_blank">http://ngmodules.org</a></li>
         </ul>
-        <img src="angular-seed_structor1.png"/>
 
-
+        <hr>
     </section>
 
 </div>

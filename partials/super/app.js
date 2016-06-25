@@ -1,40 +1,63 @@
-var app = angular.module("MyApp", []);
-        app.controller("todoCtrl", function($scope){
-            $scope.appName = "AngularJS TODO APP";
-            $scope.todoList = todoList;
+var myApp = angular.module("myApp",[]);
 
-            $scope.addNewTodo = function(newTitle){
-                todoList.push(new Todo(false, newTitle));
-                $scope.newTitle = "";
-            }
+var todoList = [{done:true, title:'Angualr 독서'},
+                {done:false, title:'Angualr 공부'},
+                {done:false, title:'내 공부'}]
 
-            $scope.archive = function(){
-                for(var i = $scope.todoList.length - 1; i >= 0; i--){
-                    if($scope.todoList[i].done){
-                        $scope.todoList.splice(i, 1);
-                    }
-                }
-            }
+myApp.controller('myController', function($scope){
+    $scope.todoList = todoList;
 
-            $scope.remain = function(){
-                var todoCount = 0;
-
-                $scope.todoList.forEach(function(obj){
-                    if(!obj.done){ todoCount++; }
-                });
-
-                return todoCount;
+    $scope.remain = function(){
+        var remainCount=0;
+        angular.forEach($scope.todoList, function(value, key){
+            if(value.done === false){
+                remainCount++;
             }
         });
 
-        var todoList = [
-            new Todo(true, "AngularJS 독서"),
-            new Todo(false, "AngularJS 공부하기"),
-            new Todo(false, "개인 프로젝트 구성")
-        ];
+        return remainCount;
+    };
 
-        function Todo(done, title){
-            this.done = done;
-            this.title = title;
-        }
+    $scope.addNewTodo = function(newTitle){
+        $scope.todoList.push({done:false, title:newTitle});
+
+        $scope.newTitle='';
+    }
+});
+
+myApp.controller('mainCtrl', function($scope){
+    $scope.broadcast=function(noticeMsg){
+        $scope.$broadcast("chat:noticeMsg", noticeMsg);
+        $scope.noticeMsg="";
+    };
+});
+
+myApp.controller('chatMsgListCtrl', function($scope, $rootScope){
+    $scope.msgList=[];
+    $rootScope.$on("chat:newMsg", function(e, newMsg){
+        $scope.msgList.push(newMsg);
+    });
+
+    $scope.$on("chat:noticeMsg", function(e, noticeMsg){
+        $scope.msgList.push("[공지] "+noticeMsg);
+    });
+});
+
+myApp.controller('chatMsgInputCtrl', function($scope){
+    $scope.submit=function(newMsg){
+        $scope.$emit("chat:newMsg", newMsg);
+        $scope.newMsg="";
+    };
+});
+
+myApp.directive('hello', function(){
+    return function(scope, iElement, iAttrs, controller){
+        // $log("<h1>hello"+iAttrs.name+"</hl>"); 
+        iElement.html("<h1>hello "+iAttrs.name+"</h1>")
+    };
+});
+
+
+
+
 

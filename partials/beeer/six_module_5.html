@@ -20,29 +20,30 @@
                 <li><a href="welcome.html">홈</a></li>
                 <li><a href="six_module.html">1. 모듈이란</a></li>
                 <li><a href="six_module_2.html">2. 컨트롤러</a></li>
-                <li><a href="six_module_3.html">3. 파일구조</a></li>
-                <li><a href="bookmark.html"> 북마크</a></li>
-                <li><a href="cookies.html"> 쿠키데모</a></li>
-                <li><a href="login.html">로그인</a></li>
-                <li ><a href="userList.html">사용자 관리</a></li>
+                <li><a href="six_module_3.html">3. 다른모듈</a></li>
+                <li><a href="six_module_4.html">4. 파일구조</a></li>
+                <ul class="navbar-in">
+                    <li ><a href="six_module_5.html">레이어별</a></li>
+                    <li ><a href="six_module_6.html">기능별</a></li>
+
+                </ul>
+
                 <li><a href="todoApp.html">TODO APP</a></li>
                 <li><a href="mathApp.html">MATH APP</a></li>
+                <li><a href="login.html">로그인</a></li>
                 <li><a href="signUp.html">가입하기</a></li>
             </ul>
         </div>
     </div>
-    <section>
 
-        <div ng-controller="cookiesCtrl">
-            <h1>Cookie 서비스 사용</h1>
-            <br>
-            <p>test 키로 저장된값: {{value}}</p>
-            <br>
-            <button ng-click="getValue()">쿠키 가져오기</button>
+        <section class="beeer_content">
+            <hr>
+            <h2>4-(1). 모듈의 레이어별 분류</h2>
+            <hr>
+            <p>레이어 별로 폴더를 만들어 파일구조를 구성한 모습</p>
 
-            <br><br>
-            <input type="text" ng-model="iValue"><button ng-click="putValue(iValue)">쿠키저장</button>
-        </div>
+            <img src="angular-seed_structor2.png"/>
+
 
     </section>
 

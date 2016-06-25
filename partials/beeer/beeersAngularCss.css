@@ -90,8 +90,15 @@ section{
     text-align: left;
 }
 .that{
-
+    list-style:none;
+    margin-left: 30px;
     color: #BB6688;
     font-size: 25px;
 
+}
+.navbar-in{
+    list-style:none;
+}
+.table_color{
+    color: #BB6688;
 }

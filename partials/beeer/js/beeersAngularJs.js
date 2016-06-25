@@ -46,13 +46,20 @@ var userList = [
 
 ];
 
+var countryList = [
+    {name:'한국', continent:'아시아'},
+    {name:'일본', continent:'아시아'},
+    {name:'미국', continent:'아메리카'},
+    {name:'영국', continent:'유럽'},
+    {name:'캐나다', continent:'아메리카'},
+    {name:'중국', continent:'아시아'}
+];
 
 angular.module('beeersApp', ['ngRoute', 'ngAnimate'])
     .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
-        .when('/welcome', {templateUrl: '../templates/welcome.html', controller:'welcomeCtrl'})
+        .when('/welcome', {templateUrl: '../templates/welcome.html', controller:''})
         .when('/login', {templateUrl: '../templates/login.html', controller:'loginCtrl'})
-        .when('/userList', {templateUrl: '../templates/userList.html', controller:'userListCtrl'})
         .when('/todoApp', {templateUrl: '../templates/todoApp.html', controller:'todoCtrl'})
         .when('/signUp', {templateUrl: '../templates/signUp.html', controller:'signCtrl'})
         .when('/mathApp', {templateUrl: '../templates/mathApp.html', controller:'mathCtrl'})
@@ -62,11 +69,17 @@ angular.module('beeersApp', ['ngRoute', 'ngAnimate'])
         .when('/six_module_4', {templateUrl: '../templates/six_module_4.html', controller:''})
         .when('/six_module_5', {templateUrl: '../templates/six_module_5.html', controller:''})
         .when('/six_module_6', {templateUrl: '../templates/six_module_6.html', controller:''})
+        .when('/six_module_7', {templateUrl: '../templates/six_module_7.html', controller:''})
+        .when('/six_module_8', {templateUrl: '../templates/six_module_8.html', controller:''})
+        .when('/six_module_9', {templateUrl: '../templates/six_module_9.html', controller:''})
+
+        .when('/userList', {templateUrl: '../templates/userList.html', controller:'userListCtrl'})
+        .when('/', {templateUrl: '../templates/welcome.html', controller:''})
 
         //   .when('/bookmark', {templateUrl: 'bookmark.html', controller:'bookmarkCtrl'})
      //   .when('/cookies', {templateUrl: 'cookies.html', controller:'cookiesCtrl'})
 
-        .otherwise({redirectTo: '/welcome'});
+        .otherwise({redirectTo: '../templates/welcome.html'});
         $locationProvider.html5Mode(true);
     }])
     .controller('MainCtrl', ['$scope','$route', '$routeParams', '$location', function($scope, $route, $routeParams, $location){
@@ -85,12 +98,31 @@ angular.module('beeersApp', ['ngRoute', 'ngAnimate'])
         $scope.password="";
         $scope.doGreeting = function(id){
             $window.alert("환영합니다!");
+            $window.open('welcome.html');
         };
         $scope.goSignUp = function(){
-            $window.href('signUp.html');
+            $window.open('signUp.html');
         };
 
         }])
+    .controller("signCtrl", ['$scope', '$window', function($scope, $window) {
+        $scope.name="";
+        $scope.password="";
+        $scope.phone="";
+        $scope.id="";
+        $scope.countryList = countryList;
+        $scope.checked=false;
+        $scope.value1='동의';
+        $scope.value2='미동의';
+
+        $scope.doGreeting = function(name){
+            var string = name+"님 가입을 환영합니다!";
+            $window.alert(string);
+            $window.open('welcome.html');
+
+        };
+
+    }])
     .controller("todoCtrl", ['$scope', function($scope) {
             $scope.appName = "Todo App";
             $scope.todoList = todoList;

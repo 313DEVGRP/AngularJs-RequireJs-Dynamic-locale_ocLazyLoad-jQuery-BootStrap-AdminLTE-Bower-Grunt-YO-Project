@@ -7,6 +7,11 @@ h1{
     color: pink;
 }
 
+pre{
+    font-size: 18px;
+    color: #924f6a;
+    background-color: rgba(241, 229, 240, 0.48);
+}
 .site-header {
     position: relative;
     z-index: 3;
@@ -92,7 +97,7 @@ section{
 .that{
     list-style:none;
     margin-left: 30px;
-    color: #BB6688;
+    color: #bb6688;
     font-size: 25px;
 
 }

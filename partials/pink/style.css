@@ -3,10 +3,10 @@ a[href="#wrap"]{position:fixed;top:50%;right:20px;}
 .page-header small:before{counter-increment:app_num;content:"< 예제 "counter(app_num)" > ";margin-right:15px;}
 .box_wrap > div{display:table-cell;width:100px;height:100px;vertical-align:middle;text-align:center;border:1px solid #333;}
 
-#link13+form .ng-invalid{border:3px solid red;}
-#link13+form .ng-valid{border:3px solid green;}
-#link13+form .ng-pristin{border-style:solid;}
-#link13+form .ng-dirty{border-style:dashed;}
+#link11+form .ng-invalid{border:3px solid red;}
+#link11+form .ng-valid{border:3px solid green;}
+#link11+form .ng-pristin{border-style:solid;}
+#link11+form .ng-dirty{border-style:dashed;}
 
 .list01 { }
 .list01 li { display:inline-block; margin:0 10px 10px 0; width:100px; height:120px;}

@@ -17,6 +17,8 @@ require.config({
 	    'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
 	    'ngRoute': 'lib/angular-route/angular-route.min',
 	    'oc.lazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
+	    'text': 'lib/requirejs-text/text', 
+	    'css': 'lib/require-css/css.min',
 	    
 	    //module
 	    'fastclick': 'AdminLTE-2.3.3/plugins/fastclick/fastclick',
@@ -39,8 +41,10 @@ require.config({
 	    'ngRoute': ['angular'],
 	    'ui.router': ['ngRoute'],
 	    'oc.lazyLoad': ['ui.router'],
-
-	    'fastclick': ['oc.lazyLoad'],
+	    'text': ['oc.lazyLoad'],
+	    'css': ['text'],
+	    
+	    'fastclick': ['css'],
 	    'sparkline': ['fastclick'],
 	    'jvectormap': ['sparkline'],
 	    'jvectormapWorld': ['jvectormap'],
@@ -57,9 +61,17 @@ require.config({
 require(	[
           		'projectWeb'
           	], 
-          	function (projectWeb) {
+          	function (projectWeb, css) {
 				$(document).ready(function () {
 					angular.bootstrap(document, ['projectWeb']);
 				});
+				
+				function loadCss(url) {
+				    var link = document.createElement("link");
+				    link.type = "text/css";
+				    link.rel = "stylesheet";
+				    link.href = url;
+				    document.getElementsByTagName("head")[0].appendChild(link);
+				};
 			}//$(document).ready
 );//require

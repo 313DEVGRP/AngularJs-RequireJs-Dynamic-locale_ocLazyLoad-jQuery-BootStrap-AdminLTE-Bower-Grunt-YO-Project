@@ -1,18 +1,18 @@
 'use strict';
 
 define(['projectWeb'], function () {
-	
+
 	var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
-	
-	indexModule.controller('indexController', ['$scope', '$ocLazyLoad', 
+
+	indexModule.controller('indexController', ['$scope', '$ocLazyLoad',
 	        function($scope, $ocLazyLoad) {
-		
+
 				$scope.mainHeader = 'partials/layout/header/';
 				$scope.mainSidebar = 'partials/layout/aside/';
 				$scope.contentWrapper = 'partials/layout/contents/';
 				$scope.mainFooter = 'partials/layout/footer/';
 				$scope.controlSidebar = 'partials/layout/sidebar/';
-		
+
 				$scope.$on('$includeContentLoaded', function(event, file) {
 					if(file === 'partials/layout/header/') {
 						console.log(file);
@@ -27,7 +27,7 @@ define(['projectWeb'], function () {
 				    	console.log(file);
 				    };
 				  });
-				
+
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{
 				        name: 'strutsiBatisController',
@@ -39,5 +39,19 @@ define(['projectWeb'], function () {
 					});
 				}
 		}]);//indexModule.controller
-	
+
+});
+
+/* 이미지 크기 자동조절 */
+$(function() {
+    $(".box-body img, .resizablebox").each(function() {
+        var oImgWidth = $(this).width();
+        var oImgHeight = $(this).height();
+        $(this).css({
+            'max-width':oImgWidth+'px',
+            'max-height':oImgHeight+'px',
+            'width':'100%',
+            'height':'100%'
+        });
+    });
 });

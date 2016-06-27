@@ -40,9 +40,9 @@ define(['projectWeb'], function () {
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{
 				        name: 'strutsiBatisController',
-				        files: ['partials/layout/aside/strutsiBatis/controller.js']
+				        files: ['partials/layout/contents/strutsiBatis/controller.js']
 				    }]).then(function() {
-						$scope.contentWrapper = "partials/layout/aside/strutsiBatis/";
+						$scope.contentWrapper = "partials/layout/contents/strutsiBatis/";
 					}, function(e) {
 						console.log(e);
 					});

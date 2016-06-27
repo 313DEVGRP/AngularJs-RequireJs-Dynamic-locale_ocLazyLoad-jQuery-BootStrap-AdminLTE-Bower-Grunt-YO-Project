@@ -43,7 +43,7 @@ define(['projectWeb'], function () {
 });
 
 /* 이미지 크기 자동조절 */
-$(function() {
+$(document).ready(function() {
     $(".box-body img, .resizablebox").each(function() {
         var oImgWidth = $(this).width();
         var oImgHeight = $(this).height();

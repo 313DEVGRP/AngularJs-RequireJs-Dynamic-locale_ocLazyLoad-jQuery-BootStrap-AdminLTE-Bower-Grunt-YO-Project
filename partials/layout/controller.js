@@ -27,6 +27,20 @@ define(['projectWeb'], function () {
 				    	console.log(file);
 				    };
 				  });
+				
+				/* 이미지 크기 자동조절 */
+				$(document).ready(function() {
+				    $(".box-body img, .resizablebox").each(function() {
+				        var oImgWidth = $(this).width();
+				        var oImgHeight = $(this).height();
+				        $(this).css({
+				            'max-width':oImgWidth+'px',
+				            'max-height':oImgHeight+'px',
+				            'width':'100%',
+				            'height':'100%'
+				        });
+				    });
+				});
 
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{
@@ -40,18 +54,4 @@ define(['projectWeb'], function () {
 				}
 		}]);//indexModule.controller
 
-});
-
-/* 이미지 크기 자동조절 */
-$(document).ready(function() {
-    $(".box-body img, .resizablebox").each(function() {
-        var oImgWidth = $(this).width();
-        var oImgHeight = $(this).height();
-        $(this).css({
-            'max-width':oImgWidth+'px',
-            'max-height':oImgHeight+'px',
-            'width':'100%',
-            'height':'100%'
-        });
-    });
 });

@@ -19,6 +19,7 @@ define(['projectWeb'], function () {
 				    }else if(file === 'partials/layout/aside/') {
 				        $.AdminLTE.layout.activate();
 				    }else if(file === 'partials/layout/contents/') {
+				    	$ocLazyLoad.load('partials/layout/contents/index.css');
 				        $.AdminLTE.layout.activate();
 				    }else if(file === 'partials/layout/footer/') {
 				        $.AdminLTE.layout.activate();
@@ -27,21 +28,11 @@ define(['projectWeb'], function () {
 				    };
 				  });
 				
-				$scope.loadBootstrap = function() {
-				    // use events to know when the files are loaded
-				    var unbind = $scope.$on('ocLazyLoad.fileLoaded', function(e, file) {
-				      if(file === 'bower_components/bootstrap/dist/css/bootstrap.css') {
-				        $scope.bootstrapLoaded = true;
-				        unbind();
-				      }
-				    });
-				  };
-				
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{
 				        name: 'strutsiBatisController',
 				        files: ['partials/layout/contents/strutsiBatis/controller.js']
-				    }]).then(function() {
+				    },'partials/layout/contents/strutsiBatis/index.css']).then(function() {
 						$scope.contentWrapper = "partials/layout/contents/strutsiBatis/";
 					}, function(e) {
 						console.log(e);

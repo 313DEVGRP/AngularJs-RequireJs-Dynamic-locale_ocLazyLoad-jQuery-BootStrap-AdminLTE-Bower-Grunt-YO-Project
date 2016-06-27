@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko" ng-app="beeersApp">
+<head>
+    <meta charset="utf-8">
+    <title>Beeer's App Demo</title>
+    <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="beeersAngularCss.css" />
+    <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../../lib/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="beeersAngularJs.js"></script>
+</head>
+
+<body>
+<header class="site-header"> LOVE BeeEr </header>
+<br>
+<div>
+    <div class="navbar" align="left">
+        <div class="navbar-inner">
+            <ul class="nav">
+                <li><a href="welcome.html">홈</a></li>
+                <li><a href="login.html">로그인</a></li>
+                <li ><a href="userList.html">사용자 관리</a></li>
+                <li><a href="todoApp.html">TODO APP</a></li>
+                <li><a href="mathApp.html">MATH APP</a></li>
+                <li><a href="signUp.html">가입하기</a></li>
+            </ul>
+        </div>
+    </div>
+    <section ng-controller="loginCtrl">
+        <p>로그인 해주세요</p>
+        <form name="loginForm">
+            <input class="someContainer" placeholder="user@mail.com" aria-expanded="false" aria-autocomplete="true" maxlegnth=256"
+                   name="id" type="text"  ng-model="id" ng-maxlength="50" ng-required="true"
+                   ng-pattern="/^[a-z0-9_+.-]+@([a-z0-9-]+\.)+[a-z0-9]{2,4}$/"> <br/>
+            <input class="someContainer" placeholder="PASSWORD" aria-expanded="false" aria-autocomplete="true" maxlegnth=256"
+                   name="password" type="password" ng-model="password" ng-required="true">  <br/>
+            <input ng-show="!loginForm.id.$error.required && !loginForm.id.$error.pattern && !loginForm.password.$error.required"
+                   class="someContainer" value="로그인" type="button" ng-click="doGreeting(id)">  &nbsp;
+            <input class="someContainer" value="회원가입" type="button" ng-click="goSignUp()"><br/><br/>
+            <span class="error" ng-show="loginForm.id.$error.required">ID와 </span>
+            <span class="error" ng-show="loginForm.id.$error.pattern">메일주소로 된 ID를 입력해주세요<br/>  </span>
+            <span class="error" ng-show="loginForm.password.$error.required">비밀번호를 입력하세요.</span>
+        </form>
+    </section>
+
+</div>
+
+</body>
+
+</html>

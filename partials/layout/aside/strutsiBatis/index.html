@@ -191,3 +191,390 @@
 	      </div>
 	      <!-- /.row -->
     </section>
+
+<!-- Style Setting -->
+<style type="text/css">
+	#demo {
+		overflow:auto;
+		max-height:469px;
+		float: left;background:#fff;
+	}
+
+	.NFText{
+		width: 200px;
+	}
+
+
+	input[type="button"] {
+		display: inline-block;
+		min-width: 100px;
+		min-height: 30px;
+		margin: 5px 0 5px 5px;
+		outline: none;
+		border: 1px solid #f45b4f;
+		border-top-width: 0px;
+		border-right-width: 0px;
+		border-bottom-width: 0px;
+		border-left-width: 0px;
+		-webkit-border-top-left-radius: 0px;
+		-webkit-border-top-right-radius: 0px;
+		-webkit-border-bottom-right-radius: 0px;
+		-webkit-border-bottom-left-radius: 0px;
+		-moz-border-top-left-radius: 0px;
+		-moz-border-top-right-radius: 0px;
+		-moz-border-bottom-right-radius: 0px;
+		-moz-border-bottom-left-radius: 0px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		padding: 10px;
+		background: #f45b4f;
+		color: #fff;
+		font-family: Oxygen,sans-serif;
+		font-size: 1em;
+		font-weight: 400;
+		font-variant: normal;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0em;
+		line-height: normal;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	button{text-transform:capitalize;}
+	.btn_wrap01{overflow:hidden;width:74%;float:left;}
+	.btn_wrap01 button{display:block;float:left;margin:0;padding:0;width:14%;min-width:0;border-left:1px solid #fff;}
+	.btn_wrap01 button:first-child{border-left:0;}
+	.btn_wrap02{width:26%;float:right;}
+	.btn_wrap02 .textInputVerticalCenter{width:69%;float:left;}
+	.btn_wrap02 button{display:block;float:left;margin:0;padding:0;;min-width:0;width:15%;border-left:1px solid #fff;}
+	.btn_wrap02 input[type="text"]{width:100%}
+
+	.demo_side{width:30%;margin:30px 0;border-top:1px solid #000;}
+	.demo_con{width:68%;float:right;margin:30px 0;border-top:1px solid #000;}
+	.demo_con table tbody tr td{text-align:center;}
+	.demo_con table tbody tr.child td{text-align:left;}
+	.dataTables_filter, .dataTables_length{display:none}
+
+	table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before {top:50%;margin-top:-10px;}
+
+	@media only screen and (max-width: 768px){
+		.btn_wrap01{width:100%}
+		.btn_wrap01 button{border-bottom:1px solid #fff;}
+		.btn_wrap01 button:first-child{width:100%;}
+		.btn_wrap02{width:100%;margin-top:10px}
+		.demo_side{width:100%;}
+		.demo_con{width:100%;}
+	}
+	@media only screen and (min-width:481px) and (max-width: 768px){
+		.btn_wrap01 button{width:33.33%;}
+		.btn_wrap01 button:nth-child(3n-1){border-left:0;}
+	}
+	@media only screen and (max-width: 480px) {
+		.btn_wrap01 button{width:50%;}
+		.btn_wrap01 button:nth-child(2n){border-left:0;}
+
+	}
+	</style>
+<!-- Content Header (Page header) -->
+    <section class="content-header" ng-controller="strutsiBatisController">
+      <h1>
+        <small>Standard Development Support System</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/dev"><i class="fa fa-home"></i> Home</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+		 <!-- Info boxes -->
+	      <div class="row">
+	        <div class="col-md-12">
+	          <div class="box">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">JAVA &amp; Oracle ( struts2 + iBatis2 ) demo + event order</h3>
+
+	              <div class="box-tools pull-right">
+	                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+	                </button>
+	                <div class="btn-group">
+	                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+	                    <i class="fa fa-wrench"></i></button>
+	                  <ul class="dropdown-menu" role="menu">
+	                    <li><a href="#/dev">Action</a></li>
+	                    <li><a href="#/dev">Another action</a></li>
+	                    <li><a href="#/dev">Something else here</a></li>
+	                    <li class="divider"></li>
+	                    <li><a href="#/dev">Separated link</a></li>
+	                  </ul>
+	                </div>
+	                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	              </div>
+	            </div>
+	            <!-- /.box-header -->
+	            <div class="box-body">
+	              <div class="row">
+	                <div class="col-md-8">
+
+	                  	<!-- jstree -->
+						<div id="mmenu" style="clear:both;" class="clearfix">
+							<form class="niceform">
+								<div class="desktop-tablet alpha boxed bm-remove btn_wrap01">
+									<button type="button" id="add_folder"><i class="fa fa-plus"></i> add folder</button>
+									<button type="button" id="add_default"><i class="fa fa-plus"></i> add file</button>
+									<button type="button" id="rename"><i class="fa fa-eraser"></i> rename</button>
+									<button type="button" id="remove"><i class="fa fa-minus"></i> remove</button>
+									<button type="button" id="cut"><i class="fa fa-cut"></i> cut</button>
+									<button type="button" id="copy"><i class="fa fa-copy"></i> copy</button>
+									<button type="button" id="paste"><i class="fa fa-paste"></i> paste</button>
+								</div>
+								<div class="desktop-tablet alpha bm-remove boxed last btn_wrap02">
+								<div class="textInputVerticalCenter">
+									<input type="text" id="text" placeholder="찾을 노드 이름 입력" class="inline-block bm-remove tip-r-fade" data-tooltip="Press Enter To Node To Search"/>
+								</div>
+									<button type="button" id="search" title="Search"><i class="fa fa-search"></i></button>
+									<button type="button" id="clear_search" title="Clear"><i class="fa fa-eraser"></i></button>
+								</div>
+							</form>
+						</div><!-- /.mmenu -->
+
+						<div id="layer" class="clearfix">
+							<div id="demo" class="demo demo_side"></div>
+
+							<div class="demo_con">
+								<table id="jstreeTable" class="display responsive no-wrap" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+											<th>c_id</th>
+											<th>c_parentid</th>
+											<th>c_position</th>
+											<th>c_left</th>
+											<th>c_right</th>
+											<th>c_level</th>
+											<th>c_title</th>
+											<th>c_type</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div><!-- /.layer -->
+
+						<div class="clearfix">
+							<input type="button" value="reconstruct" onclick="javascript:alert('not supprt')" />
+							<input type="button"  id="analyze" value="analyze" onclick="$('#alog').load('${pageContext.request.contextPath}/egovframework/com/ext/jstree/strutsiBatis/analyzeNode.action');" />
+							<input type="button"  value="refresh" onclick="$('#demo').jstree('refresh',-1);" />
+						</div>
+						<div id='alog' style="float:left; border:1px solid gray; padding:5px; height:150px; margin-top:15px; overflow:auto; width: 100%;max-width:1180px;"></div>
+
+	                	<!-- /.jstree Demo -->
+
+	                </div><!-- /.col -->
+	              </div><!-- /.row -->
+	            </div><!-- ./box-body -->
+
+	          </div>
+	          <!-- /.box -->
+	        </div>
+	        <!-- /.col -->
+	      </div>
+	      <!-- /.row -->
+    </section>
+
+
+<!-- Style Setting -->
+<style type="text/css">
+	#demo {
+		overflow:auto;
+		max-height:469px;
+		float: left;background:#fff;
+	}
+
+	.NFText{
+		width: 200px;
+	}
+
+
+	input[type="button"] {
+		display: inline-block;
+		min-width: 100px;
+		min-height: 30px;
+		margin: 5px 0 5px 5px;
+		outline: none;
+		border: 1px solid #f45b4f;
+		border-top-width: 0px;
+		border-right-width: 0px;
+		border-bottom-width: 0px;
+		border-left-width: 0px;
+		-webkit-border-top-left-radius: 0px;
+		-webkit-border-top-right-radius: 0px;
+		-webkit-border-bottom-right-radius: 0px;
+		-webkit-border-bottom-left-radius: 0px;
+		-moz-border-top-left-radius: 0px;
+		-moz-border-top-right-radius: 0px;
+		-moz-border-bottom-right-radius: 0px;
+		-moz-border-bottom-left-radius: 0px;
+		border-top-left-radius: 0px;
+		border-top-right-radius: 0px;
+		border-bottom-right-radius: 0px;
+		border-bottom-left-radius: 0px;
+		padding: 10px;
+		background: #f45b4f;
+		color: #fff;
+		font-family: Oxygen,sans-serif;
+		font-size: 1em;
+		font-weight: 400;
+		font-variant: normal;
+		text-align: center;
+		text-transform: uppercase;
+		letter-spacing: 0em;
+		line-height: normal;
+		-webkit-transition: all 0.2s ease-in-out;
+		-moz-transition: all 0.2s ease-in-out;
+		-o-transition: all 0.2s ease-in-out;
+		-ms-transition: all 0.2s ease-in-out;
+		transition: all 0.2s ease-in-out;
+	}
+	button{text-transform:capitalize;}
+	.btn_wrap01{overflow:hidden;width:74%;float:left;}
+	.btn_wrap01 button{display:block;float:left;margin:0;padding:0;width:14%;min-width:0;border-left:1px solid #fff;}
+	.btn_wrap01 button:first-child{border-left:0;}
+	.btn_wrap02{width:26%;float:right;}
+	.btn_wrap02 .textInputVerticalCenter{width:69%;float:left;}
+	.btn_wrap02 button{display:block;float:left;margin:0;padding:0;;min-width:0;width:15%;border-left:1px solid #fff;}
+	.btn_wrap02 input[type="text"]{width:100%}
+
+	.demo_side{width:30%;margin:30px 0;border-top:1px solid #000;}
+	.demo_con{width:68%;float:right;margin:30px 0;border-top:1px solid #000;}
+	.demo_con table tbody tr td{text-align:center;}
+	.demo_con table tbody tr.child td{text-align:left;}
+	.dataTables_filter, .dataTables_length{display:none}
+
+	table.dataTable.dtr-inline.collapsed tbody td:first-child:before, table.dataTable.dtr-inline.collapsed tbody th:first-child:before {top:50%;margin-top:-10px;}
+
+	@media only screen and (max-width: 768px){
+		.btn_wrap01{width:100%}
+		.btn_wrap01 button{border-bottom:1px solid #fff;}
+		.btn_wrap01 button:first-child{width:100%;}
+		.btn_wrap02{width:100%;margin-top:10px}
+		.demo_side{width:100%;}
+		.demo_con{width:100%;}
+	}
+	@media only screen and (min-width:481px) and (max-width: 768px){
+		.btn_wrap01 button{width:33.33%;}
+		.btn_wrap01 button:nth-child(3n-1){border-left:0;}
+	}
+	@media only screen and (max-width: 480px) {
+		.btn_wrap01 button{width:50%;}
+		.btn_wrap01 button:nth-child(2n){border-left:0;}
+
+	}
+	</style>
+<!-- Content Header (Page header) -->
+    <section class="content-header" ng-controller="strutsiBatisController">
+      <h1>
+        <small>Standard Development Support System</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#/dev"><i class="fa fa-home"></i> Home</a></li>
+      </ol>
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+		 <!-- Info boxes -->
+	      <div class="row">
+	        <div class="col-md-12">
+	          <div class="box">
+	            <div class="box-header with-border">
+	              <h3 class="box-title">JAVA &amp; Oracle ( struts2 + iBatis2 ) demo + event order</h3>
+
+	              <div class="box-tools pull-right">
+	                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+	                </button>
+	                <div class="btn-group">
+	                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+	                    <i class="fa fa-wrench"></i></button>
+	                  <ul class="dropdown-menu" role="menu">
+	                    <li><a href="#/dev">Action</a></li>
+	                    <li><a href="#/dev">Another action</a></li>
+	                    <li><a href="#/dev">Something else here</a></li>
+	                    <li class="divider"></li>
+	                    <li><a href="#/dev">Separated link</a></li>
+	                  </ul>
+	                </div>
+	                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+	              </div>
+	            </div>
+	            <!-- /.box-header -->
+	            <div class="box-body">
+	              <div class="row">
+	                <div class="col-md-8">
+
+	                  	<!-- jstree -->
+						<div id="mmenu" style="clear:both;" class="clearfix">
+							<form class="niceform">
+								<div class="desktop-tablet alpha boxed bm-remove btn_wrap01">
+									<button type="button" id="add_folder"><i class="fa fa-plus"></i> add folder</button>
+									<button type="button" id="add_default"><i class="fa fa-plus"></i> add file</button>
+									<button type="button" id="rename"><i class="fa fa-eraser"></i> rename</button>
+									<button type="button" id="remove"><i class="fa fa-minus"></i> remove</button>
+									<button type="button" id="cut"><i class="fa fa-cut"></i> cut</button>
+									<button type="button" id="copy"><i class="fa fa-copy"></i> copy</button>
+									<button type="button" id="paste"><i class="fa fa-paste"></i> paste</button>
+								</div>
+								<div class="desktop-tablet alpha bm-remove boxed last btn_wrap02">
+								<div class="textInputVerticalCenter">
+									<input type="text" id="text" placeholder="찾을 노드 이름 입력" class="inline-block bm-remove tip-r-fade" data-tooltip="Press Enter To Node To Search"/>
+								</div>
+									<button type="button" id="search" title="Search"><i class="fa fa-search"></i></button>
+									<button type="button" id="clear_search" title="Clear"><i class="fa fa-eraser"></i></button>
+								</div>
+							</form>
+						</div><!-- /.mmenu -->
+
+						<div id="layer" class="clearfix">
+							<div id="demo" class="demo demo_side"></div>
+
+							<div class="demo_con">
+								<table id="jstreeTable" class="display responsive no-wrap" cellspacing="0" width="100%">
+									<thead>
+										<tr>
+											<th>c_id</th>
+											<th>c_parentid</th>
+											<th>c_position</th>
+											<th>c_left</th>
+											<th>c_right</th>
+											<th>c_level</th>
+											<th>c_title</th>
+											<th>c_type</th>
+										</tr>
+									</thead>
+								</table>
+							</div>
+						</div><!-- /.layer -->
+
+						<div class="clearfix">
+							<input type="button" value="reconstruct" onclick="javascript:alert('not supprt')" />
+							<input type="button"  id="analyze" value="analyze" onclick="$('#alog').load('${pageContext.request.contextPath}/egovframework/com/ext/jstree/strutsiBatis/analyzeNode.action');" />
+							<input type="button"  value="refresh" onclick="$('#demo').jstree('refresh',-1);" />
+						</div>
+						<div id='alog' style="float:left; border:1px solid gray; padding:5px; height:150px; margin-top:15px; overflow:auto; width: 100%;max-width:1180px;"></div>
+
+	                	<!-- /.jstree Demo -->
+
+	                </div><!-- /.col -->
+	              </div><!-- /.row -->
+	            </div><!-- ./box-body -->
+
+	          </div>
+	          <!-- /.box -->
+	        </div>
+	        <!-- /.col -->
+	      </div>
+	      <!-- /.row -->
+    </section>

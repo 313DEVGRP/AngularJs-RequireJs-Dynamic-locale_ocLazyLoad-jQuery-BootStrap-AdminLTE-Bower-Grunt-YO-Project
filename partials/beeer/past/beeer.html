@@ -159,11 +159,11 @@
       <option value="">선택해 주세요</option>
     </select>
     </div>
-    <div>경유 국가 : <select ng-model="viaCountry" ng-options="contry as country.name for country in countryList">
+    <div>경유 국가 : <select ng-model="viaCountry" ng-options="contry.name as country.name for country in countryList">
       <option value="">선택해 주세요</option>
     </select>
     </div>
-    <div>도착 국가(대륙 그룹별):<select ng-model="arrCountry" ng-options="country.name group by country.continent for country in countyList" ng-required="true">
+    <div>도착 국가(대륙 그룹별):<select ng-model="arrCountry" ng-options="country.name grout by country.continent for country in countyList" ng-required="true">
       <option value="">선택해 주세요</option>
     </select></div>
   </form>

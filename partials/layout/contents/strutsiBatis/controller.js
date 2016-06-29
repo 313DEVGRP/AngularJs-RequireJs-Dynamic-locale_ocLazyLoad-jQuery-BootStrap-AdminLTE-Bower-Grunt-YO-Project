@@ -19,12 +19,34 @@ define(['projectWeb'], function () {
 		                  'partials/common/js/jstree-v.pre1.0/jquery.jstree.js'
           ]).then(function() {
         	  // ==================== jstree ====================
+        	  // Code for the menu buttons
+        	  $(function () { 
+        			$("#mmenu input, #mmenu button").click(function () {
+        				switch(this.id) {
+        					case "add_default":
+        					case "add_folder":
+        						$("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+        						break;
+        					case "search":
+        						$("#demo").jstree("search", document.getElementById("text").value);
+        						//$("#jstreeTable_filter").find('input[type="search"]').val();
+        						
+        								$('').DataTable().column(6).search(document.getElementById("text").value).draw();;
+        							
+        						break;
+        					case "text": break;
+        					default:
+        						$("#demo").jstree(this.id);
+        						break;
+        				}
+        			});
+        		});
         	  $(function () {
         		  $("#demo")
         		  .bind("before.jstree", function (e, data) {
-        		  	$("#alog").append(data.func + "<br />");
-        		  	$("li:not([rel='drive']).jstree-open > a > .jstree-icon").css('background-image','url(${pageContext.request.contextPath}/assets/js/jstree-v.pre1.0/toolbar_open.png)');
-        		  	$("li:not([rel='drive']).jstree-closed > a > .jstree-icon").css('background-image','url(${pageContext.request.contextPath}/assets/js/jstree-v.pre1.0/ic_explorer.png)');
+        		  	//$("#alog").append(data.func + "<br />");
+        		  	$("li:not([rel='drive']).jstree-open > a > .jstree-icon").css('background-image','url(/assets/js/jstree-v.pre1.0/themes/toolbar_open.png)');
+        		  	$("li:not([rel='drive']).jstree-closed > a > .jstree-icon").css('background-image','url(/assets/js/jstree-v.pre1.0/themes/ic_explorer.png)');
         		  })
         		  .jstree({ 
         		  	// List of active plugins
@@ -140,7 +162,7 @@ define(['projectWeb'], function () {
         		  		// All the options are almost the same as jQuery's AJAX (read the docs)
         		  		"ajax" : {
         		  			// the URL to fetch the data
-        		  			"url" : "${getChildNode}",
+        		  			"url" : "/egovframework/com/ext/jstree/strutsiBatis/getChildNode.action",
         		  			// the `data` function is executed in the instance's scope
         		  			// the parameter is the node being loaded 
         		  			// (may be -1, 0, or undefined when loading the root nodes)
@@ -157,7 +179,7 @@ define(['projectWeb'], function () {
         		  		// As this has been a common question - async search
         		  		// Same as above - the `ajax` config option is actually jQuery's AJAX object
         		  		"ajax" : {
-        		  			"url" : "${searchNode}",
+        		  			"url" : "/egovframework/com/ext/jstree/strutsiBatis/searchNode.action",
         		  				// You get the search string as a parameter
         		  				"data" : function (str) {
         		  					return { 
@@ -184,7 +206,7 @@ define(['projectWeb'], function () {
         		  					"valid_children" : "none",
         		  					// If we specify an icon for the default type it WILL OVERRIDE the theme icons
         		  					"icon" : {
-        		  						"image" : "${pageContext.request.contextPath}/assets/js/jstree-v.pre1.0/themes/16.png"
+        		  						"image" : "/assets/js/jstree-v.pre1.0/themes/attibutes.png"
         		  					}
         		  				},
         		  				// The `folder` type
@@ -192,7 +214,7 @@ define(['projectWeb'], function () {
         		  					// can have files and other folders inside of it, but NOT `drive` nodes
         		  					"valid_children" : [ "default", "folder" ],
         		  					"icon" : {
-        		  						"image" : "${pageContext.request.contextPath}/assets/js/jstree-v.pre1.0/ic_explorer.png"
+        		  						"image" : "/assets/js/jstree-v.pre1.0/themes/ic_explorer.png"
         		  					}
         		  				},
         		  				// The `drive` nodes 
@@ -200,7 +222,7 @@ define(['projectWeb'], function () {
         		  					// can have files and folders inside, but NOT other `drive` nodes
         		  					"valid_children" : [ "default", "folder" ],
         		  					"icon" : {
-        		  						"image" : "${pageContext.request.contextPath}/assets/js/jstree-v.pre1.0/themes/loading/loading125.gif"
+        		  						"image" : "/assets/js/jstree-v.pre1.0/themes/home.png"
         		  					},
         		  					// those prevent the functions with the same name to be used on `drive` nodes
         		  					// internally the `before` event is used
@@ -227,7 +249,7 @@ define(['projectWeb'], function () {
         		  	})
         		  	.bind("create.jstree", function (e, data) {
         		  		$.post(
-        		  			"${addNode}",
+        		  			"/egovframework/com/ext/jstree/strutsiBatis/addNode.action",
         		  			{ 
         		  				"ref" : data.rslt.parent.attr("id").replace("node_","").replace("copy_",""), 
         		  				"c_position" : data.rslt.position,
@@ -241,9 +263,11 @@ define(['projectWeb'], function () {
         		  				else {
         		  					$.jstree.rollback(data.rlbk);
         		  				}
-        		  				$("#analyze").click();
+        		  				//$("#analyze").click();
         		  				$("span.ui-icon-refresh").click();
-        		  				jstreeDataTableReload();
+        		  				
+        		  						//jstreeDataTableReload();
+        		  					
         		  			}
         		  		);
         		  	})
@@ -252,21 +276,23 @@ define(['projectWeb'], function () {
         		  			$.ajax({
         		  				async : false,
         		  				type: 'POST',
-        		  				url: "${removeNode}",
+        		  				url: "/egovframework/com/ext/jstree/strutsiBatis/removeNode.action",
         		  				data : { 
         		  					"c_id" : this.id.replace("node_","").replace("copy_","")
         		  				}, 
         		  				success : function (r) {
-        		  					$("#analyze").click();
+        		  					//$("#analyze").click();
         		  					$("span.ui-icon-refresh").click();
-        		  					jstreeDataTableReload();
+        		  					
+        		  							//jstreeDataTableReload();
+        		  						
         		  				}
         		  			});
         		  		});
         		  	})
         		  	.bind("rename.jstree", function (e, data) {
         		  		$.post(
-        		  			"${alterNode}",
+        		  			"/egovframework/com/ext/jstree/strutsiBatis/alterNode.action",
         		  			{ 
         		  					"c_id" : data.rslt.obj.attr("id").replace("node_","").replace("copy_",""),
         		  					"c_title" : data.rslt.new_name,
@@ -276,24 +302,28 @@ define(['projectWeb'], function () {
         		  				if(!r.status) {
         		  					$.jstree.rollback(data.rlbk);
         		  				}
-        		  				$("#analyze").click();
+        		  				//$("#analyze").click();
         		  				$("span.ui-icon-refresh").click();
-        		  				jstreeDataTableReload();
+        		  				
+        		  						//jstreeDataTableReload();
+        		  					
         		  			}
         		  		);
         		  	})
         		  	.bind("set_type.jstree", function (e, data) {
         		  		$.post(
-        		  			"${alterNodeType}",
+        		  			"/egovframework/com/ext/jstree/strutsiBatis/alterNodeType.action",
         		  			{ 
         		  					"c_id" : data.rslt.obj.attr("id").replace("node_","").replace("copy_",""),
         		  					"c_title" : data.rslt.new_name,
         		  					"c_type" : data.rslt.obj.attr("rel")
         		  			}, 
         		  			function (r) {
-        		  				$("#analyze").click();
+        		  				//$("#analyze").click();
         		  				$("span.ui-icon-refresh").click();
-        		  				jstreeDataTableReload();
+        		  				
+        		  						//jstreeDataTableReload();
+        		  					
         		  			}
         		  		);
         		  	})
@@ -302,7 +332,7 @@ define(['projectWeb'], function () {
         		  			$.ajax({
         		  				async : false,
         		  				type: 'POST',
-        		  				url: "${moveNode}",
+        		  				url: "/egovframework/com/ext/jstree/strutsiBatis/moveNode.action",
         		  				data : { 
         		  					"c_id" : $(this).attr("id").replace("node_","").replace("copy_",""), 
         		  					"ref" : data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_","").replace("copy_",""), 
@@ -321,9 +351,11 @@ define(['projectWeb'], function () {
         		  							data.inst.refresh(data.inst._get_parent(data.rslt.oc));
         		  						}
         		  					}
-        		  					$("#analyze").click();
+        		  					//$("#analyze").click();
         		  					$("span.ui-icon-refresh").click();
-        		  					jstreeDataTableReload();
+        		  					
+        		  							//jstreeDataTableReload();
+        		  						
         		  				}
         		  			});
         		  		});

@@ -45,8 +45,8 @@ define(['projectWeb'], function () {
         		  $("#demo")
         		  .bind("before.jstree", function (e, data) {
         		  	//$("#alog").append(data.func + "<br />");
-        		  	$("li:not([rel='drive']).jstree-open > a > .jstree-icon").css('background-image','url(/assets/js/jstree-v.pre1.0/themes/toolbar_open.png)');
-        		  	$("li:not([rel='drive']).jstree-closed > a > .jstree-icon").css('background-image','url(/assets/js/jstree-v.pre1.0/themes/ic_explorer.png)');
+        		  	$("li:not([rel='drive']).jstree-open > a > .jstree-icon").css('background-image','url(partials/common/js/jstree-v.pre1.0/themes/toolbar_open.png)');
+        		  	$("li:not([rel='drive']).jstree-closed > a > .jstree-icon").css('background-image','url(partials/common/js/jstree-v.pre1.0/themes/ic_explorer.png)');
         		  })
         		  .jstree({ 
         		  	// List of active plugins
@@ -206,7 +206,7 @@ define(['projectWeb'], function () {
         		  					"valid_children" : "none",
         		  					// If we specify an icon for the default type it WILL OVERRIDE the theme icons
         		  					"icon" : {
-        		  						"image" : "/assets/js/jstree-v.pre1.0/themes/attibutes.png"
+        		  						"image" : "partials/common/js/jstree-v.pre1.0/themes/attibutes.png"
         		  					}
         		  				},
         		  				// The `folder` type
@@ -214,7 +214,7 @@ define(['projectWeb'], function () {
         		  					// can have files and other folders inside of it, but NOT `drive` nodes
         		  					"valid_children" : [ "default", "folder" ],
         		  					"icon" : {
-        		  						"image" : "/assets/js/jstree-v.pre1.0/themes/ic_explorer.png"
+        		  						"image" : "partials/common/js/jstree-v.pre1.0/themes/ic_explorer.png"
         		  					}
         		  				},
         		  				// The `drive` nodes 
@@ -222,7 +222,7 @@ define(['projectWeb'], function () {
         		  					// can have files and folders inside, but NOT other `drive` nodes
         		  					"valid_children" : [ "default", "folder" ],
         		  					"icon" : {
-        		  						"image" : "/assets/js/jstree-v.pre1.0/themes/home.png"
+        		  						"image" : "partials/common/js/jstree-v.pre1.0/themes/home.png"
         		  					},
         		  					// those prevent the functions with the same name to be used on `drive` nodes
         		  					// internally the `before` event is used

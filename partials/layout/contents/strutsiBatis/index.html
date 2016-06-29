@@ -43,53 +43,47 @@
 	                <div class="col-md-8">
 
 	                  	<!-- jstree -->
-						<div id="jsTreeContainer">
-							<article>
+						<div id="jsTreeContainer" class="box">
+								<!-- Style Setting --> 
+								<div id="mmenu" class="box-body">
+									<form class="niceform">
+										<!-- Application buttons -->
+										    <p>Add the classes <code>.btn.btn-app</code> to an <code>&lt;a></code> tag to achieve the following:</p>
+										    <a id="add_folder" class="btn btn-app">
+										      <i class="fa fa-calendar-plus-o"></i> Add Folder
+										    </a>
+										    <a id="add_default" class="btn btn-app">
+										      <i class="fa fa-plus-square-o"></i> Add File
+										    </a>
+										    <a id="rename" class="btn btn-app">
+										      <i class="fa fa-repeat"></i> Rename
+										    </a>
+										    <a id="remove" class="btn btn-app">
+										      <i class="fa fa-minus-square-o"></i> Remove
+										    </a>
+										    <a id="cut" class="btn btn-app">
+										      <i class="fa fa-cut"></i> Cut
+										    </a>
+										    <a id="copy" class="btn btn-app">
+										      <i class="fa fa-copy"></i> Copy
+										    </a>
+										    <a id="paste" class="btn btn-app">
+										      <i class="fa fa-paste"></i> Paste
+										    </a>
+										    <input class="form-control" type="text" id="text" placeholder="찾을 노드 이름 입력">
+									</form>
+								</div> <!-- /.mmenu -->
+								<!-- 
 								<div class="clearfix">
-									<div class="container bm-remove">
-										<div id="article" class="one-whole boxed p-twenty animate-in clearfix" data-anim-type="fade-in" data-anim-delay="0">
-											<div class="article-body rte" itemprop="articleBody">
-												<div id="description">
-													<div class="clearfix">
-														<!-- Style Setting --> 
-														<div id="mmenu" style="clear:both;" class="clearfix">
-															<form class="niceform">
-																<div class="desktop-tablet alpha boxed bm-remove btn_wrap01">
-																	<button type="button" id="add_folder"><i class="fa fa-plus"></i> add folder</button>
-																	<button type="button" id="add_default"><i class="fa fa-plus"></i> add file</button>
-																	<button type="button" id="rename"><i class="fa fa-eraser"></i> rename</button>
-																	<button type="button" id="remove"><i class="fa fa-minus"></i> remove</button>
-																	<button type="button" id="cut"><i class="fa fa-cut"></i> cut</button>
-																	<button type="button" id="copy"><i class="fa fa-copy"></i> copy</button>
-																	<button type="button" id="paste"><i class="fa fa-paste"></i> paste</button>
-																</div>
-																<div class="desktop-tablet alpha bm-remove boxed last btn_wrap02">
-																	<div class="textInputVerticalCenter">
-																		<input type="text" id="text" placeholder="찾을 노드 이름 입력" class="inline-block bm-remove tip-r-fade" data-tooltip="Press Enter To Node To Search"/>
-																	</div>
-																	<button type="button" id="search" title="Search"><i class="fa fa-search"></i></button>
-																	<button type="button" id="clear_search" title="Clear"><i class="fa fa-eraser"></i></button>
-																</div>
-															</form>
-														</div> <!-- /.mmenu -->
-														<!-- 
-														<div class="clearfix">
-															<button type="button" id="reconstruct" value="reconstruct" onclick="javascript:alert('not supprt')" />
-															<button type="button"  id="analyze" value="analyze" onclick="$('#alog').load('/egovframework/com/ext/jstree/strutsiBatis/analyzeNode.action');" />
-															<button type="button" id="refresh" value="refresh" onclick="$('#demo').jstree('refresh',-1);" />
-														</div>
-														<div id='alog' style="float:left; border:1px solid gray; padding:5px; height:150px; margin-top:15px; overflow:auto; width: 100%;max-width:1180px;">
-														</div>
-														-->
-														<div id="demo" class="demo demo_side">
-														</div><!-- /.demo -->
-													</div><!-- /.clearfix -->
-												</div><!-- /.description -->
-											</div><!-- /.article-body rte -->
-										</div><!-- /.article -->
-									</div><!-- /.container -->
-								</div><!-- /.clearfix -->
-							</article>
+									<button type="button" id="reconstruct" value="reconstruct" onclick="javascript:alert('not supprt')" />
+									<button type="button"  id="analyze" value="analyze" onclick="$('#alog').load('/egovframework/com/ext/jstree/strutsiBatis/analyzeNode.action');" />
+									<button type="button" id="refresh" value="refresh" onclick="$('#demo').jstree('refresh',-1);" />
+								</div>
+								<div id='alog' style="float:left; border:1px solid gray; padding:5px; height:150px; margin-top:15px; overflow:auto; width: 100%;max-width:1180px;">
+								</div>
+								-->
+								<div id="demo" class="demo demo_side">
+								</div><!-- /.demo -->
 						</div><!-- /.jsTreeContainer -->
 	                	<!-- /.jstree Demo -->
 

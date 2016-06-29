@@ -27,6 +27,7 @@
     "oclazyload": "1.0.9",
     
     "bootstrap": "3.3.6",
+    "normalize-css": "4.1.1",
     
     "jquery": "1.12.4",
     "jquery-ui": "1.11.4",

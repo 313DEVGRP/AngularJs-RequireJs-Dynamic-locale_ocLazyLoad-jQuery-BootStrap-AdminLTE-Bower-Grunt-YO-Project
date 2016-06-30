@@ -19,11 +19,8 @@ define(['projectWeb'], function () {
 		                  'partials/common/js/jstree-v.pre1.0/jquery.jstree.js',
 		                  
 		                  'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min.css',
-		                  'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min.js',
 		                  'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.css',
-		                  'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min.js',
-		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css',
-		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js'
+		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'
 
           ]).then(function() {
         	  // ==================== jstree ====================

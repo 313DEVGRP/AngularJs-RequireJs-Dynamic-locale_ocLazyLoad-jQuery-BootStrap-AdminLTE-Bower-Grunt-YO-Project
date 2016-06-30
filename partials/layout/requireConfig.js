@@ -29,6 +29,9 @@ require.config({
 	    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
 	    'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
 	    'demo': 'AdminLTE-2.3.3/dist/js/demo',
+	    'dataTables':'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min',
+	    'dataTables.bootstrap':'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min',
+        'dataTables.responsive':'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min',
 	    
 	    'projectWeb': 'partials/layout/routeConfig'
 	},
@@ -53,7 +56,10 @@ require.config({
 	    
 	    'adminLte': ['chartjs'],
 	    'demo': ['adminLte'],
-	    'projectWeb': ['demo'],
+	    'dataTables':['demo'],
+	    'dataTables.bootstrap':['dataTables'],
+	    'dataTables.responsive':['dataTables.bootstrap'],
+	    'projectWeb': ['dataTables.responsive'],
 	    'lazymodule': ['projectWeb']
 	}
 });

@@ -16,7 +16,15 @@ define(['projectWeb'], function () {
 		$ocLazyLoad.load([
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js',
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.hotkeys.js',
-		                  'partials/common/js/jstree-v.pre1.0/jquery.jstree.js'
+		                  'partials/common/js/jstree-v.pre1.0/jquery.jstree.js',
+		                  
+		                  'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min.css',
+		                  'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min.js',
+		                  'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.css',
+		                  'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min.js',
+		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css',
+		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min.js'
+
           ]).then(function() {
         	  // ==================== jstree ====================
         	  // Code for the menu buttons
@@ -266,7 +274,7 @@ define(['projectWeb'], function () {
         		  				//$("#analyze").click();
         		  				$("span.ui-icon-refresh").click();
         		  				
-        		  						//jstreeDataTableReload();
+        		  						jstreeDataTableReload();
         		  					
         		  			}
         		  		);
@@ -284,7 +292,7 @@ define(['projectWeb'], function () {
         		  					//$("#analyze").click();
         		  					$("span.ui-icon-refresh").click();
         		  					
-        		  							//jstreeDataTableReload();
+        		  							jstreeDataTableReload();
         		  						
         		  				}
         		  			});
@@ -305,7 +313,7 @@ define(['projectWeb'], function () {
         		  				//$("#analyze").click();
         		  				$("span.ui-icon-refresh").click();
         		  				
-        		  						//jstreeDataTableReload();
+        		  						jstreeDataTableReload();
         		  					
         		  			}
         		  		);
@@ -322,7 +330,7 @@ define(['projectWeb'], function () {
         		  				//$("#analyze").click();
         		  				$("span.ui-icon-refresh").click();
         		  				
-        		  						//jstreeDataTableReload();
+        		  						jstreeDataTableReload();
         		  					
         		  			}
         		  		);
@@ -354,7 +362,7 @@ define(['projectWeb'], function () {
         		  					//$("#analyze").click();
         		  					$("span.ui-icon-refresh").click();
         		  					
-        		  							//jstreeDataTableReload();
+        		  							jstreeDataTableReload();
         		  						
         		  				}
         		  			});
@@ -363,6 +371,50 @@ define(['projectWeb'], function () {
 
         		  });
         	  // ==================== jstree ====================
+        	  function jstreeDataTableReload() {
+					var jstreeDataTable = $('#jstreeTable').dataTable( {
+						"ajax": {
+							"url": "/egovframework/com/ext/jstree/strutsiBatis/jstreeMonitor/getJstreeMonitor.action",
+							"dataSrc": "rows"
+						},
+						"processing": true,
+						"responsive": true,
+						"columns": [
+							{ "data": "cell.0" },
+							{ "data": "cell.1" },
+							{ "data": "cell.2" },
+							{ "data": "cell.3" },
+							{ "data": "cell.4" },
+							{ "data": "cell.5" },
+							{ "data": "cell.6" },
+							{ "data": "cell.7" }
+						]
+					} );
+					jstreeDataTable.api().ajax.reload();
+				}
+
+				$(function () {
+
+				var jstreeDataTable = $('#jstreeTable').dataTable( {
+					"ajax": {
+						"url": "/egovframework/com/ext/jstree/strutsiBatis/jstreeMonitor/getJstreeMonitor.action",
+						"dataSrc": "rows"
+					},
+					"processing": true,
+					"responsive": true,
+					"columns": [
+						{ "data": "cell.0" },
+						{ "data": "cell.1" },
+						{ "data": "cell.2" },
+						{ "data": "cell.3" },
+						{ "data": "cell.4" },
+						{ "data": "cell.5" },
+						{ "data": "cell.6" },
+						{ "data": "cell.7" }
+					]
+				} );
+				});
+				// ==================== jstree DataTables ====================
 	    });
 
 		

@@ -399,6 +399,12 @@ define(['projectWeb'], function () {
 					},
 					"processing": true,
 					"responsive": true,
+					"paging": true,
+					  "lengthChange": false,
+					  "searching": false,
+					  "ordering": true,
+					  "info": true,
+					  "autoWidth": false,
 					"columns": [
 						{ "data": "cell.0" },
 						{ "data": "cell.1" },

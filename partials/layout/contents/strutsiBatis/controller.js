@@ -26,7 +26,7 @@ define(['projectWeb'], function () {
         	  // ==================== jstree ====================
         	  // Code for the menu buttons
         	  $(function () { 
-        			$("#mmenu input, #mmenu button").click(function () {
+        			$("#add_folder a").click(function () {
         				switch(this.id) {
         					case "add_default":
         					case "add_folder":
@@ -34,9 +34,7 @@ define(['projectWeb'], function () {
         						break;
         					case "search":
         						$("#demo").jstree("search", document.getElementById("text").value);
-        						//$("#jstreeTable_filter").find('input[type="search"]').val();
-        						
-        								$('').DataTable().column(6).search(document.getElementById("text").value).draw();;
+								$('').DataTable().column(6).search(document.getElementById("text").value).draw();;
         							
         						break;
         					case "text": break;
@@ -376,6 +374,12 @@ define(['projectWeb'], function () {
 						},
 						"processing": true,
 						"responsive": true,
+						"paging": true,
+						"lengthChange": false,
+						"searching": false,
+						"ordering": true,
+						"info": true,
+						"autoWidth": false,
 						"columns": [
 							{ "data": "cell.0" },
 							{ "data": "cell.1" },
@@ -400,11 +404,11 @@ define(['projectWeb'], function () {
 					"processing": true,
 					"responsive": true,
 					"paging": true,
-					  "lengthChange": false,
-					  "searching": false,
-					  "ordering": true,
-					  "info": true,
-					  "autoWidth": false,
+					"lengthChange": false,
+					"searching": false,
+					"ordering": true,
+					"info": true,
+					"autoWidth": false,
 					"columns": [
 						{ "data": "cell.0" },
 						{ "data": "cell.1" },

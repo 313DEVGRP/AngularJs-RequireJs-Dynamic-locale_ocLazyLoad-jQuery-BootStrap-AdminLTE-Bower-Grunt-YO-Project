@@ -13,7 +13,6 @@
 
     <!-- Main content -->
     <section class="content">
-		<!-- Info boxes -->
 		<div class="row">
 			<div class="col-md-12">
 				<div class="box box-primary">
@@ -73,6 +72,7 @@
 						    			<a id=analyze class="btn btn-app">
 							      			<i class="fa fa-calculator"></i> Analyze
 						    			</a>
+        
 										<div class="input-group margin">
 								  			<span class="input-group-addon">
 								  				<i class="fa fa-check"></i>
@@ -100,6 +100,27 @@
 								</div><!-- /.form-group -->
 							</div><!-- ./box-body -->
 						</form><!-- /.form -->
+						
+		    			<!-- Small modal -->
+						<div class="modal modal-info fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+          					<div class="modal-dialog modal-sm">
+            					<div class="modal-content">
+              						<div class="modal-header">
+                						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  						<span aria-hidden="true">&times;</span></button>
+               							<h4 class="modal-title">Info Modal</h4>
+              						</div>
+              						<div class="modal-body">
+                						<p>jsTree의 변화를 감지했습니다. dataTable을 자동으로 업데이트 합니다.</p>
+              						</div>
+              						<div class="modal-footer">
+                						<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                						<button type="button" class="btn btn-outline">Save changes</button>
+              						</div>
+            					</div><!-- /.modal-content -->
+         				 	</div><!-- /.modal-dialog -->
+       					</div>
+        				<!-- /.modal -->
 	                	<!-- /.jstree Demo -->
 	          </div><!-- /.box -->
 	        </div><!-- /.col -->

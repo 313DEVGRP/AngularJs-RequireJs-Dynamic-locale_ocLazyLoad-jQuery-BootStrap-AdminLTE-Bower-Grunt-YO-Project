@@ -367,32 +367,9 @@ define(['projectWeb'], function () {
         		  });
         	  // ==================== jstree ====================
         	  function jstreeDataTableReload() {
-					var jstreeDataTable = $('#jstreeTable').dataTable( {
-						"ajax": {
-							"url": "/egovframework/com/ext/jstree/strutsiBatis/jstreeMonitor/getJstreeMonitor.action",
-							"dataSrc": "rows"
-						},
-						"processing": true,
-						"responsive": true,
-						"paging": true,
-						"lengthChange": false,
-						"searching": false,
-						"ordering": true,
-						"info": true,
-						"autoWidth": false,
-						"columns": [
-							{ "data": "cell.0" },
-							{ "data": "cell.1" },
-							{ "data": "cell.2" },
-							{ "data": "cell.3" },
-							{ "data": "cell.4" },
-							{ "data": "cell.5" },
-							{ "data": "cell.6" },
-							{ "data": "cell.7" }
-						]
-					} );
-					jstreeDataTable.api().ajax.reload();
-				}
+        		  $('.bs-example-modal-sm').modal('show');
+        		  $('#jstreeTable').dataTable().api().ajax.reload();
+        	  }
 
 				$(function () {
 

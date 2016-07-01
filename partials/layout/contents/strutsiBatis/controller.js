@@ -26,7 +26,7 @@ define(['projectWeb'], function () {
         	  // ==================== jstree ====================
         	  // Code for the menu buttons
         	  $(function () { 
-        			$("#add_folder a").click(function () {
+        			$("#jsTreeContainer .btn").click(function () {
         				switch(this.id) {
         					case "add_default":
         					case "add_folder":

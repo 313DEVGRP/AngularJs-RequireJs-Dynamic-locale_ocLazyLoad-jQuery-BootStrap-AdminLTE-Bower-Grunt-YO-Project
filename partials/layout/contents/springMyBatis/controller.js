@@ -11,7 +11,7 @@ define(['projectWeb'], function () {
 	    });
 	}]);
 	
-	strutsiBatisModule.controller('strutsiBatisController', ['$scope', '$ocLazyLoad', 
+	strutsiBatisModule.controller('springMyBatisController', ['$scope', '$ocLazyLoad', 
 	                                      	        function($scope, $ocLazyLoad) {
 		$ocLazyLoad.load([
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js',
@@ -165,7 +165,7 @@ define(['projectWeb'], function () {
         		  		// All the options are almost the same as jQuery's AJAX (read the docs)
         		  		"ajax" : {
         		  			// the URL to fetch the data
-        		  			"url" : "/egovframework/com/ext/jstree/strutsiBatis/getChildNode.action",
+        		  			"url" : "/egovframework/com/etc/jstree/springiBatis/core/getChildNode.do",
         		  			// the `data` function is executed in the instance's scope
         		  			// the parameter is the node being loaded 
         		  			// (may be -1, 0, or undefined when loading the root nodes)
@@ -182,7 +182,7 @@ define(['projectWeb'], function () {
         		  		// As this has been a common question - async search
         		  		// Same as above - the `ajax` config option is actually jQuery's AJAX object
         		  		"ajax" : {
-        		  			"url" : "/egovframework/com/ext/jstree/strutsiBatis/searchNode.action",
+        		  			"url" : "/egovframework/com/etc/jstree/springiBatis/core/searchNode.do",
         		  				// You get the search string as a parameter
         		  				"data" : function (str) {
         		  					return { 
@@ -252,7 +252,7 @@ define(['projectWeb'], function () {
         		  	})
         		  	.bind("create.jstree", function (e, data) {
         		  		$.post(
-        		  			"/egovframework/com/ext/jstree/strutsiBatis/addNode.action",
+        		  			"/egovframework/com/etc/jstree/springiBatis/core/addNode.do",
         		  			{ 
         		  				"ref" : data.rslt.parent.attr("id").replace("node_","").replace("copy_",""), 
         		  				"c_position" : data.rslt.position,
@@ -279,7 +279,7 @@ define(['projectWeb'], function () {
         		  			$.ajax({
         		  				async : false,
         		  				type: 'POST',
-        		  				url: "/egovframework/com/ext/jstree/strutsiBatis/removeNode.action",
+        		  				url: "/egovframework/com/etc/jstree/springiBatis/core/removeNode.do",
         		  				data : { 
         		  					"c_id" : this.id.replace("node_","").replace("copy_","")
         		  				}, 
@@ -295,7 +295,7 @@ define(['projectWeb'], function () {
         		  	})
         		  	.bind("rename.jstree", function (e, data) {
         		  		$.post(
-        		  			"/egovframework/com/ext/jstree/strutsiBatis/alterNode.action",
+        		  			"/egovframework/com/etc/jstree/springiBatis/core/alterNode.do",
         		  			{ 
         		  					"c_id" : data.rslt.obj.attr("id").replace("node_","").replace("copy_",""),
         		  					"c_title" : data.rslt.new_name,
@@ -315,7 +315,7 @@ define(['projectWeb'], function () {
         		  	})
         		  	.bind("set_type.jstree", function (e, data) {
         		  		$.post(
-        		  			"/egovframework/com/ext/jstree/strutsiBatis/alterNodeType.action",
+        		  			"/egovframework/com/etc/jstree/springiBatis/core/alterNodeType.do",
         		  			{ 
         		  					"c_id" : data.rslt.obj.attr("id").replace("node_","").replace("copy_",""),
         		  					"c_title" : data.rslt.new_name,
@@ -335,7 +335,7 @@ define(['projectWeb'], function () {
         		  			$.ajax({
         		  				async : false,
         		  				type: 'POST',
-        		  				url: "/egovframework/com/ext/jstree/strutsiBatis/moveNode.action",
+        		  				url: "/egovframework/com/etc/jstree/springiBatis/core/moveNode.do",
         		  				data : { 
         		  					"c_id" : $(this).attr("id").replace("node_","").replace("copy_",""), 
         		  					"ref" : data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_","").replace("copy_",""), 
@@ -375,7 +375,7 @@ define(['projectWeb'], function () {
 
 				var jstreeDataTable = $('#jstreeTable').dataTable( {
 					"ajax": {
-						"url": "/egovframework/com/ext/jstree/strutsiBatis/jstreeMonitor/getJstreeMonitor.action",
+						"url": "/egovframework/com/etc/jstree/springiBatis/monitor/list.do",
 						"dataSrc": "rows"
 					},
 					"processing": true,

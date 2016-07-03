@@ -28,26 +28,23 @@ define(['projectWeb'], function () {
 				    };
 				  });
 				
-				/* 이미지 크기 자동조절 */
-				$(document).ready(function() {
-				    $(".box-body img, .resizablebox").each(function() {
-				        var oImgWidth = $(this).width();
-				        var oImgHeight = $(this).height();
-				        $(this).css({
-				            'max-width':oImgWidth+'px',
-				            'max-height':oImgHeight+'px',
-				            'width':'100%',
-				            'height':'100%'
-				        });
-				    });
-				});
-
 				$scope.strutsiBatis = function() {
 					$ocLazyLoad.load([{
 				        name: 'strutsiBatisController',
 				        files: ['partials/layout/contents/strutsiBatis/controller.js']
 				    },'partials/layout/contents/strutsiBatis/index.css']).then(function() {
 						$scope.contentWrapper = "partials/layout/contents/strutsiBatis/";
+					}, function(e) {
+						console.log(e);
+					});
+				};
+				
+				$scope.springMyBatis = function() {
+					$ocLazyLoad.load([{
+				        name: 'springMyBatisController',
+				        files: ['partials/layout/contents/springMyBatis/controller.js']
+				    },'partials/layout/contents/springMyBatis/index.css']).then(function() {
+						$scope.contentWrapper = "partials/layout/contents/springMyBatis/";
 					}, function(e) {
 						console.log(e);
 					});

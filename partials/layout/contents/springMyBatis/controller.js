@@ -4,13 +4,6 @@ define(['projectWeb'], function () {
 	
 	var springMyBatisModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 	
-	springMyBatisModule.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
-	    $ocLazyLoadProvider.config({
-	        jsLoader: requirejs,
-	        debug: true
-	    });
-	}]);
-	
 	springMyBatisModule.controller('springMyBatisController', ['$scope', '$ocLazyLoad', 
 	                                      	        function($scope, $ocLazyLoad) {
 		$ocLazyLoad.load([

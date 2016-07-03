@@ -59,8 +59,7 @@ require.config({
 	    'dataTables':['demo'],
 	    'dataTables.bootstrap':['dataTables'],
 	    'dataTables.responsive':['dataTables.bootstrap'],
-	    'projectWeb': ['dataTables.responsive'],
-	    'lazymodule': ['projectWeb']
+	    'projectWeb': ['dataTables.responsive']
 	}
 });
 

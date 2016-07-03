@@ -48,7 +48,7 @@ define(['projectWeb'], function () {
 					}, function(e) {
 						console.log(e);
 					});
-				}
+				};
 		}]);//indexModule.controller
 
 });

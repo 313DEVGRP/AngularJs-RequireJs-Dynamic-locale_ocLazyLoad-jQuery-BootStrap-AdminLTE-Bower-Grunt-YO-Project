@@ -2,16 +2,16 @@
 
 define(['projectWeb'], function () {
 	
-	var strutsiBatisModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
+	var springMyBatisModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 	
-	strutsiBatisModule.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
+	springMyBatisModule.config(['$ocLazyLoadProvider', function($ocLazyLoadProvider) {
 	    $ocLazyLoadProvider.config({
 	        jsLoader: requirejs,
 	        debug: true
 	    });
 	}]);
 	
-	strutsiBatisModule.controller('springMyBatisController', ['$scope', '$ocLazyLoad', 
+	springMyBatisModule.controller('springMyBatisController', ['$scope', '$ocLazyLoad', 
 	                                      	        function($scope, $ocLazyLoad) {
 		$ocLazyLoad.load([
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js',

@@ -30,22 +30,22 @@ define(['projectWeb'], function () {
         				switch(this.id) {
         					case "add_default":
         					case "add_folder":
-        						$("#demo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
+        						$("#springMyBatisDemo").jstree("create", null, "last", { "attr" : { "rel" : this.id.toString().replace("add_", "") } });
         						break;
         					case "search":
-        						$("#demo").jstree("search", document.getElementById("text").value);
+        						$("#springMyBatisDemo").jstree("search", document.getElementById("text").value);
 								$('#jstreeTable').DataTable().column(6).search(document.getElementById("text").value).draw();
         							
         						break;
         					case "text": break;
         					default:
-        						$("#demo").jstree(this.id);
+        						$("#springMyBatisDemo").jstree(this.id);
         						break;
         				}
         			});
         		});
         	  $(function () {
-        		  $("#demo")
+        		  $("#springMyBatisDemo")
         		  .bind("before.jstree", function (e, data) {
         		  	//$("#alog").append(data.func + "<br />");
         		  	$("li:not([rel='drive']).jstree-open > a > .jstree-icon").css('background-image','url(partials/common/js/jstree-v.pre1.0/themes/toolbar_open.png)');

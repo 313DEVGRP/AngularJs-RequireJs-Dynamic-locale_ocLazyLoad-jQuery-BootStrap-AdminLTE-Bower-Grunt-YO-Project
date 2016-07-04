@@ -16,16 +16,23 @@ define(['projectWeb'], function () {
 		        url: "/", // root route
 		        views: {
 		          '': {
-		            controller: 'indexController', // This view will use AppCtrl loaded below in the resolve
+		            controller: 'layoutController', // This view will use AppCtrl loaded below in the resolve
 		            templateUrl: 'partials/layout/'
 		          }
 		        },
 		        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
 		          indexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 		            // you can lazy load files for an existing module
-		            return $ocLazyLoad.load('partials/layout/controller.js');
+		            return $ocLazyLoad.load([{
+		                name: 'layoutService',
+		                files: ['partials/layout/service.js']
+		            },{
+		                name: 'layoutController',
+		                files: ['partials/layout/controller.js']
+		            }]);
 		          }]
 		        }
 		      });
 	}]); //indexModule.config
 });
+

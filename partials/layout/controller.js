@@ -2,10 +2,10 @@
 
 define(['projectWeb'], function () {
 
-	var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
+	var indexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'layoutService']);
 
-	indexModule.controller('indexController', ['$scope', '$ocLazyLoad',
-	        function($scope, $ocLazyLoad) {
+	indexModule.controller('layoutController', ['$scope', '$ocLazyLoad', 'layoutService',
+	        function($scope, $ocLazyLoad, layoutService) {
 
 				$scope.mainHeader = 'partials/layout/header/';
 				$scope.mainSidebar = 'partials/layout/aside/';
@@ -17,12 +17,12 @@ define(['projectWeb'], function () {
 					if(file === 'partials/layout/header/') {
 						console.log(file);
 				    }else if(file === 'partials/layout/aside/') {
-				        $.AdminLTE.layout.activate();
+				    	layoutService.fire();
 				    }else if(file === 'partials/layout/contents/') {
 				    	$ocLazyLoad.load('partials/layout/contents/index.css');
-				        $.AdminLTE.layout.activate();
+				    	layoutService.fire();
 				    }else if(file === 'partials/layout/footer/') {
-				        $.AdminLTE.layout.activate();
+				    	layoutService.fire();
 				    }else if(file === 'partials/layout/sidebar/') {
 				    	console.log(file);
 				    };
@@ -41,6 +41,9 @@ define(['projectWeb'], function () {
 				
 				$scope.springMyBatis = function() {
 					$ocLazyLoad.load([{
+				        name: 'springMyBatisService',
+				        files: ['partials/layout/contents/springMyBatis/service.js']
+				    },{
 				        name: 'springMyBatisController',
 				        files: ['partials/layout/contents/springMyBatis/controller.js']
 				    },'partials/layout/contents/springMyBatis/index.css']).then(function() {

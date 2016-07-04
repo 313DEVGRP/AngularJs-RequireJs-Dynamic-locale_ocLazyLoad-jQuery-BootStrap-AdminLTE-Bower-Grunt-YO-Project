@@ -499,7 +499,22 @@
   	</div>
     <!-- css_class__e -->
 
+	<!-- MVC -->
+	<div id="link14" class="page-header">
+      <h1><small></small>MVC</h1>
+    </div>
+	<div ng-controller="mvcCtrl">
+		Model 입력 : <input ng-model="greetingModel"><br>
+		<h4>Model : {{greetingModel}}</h4>
+		<br>
+		<input type="checkbox" ng-model="viewModel"> 발표자료 보기<br>
+		<div ng-show="viewModel">
+			<a ng-href="{{twiceMVC}}" target="blank" >MVC TWICE 발표 자료 보러가기</a>
+		</div>
+		<br>
+		<button ng-click="clearModel(greetingModel)">Clear Model Data</button>
+	</div>
+	<!-- MVC -->
   </div>
-  <div>2016.06.19.pullTest</div>
   </body>
 </html>

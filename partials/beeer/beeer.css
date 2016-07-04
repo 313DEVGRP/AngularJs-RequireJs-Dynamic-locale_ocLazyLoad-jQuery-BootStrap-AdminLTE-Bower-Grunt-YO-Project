@@ -1,0 +1,7 @@
+@charset "UTF-8";
+
+html,body{height:100%;}
+header{width:200px; height:100%; position:fixed; left:0;}
+article{margin-left:200px;}
+section{height:100%}
+

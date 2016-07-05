@@ -13,12 +13,12 @@
 
 <body class="well">
     <!--<div class="nav">
-            <ul>
-                <li><a href="#none">todoapp</a></li>
-                <li><a href="#none">menulist</a></li>
-                <li><a href="#none">checkbox</a></li>
-            </ul>
-        </div>-->
+                <ul>
+                    <li><a href="#none">todoapp</a></li>
+                    <li><a href="#none">menulist</a></li>
+                    <li><a href="#none">checkbox</a></li>
+                </ul>
+            </div>-->
     <!-- todoapp -->
     <div id="num_01" class="page-header">
         <h1>1. todoapp exercise</h1>
@@ -114,7 +114,7 @@
         <h1>5. select element exercise</h1>
     </div>
     <div ng-init="countryList = [{name:'한국', code:'KR', continent:'아시아'},
-            {name:'일본', code:'jr', continent:'아시아'}, {name:'미국', code:'en',}]">
+                {name:'일본', code:'jr', continent:'아시아'}, {name:'미국', code:'en',}]">
         <form name="myRouteForm">
             <div>출발 국가 :
                 <select ng-model="depCountry" ng-option="country.name for country in countryList" ng-required="true">
@@ -259,6 +259,29 @@
             <p>선택1의 바인딩된 값: {{value1}}</p>
             <p>선택2의 바인딩된 값: {{value2}}</p>
         </form>
+    </div>
+    <!-- Directive expression -->
+    <div id="num_13" class="page-header">
+        <h1>13. Directive expression</h1>
+    </div>
+    <div ng-controller="mainCtrl">
+        <p ng:style="getStyle()">hello</p>
+        <p class="ng_style:getStyle();">hello</p>
+        <ng-form name="groupForm">
+            <form name="formA">
+                <input type="text" name="">
+            </form>
+            <form name="formB">
+                <input type="text" name="">
+            </form>
+        </ng-form>
+    </div>
+    <!-- Hello derective exercise -->
+    <div id="num_14" class="page-header">
+        <h1>14. Hello derective exercise</h1>
+    </div>
+    <div>
+        <div hello name="agularJS"></div>
     </div>
 </body>
 

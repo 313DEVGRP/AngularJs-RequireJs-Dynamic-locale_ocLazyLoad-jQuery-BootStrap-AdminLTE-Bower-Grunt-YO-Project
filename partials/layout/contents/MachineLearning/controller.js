@@ -2,10 +2,10 @@
 
 define(['projectWeb'], function () {
 	
-	var springHibernateModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'springHibernateService', 'layoutService']);
+	var machineLearningModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'machineLearningService', 'layoutService']);
 	
-	springHibernateModule.controller('springHibernateController', ['$scope', '$ocLazyLoad', 'springHibernateService', 'layoutService',
-	                                      	        function($scope, $ocLazyLoad, springHibernateService, layoutService) {
+	machineLearningModule.controller('machineLearningController', ['$scope', '$ocLazyLoad', 'machineLearningService', 'layoutService',
+	                                      	        function($scope, $ocLazyLoad, machineLearningService, layoutService) {
 		
 		$ocLazyLoad.load([
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js',
@@ -17,7 +17,7 @@ define(['projectWeb'], function () {
 		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'
 
           ]).then(function() {
-        	  springHibernateService.fire();
+        	  machineLearningService.fire();
         	  layoutService.fire();
 	    });
 

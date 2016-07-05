@@ -2,9 +2,9 @@
 
 define(['projectWeb'], function () {
 	
-	var springHibernateServiceModule = angular.module('springHibernateServiceModule', []);
+	var machineLearningServiceModule = angular.module('machineLearningServiceModule', []);
 	
-	springHibernateServiceModule.factory('springHibernateService', ['$rootScope',
+	machineLearningServiceModule.factory('machineLearningService', ['$rootScope',
 	                                      	        function($rootScope) {
 		return {
 			fire: function() {

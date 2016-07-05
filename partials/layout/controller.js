@@ -108,6 +108,20 @@ define(['projectWeb'], function () {
 						console.log(e);
 					});
 				};
+				
+				$scope.machineLearning = function() {
+					$ocLazyLoad.load([{
+				        name: 'machineLearningService',
+				        files: ['partials/layout/contents/MachineLearning/service.js']
+				    },{
+				        name: 'machineLearningController',
+				        files: ['partials/layout/contents/MachineLearning/controller.js']
+				    },'partials/layout/contents/MachineLearning/index.css']).then(function() {
+						$scope.contentWrapper = "partials/layout/contents/MachineLearning/";
+					}, function(e) {
+						console.log(e);
+					});
+				};
 		}]);//indexModule.controller
 
 });

@@ -27,7 +27,7 @@ require.config({
 	    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
 	    'slimScroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
 	    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
-	    'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
+	    'adminLte': 'AdminLTE-2.3.3/dist/js/app',
 	    'demo': 'AdminLTE-2.3.3/dist/js/demo',
 	    'dataTables':'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min',
 	    'dataTables.bootstrap':'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min',

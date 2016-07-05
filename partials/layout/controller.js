@@ -52,6 +52,62 @@ define(['projectWeb'], function () {
 						console.log(e);
 					});
 				};
+				
+				$scope.springHibernate = function() {
+					$ocLazyLoad.load([{
+				        name: 'springHibernateService',
+				        files: ['partials/layout/contents/springHibernate/service.js']
+				    },{
+				        name: 'springHibernateController',
+				        files: ['partials/layout/contents/springHibernate/controller.js']
+				    },'partials/layout/contents/springHibernate/index.css']).then(function() {
+						$scope.contentWrapper = "partials/layout/contents/springHibernate/";
+					}, function(e) {
+						console.log(e);
+					});
+				};
+				
+				$scope.dwr = function() {
+					$ocLazyLoad.load([{
+				        name: 'dwrService',
+				        files: ['partials/layout/contents/DWR/service.js']
+				    },{
+				        name: 'dwrController',
+				        files: ['partials/layout/contents/DWR/controller.js']
+				    },'partials/layout/contents/DWR/index.css']).then(function() {
+						$scope.contentWrapper = "partials/layout/contents/DWR/";
+					}, function(e) {
+						console.log(e);
+					});
+				};
+				
+				$scope.lucene = function() {
+					$ocLazyLoad.load([{
+				        name: 'luceneService',
+				        files: ['partials/layout/contents/Lucene/service.js']
+				    },{
+				        name: 'luceneController',
+				        files: ['partials/layout/contents/Lucene/controller.js']
+				    },'partials/layout/contents/Lucene/index.css']).then(function() {
+						$scope.contentWrapper = "partials/layout/contents/Lucene/";
+					}, function(e) {
+						console.log(e);
+					});
+				};
+				
+				$scope.hadoop = function() {
+					$ocLazyLoad.load([{
+				        name: 'hadoopService',
+				        files: ['partials/layout/contents/Hadoop/service.js']
+				    },{
+				        name: 'hadoopController',
+				        files: ['partials/layout/contents/Hadoop/controller.js']
+				    },'partials/layout/contents/Hadoop/index.css']).then(function() {
+						$scope.contentWrapper = "partials/layout/contents/Hadoop/";
+					}, function(e) {
+						console.log(e);
+					});
+				};
 		}]);//indexModule.controller
 
 });

@@ -87,15 +87,17 @@ section:first-child{
 }
 
 .title{
-  line-height:200px;
-  font-size:3rem;
+  width:68%;
+  margin:15% auto 0;
+  font-size:2.9rem;
   text-align:center;
 }
 .g-name{
   position:absolute;
-  right:11.5rem;
-  bottom:5rem;
+  right:calc(18% + 5px);
+  bottom:10%;
   font-size:2rem;
+  text-align:right;
 }
 
 .content{

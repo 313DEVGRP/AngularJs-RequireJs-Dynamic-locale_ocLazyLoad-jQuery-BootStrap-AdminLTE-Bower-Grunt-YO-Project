@@ -5,31 +5,23 @@
   <title>beeer</title>
   <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./beeer.css">
-  <!--<script src="../../lib/angular/angular.js"></script>-->
 </head>
 <body class="well" ng-app="beeer">
   <header>
     <aside>
       <nav>
-        <h3>예제 모음</h3>
         <ul class="snb">
-          <li class="home on"><a href="#">beeer</a></li>
+          <li class="home on"><a href="#">Angular</a></li>
           <li class="sub-list">
             <a href="#">예제 코드</a>
             <ul class="snb-sub">
-              <li><a href="#">TODO app</a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
+              <li><a href="#">1{{todoName}}</a></li>
+              <li><a href="#">2{{}}</a></li>
+              <li><a href="#">3{{}}</a></li>
+              <li><a href="#">4{{}}</a></li>
+              <li><a href="#">5{{}}</a></li>
+              <li><a href="#">6{{}}</a></li>
+              <li><a href="#">7{{}}</a></li>
             </ul>
           </li>
           <li class="end-list"><a href="#">etc</a></li>
@@ -42,16 +34,71 @@
       <h2 class="title">시작하세요 Angular JS 프로그래밍</h2>
       <p class="g-name">beeer</p>
     </section>
-    <section ng-init="appName='Angualr TODO'">
-      <h2>{{appName}}</h2>
-      <div class="contnet">
-
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">1{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
       </div>
     </section>
-    <section></section>
-    <section></section>
-    <section></section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">2{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
+      </div>
+    </section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">3{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
+      </div>
+    </section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">4{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
+      </div>
+    </section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">5{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
+      </div>
+    </section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">6{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
+      </div>
+    </section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">7{{todoName}}</h2>
+        <div class="view-con">
+          code write
+        </div>
+      </div>
+    </section>
+    <section ng-app="todoapp">
+      <div class="content">
+        <h2 class="chapter">etc</h2>
+        <div class="view-con">
+          contents write
+        </div>
+      </div>
+    </section>
   </article>
-  <script type="text/javascript" data-main="./app" src="../../lib/requirejs/require.js" charset="UTF-8"></script>
+  <script type="text/javascript" data-main="./appConfig" src="../../lib/requirejs/require.js" charset="UTF-8"></script>
 </body>
 </html>

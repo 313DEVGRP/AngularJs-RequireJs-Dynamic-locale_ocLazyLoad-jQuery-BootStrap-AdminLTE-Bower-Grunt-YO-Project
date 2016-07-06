@@ -38,28 +38,28 @@ require.config({
 
 	shim: {
 		'jquery-migrate': ['jquery'],
-		'jquery-ui': ['jquery-migrate'],
-		'twitterBootstrap': ['jquery-ui'],
-	    'angular': ['twitterBootstrap'],
+		'jquery-ui': ['jquery'],
+		'twitterBootstrap': ['jquery'],
+	    'angular': ['jquery'],
 	    'ngRoute': ['angular'],
-	    'ui.router': ['ngRoute'],
-	    'oc.lazyLoad': ['ui.router'],
-	    'text': ['oc.lazyLoad'],
-	    'css': ['text'],
+	    'ui.router': ['angular'],
+	    'oc.lazyLoad': ['angular'],
+	    'text': ['angular'],
+	    'css': ['angular'],
 	    
-	    'fastclick': ['css'],
-	    'sparkline': ['fastclick'],
-	    'jvectormap': ['sparkline'],
-	    'jvectormapWorld': ['jvectormap'],
-	    'slimScroll': ['jvectormapWorld'],
-	    'chartjs': ['slimScroll'],
+	    'fastclick': ['jquery'],
+	    'sparkline': ['jquery'],
+	    'jvectormap': ['jquery'],
+	    'jvectormapWorld': ['jquery'],
+	    'slimScroll': ['jquery'],
+	    'chartjs': ['jquery'],
 	    
-	    'adminLte': ['chartjs'],
-	    'demo': ['adminLte'],
-	    'dataTables':['demo'],
-	    'dataTables.bootstrap':['dataTables'],
-	    'dataTables.responsive':['dataTables.bootstrap'],
-	    'projectWeb': ['dataTables.responsive']
+	    'adminLte': ['angular'],
+	    'demo': ['angular'],
+	    'dataTables': ['angular'],
+	    'dataTables.bootstrap': ['angular'],
+	    'dataTables.responsive': ['angular'],
+	    'projectWeb': ['adminLte']
 	}
 });
 

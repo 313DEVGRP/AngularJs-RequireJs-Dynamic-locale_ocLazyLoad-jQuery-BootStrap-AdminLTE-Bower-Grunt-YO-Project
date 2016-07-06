@@ -14,6 +14,12 @@ require.config({
 
     //angular
     'angular': 'lib/angular/angular.min',
+    'angular.animate' : 'lib/angular-animate/angular-animate.min',
+    'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
+    'ngRoute': 'lib/angular-route/angular-route.min',
+    'oc.lazyLoad': 'lib/oclazyload/dist/ocLazyLoad.require',
+    'text': 'lib/requirejs-text/text',
+    'css': 'lib/require-css/css.min',
 
     //myApp
     'projectWeb' : 'partials/beeer/app'
@@ -24,7 +30,13 @@ require.config({
     'jquery-ui': ['jquery-migrate'],
     'twitterBootstrap': ['jquery-ui'],
     'angular': ['twitterBootstrap'],
-    'projectWeb' : ['angular']
+    'angular.animate': ['angular'],
+    'ngRoute': ['angular.animate'],
+    'ui.router': ['ngRoute'],
+    'oc.lazyLoad': ['ui.router'],
+    'text': ['oc.lazyLoad'],
+    'css': ['text'],
+    'projectWeb' : ['css']
   }
 });
 

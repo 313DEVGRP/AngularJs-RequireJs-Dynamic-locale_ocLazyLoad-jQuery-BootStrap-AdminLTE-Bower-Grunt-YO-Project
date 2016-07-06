@@ -44,13 +44,15 @@ aside h3{
   height:100px;
   line-height:3;
   font-size:1.8rem;
-  color:#000;
   text-align:center;
   border-top:0 none;
 }
 .snb .home:hover{
   padding-left:15px;
   font-size:2rem;
+}
+.home a{
+  color:#000;
 }
 .end-list{
   border-bottom:1px #c9c9c9 solid;

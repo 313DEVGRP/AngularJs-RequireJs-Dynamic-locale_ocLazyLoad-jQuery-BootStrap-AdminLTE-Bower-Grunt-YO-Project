@@ -1,23 +1,45 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app>
 <head>
   <meta charset="UTF-8">
   <title>beeer</title>
+  <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="./beeer.css">
 </head>
 <body class="well">
   <header>
     <aside>
       <nav>
-        <ul>
-          <li><a href="#">예제 코드 : beeer</a></li>
+        <h3>예제 모음</h3>
+        <ul class="snb">
+          <li class="home on"><a href="#">beeer</a></li>
+          <li class="sub-list">
+            <a href="#">예제 코드</a>
+            <ul class="snb-sub">
+              <li><a href="#">TODO app</a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+              <li><a href="#"></a></li>
+            </ul>
+          </li>
+          <li class="end-list"><a href="#">etc</a></li>
         </ul>
       </nav>
     </aside>
   </header>
   <article>
     <section>
-      <h2>예제 코드</h2>
-      <p>beeer</p>
+      <h2 class="title">시작하세요 Angular JS 프로그래밍</h2>
+      <p class="g-name">beeer</p>
     </section>
     <section>
       <h2>TODO app</h2>
@@ -26,5 +48,6 @@
     <section></section>
     <section></section>
   </article>
+  <script type="text/javascript" data-main="./app" src="../../lib/requirejs/require.js" charset="UTF-8"></script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en" ng-app>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>beeer</title>
   <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./beeer.css">
 </head>
-<body class="well" ng-app="beeer">
+<body class="well">
   <header>
     <aside>
       <nav>
@@ -15,8 +15,8 @@
           <li class="sub-list">
             <a href="#">예제 코드</a>
             <ul class="snb-sub">
-              <li><a href="#">1{{todoName}}</a></li>
-              <li><a href="#">2{{}}</a></li>
+              <li><a href="#">TODO App</a></li>
+              <li><a href="#">TODO App - 2</a></li>
               <li><a href="#">3{{}}</a></li>
               <li><a href="#">4{{}}</a></li>
               <li><a href="#">5{{}}</a></li>
@@ -34,23 +34,77 @@
       <h2 class="title">시작하세요 Angular JS 프로그래밍</h2>
       <p class="g-name">beeer</p>
     </section>
-    <section ng-app="todoapp">
+    <section ng-controller="todoCtrl">
       <div class="content">
-        <h2 class="chapter">1{{todoName}}</h2>
+        <h2 class="chapter">{{appName}}</h2>
         <div class="view-con">
-          code write
+          <p>전체 할 일 <strong>{{todoList.length}}</strong>개 / 남은 할인을 <strong>{{remain()}}</strong>개 [<a href="#" ng-click="archive()">보관하기</a>]</p>
+          <ul class="list-unstyled">
+            <li class="checkbox" ng-repeat="todo in todoList">
+              <input type="checkbox" ng-model="todo.done">{{todo.title}}
+            </li>
+          </ul>
+          <!--
+          <ul class="list-unstyled">
+            <li class="checkbox"><input type="checkbox">AngularJS 독서</li>
+            <li class="checkbox"><input type="checkbox">개인 프로젝트 구성</li>
+          </ul>
+          -->
+
+          <form name="newItemForm" class="form-inline" action="">
+            <div class="form-group">
+              <label class="sr-only" for="newItemText">새로운 할 일</label>
+              <input type="text" class="form-control" name="newItemText" id="newItemText" placeholder="새로운 할 일" ng-model="newTitle">
+            </div>
+            <button type="submit" class="btn btn-default" ng-click="addNewTodo(newTitle)">추가</button>
+          </form>
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section ng-controller="todo2Ctrl">
       <div class="content">
-        <h2 class="chapter">2{{todoName}}</h2>
+        <h2 class="chapter">{{appName}}</h2>
         <div class="view-con">
-          code write
+          <ul class="list-unstyled">
+            <li>
+              <form ng-submit="addTodo(newTodo)" action="">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="newTodo" placeholder="Type todos">
+                  <span class="input-group-btn">
+                   <button class="btn btn-success" type="submit">Add</button>
+                  </span>
+                </div>
+              </form>
+            </li>
+          </ul>
+
+          <!--<ul class="list-unstyled" ng-repeat="todo in todoList track by $index">-->
+          <ul class="list-unstyled" ng-repeat="todo in todos | filter:statusFilter">
+            <li class="todo-item">
+              <div class="input-group">
+                <span class="input-group-addon">
+                  <input type="checkbox" aria-label="..." ng-model="todo.completed">
+                </span>
+                <input type="text" class="form-control" aria-label="..." ng-model="todo.title">
+                <div class="input-group-btn">
+                 <button type="submit" class="btn btn-danger" ng-click="remove(todo.id)">Remove</button>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <div class="btn-group" role="group" aria-label="...">
+            <button type="button" class="btn btn-default" ng-click="status='completed'">Completed</button>
+            <button type="button" class="btn btn-default" ng-click="status='active'">Active</button>
+            <button type="button" class="btn btn-default" ng-click="status=''">All</button>
+            <button type="button" class="btn btn-default" ng-click="clearCompleted()">Clear Completed</button>
+          </div>
+
+          <pre>{{todos | json}}</pre>
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section>
       <div class="content">
         <h2 class="chapter">3{{todoName}}</h2>
         <div class="view-con">
@@ -58,7 +112,7 @@
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section>
       <div class="content">
         <h2 class="chapter">4{{todoName}}</h2>
         <div class="view-con">
@@ -66,7 +120,7 @@
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section>
       <div class="content">
         <h2 class="chapter">5{{todoName}}</h2>
         <div class="view-con">
@@ -74,7 +128,7 @@
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section>
       <div class="content">
         <h2 class="chapter">6{{todoName}}</h2>
         <div class="view-con">
@@ -82,7 +136,7 @@
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section>
       <div class="content">
         <h2 class="chapter">7{{todoName}}</h2>
         <div class="view-con">
@@ -90,7 +144,7 @@
         </div>
       </div>
     </section>
-    <section ng-app="todoapp">
+    <section>
       <div class="content">
         <h2 class="chapter">etc</h2>
         <div class="view-con">

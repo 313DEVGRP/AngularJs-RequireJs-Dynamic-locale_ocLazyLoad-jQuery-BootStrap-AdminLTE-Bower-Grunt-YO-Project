@@ -10,8 +10,10 @@ ul,ol{
 }
 a,
 a:hover{
-  display:block;
   text-decoration:none;
+}
+li a{
+  display:block;
 }
 
 
@@ -113,4 +115,9 @@ section:first-child{
   margin-top:15px;
   padding:10px;
   border-top:1px #c9c9c9 solid;
+}
+
+.list-unstyled .checkbox input{
+  margin:0 10px 0 0;
+  position:static;
 }

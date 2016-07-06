@@ -14,11 +14,9 @@ require.config({
 
     //angular
     'angular': 'lib/angular/angular.min',
-    'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
-    'ngRoute': 'lib/angular-route/angular-route.min',
 
     //myApp
-    'beeer' : 'partials/beeer/app'
+    'projectWeb' : 'partials/beeer/app'
   },
 
   shim: {
@@ -26,18 +24,17 @@ require.config({
     'jquery-ui': ['jquery-migrate'],
     'twitterBootstrap': ['jquery-ui'],
     'angular': ['twitterBootstrap'],
-    'ngRoute': ['angular'],
-    'ui.router': ['ngRoute'],
-    'beeer' : ['ui.router']
+    'projectWeb' : ['angular']
   }
 });
 
 require(	[
-    'beeer'
+    'projectWeb'
   ],
-  function (beeer) {
+  function (projectWeb) {
     $(document).ready(function () {
       layoutScroll();
+      angular.bootstrap(document, ['projectWeb'])
     });
   }//$(document).ready
 );//require

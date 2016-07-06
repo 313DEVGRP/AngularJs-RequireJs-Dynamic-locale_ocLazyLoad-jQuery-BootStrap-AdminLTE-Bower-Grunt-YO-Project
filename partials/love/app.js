@@ -34,46 +34,98 @@ app.controller('todoCtrl', function($scope) {
 });
 
 app.controller('mainCtrl', function($scope) {
-        var menuList = [
-            { itemId: 1, itemName: '샌드위치', itemPrice: 2000, itemCount: 0 },
-            { itemId: 2, itmeName: '아메리카노', itemPrice: 1000, itemCount: 0 },
-            { itemId: 3, itemName: '카푸치노', itemPrice: 1500, itemCount: 0 }
-        ]
+            var menuList = [
+                { itemId: 1, itemName: '샌드위치', itemPrice: 2000, itemCount: 0 },
+                { itemId: 2, itmeName: '아메리카노', itemPrice: 1000, itemCount: 0 },
+                { itemId: 3, itemName: '카푸치노', itemPrice: 1500, itemCount: 0 }
+            ]
 
-        app.controller('mainCtrl', function($scope) {
-            $scope.menuList = menuList;
-            $scope.totalPrice = 0;
-            $scope.totalText = "구매한 것 없음";
-            $scope.buy = function() {
+            app.controller('mainCtrl', function($scope) {
+                $scope.menuList = menuList;
                 $scope.totalPrice = 0;
-                $scope.totalText = "";
-                angular.forEach($scope.menuList, function(menu) {
-                    $scope.totalPrice += (menu.itemPrice * Number(menu.itemCount));
-                    if (Number(menu.itemCount) > 0) {
-                        if ($scope.totalText.length > 0) {
-                            $scope.totalText += ", ";
+                $scope.totalText = "구매한 것 없음";
+                $scope.buy = function() {
+                    $scope.totalPrice = 0;
+                    $scope.totalText = "";
+                    angular.forEach($scope.menuList, function(menu) {
+                        $scope.totalPrice += (menu.itemPrice * Number(menu.itemCount));
+                        if (Number(menu.itemCount) > 0) {
+                            if ($scope.totalText.length > 0) {
+                                $scope.totalText += ", ";
+                            }
+                            $scope.totalText += menu.itemName + " " + menu.itemCount + "개";
                         }
-                        $scope.totalText += menu.itemName + " " + menu.itemCount + "개";
-                    }
-                });
-            };
-            $scope.reset = function() {
-                angular.forEach($scope.menuList, function(menu) {
-                    menu.itemCount = 0;
-                });
-                $scope.totalPrice = 0;
-                $scope.totalText = "구매한 것 없음"
+                    });
+                };
+                $scope.reset = function() {
+                    angular.forEach($scope.menuList, function(menu) {
+                        menu.itemCount = 0;
+                    });
+                    $scope.totalPrice = 0;
+                    $scope.totalText = "구매한 것 없음"
+                };
+            });
+        }
+
+        function customerCtrl($scope) {
+            var customerList = [
+                { name: '봄이', age: 3 },
+                { name: '여름이', age: 5 }
+            ];
+            var youngCusterList = [];
+            angular.forEach(customerList, function(value, key) {
+                if (value.age < 15) {
+                    youngCusterList.push(value);
+                }
+            });
+            $scope.customerList = customerList;
+            $scope.youngCusterList = youngCusterList;
+        }
+
+        agular.module('jsTree', []).controller('mainCtrl', function($scope) {
+            $scope.getStyle = function() {
+                return { "color": "skyblue" };
             };
         });
-    }
-
-    function customerCtrl($scope) {
-        var customerList = [{ name: '봄이' }, age: 10
-            },
-            { name: '여름이', age: 5 }];
-    var youngCusterList = []; angular.forEach(customerList, function(value, key) {
-        if (value.age < 15) {
-            youngCusterList.push(value);
-        }
-    }); $scope.customerList = customerList; $scope.youngCusterList = youngCusterList;
-}
+        agular.module('jsTree',[]).directive('hello',function(){
+            return function (scope,iElement,iAttrs,controller){
+                //링크함수는 해당 지시자 적용된 DOM에 연결된 함수를 의미
+                //연결함수 (scope객체, 연결요소객체, 속성객체, 컨트롤러객체)인자로 주어짐
+                //설정함수가 함수를 반환하면 링크함수를 반환하는것이고,
+                //객체를 반환하면 설정객체를 반환하는것이다.
+                iElement.html("<h1>hello"+iAttrs.name+"</h1>")
+            };
+        });
+        agular.module('jsTree',[]).directive('hello',function($log){
+            return {
+                name: 0,
+                priority: 0,
+                template: '<div></div>',
+                //templateUrl: 'directive.html',
+                replace: false,
+                restrict: 'A',
+                scope: false,
+                //require: 'ngModel',
+                controller: function($scope, $element, $attrs, $transclude){
+                },
+                compile: function compile(tElement, tAttrs){
+                    return{
+                        pre: function preLink(scope, iElement, iAttrs, controller){
+                        },
+                        post: function postLink(scope, iElement, iAttrs, controller){
+                            $log.log("<h1>hello"+iAttrs.name+"</h1>");
+                            iElement.html("<h1>hello"+iAttrs.name+"</h1>");
+                        }
+                    }
+                    //또는
+                    //return function postLink(scope, iElement, iAttrs, controller, transcludeFn) {}
+                },
+                //또는
+                //link: {
+                //pre: function preLink(scope, iElement, iAttrs, controller, transcludeFn) {}
+                //post: function postLink(scope, iElement, iAttrs, controller, transcludeFn) {}
+                //}
+                //또는
+                //link: function postLink(scope, iElement, iAttrs, controller) {}
+            };
+        });

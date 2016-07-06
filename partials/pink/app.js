@@ -93,3 +93,15 @@ app.controller('css_class', function($scope) {
 		$scope.bgStyle.backgroundColor=color;
 	}
 });
+app.controller('mvcCtrl', function($scope){
+	$scope.greetingModel="안녕하세요.";
+	
+	$scope.viewModel = true;
+	$scope.twiceMVC = "https://www.icloud.com/keynote/0000iX57P7suEEj2d7H7Bw_2Q#mvc";
+	
+	$scope.clearModel = function(msg){
+		alert(msg+"이 Model은 사라집니다.");
+		$scope.greetingModel="";
+	};
+	
+});

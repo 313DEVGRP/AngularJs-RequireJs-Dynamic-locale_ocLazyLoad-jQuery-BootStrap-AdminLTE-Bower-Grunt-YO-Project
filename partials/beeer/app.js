@@ -66,4 +66,4 @@ function layoutScroll() {
   });
 }
 
-angular.module('todoapp', [])
+angular.module('todoapp', []);

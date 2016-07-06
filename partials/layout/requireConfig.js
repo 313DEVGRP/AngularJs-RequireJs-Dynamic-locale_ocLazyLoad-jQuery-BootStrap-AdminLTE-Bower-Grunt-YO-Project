@@ -54,12 +54,12 @@ require.config({
 	    'slimScroll': ['css'],
 	    'chartjs': ['css'],
 	    
-	    'adminLte': ['chartjs'],
+	    'adminLte': ['css'],
 	    'demo': ['adminLte'],
 	    'dataTables':['demo'],
-	    'dataTables.bootstrap':['dataTables'],
-	    'dataTables.responsive':['dataTables.bootstrap'],
-	    'projectWeb': ['dataTables.responsive']
+	    'dataTables.bootstrap':['demo'],
+	    'dataTables.responsive':['demo'],
+	    'projectWeb': ['demo']
 	}
 });
 

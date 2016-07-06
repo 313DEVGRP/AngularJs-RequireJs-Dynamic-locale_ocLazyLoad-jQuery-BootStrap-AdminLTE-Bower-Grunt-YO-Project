@@ -294,6 +294,48 @@ define(
 																console.log(e);
 															});
 										};
+										
+										$scope.nexus = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'nexusService',
+																		files : [ 'partials/layout/contents/nexus/service.js' ]
+																	},
+																	{
+																		name : 'nexusController',
+																		files : [ 'partials/layout/contents/nexus/controller.js' ]
+																	},
+																	'partials/layout/contents/nexus/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/nexus/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.bamboo = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'bambooService',
+																		files : [ 'partials/layout/contents/bamboo/service.js' ]
+																	},
+																	{
+																		name : 'bambooController',
+																		files : [ 'partials/layout/contents/bamboo/controller.js' ]
+																	},
+																	'partials/layout/contents/bamboo/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/bamboo/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
 									} ]);// indexModule.controller
 
 		});

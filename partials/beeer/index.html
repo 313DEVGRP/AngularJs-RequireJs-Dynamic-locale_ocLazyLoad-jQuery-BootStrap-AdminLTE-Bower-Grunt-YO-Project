@@ -67,11 +67,21 @@
         <div class="view-con">
           <ul class="list-unstyled">
             <li>
+              <!--
               <form ng-submit="addTodo(newTodo)" action="">
                 <div class="input-group">
                   <input type="text" class="form-control" ng-model="newTodo" placeholder="Type todos">
                   <span class="input-group-btn">
                    <button class="btn btn-success" type="submit">Add</button>
+                  </span>
+                </div>
+              </form>
+              -->
+              <form action="">
+                <div class="input-group">
+                  <input type="text" class="form-control" ng-model="newTodo" placeholder="Type todos">
+                  <span class="input-group-btn">
+                   <button class="btn btn-success" type="button" ng-click="addTodo(newTodo)">Add</button>
                   </span>
                 </div>
               </form>

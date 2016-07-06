@@ -61,7 +61,6 @@ function layoutScroll() {
       $('article > section').each(function () {
         arrSecTOP.push($(this).offset().top)
       });
-      console.log(arrSecTOP)
     },
     resize:function () {
       $(this).load();

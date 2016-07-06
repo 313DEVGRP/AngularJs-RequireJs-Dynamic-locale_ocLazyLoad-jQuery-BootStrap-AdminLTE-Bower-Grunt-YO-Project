@@ -66,7 +66,7 @@ define(['projectWeb'], function () {
       };
 
       $scope.addTodo = function (todoTitle) {
-        todoTitle = todoTitle.trim();
+        //todoTitle = todoTitle.trim();
         if (!todoTitle) return;
 
         // 새로 추가할 아이디 계산
@@ -93,7 +93,7 @@ define(['projectWeb'], function () {
           $scope.statusFilter = {};                 //   필터를 해제한다.
         }
       });
-      
+
       $scope.clearCompleted = function () {
         var incompleteTodos = $scope.todos.filter(function (todo) {
           return !todo.completed;

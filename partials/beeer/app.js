@@ -15,7 +15,10 @@ require.config({
     //angular
     'angular': 'lib/angular/angular.min',
     'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
-    'ngRoute': 'lib/angular-route/angular-route.min'
+    'ngRoute': 'lib/angular-route/angular-route.min',
+
+    //myApp
+    'beeer' : 'partials/beeer/app'
   },
 
   shim: {
@@ -24,33 +27,27 @@ require.config({
     'twitterBootstrap': ['jquery-ui'],
     'angular': ['twitterBootstrap'],
     'ngRoute': ['angular'],
-    'ui.router': ['ngRoute']
+    'ui.router': ['ngRoute'],
+    'beeer' : ['ui.router']
   }
 });
 
-
 require(	[
-    'jquery'
+    'beeer'
   ],
-  function ($) {
+  function (beeer) {
     $(document).ready(function () {
-
       layoutScroll();
-
     });
-
   }//$(document).ready
 );//require
 
 function layoutScroll() {
   var arrSecTOP = [];
   var idx = 0;
-
   $('article > section').each(function () {
     arrSecTOP.push($(this).offset().top)
   });
-
-
   $('.snb li').on('click',function(){
     var $this = $(this);
     $this.addClass('on').siblings().removeClass('on')
@@ -67,7 +64,6 @@ function layoutScroll() {
       $('article').stop().animate({scrollTop:arrSecTOP[arrSecTOP.length-1]});
     }
   });
-
-  console.log(arrSecTOP)
 }
 
+angular.module('todoapp', [])

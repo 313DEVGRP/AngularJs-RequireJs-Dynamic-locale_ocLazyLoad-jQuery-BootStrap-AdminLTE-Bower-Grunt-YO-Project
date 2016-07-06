@@ -5,8 +5,9 @@
   <title>beeer</title>
   <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./beeer.css">
+  <!--<script src="../../lib/angular/angular.js"></script>-->
 </head>
-<body class="well">
+<body class="well" ng-app="beeer">
   <header>
     <aside>
       <nav>
@@ -41,8 +42,11 @@
       <h2 class="title">시작하세요 Angular JS 프로그래밍</h2>
       <p class="g-name">beeer</p>
     </section>
-    <section>
-      <h2>TODO app</h2>
+    <section ng-init="appName='Angualr TODO'">
+      <h2>{{appName}}</h2>
+      <div class="contnet">
+
+      </div>
     </section>
     <section></section>
     <section></section>

@@ -252,6 +252,48 @@ define(
 																console.log(e);
 															});
 										};
+										
+										$scope.fisheyeCrucible = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'fisheyeCrucibleService',
+																		files : [ 'partials/layout/contents/fisheyeCrucible/service.js' ]
+																	},
+																	{
+																		name : 'fisheyeCrucibleController',
+																		files : [ 'partials/layout/contents/fisheyeCrucible/controller.js' ]
+																	},
+																	'partials/layout/contents/fisheyeCrucible/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/fisheyeCrucible/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.nas = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'nasService',
+																		files : [ 'partials/layout/contents/nas/service.js' ]
+																	},
+																	{
+																		name : 'nasController',
+																		files : [ 'partials/layout/contents/nas/controller.js' ]
+																	},
+																	'partials/layout/contents/nas/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/nas/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
 									} ]);// indexModule.controller
 
 		});

@@ -336,6 +336,111 @@ define(
 																console.log(e);
 															});
 										};
+										
+										$scope.hudson = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'hudsonService',
+																		files : [ 'partials/layout/contents/hudson/service.js' ]
+																	},
+																	{
+																		name : 'hudsonController',
+																		files : [ 'partials/layout/contents/hudson/controller.js' ]
+																	},
+																	'partials/layout/contents/hudson/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/hudson/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.maven = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'mavenService',
+																		files : [ 'partials/layout/contents/maven/service.js' ]
+																	},
+																	{
+																		name : 'mavenController',
+																		files : [ 'partials/layout/contents/maven/controller.js' ]
+																	},
+																	'partials/layout/contents/maven/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/maven/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.sonar = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'sonarService',
+																		files : [ 'partials/layout/contents/sonar/service.js' ]
+																	},
+																	{
+																		name : 'sonarController',
+																		files : [ 'partials/layout/contents/sonar/controller.js' ]
+																	},
+																	'partials/layout/contents/sonar/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/sonar/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.google = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'googleService',
+																		files : [ 'partials/layout/contents/google/service.js' ]
+																	},
+																	{
+																		name : 'googleController',
+																		files : [ 'partials/layout/contents/google/controller.js' ]
+																	},
+																	'partials/layout/contents/google/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/google/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.naver = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'naverService',
+																		files : [ 'partials/layout/contents/naver/service.js' ]
+																	},
+																	{
+																		name : 'naverController',
+																		files : [ 'partials/layout/contents/naver/controller.js' ]
+																	},
+																	'partials/layout/contents/naver/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/naver/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
 									} ]);// indexModule.controller
 
 		});

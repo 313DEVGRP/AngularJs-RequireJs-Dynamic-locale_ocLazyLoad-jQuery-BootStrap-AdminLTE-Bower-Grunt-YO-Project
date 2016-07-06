@@ -1,0 +1,229 @@
+.profile-frame>p {
+	color: black;
+	font-size: 11pt;
+}
+
+.profile-frame>p>a {
+	color: black;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.p
+			
+			.profile-box {
+	max-width: 258px;
+	display: block;
+}
+
+.profile-box a {
+	display: block;
+	overflow: hidden;
+	position: relative;
+	text-decoration: none;
+	max-width: 100%;
+}
+
+.profile-box a img {
+	border-radius: 5px;
+	width: 100%;
+}
+
+.profile-box .profile-box-title {
+	-webkit-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+	transition: all 0.5s;
+	background: rgba(36, 27, 28, 0.9);
+	height: 50px;
+	bottom: 13%;
+	color: #FFF;
+	font-size: 18px;
+	font-weight: 700;
+	left: 0;
+	padding: 9px 11px 9px;
+	position: absolute;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+	text-transform: uppercase;
+	z-index: 1;
+}
+
+.profile-box .profile-box-title .profile-box-name {
+	display: block;
+}
+
+.profile-box .profile-box-title .profile-box-role {
+	background-color: #f45b4f;
+	display: inline-block;
+	float: left;
+	font-size: 12px;
+	font-weight: 400;
+	border-radius: 2px;
+	color: rgb(255, 255, 255);
+	margin: 7px -2px -10px -2px;
+	padding: 0px 9px;
+	text-transform: none;
+}
+
+@media only screen and (min-width: 1200px) {
+	.container .one-quarter {
+		width: 310px;
+	}
+	.one-whole .clear {
+		display: inline-block;
+	}
+	.container .one-quarter.last {
+		margin-right: 20px;
+	}
+}
+
+@media ( max-width : 1200px) and (min-width: 1100px) {
+	.container {
+		width: 950px;
+	}
+}
+
+@media ( max-width : 1100px) and (min-width: 980px) {
+	.container {
+		width: 730px;
+	}
+	.one-whole .clear {
+		display: inline-block;
+	}
+	.container .one-quarter.last {
+		margin-right: 20px;
+	}
+}
+
+@media only screen and (max-width: 980px) and (min-width: 769px) {
+	.profile-box .profile-box-title {
+		bottom: 12%;
+		height: 37px;
+		padding: 3px 7px;
+	}
+	.profile-box .profile-box-title .profile-box-name {
+		font-size: 13px;
+	}
+	.profile-box .profile-box-title .profile-box-role {
+		margin: 0;
+		font-size: 10px;
+	}
+}
+
+.contact {
+	margin-bottom: 8px;
+}
+
+.contact span {
+	width: 36px;
+	height: 36px;
+	text-align: center;
+	line-height: 34px;
+	display: inline-block;
+}
+
+.contact span a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	border: 1px solid #f45b4f;
+	-webkit-border-radius: 100%;
+	-moz-border-radius: 100%;
+	border-radius: 100%;
+	background: #fff;
+	color: #f45b4f;
+	font-size: 1.2em;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+.contact span a:hover {
+	background: #f45b4f;
+	color: #fff;
+}
+
+/* Special Thanks Members Section */
+#liscrollbox {
+	padding-top: 20px;
+}
+/* Styles For List Scroll */
+.tickercontainer { /* the outer div with the black border */
+	margin: 0 auto;
+	padding: 0 10px;
+	background: #fff;
+	max-width: 800px;
+	height: 50px;
+	overflow: hidden;
+}
+
+.tickercontainer .mask {
+	/* that serves as a mask. so you get a sort of padding both left and right */
+	position: relative;
+	left: 10px;
+	top: 8px;
+	width: 718px;
+	overflow: hidden;
+}
+
+ul.newsticker { /* that's your list */
+	position: relative;
+	left: 750px;
+	list-style-type: none;
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+}
+
+ul.newsticker li {
+	float: left;
+	/* important: display inline gives incorrect results when you check for elem's width */
+	margin-right: 30px;
+	padding: 0;
+	background: #fff;
+	font-size: 12pt;
+}
+
+ul.newsticker a {
+	white-space: nowrap;
+	padding: 0;
+	color: #ff0000;
+	font: bold 10px Verdana;
+	margin: 0 50px 0 0;
+}
+
+.one-whole .part-4 {
+	width: 25%;
+	padding: 20px 0px 20px 20px;
+	float: left
+}
+
+.one-whole .part-4:first-child {
+	padding-left: 0px
+}
+
+.one-whole>.part-4 .one-quarter.product-item {
+	width: 100%;
+	margin: 0px
+}
+
+#footer .container .one-quarter {
+	width: 25%;
+	padding-right: 20px;
+	margin-right: 0px;
+}
+
+#footer .container .one-quarter.last {
+	padding-right: 0px;
+}
+
+@media ( max-width :768px) {
+	.one-whole>.part-4 {
+		width: 100%;
+		padding: 20px 0px 0px;
+	}
+	#footer .container .one-quarter {
+		width: 100%;
+		padding-right: 0px;
+	}
+}

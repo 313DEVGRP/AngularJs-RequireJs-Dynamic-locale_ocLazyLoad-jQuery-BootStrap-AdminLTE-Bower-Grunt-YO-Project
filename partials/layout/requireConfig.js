@@ -27,7 +27,7 @@ require.config({
 	    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
 	    'slimScroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
 	    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
-	    'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
+	    'adminLte': 'AdminLTE-2.3.3/dist/js/app',
 	    'demo': 'AdminLTE-2.3.3/dist/js/demo',
 	    'dataTables':'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min',
 	    'dataTables.bootstrap':'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min',
@@ -38,28 +38,28 @@ require.config({
 
 	shim: {
 		'jquery-migrate': ['jquery'],
-		'jquery-ui': ['jquery'],
-		'twitterBootstrap': ['jquery'],
+		'jquery-ui': ['jquery-migrate'],
+		'twitterBootstrap': ['jquery-ui'],
 	    'angular': ['twitterBootstrap'],
 	    'ngRoute': ['angular'],
 	    'ui.router': ['ngRoute'],
 	    'oc.lazyLoad': ['ui.router'],
 	    'text': ['oc.lazyLoad'],
-	    'css':  ['oc.lazyLoad'],
+	    'css': ['text'],
 	    
 	    'fastclick': ['css'],
-	    'sparkline': ['css'],
-	    'jvectormap': ['css'],
-	    'jvectormapWorld': ['css'],
-	    'slimScroll': ['css'],
-	    'chartjs': ['css'],
+	    'sparkline': ['fastclick'],
+	    'jvectormap': ['sparkline'],
+	    'jvectormapWorld': ['jvectormap'],
+	    'slimScroll': ['jvectormapWorld'],
+	    'chartjs': ['slimScroll'],
 	    
-	    'adminLte': ['css'],
+	    'adminLte': ['chartjs'],
 	    'demo': ['adminLte'],
 	    'dataTables':['demo'],
-	    'dataTables.bootstrap':['demo'],
-	    'dataTables.responsive':['demo'],
-	    'projectWeb': ['demo']
+	    'dataTables.bootstrap':['dataTables'],
+	    'dataTables.responsive':['dataTables.bootstrap'],
+	    'projectWeb': ['dataTables.responsive']
 	}
 });
 

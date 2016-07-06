@@ -105,3 +105,72 @@ app.controller('mvcCtrl', function($scope){
 	};
 	
 });
+app.directive('hellopink', function(){
+	return function(scope, iElement, iAttrs, controller){
+		iElement.html("<h3>"+iAttrs.name+"</h3>");
+		iElement.append("<br>");
+	};
+});
+app.directive('helloPink', function(){
+	return function(scope, iElement, iAttrs, controller){
+		iElement.html("<h3>"+iAttrs.name+"</h3>");
+		iElement.append("<br>");
+	};
+});
+app.directive('helloP', function(){
+	return function(scope, iElement, iAttrs, controller){
+		iElement.html("<h3>"+iAttrs.name+"</h3>");
+		iElement.append("<br>");
+	};
+});
+app.directive('pinkcompile', function(){
+	return{
+		name : 0,
+		template:'<div></div>',
+		replace : false,
+		transclude : true,
+//		restrict : E,
+		scope : false,
+		compile : function(tElement, tAttrs){
+			return {
+				pre : function (scope, iElement, iAttrs, controller){
+				},
+				post : function (scope,iElement,iAttrs,controller){
+					iElement.html("<h3>1 "+iAttrs.name+"</h3>");
+				}
+			}
+		}			
+	}
+});
+app.directive('pinkcompile2', function(){
+	return{
+		name : 0,
+		template:'<div></div>',
+		replace : false,
+		transclude : true,
+//		restrict : E,
+		scope : false,
+		compile : function(tElement, tAttrs){
+			return function(scope, iElement, iAttrs, controller, transcludeFn){
+				iElement.html("<h3>2 "+iAttrs.name+"</h3>");
+			};
+		}			
+	}
+});
+app.directive('pinklink', function(){
+	return{
+		link : {
+			pre : function preLink(scope, iElement, iAttrs, controller, transcludeFn){ 
+				iElement.html("<h3>3 "+iAttrs.name+"</h3>");
+			},
+			post : function postLink(scope, iElement, iAttrs, controller, transcludeFn){ },
+		}
+	}
+});
+app.directive('pinklink2', function(){
+	return{
+ 		link : function (scope, iElement, iAttrs, controller){
+	 			iElement.html("<h3>4 "+iAttrs.name+"</h3>");
+ 		}
+	}
+});

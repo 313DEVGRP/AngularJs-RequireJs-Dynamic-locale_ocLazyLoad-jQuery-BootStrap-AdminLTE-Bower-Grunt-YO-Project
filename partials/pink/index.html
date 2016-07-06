@@ -515,6 +515,33 @@
 		<button ng-click="clearModel(greetingModel)">Clear Model Data</button>
 	</div>
 	<!-- MVC -->
+	
+	<!-- Directive -->
+	<!-- Directive 이름이 대문자로 끝날 때 동작 X -->
+	<!-- Directive hello - O, helloPink - O, helloP - X -->
+	<div id="link16" class="page-header">
+      <h1><small></small>Directive</h1>
+    </div>
+    <div>
+		Directive hellopink - O
+		<div hellopink name="Pink World"></div>
+		Directive helloPink - O
+		<div helloPink name="Pink World"></div>
+		Directive helloP - X
+		<div helloP name="Pink World"></div>
+	</div>
+	<hr>
+	<div>
+		지시자 설정 객체 ex		
+		<div pinkcompile name="directive Compile Object"></div>
+		<hr>
+		<div pinkcompile2 name="directive Compile Function"></div>
+		<hr>
+		<div pinklink name="directive Link Object"></div>
+		<hr>
+		<div pinklink2 name="directive Link Function"></div>
+	</div>
+	<!-- Directive -->
   </div>
   </body>
 </html>

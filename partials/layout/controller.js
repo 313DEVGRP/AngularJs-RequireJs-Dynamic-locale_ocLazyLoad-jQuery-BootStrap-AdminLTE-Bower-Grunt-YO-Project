@@ -210,6 +210,48 @@ define(
 																console.log(e);
 															});
 										};
+										
+										$scope.jira = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'jiraService',
+																		files : [ 'partials/layout/contents/jira/service.js' ]
+																	},
+																	{
+																		name : 'jiraController',
+																		files : [ 'partials/layout/contents/jira/controller.js' ]
+																	},
+																	'partials/layout/contents/jira/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/jira/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
+										
+										$scope.github = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'githubService',
+																		files : [ 'partials/layout/contents/github/service.js' ]
+																	},
+																	{
+																		name : 'githubController',
+																		files : [ 'partials/layout/contents/github/controller.js' ]
+																	},
+																	'partials/layout/contents/github/index.css' ])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/github/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
 									} ]);// indexModule.controller
 
 		});

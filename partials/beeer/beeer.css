@@ -51,6 +51,9 @@ aside h3{
   padding-left:15px;
   font-size:2rem;
 }
+.snb .home.on{
+  background-color: transparent;
+}
 .home a{
   color:#000;
 }

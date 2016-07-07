@@ -1,6 +1,6 @@
 'use strict';
 
-var app=angular.module('projectWeb',[]);
+var app=angular.module('projectWeb',['ngCookies']);
 app.controller('todoCtrl', function($scope){
   $scope.appName="AngularJS TODO APP";
   $scope.todoList=[
@@ -84,27 +84,38 @@ app.controller('evtCtrl', function($scope) {
 	$scope.eventCnt = 0;
 	$scope.handleEvt=function(mesage){
 		$scope.mes = mesage;
-		$scope.eventCnt++
-	}
+		$scope.eventCnt++;
+	};
 });
 app.controller('css_class', function($scope) {
-	$scope.bgStyle = {backgroundColor:'red'}
+	$scope.bgStyle = {backgroundColor:'red'};
 	$scope.changeColor=function(color){
 		$scope.bgStyle.backgroundColor=color;
-	}
+	};
 });
 app.controller('mvcCtrl', function($scope){
 	$scope.greetingModel="안녕하세요.";
-	
+
 	$scope.viewModel = true;
 	$scope.twiceMVC = "https://www.icloud.com/keynote/0000iX57P7suEEj2d7H7Bw_2Q#mvc";
-	
+
 	$scope.clearModel = function(msg){
 		alert(msg+"이 Model은 사라집니다.");
 		$scope.greetingModel="";
 	};
-	
+
 });
+app.controller("cookieCtrl",['$scope','$cookies',function($scope,$cookies){
+  $scope.val=$cookies.get("test")||"없음";
+
+  $scope.getValue=function(){
+    $scope.val=$cookies.get('test');
+  };
+  $scope.putValue=function(iV){
+    $cookies.put("test",iV);
+  };
+}]);
+
 app.directive('hellopink', function(){
 	return function(scope, iElement, iAttrs, controller){
 		iElement.html("<h3>"+iAttrs.name+"</h3>");
@@ -138,9 +149,9 @@ app.directive('pinkcompile', function(){
 				post : function (scope,iElement,iAttrs,controller){
 					iElement.html("<h3>1 "+iAttrs.name+"</h3>");
 				}
-			}
-		}			
-	}
+			};
+		}
+	};
 });
 app.directive('pinkcompile2', function(){
 	return{
@@ -154,23 +165,23 @@ app.directive('pinkcompile2', function(){
 			return function(scope, iElement, iAttrs, controller, transcludeFn){
 				iElement.html("<h3>2 "+iAttrs.name+"</h3>");
 			};
-		}			
-	}
+		}
+	};
 });
 app.directive('pinklink', function(){
 	return{
 		link : {
-			pre : function preLink(scope, iElement, iAttrs, controller, transcludeFn){ 
+			pre : function preLink(scope, iElement, iAttrs, controller, transcludeFn){
 				iElement.html("<h3>3 "+iAttrs.name+"</h3>");
 			},
 			post : function postLink(scope, iElement, iAttrs, controller, transcludeFn){ },
 		}
-	}
+	};
 });
 app.directive('pinklink2', function(){
 	return{
  		link : function (scope, iElement, iAttrs, controller){
 	 			iElement.html("<h3>4 "+iAttrs.name+"</h3>");
  		}
-	}
+	};
 });

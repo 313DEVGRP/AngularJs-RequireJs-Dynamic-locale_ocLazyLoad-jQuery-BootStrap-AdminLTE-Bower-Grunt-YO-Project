@@ -185,3 +185,26 @@ app.directive('pinklink2', function(){
  		}
 	};
 });
+app.controller('transCtrl', ['$scope', function($scope){
+		$scope.noticeList = [{
+			url : "notice/1",
+			text : "공지사항 첫 번째 글입니다."
+		},{
+			url : "notice/2",
+			text : "공지사항 두 번째 글입니다."
+		},{
+			url : "notice/3",
+			text : "공지사항 세 번째 글입니다."
+		}];
+}]);
+app.directive('panel', function(){
+	return{
+		templateUrl : "template/panelTmpl.html",
+		restrict : "AE",
+		transclude : true,
+		scope : {
+			title : "@",
+			type : "@",
+		}
+	};
+});

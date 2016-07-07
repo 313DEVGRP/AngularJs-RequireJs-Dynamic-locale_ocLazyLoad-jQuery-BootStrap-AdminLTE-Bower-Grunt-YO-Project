@@ -454,8 +454,7 @@ define(
 																		name : 'backendDevelopersController',
 																		files : [ 'partials/layout/contents/stakeholder/backendDevelopers/controller.js' ]
 																	},
-																	'partials/layout/contents/stakeholder/backendDevelopers/index.css',
-																	'partials/layout/contents/stakeholder/backendDevelopers/backbone.scss.css'])
+																	'partials/layout/contents/stakeholder/backendDevelopers/index.css'])
 													.then(
 															function() {
 																$scope.contentWrapper = "partials/layout/contents/stakeholder/backendDevelopers/";

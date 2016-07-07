@@ -37,6 +37,11 @@
       <a href="#link11" class="label label-primary">css class 유효성 검증결과 표현</a>
       <a href="#link12" class="label label-primary">mouse, keyboard 이벤트</a>
       <a href="#link13" class="label label-primary">css, class동적처리</a>
+      <a href="#link14" class="label label-primary">MVC</a>
+      <a href="#link15" class="label label-primary">Module</a>
+      <a href="#link16" class="label label-primary">Directive</a>
+      <a href="#link17" class="label label-primary">Transclude</a>
+
     </div>
 
     <!-- todoApp -->
@@ -558,6 +563,26 @@
   		<div pinklink2 name="directive Link Function"></div>
   	</div>
   	<!-- Directive__e -->
+
+  	<!-- transclude -->
+   	<div id="link17" class="page-header">
+      <h1><small></small>Transclude</h1>
+    </div>
+    <div ng-controller="transCtrl">
+    	<div>
+    	<panel title="알림" type="alert">
+    		<p>AngularJS는 자바스크립트 웹 애플리케이션을 쉽게 개발하게 도와줍니다.</p>
+    	</panel>
+    	<panel title="공지사항 목록" type="info">
+    		<ul>
+    			<li ng-repeat="notice in noticeList">
+    				<a href="{{notice.url}}">{{notice.text}}</a>
+    			</li>
+    		</ul>
+    	</panel>
+    	</div>
+    </div>
+  	<!-- transclude__e -->
 </div>
 </body>
 </html>

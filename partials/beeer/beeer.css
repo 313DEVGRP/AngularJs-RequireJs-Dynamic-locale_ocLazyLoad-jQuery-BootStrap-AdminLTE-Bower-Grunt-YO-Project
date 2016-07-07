@@ -16,7 +16,7 @@ li a{
   display:block;
 }
 
-
+/* --- header aside --- */
 header{
   width:200px; height:calc(100% - 40px);
   position:fixed;
@@ -28,6 +28,7 @@ aside h3{
   text-align:center;
 }
 .snb{
+  max-height:300px;
   padding:0;
 }
 .snb li{
@@ -59,10 +60,6 @@ aside h3{
 .home a{
   color:#000;
 }
-.end-list{
-  border-bottom:1px #c9c9c9 solid;
-}
-
 .snb-sub{
   display:none;
   margin-top:5px;
@@ -72,6 +69,11 @@ aside h3{
   font-weight:bold;
   background-color:#f9f9e9;
 }
+.end-list{
+  border-bottom:1px #c9c9c9 solid;
+}
+
+/* -- contents --*/
 article{
   height:100%;
   margin-left:200px;
@@ -103,7 +105,7 @@ section:first-child{
 
 .content{
   height:100%;
-  border:1px red solid;
+  position:relative;
   overflow:hidden;
 }
 .chapter{
@@ -119,4 +121,37 @@ section:first-child{
 .list-unstyled .checkbox input{
   margin:0 10px 0 0;
   position:static;
+}
+
+.code{
+  margin-bottom:0;
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-5px;
+}
+
+/* --- ng-switch --- */
+.col-sm-4 h3{
+  height:60px;
+  border-bottom:1px #c9c9c9 solid;
+}
+.row.default{
+  padding:0;
+}
+.box{
+  width:100px;
+  height:100px;
+}
+.red{
+  background-color:#f00
+}
+.green{
+  background-color:#0f0;
+}
+.blue{
+  background-color:#00f;
+}
+.black{
+  background-color:#000;
 }

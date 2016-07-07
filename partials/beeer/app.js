@@ -106,6 +106,27 @@ define(['projectWeb'], function () {
       };
     })
 
+    // 메뉴판
+    .controller('menuCtrl', function ($scope) {
+      $scope.appName = "메뉴판";
+      $scope.menuList = [
+        { itemId : 1, itemName : '샌드위치', itemPrice : 2000, itemCount : 0},
+        { itemId : 2, itemName : '아메리카노', itemPrice : 1000, itemCount : 0},
+        { itemId : 3, itemName : '카푸치노', itemPrice : 1500, itemCount : 0}
+      ];
+
+      $scope.totalPrice = 0;
+
+      $scope.buy = function(){
+        $scope.totalPrice = 0; // 가격 초기화 - 초기화 하지 않으면 계속 누적된 금액으로 계산됨
+        angular.forEach($scope.menuList, function(menu, idx){
+          $scope.totalPrice = $scope.totlaPrice + (menu.itemPrice * Number(menu.itemCount));
+        });
+      };
+    })
+  
+    // ng-repeat="(key, value) in [])"
+
 
 });
 

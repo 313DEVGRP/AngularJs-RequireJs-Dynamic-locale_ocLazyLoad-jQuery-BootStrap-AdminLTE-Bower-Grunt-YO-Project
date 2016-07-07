@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta author="Su">
   <title>beeer</title>
   <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./beeer.css">
@@ -17,11 +19,11 @@
             <ul class="snb-sub">
               <li><a href="#">TODO App</a></li>
               <li><a href="#">TODO App - 2</a></li>
-              <li><a href="#">3{{}}</a></li>
-              <li><a href="#">4{{}}</a></li>
-              <li><a href="#">5{{}}</a></li>
-              <li><a href="#">6{{}}</a></li>
-              <li><a href="#">7{{}}</a></li>
+              <li><a href="#">표현식</a></li>
+              <li><a href="#">데이터 바인딩</a></li>
+              <li><a href="#">반복 지시자</a></li>
+              <li><a href="#">조건 지시자</a></li>
+              <li><a href="#">콘트롤러 지시자</a></li>
             </ul>
           </li>
           <li class="end-list"><a href="#">etc</a></li>
@@ -58,6 +60,10 @@
             </div>
             <button type="button" class="btn btn-default" ng-click="addNewTodo(newTitle)">추가</button>
           </form>
+        </div>
+        <div class="code panel">
+          <p data-height="180" data-theme-id="0" data-slug-hash="PzKEWj" data-default-tab="result" data-user="Su__" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/PzKEWj/">PzKEWj</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </div>
       </div>
     </section>
@@ -115,43 +121,148 @@
         </div>
       </div>
     </section>
-    <section>
+    <section ng-init="person={ name : '재도', favorite : ['사과','딸기','포도']}">
       <div class="content">
-        <h2 class="chapter">3{{todoName}}</h2>
+        <h2 class="chapter">hello {{person.name}}</h2>
         <div class="view-con">
-          code write
+          <ul ng-repeat="fruit in person.favorite">
+            <li><a href="#{{fruit}}">{{fruit}}</a></li>
+          </ul>
+          <p>좋아하는 과일의 갯수 : {{numberOfFavorite = person.favorite.length}}</p>
+          <p>과일 갯수 * $100 = {{numberOfFavorite * 100 | currency}}</p>
+          <p>재도가 맞나요 {{person.name == '재도'}}</p>
+          <p>좋아하는 과일 수가 4개보다 많나요 {{numberOfFavorite > 4}}</p>
+          <p>scope에 없는 객체 접근 하면 ? {{cat.type.name}}</p>
+        </div>
+        <div class="code panel">
+          <p data-height="180" data-theme-id="0" data-slug-hash="BzdJVY" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/BzdJVY/">표현식</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+      </div>
+    </section>
+    <section ng-controller="menuCtrl">
+      <div class="content">
+        <h2 class="chapter">양방향 데이터 바인딩 예제</h2>
+        <div class="view-con">
+          <h3>{{appName}}</h3>
+          <p>메뉴 목록</p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>메뉴</th>
+                <th>가격</th>
+                <th>갯수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="menu in menuList">
+                <td>{{menu.itemName}}</td>
+                <td>{{menu.itemPrice}}</td>
+                <td><input type="text" ng-model="menu.itemCount"></td>
+              </tr>
+            </tbody>
+          </table>
+          <button ng-click="buy()">구매</button>
+          <h3>구입 가격</h3>
+          <div class="panel-footer text-right">
+            가격 : {{totalPrice}}
+          </div>
+        </div>
+        <div class="code panel">
+          <p data-height="180" data-theme-id="0" data-slug-hash="zBdpLY" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/zBdpLY/">menuList</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </div>
       </div>
     </section>
     <section>
       <div class="content">
-        <h2 class="chapter">4{{todoName}}</h2>
+        <h2 class="chapter">반복적인 데이터 표현을 위한 템플릿</h2>
         <div class="view-con">
-          code write
+          <h3>ng-repeat</h3>
+          <div class="panel-danger" ng-init="customerList = [{ name : '영희', age : 25}, { name : '순희', age : 28}]">
+            고객 목록
+            <ul>
+              <li ng-repeat="customer in customerList">
+                [{{$index + 1}}] 고객 이름 : {{customer.name}}, 고객 나이 : {{customer.age}}
+              </li>
+            </ul>
+          </div>
+          <div class="panel-footer" ng-init="myFriend = { name : '철수', age : 25, hobby : '축구'}">
+            내 친구 소개
+            <ul>
+              <li ng-repeat="(attr, value) in myFriend">
+                <p>{{attr}} : {{value}}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="code panel">
+          <p data-height="180" data-theme-id="0" data-slug-hash="OXjzoQ" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/OXjzoQ/">ng-repeat</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </div>
       </div>
     </section>
     <section>
       <div class="content">
-        <h2 class="chapter">5{{todoName}}</h2>
+        <h2 class="chapter">조건적인 데이터 표현을 위한 템플릿</h2>
         <div class="view-con">
-          code write
+          <ul class="row default">
+            <li class="col-sm-4">
+              <h3>ng-switch</h3>
+              <div>
+                <input type="radio" ng-model="color" value="red"> 빨간색<br>
+                <input type="radio" ng-model="color" value="green"> 녹색<br>
+                <input type="radio" ng-model="color" value="blue"> 파란색<br>
+                <div ng-switch="color">
+                  <div ng-switch-when="red" class="box red"></div>
+                  <div ng-switch-when="green" class="box green"></div>
+                  <div ng-switch-when="blue" class="box blue"></div>
+                  <div ng-switch-default class="box black"></div>
+                </div>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <h3>ng-if</h3>
+              <div>
+                  약관에 동의 : <input type="checkbox" ng-model="checkedIf" ng-init="checkedIf=false">
+                  <br>
+                  동의하면 다음으로 진행됩니다
+                  <button class="btn btn-success btn-block" ng-if="checkedIf">다음</button>
+              </div>
+            </li>
+            <li class="col-sm-4">
+              <h3>ng-show / ng-hide</h3>
+              <div>
+                동의 여부 : <input type="checkbox" ng-model="checkedShow">
+                <br>
+                <div>
+                  <span ng-show="checkedShow">
+                    다음으로 진행 합니다. <button class="btn btn-success btn-xs">계속</button>
+                  </span>
+                </div>
+                <div>
+                  <span ng-hide="checkedShow">
+                    다음으로 진행 할 수 없습니다.
+                  </span>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="code panel">
+          <p data-height="180" data-theme-id="0" data-slug-hash="jALkKE" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/jALkKE/">조건 지시자</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
         </div>
       </div>
     </section>
     <section>
       <div class="content">
-        <h2 class="chapter">6{{todoName}}</h2>
+        <h2 class="chapter">비지니스 로직 처리를 위한 템플릿</h2>
         <div class="view-con">
-          code write
+          coming soon
         </div>
-      </div>
-    </section>
-    <section>
-      <div class="content">
-        <h2 class="chapter">7{{todoName}}</h2>
-        <div class="view-con">
-          code write
+        <div class="code panel">
+
         </div>
       </div>
     </section>
@@ -160,6 +271,9 @@
         <h2 class="chapter">etc</h2>
         <div class="view-con">
           contents write
+        </div>
+        <div class="code panel">
+
         </div>
       </div>
     </section>

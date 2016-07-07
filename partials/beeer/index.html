@@ -2,8 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta author="Su">
+  <meta name="author" content="Su">
   <title>beeer</title>
   <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="./beeer.css">
@@ -61,9 +60,23 @@
             <button type="button" class="btn btn-default" ng-click="addNewTodo(newTitle)">추가</button>
           </form>
         </div>
-        <div class="code panel">
-          <p data-height="180" data-theme-id="0" data-slug-hash="PzKEWj" data-default-tab="result" data-user="Su__" data-embed-version="2" data-preview="true" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/PzKEWj/">PzKEWj</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-default btn-md code" data-toggle="modal" data-target="#todo">code view</button>
+        <!-- Modal -->
+        <div id="todo" class="modal fade" role="dialog">
+          <div class="modal-dialog custom">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+                <p data-theme-id="0" data-slug-hash="oLZqZm" data-default-tab="result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/oLZqZm/">todo</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -134,9 +147,23 @@
           <p>좋아하는 과일 수가 4개보다 많나요 {{numberOfFavorite > 4}}</p>
           <p>scope에 없는 객체 접근 하면 ? {{cat.type.name}}</p>
         </div>
-        <div class="code panel">
-          <p data-height="180" data-theme-id="0" data-slug-hash="BzdJVY" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/BzdJVY/">표현식</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-default btn-md code" data-toggle="modal" data-target="#person">code view</button>
+        <!-- Modal -->
+        <div id="person" class="modal fade" role="dialog">
+          <div class="modal-dialog custom">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+                <p data-theme-id="0" data-slug-hash="BzdJVY" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/BzdJVY/">표현식</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -168,9 +195,23 @@
             가격 : {{totalPrice}}
           </div>
         </div>
-        <div class="code panel">
-          <p data-height="180" data-theme-id="0" data-slug-hash="zBdpLY" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/zBdpLY/">menuList</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-default btn-md code" data-toggle="modal" data-target="#binding">code view</button>
+        <!-- Modal -->
+        <div id="binding" class="modal fade" role="dialog">
+          <div class="modal-dialog custom">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+                <p data-theme-id="0" data-slug-hash="zBdpLY" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/zBdpLY/">menuList</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -199,6 +240,24 @@
         <div class="code panel">
           <p data-height="180" data-theme-id="0" data-slug-hash="OXjzoQ" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/OXjzoQ/">ng-repeat</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
           <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+        </div>
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-default btn-md code" data-toggle="modal" data-target="#ngRepeat">code view</button>
+        <!-- Modal -->
+        <div id="ngRepeat" class="modal fade" role="dialog">
+          <div class="modal-dialog custom">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+                <p data-theme-id="0" data-slug-hash="OXjzoQ" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/OXjzoQ/">ng-repeat</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -249,9 +308,23 @@
             </li>
           </ul>
         </div>
-        <div class="code panel">
-          <p data-height="180" data-theme-id="0" data-slug-hash="jALkKE" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/jALkKE/">조건 지시자</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
-          <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-default btn-md code" data-toggle="modal" data-target="#ngIf">code view</button>
+        <!-- Modal -->
+        <div id="ngIf" class="modal fade" role="dialog">
+          <div class="modal-dialog custom">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+                <p data-theme-id="0" data-slug-hash="jALkKE" data-default-tab="html,result" data-user="Su__" data-embed-version="2" class="codepen">See the Pen <a href="http://codepen.io/Su__/pen/jALkKE/">조건 지시자</a> by Su-hyun (<a href="http://codepen.io/Su__">@Su__</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+                <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -261,8 +334,22 @@
         <div class="view-con">
           coming soon
         </div>
-        <div class="code panel">
 
+        <!-- Trigger the modal with a button -->
+        <button type="button" class="btn btn-default btn-md code" data-toggle="modal" data-target="#ngControl">code view</button>
+        <!-- Modal -->
+        <div id="ngControl" class="modal fade" role="dialog">
+          <div class="modal-dialog custom">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-body">
+
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

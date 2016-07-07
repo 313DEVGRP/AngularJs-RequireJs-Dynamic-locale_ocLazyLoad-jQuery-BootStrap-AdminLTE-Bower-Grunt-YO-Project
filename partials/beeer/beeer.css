@@ -23,13 +23,18 @@ header{
   border:1px #c9c9c9 solid;
   overflow:hidden;
 }
+aside,
+nav{
+  height:100%;
+}
 aside h3{
   padding:20px;
   text-align:center;
 }
 .snb{
-  max-height:300px;
+  max-height:100%;
   padding:0;
+  overflow:auto;
 }
 .snb li{
   padding:5px 15px;
@@ -124,11 +129,15 @@ section:first-child{
 }
 
 .code{
-  margin-bottom:0;
   position:absolute;
-  left:0;
   right:0;
-  bottom:-5px;
+  bottom:0;
+}
+.modal.in .modal-dialog.custom{
+  transform: translate(0, 25%);
+  -webkit-transform: translate(0, 25%);
+  -ms-transform: translate(0, 25%);
+  -moz-transform: translate(0, 25%);
 }
 
 /* --- ng-switch --- */

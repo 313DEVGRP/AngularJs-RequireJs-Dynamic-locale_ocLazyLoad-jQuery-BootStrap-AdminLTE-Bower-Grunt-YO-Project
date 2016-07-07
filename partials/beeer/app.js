@@ -18,6 +18,8 @@ define(['projectWeb'], function () {
 
       // 새로운 할 일 추가
       $scope.addNewTodo = function (newTitle) {
+        if(newTitle == undefined) return;
+        if(newTitle === '') return;
         $scope.todoList.push({ done : false, title : newTitle});
         $scope.newTitle = '';
       };
@@ -66,8 +68,10 @@ define(['projectWeb'], function () {
       };
 
       $scope.addTodo = function (todoTitle) {
-        //todoTitle = todoTitle.trim();
-        if (!todoTitle) return;
+        if(todoTitle == undefined) return;
+
+        var todoTitle = todoTitle.trim();
+        if (todoTitle === '') return;
 
         // 새로 추가할 아이디 계산
         var newId = !$scope.todos.length ?

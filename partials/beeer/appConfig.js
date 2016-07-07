@@ -45,8 +45,10 @@ require(	[
   ],
   function (projectWeb) {
     $(document).ready(function () {
+
+      angular.bootstrap(document, ['projectWeb']);
       layoutScroll();
-      angular.bootstrap(document, ['projectWeb'])
+
     });
   }//$(document).ready
 );//require

@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko" ng-app="jsTree">
+<!--<![endif]-->
+<!--
+     ____    _   ____
+    |___ \  | | |___ \
+     ___) | | |  ___) |
+    |___  | | | |___  |
+     ___) | | |  ___) | cheer up! :)
+    |____/  |_| |____/  from www.313.co.kr
+-->
 
 <head>
     <meta charset="UTF-8">
@@ -299,6 +308,34 @@
         <div hello name = "google"></div>
         <div hello name = "naver"></div>
         <div hello></div>
+    </div>
+    <!-- @ Scope derective exercise -->
+    <div id="num_17" class="page-header">
+        <h1>17. @ Scope derective exercise</h1>
+    </div>
+    <div ng-controller="demoCtrl">
+        <div hello to = "google"></div>
+        <div hello to = "naver"></div>
+        <div hello></div>
+    </div>
+    <!-- & Scope derective exercise -->
+    <div id="num_18" class="page-header">
+        <h1>18. &amp; Scope derective exercise</h1>
+    </div>
+    <div ng-controller="demoCtrl">
+        <div ng-repeat="helloSb in helloList" hello to="{{helloSb.name}}" send="sendMessage(helloSb.name)"></div>
+    </div>
+    <!-- = Scope derective exercise -->
+    <div id="num_19" class="page-header">
+        <h1>19. = Scope derective exercise</h1>
+    </div>
+    <div ng-controller="demoCtrl">
+        <ul>
+            <li ng-repeat="helloSb in helloList">
+                <input type="text" ng-model="helloSb.name">
+            </li>
+        </ul>
+        <div ng-repeat="helloSb in helloList" hello to="helloSb.name"></div>
     </div>
 </body>
 

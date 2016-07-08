@@ -86,7 +86,8 @@ app.controller('mainCtrl', function($scope) {
             $scope.getStyle = function() {
                 return { "color": "skyblue" };
             };
-        }); agular.module('jsTree', []).directive('hello', function() {
+        });
+        agular.module('jsTree', []).directive('hello', function() {
             return function(scope, iElement, iAttrs, controller) {
                 //링크함수는 해당 지시자 적용된 DOM에 연결된 함수를 의미
                 //연결함수 (scope객체, 연결요소객체, 속성객체, 컨트롤러객체)인자로 주어짐
@@ -94,7 +95,8 @@ app.controller('mainCtrl', function($scope) {
                 //객체를 반환하면 설정객체를 반환하는것이다.
                 iElement.html("<h1>hello" + iAttrs.name + "</h1>")
             };
-        }); agular.module('jsTree', []).directive('hello', function($log) {
+        });
+        agular.module('jsTree', []).directive('hello', function($log) {
             return {
                 name: 0,
                 priority: 0,
@@ -124,7 +126,8 @@ app.controller('mainCtrl', function($scope) {
                 //또는
                 //link: function postLink(scope, iElement, iAttrs, controller) {}
             };
-        }); agular.module('jsTree', []).directive('hello', function() {
+        });
+        agular.module('jsTree', []).directive('hello', function() {
             return {
                 templateUrl: "template/index.html",
                 //template: "<h1>hello<span>name</span></h1>",
@@ -136,7 +139,8 @@ app.controller('mainCtrl', function($scope) {
                         iEl.find("span").text(iAt.name);
                     }*/
             }
-        }); agular.module('jsTree', []).controller('demoCtrl', ['$scope', function($scope) {
+        });
+        agular.module('jsTree', []).controller('demoCtrl', ['$scope', function($scope) {
             $scope.name = "Ctrl에서 사용된 name model";
         }]).directive('hello', function() {
             return {
@@ -145,6 +149,42 @@ app.controller('mainCtrl', function($scope) {
                 scope: true,
                 controller: function($scope, $element, $attrs, $transclude) {
                     if ($attrs.name) $scope.name = $attrs.name;
+                }
+            }
+        });
+        agular.module('jsTree', []).controller('demoCtrl', ['$scope', function($scope) {
+            $scope.name = "Ctrl에서 사용된 name model";
+        }]).directive('hello', function() {
+            return {
+                templateUrl: "template/index.html",
+                restrict: "AE",
+                scope: {name:"@to"}
+            }
+        });
+        agular.module('jsTree', []).controller('demoCtrl', ['$scope', function($scope) {
+            $scope.helloList = [{name:'google'},{name:'naver'},{name:'angular'}] ;
+            $scope.sendMessage = function(toSb){
+                console.log(toSb+"에게 메시지를 보낸다.");
+            }
+        }]).directive('hello', function() {
+            return {
+                templateUrl: "template/index.html",
+                restrict: "AE",
+                scope: {
+                    name:"@to",
+                    send: "&"
+                }
+            }
+        });
+        agular.module('jsTree', []).controller('demoCtrl', ['$scope', function($scope) {
+            $scope.helloList = [{name:'google'},{name:'naver'},{name:'angular'}] ;
+            }
+        }]).directive('hello', function() {
+            return {
+                templateUrl: "template/index.html",
+                restrict: "AE",
+                scope: {
+                    name:"=to"
                 }
             }
         });

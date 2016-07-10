@@ -2,10 +2,10 @@
 
 define(['projectWeb'], function () {
 	
-	var confluenceModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'confluenceService', 'layoutService']);
+	var confluenceModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'customersService', 'layoutService']);
 	
-	confluenceModule.controller('confluenceController', ['$scope', '$ocLazyLoad', 'confluenceService', 'layoutService',
-	                                      	        function($scope, $ocLazyLoad, confluenceService, layoutService) {
+	confluenceModule.controller('customersController', ['$scope', '$ocLazyLoad', 'customersService', 'layoutService',
+	                                      	        function($scope, $ocLazyLoad, customersService, layoutService) {
 		
 		$ocLazyLoad.load([
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js',
@@ -17,7 +17,7 @@ define(['projectWeb'], function () {
 		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'
 
           ]).then(function() {
-        	  confluenceService.fire();
+        	  customersService.fire();
         	  layoutService.fire();
 	    });
 

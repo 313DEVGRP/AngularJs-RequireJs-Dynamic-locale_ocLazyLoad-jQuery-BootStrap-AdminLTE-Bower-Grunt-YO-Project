@@ -462,6 +462,28 @@ define(
 																console.log(e);
 															});
 										};
+										
+										$scope.customers = function (){
+											
+											$ocLazyLoad
+											.load(
+													[
+															{
+																name : 'customersService',
+																files : [ 'partials/layout/contents/stakeholder/customers/service.js' ]
+															},
+															{
+																name : 'customersController',
+																files : [ 'partials/layout/contents/stakeholder/customers/controller.js' ]
+															},
+															'partials/layout/contents/stakeholder/customers/index.css'])
+											.then(
+													function() {
+														$scope.contentWrapper = "partials/layout/contents/stakeholder/customers/";
+													}, function(e) {
+														console.log(e);
+													});
+										};
 									} ]);// indexModule.controller
 
 		});

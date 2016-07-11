@@ -19,38 +19,67 @@
 
 <!-- Main content -->
 <section class="content" ng-controller="customersController">
-	<!-- Default box -->
-	<div class="box">
-		<div class="box-header with-border">
-			<h3 class="box-title">Confluence</h3>
+	<!-- Info boxes -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-success">
+				<div class="box-header with-border">
+					<h3 class="box-title">DataTable</h3>
 
-			<div class="box-tools pull-right">
-				<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
-					<i class="fa fa-minus"></i>
-				</button>
-				<button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-					<i class="fa fa-times"></i>
-				</button>
-			</div>
-		</div>
-		<div class="box-body">
-			컨플루언스는 요구사항 온라인 문서를 시작으로 개발 문서 등을 공유하며, 정보를 구조화하며 CI 환경에서 모두 참조할 수 있도록 연결할 수 있는 기능을 제공하는 솔루션입니다.
-			<br />
-			<code>팝업창 차단을 해제해 주세요. 브라우저 설정에 따라서 보이지 않는 경우가 있습니다.</code>
-			<br />
-			<img class="img-responsive pad" src="partials/layout/contents/DEV/confluence/img/alm.jpg" alt="alm">
-			<div class="row">
-				<div class="col-xs-12 text-center">
-					<a href="http://www.313.co.kr/confluence" target="_blank">
-						Confluence 바로가기
-					</a>
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse">
+							<i class="fa fa-minus"></i>
+						</button>
+						<div class="btn-group">
+							<button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-wrench"></i>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="#/dev">Action</a>
+								</li>
+								<li>
+									<a href="#/dev">Another action</a>
+								</li>
+								<li>
+									<a href="#/dev">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#/dev">Separated link</a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn btn-box-tool" data-widget="remove">
+							<i class="fa fa-times"></i>
+						</button>
+					</div>
+					<!-- /.box-tools pull-right -->
 				</div>
+				<!-- box-header with-border -->
+
+				<!-- jstree Datatable -->
+				<div class="box-body">
+					<table id="jstreeTable" class="table table-bordered table-striped display responsive no-wrap">
+						<thead>
+							<tr>
+								<th>c_id</th>
+								<th>c_parentid</th>
+								<th>c_position</th>
+								<th>c_left</th>
+								<th>c_right</th>
+								<th>c_level</th>
+								<th>c_title</th>
+								<th>c_type</th>
+							</tr>
+						</thead>
+					</table>
+				</div>
+				<!-- /.jstree Datatable -->
 			</div>
-			<div class="ajax-content"></div>
+			<!-- /.box -->
 		</div>
-		<!-- /.box-body -->
-		<div class="box-footer">313 DEV Tools</div>
-		<!-- /.box-footer-->
+		<!-- /.col -->
 	</div>
-	<!-- /.box -->
+	<!-- /.row -->
 </section>

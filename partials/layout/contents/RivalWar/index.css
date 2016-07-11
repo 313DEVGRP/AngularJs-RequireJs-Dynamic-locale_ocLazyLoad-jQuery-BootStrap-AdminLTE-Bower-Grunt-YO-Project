@@ -105,7 +105,7 @@ address,caption,cite,code,dfn,em,var,b {font-style: normal; font-weight: normal}
 .main-view .box-header { padding: 0 0 10px 0; }
 .main-view .box-body { padding: 10px 0; }
 
-.radio { display: inline-block; width: 23px; height: 22px; background: url(main/img/main-checkbox.png) no-repeat 0 0; outline-style: none !important; }
+.radio { display: inline-block; width: 23px; height: 22px; background: url(partials/layout/contents/RivalWar/img/main-bg.png) no-repeat 0 0; outline-style: none !important; }
 .radio:checked { background-position: 0 -25px; outline-style: none; }
 .radio-box .radio { margin: 0; vertical-align: middle; margin-right: 5px; }
 .radio-box label { margin: 0; vertical-align: middle; font-size: 15px; color: #323232; }

@@ -18,7 +18,7 @@ define(
 											rivalWarLayoutService) {
 
 										$scope.mainHeader = 'partials/layout/header/RivalWar/';
-										//$scope.mainSidebar = 'partials/layout/aside/RivalWar/';
+										$scope.mainSidebar = 'partials/layout/aside/RivalWar/';
 										$scope.contentWrapper = 'partials/layout/contents/RivalWar/';
 										$scope.mainFooter = 'partials/layout/footer/RivalWar/';
 										$scope.controlSidebar = 'partials/layout/sidebar/RivalWar/';
@@ -31,15 +31,15 @@ define(
 																console
 																		.log(file);
 															} else if (file === 'partials/layout/aside/RivalWar/') {
-																layoutService
+																rivalWarLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/contents/RivalWar/') {
 																$ocLazyLoad
 																		.load('partials/layout/contents/RivalWar/index.css');
-																layoutService
+																rivalWarLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/footer/RivalWar/') {
-																layoutService
+																rivalWarLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/sidebar/RivalWar/') {
 																console

@@ -11,6 +11,8 @@ define([ 'projectWeb' ], function() {
 
 						$.AdminLTE.layout.activate();
 
+						$("body").addClass('sidebar-collapse');
+						
 						$(".sidebar-menu li a").click(function() {
 							$('li .active').removeClass('active');
 							$(this).parent().addClass('active');

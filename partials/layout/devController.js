@@ -484,6 +484,27 @@ define(
 														console.log(e);
 													});
 										};
+										
+										$scope.frontendDevelopers = function() {
+											$ocLazyLoad
+													.load(
+															[
+																	{
+																		name : 'frontendDevelopersService',
+																		files : [ 'partials/layout/contents/DEV/stakeholder/frontendDevelopers/service.js' ]
+																	},
+																	{
+																		name : 'frontendDevelopersController',
+																		files : [ 'partials/layout/contents/DEV/stakeholder/frontendDevelopers/controller.js' ]
+																	},
+																	'partials/layout/contents/DEV/stakeholder/frontendDevelopers/index.css'])
+													.then(
+															function() {
+																$scope.contentWrapper = "partials/layout/contents/DEV/stakeholder/frontendDevelopers/";
+															}, function(e) {
+																console.log(e);
+															});
+										};
 									} ]);// indexModule.controller
 
 		});

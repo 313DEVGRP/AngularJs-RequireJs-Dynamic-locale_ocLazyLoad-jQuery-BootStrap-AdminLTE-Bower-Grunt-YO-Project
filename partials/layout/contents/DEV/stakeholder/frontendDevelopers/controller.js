@@ -2,10 +2,10 @@
 
 define(['projectWeb'], function () {
 	
-	var confluenceModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'confluenceService', 'devLayoutService']);
+	var frontendDevelopersModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'frontendDevelopersService', 'devLayoutService']);
 	
-	confluenceModule.controller('confluenceController', ['$scope', '$ocLazyLoad', 'confluenceService', 'devLayoutService',
-	                                      	        function($scope, $ocLazyLoad, confluenceService, devLayoutService) {
+	frontendDevelopersModule.controller('frontendDevelopersController', ['$scope', '$ocLazyLoad', 'frontendDevelopersService', 'devLayoutService',
+	                                      	        function($scope, $ocLazyLoad, frontendDevelopersService, devLayoutService) {
 		
 		$ocLazyLoad.load([
 		                  'partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js',
@@ -17,11 +17,11 @@ define(['projectWeb'], function () {
 		              	  'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/css/dataTables.responsive.css'
 
           ]).then(function() {
-        	  confluenceService.fire();
+        	  frontendDevelopersService.fire();
         	  devLayoutService.fire();
 	    });
 
 		
-	}]);//strutsiBatisController.controller
+	}]);//frontendDevelopersController.controller
 	
 });

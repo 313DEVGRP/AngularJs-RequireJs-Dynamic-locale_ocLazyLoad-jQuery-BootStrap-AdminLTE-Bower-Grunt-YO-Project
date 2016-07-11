@@ -2,14 +2,13 @@
 
 define(['projectWeb'], function () {
 	
-	var confluenceServiceModule = angular.module('confluenceServiceModule', []);
+	var frontendDevelopersServiceModule = angular.module('frontendDevelopersServiceModule', []);
 	
-	confluenceServiceModule.factory('confluenceService', ['$rootScope',
+	frontendDevelopersServiceModule.factory('frontendDevelopersService', ['$rootScope',
 	                                      	        function($rootScope) {
 		return {
 			fire: function() {
-				console.log('confluence');
-				window.open('http://www.313.co.kr/confluence', 'confluence', '_blank');
+				console.log('frontendDevelopers');
 			}//fire end
 		};//return end
 	}]);//.define function end

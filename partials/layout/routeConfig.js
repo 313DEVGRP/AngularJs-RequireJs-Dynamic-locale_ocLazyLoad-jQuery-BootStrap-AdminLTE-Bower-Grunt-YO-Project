@@ -12,23 +12,23 @@ define(['projectWeb'], function () {
 
 			// You can also load via resolve
 		    $stateProvider
-		      .state('index', {
+		      .state('rivalWar', {
 		        url: "/", // root route
 		        views: {
 		          '': {
-		            controller: 'layoutController', // This view will use AppCtrl loaded below in the resolve
-		            templateUrl: 'partials/layout/'
+		            controller: 'rivalWarLayoutController', // This view will use AppCtrl loaded below in the resolve
+		            templateUrl: 'partials/layout/rivalWarIndex.html'
 		          }
 		        },
 		        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
-		          indexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+		          rivalWarIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 		            // you can lazy load files for an existing module
 		            return $ocLazyLoad.load([{
-		                name: 'layoutService',
-		                files: ['partials/layout/service.js']
+		                name: 'rivalWarLayoutService',
+		                files: ['partials/layout/rivalWarService.js']
 		            },{
-		                name: 'layoutController',
-		                files: ['partials/layout/controller.js']
+		                name: 'rivalWarLayoutController',
+		                files: ['partials/layout/rivalWarController.js']
 		            }]);
 		          }]
 		        }
@@ -37,19 +37,19 @@ define(['projectWeb'], function () {
 		        url: "/dev", // root route
 		        views: {
 		          '': {
-		            controller: 'layoutController', // This view will use AppCtrl loaded below in the resolve
-		            templateUrl: 'partials/layout/dev.html'
+		            controller: 'devLayoutController', // This view will use AppCtrl loaded below in the resolve
+		            templateUrl: 'partials/layout/devIndex.html'
 		          }
 		        },
 		        resolve: { // Any property in resolve should return a promise and is executed before the view is loaded
-		          indexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+		          devIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
 		            // you can lazy load files for an existing module
 		            return $ocLazyLoad.load([{
-		                name: 'layoutService',
-		                files: ['partials/layout/service.js']
+		                name: 'devLayoutService',
+		                files: ['partials/layout/devService.js']
 		            },{
-		                name: 'layoutController',
-		                files: ['partials/layout/controller.js']
+		                name: 'devLayoutController',
+		                files: ['partials/layout/devController.js']
 		            }]);
 		          }]
 		        }

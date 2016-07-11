@@ -14,7 +14,7 @@ define(
 									'$scope',
 									'$ocLazyLoad',
 									'devLayoutService',
-									function($scope, $ocLazyLoad, layoutService) {
+									function($scope, $ocLazyLoad, devLayoutService) {
 
 										$scope.mainHeader = 'partials/layout/header/DEV/';
 										$scope.mainSidebar = 'partials/layout/aside/DEV/';
@@ -30,15 +30,15 @@ define(
 																console
 																		.log(file);
 															} else if (file === 'partials/layout/aside/DEV/') {
-																layoutService
+																devLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/contents/DEV/') {
 																$ocLazyLoad
 																		.load('partials/layout/contents/DEV/index.css');
-																layoutService
+																devLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/footer/DEV/') {
-																layoutService
+																devLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/sidebar/DEV/') {
 																console

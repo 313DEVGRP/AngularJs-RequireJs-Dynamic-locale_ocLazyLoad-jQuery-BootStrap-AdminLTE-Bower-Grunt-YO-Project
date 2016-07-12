@@ -2,7 +2,8 @@
 
 require.config({
 	baseUrl: '',
-
+	waitSeconds : 30,
+	
 	paths: {
 		//jquery
 		'jquery': 'lib/jquery/dist/jquery.min',

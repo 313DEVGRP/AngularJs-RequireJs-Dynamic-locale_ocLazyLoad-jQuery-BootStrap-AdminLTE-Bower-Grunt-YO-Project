@@ -10,7 +10,7 @@
 }
 
 .p
-			
+
 			.profile-box {
 	max-width: 258px;
 	display: block;
@@ -78,13 +78,13 @@
 
 @media ( max-width : 1200px) and (min-width: 1100px) {
 	.frontendContainer {
-		width: 950px;
+		width: 100%;
 	}
 }
 
 @media ( max-width : 1100px) and (min-width: 980px) {
 	.frontendContainer {
-		width: 730px;
+		width: 100%;
 	}
 	.one-whole .clear {
 		display: inline-block;
@@ -519,7 +519,7 @@ iframe,.fluid-width-video-wrapper {
 
 @media only screen and (min-width: 1200px) {
     .frontendContainer {
-        width: 1180px;
+        width: 100%;
     }
 
     .frontendContainer .one-half {
@@ -549,7 +549,7 @@ iframe,.fluid-width-video-wrapper {
 
 @media only screen and (max-width: 980px) {
     .frontendContainer {
-        width: 665px;
+        width:100%;
     }
 
     .frontendContainer .one-half {

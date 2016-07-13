@@ -50,12 +50,6 @@ define(['projectWeb'], function () {
 		            },{
 		                name: 'devLayoutController',
 		                files: ['partials/layout/devController.js']
-		            },{
-		                name: 'devAsideService',
-		                files: ['partials/layout/aside/DEV/service.js']
-		            },{
-		                name: 'devAsideController',
-		                files: ['partials/layout/aside/DEV/controller.js']
 		            }]);
 		          }]
 		        }

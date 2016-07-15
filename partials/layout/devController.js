@@ -28,6 +28,11 @@ define(['projectWeb'
 				console.log(file);
 			};
 		});
+		
+		$scope.$on('goToHome', function() {
+			$scope.contentWrapper = 'partials/layout/contents/DEV/';
+			console.log("goToHome");
+		});
 
 		$scope.whyJsTree = function() {
 			$ocLazyLoad.load([{

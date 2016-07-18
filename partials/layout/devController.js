@@ -5,7 +5,7 @@ define(['projectWeb'
 
 	var devIndexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'devLayoutService'
 	]);
-
+	
 	devIndexModule.controller('devLayoutController', ['$scope', '$ocLazyLoad', 'devLayoutService', function($scope, $ocLazyLoad, devLayoutService) {
 
 		$scope.mainHeader = 'partials/layout/header/DEV/';
@@ -30,7 +30,7 @@ define(['projectWeb'
 		});
 		
 		$scope.$on('goToHome', function() {
-			$scope.contentWrapper = 'partials/layout/contents/DEV/';
+			$scope.contentWrapper = "partials/layout/contents/DEV/jstree/whyJsTree/";
 			console.log("goToHome");
 		});
 
@@ -427,5 +427,10 @@ define(['projectWeb'
 		};
 	}
 	]);// indexModule.controller
+	
+	devIndexModule.controller('devContentsController', ['$scope', '$ocLazyLoad', 'devLayoutService', function($scope, $ocLazyLoad, devLayoutService) {
+		console.log('check this');
+	}]);// devContentsController.controller
+
 
 });

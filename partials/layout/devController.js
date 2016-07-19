@@ -32,6 +32,7 @@ define(['projectWeb'
 		$scope.$on('goToHome', function() {
 			$scope.contentWrapper = "partials/layout/contents/DEV/";
 			$ocLazyLoad.load('partials/layout/contents/DEV/index.css');
+			$('li .active').removeClass('active');
 			devLayoutService.fire();
 			console.log("goToHome");
 		});

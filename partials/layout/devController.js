@@ -30,7 +30,9 @@ define(['projectWeb'
 		});
 		
 		$scope.$on('goToHome', function() {
-			$scope.contentWrapper = "partials/layout/contents/DEV/jstree/whyJsTree/";
+			$scope.contentWrapper = "partials/layout/contents/DEV/";
+			$ocLazyLoad.load('partials/layout/contents/DEV/index.css');
+			devLayoutService.fire();
 			console.log("goToHome");
 		});
 

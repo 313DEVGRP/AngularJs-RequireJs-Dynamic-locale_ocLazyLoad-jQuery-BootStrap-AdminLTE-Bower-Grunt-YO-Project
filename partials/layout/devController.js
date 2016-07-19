@@ -88,7 +88,7 @@ define(
 																console.log(e);
 															});
 										};
-										
+
 										$scope.jsTreeArchitecture = function() {
 											$ocLazyLoad
 													.load(
@@ -647,7 +647,14 @@ define(
 			devIndexModule.controller('devContentsController', ['$scope',
 					'$ocLazyLoad', 'devLayoutService',
 					function($scope, $ocLazyLoad, devLayoutService) {
-						console.log('check this');
+						console.log('devContentsController');
+					}
+			]);// devContentsController.controller
+
+			devIndexModule.controller('devAsideController', ['$scope',
+					'$ocLazyLoad', 'devLayoutService',
+					function($scope, $ocLazyLoad, devLayoutService) {
+						console.log('devAsideController');
 					}
 			]);// devContentsController.controller
 

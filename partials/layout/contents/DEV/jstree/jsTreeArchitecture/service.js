@@ -12,4 +12,4 @@ define(['projectWeb'], function () {
 			}//fire end
 		};//return end
 	}]);//.define function end
-});
+});sz

@@ -8,7 +8,7 @@ define(['projectWeb'], function () {
 	                                      	        function($rootScope) {
 		return {
 			fire: function() {
-				console.log('check')
+				console.log('springHibernateService')
 			}//fire end
 		};//return end
 	}]);//.define function end

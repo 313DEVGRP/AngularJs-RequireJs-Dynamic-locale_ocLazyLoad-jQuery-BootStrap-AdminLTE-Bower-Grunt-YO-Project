@@ -2,13 +2,13 @@
 
 define(['projectWeb'], function () {
 	
-	var dwrServiceModule = angular.module('dwrServiceModule', []);
+	var jsTreeArchitectureServiceModule = angular.module('jsTreeArchitectureServiceModule', []);
 	
-	dwrServiceModule.factory('dwrService', ['$rootScope',
+	jsTreeArchitectureServiceModule.factory('jsTreeArchitectureService', ['$rootScope',
 	                                      	        function($rootScope) {
 		return {
 			fire: function() {
-				console.log('dwr')
+				console.log('jsTreeArchitectureService')
 			}//fire end
 		};//return end
 	}]);//.define function end

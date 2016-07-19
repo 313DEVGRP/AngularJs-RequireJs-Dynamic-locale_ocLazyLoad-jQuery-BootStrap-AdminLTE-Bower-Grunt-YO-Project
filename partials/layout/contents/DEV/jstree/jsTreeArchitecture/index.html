@@ -1,13 +1,13 @@
 
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<section class="content-header" ng-controller="jsTreeArchitectureHeaderController">
 	<h1>
 		jsTree Sevice Engine
 		<small>Support System</small>
 	</h1>
 	<ol class="breadcrumb">
 		<li>
-			<a href="#StandardDevelopment#/dev">
+			<a href="#StandardDevelopment#/dev" ng-click="broadcastGoToHome()">
 				<i class="fa fa-home"></i>
 				Home
 			</a>
@@ -18,7 +18,7 @@
 </section>
 
 <!-- Main content -->
-<section class="content" ng-controller="dwrController">
+<section class="content" ng-controller="jsTreeArchitectureController">
 	<div class="row">
 		<div class="col-md-12">
 			<div class="box box-default">

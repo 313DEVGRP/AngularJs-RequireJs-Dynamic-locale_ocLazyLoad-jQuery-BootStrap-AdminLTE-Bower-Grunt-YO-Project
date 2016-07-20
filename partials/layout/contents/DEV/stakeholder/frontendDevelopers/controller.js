@@ -28,7 +28,7 @@ define(
 																'partials/layout/contents/DEV/stakeholder/frontendDevelopers/plugin/jquery.mCustomScrollbar.min.js',
 																'partials/layout/contents/DEV/stakeholder/frontendDevelopers/plugin/jquery.mousewheel.min.js',
 																'partials/layout/contents/DEV/stakeholder/frontendDevelopers/plugin/jcarousel.min.js',
-																'partials/layout/contents/DEV/stakeholder/frontendDevelopers/plugin/jquery.usquare.js',
+																'partials/layout/contents/DEV/stakeholder/frontendDevelopers/plugin/jquery.usquare.js'
 														])
 												.then(
 														function() {

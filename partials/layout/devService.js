@@ -19,11 +19,12 @@ define(['projectWeb'], function() {
           console.error('There are no _LOCALES provided');
         }
         var _LOCALES_DISPLAY_NAMES = [];
+        
         _LOCALES.forEach(function(locale) {
           _LOCALES_DISPLAY_NAMES.push(localesObj[locale]);
         });
 
-        var currentLocale = $translate.proposedLanguage();// because of async
+        var currentLocale = $translate.proposedLanguage();
 
         // METHODS
         var checkLocaleIsValid = function(locale) {
@@ -57,7 +58,6 @@ define(['projectWeb'], function() {
         // EVENTS
         $rootScope.$on('$translateChangeSuccess', function(event, data) {
           document.documentElement.setAttribute('lang', data.language);// sets
-
           tmhDynamicLocale.set(data.language.toLowerCase().replace(/_/g, '-'));// load
         });
 

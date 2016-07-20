@@ -9,15 +9,15 @@ define(
               'ngSanitize', 'ngTouch', 'pascalprecht.translate',
               'tmh.dynamicLocale']);
 
-          routeModule.constant('DEBUG_MODE', true/* DEBUG_MODE */);
+          routeModule.constant('DEBUG_MODE', true);
           routeModule.constant('VERSION_TAG', new Date().getTime());
           routeModule.constant('LOCALES', {
             'locales': {
-              'ko_KR': '한글',
-              'en_US': 'English'
+              'en_US': 'English',
+              'ko_KR': '한글'
             },
             'preferredLocale': 'en_US'
-          });
+          }); // LOCALES end
 
           routeModule.config([
               '$routeProvider',
@@ -31,16 +31,15 @@ define(
                 $urlRouterProvider.otherwise("/");
                 $locationProvider.hashPrefix("StandardDevelopment#");
 
-                // You can also load via resolve
                 $stateProvider.state('rivalWar', {
-                  url: "/", // root route
+                  url: "/",
                   views: {
                     '': {
-                      controller: 'rivalWarLayoutController', // This
+                      controller: 'rivalWarLayoutController',
                       templateUrl: 'partials/layout/rivalWarIndex.html'
                     }
                   },
-                  resolve: { // Any property
+                  resolve: {
                     rivalWarIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([{
                         name: 'rivalWarLayoutService',
@@ -52,42 +51,39 @@ define(
                     }]
                   }
                 }).state('dev', {
-                  url: "/dev", // root
+                  url: "/dev",
                   views: {
                     '': {
-                      controller: 'devLayoutController', // This
+                      controller: 'devLayoutController',
                       templateUrl: 'partials/layout/devIndex.html'
                     }
                   },
-                  resolve: { // Any property
+                  resolve: {
                     devIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([{
-                        name: 'devLayoutDirective',
-                        files: ['partials/layout/devDirective.js']
-                      },{
+                        name: 'devLayoutController',
+                        files: ['partials/layout/devController.js']
+                      }, {
                         name: 'devLayoutService',
                         files: ['partials/layout/devService.js']
                       }, {
-                        name: 'devLayoutController',
-                        files: ['partials/layout/devController.js']
+                        name: 'devLayoutDirective',
+                        files: ['partials/layout/devDirective.js']
                       }]);
                     }]
                   }
                 });
-              }]); // indexModule.config
+              }]); // routeModule.config
 
-          // Angular debug info
           routeModule.config(function($compileProvider, DEBUG_MODE) {
             if (!DEBUG_MODE) {
-              $compileProvider.debugInfoEnabled(false);// disables AngularJS
-                                                        // debug info
+              $compileProvider.debugInfoEnabled(false);
             }
-          })
-          // Angular Translate
+          });// $compileProvider end
+
           routeModule.config(function($translateProvider, DEBUG_MODE, LOCALES) {
             if (DEBUG_MODE) {
               $translateProvider.useMissingTranslationHandlerLog();// warns
-                                                                    // about
             }
             $translateProvider.useStaticFilesLoader({
               prefix: 'partials/common/lang/locale-',
@@ -97,11 +93,12 @@ define(
             $translateProvider.useSanitizeValueStrategy('escapeParameters');
             $translateProvider.preferredLanguage(LOCALES.preferredLocale);
             $translateProvider.useLocalStorage();
-          })
-          // Angular Dynamic Locale
+          });// $translateProvider end
+
           routeModule
                   .config(function(tmhDynamicLocaleProvider) {
                     tmhDynamicLocaleProvider
                             .localeLocationPattern('lib/angular-i18n/angular-locale_{{locale}}.js');
-                  });
-        });
+                  }); // tmhDynamicLocaleProvider end
+
+        }); // function end

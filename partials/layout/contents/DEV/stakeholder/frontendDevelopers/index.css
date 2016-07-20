@@ -1,6 +1,6 @@
-@import url("usquare_style.css");
+@import url("plugin/usquare_style.css");
 
-@import url("jquery.mCustomScrollbar.css");
+@import url("plugin/jquery.mCustomScrollbar.css");
 
 @charset "utf-8";
 /* CSS Document */
@@ -599,7 +599,7 @@ iframe,.fluid-width-video-wrapper {
 	.one-half-percent.desktop-tablet.alpha,.one-third-percent.desktop-tablet.alpha,.two-third-percent.desktop-tablet.alpha,.one-quarter-percent.desktop-tablet.alpha,.two-quarter-percent.desktop-tablet.alpha,.three-quarter-percent.desktop-tablet.alpha
 		{
 		/* padding-left: 0; */
-		
+
 	}
 	.one-half-percent.desktop-tablet.omega,.one-third-percent.desktop-tablet.omega,.two-third-percent.desktop-tablet.omega,.one-quarter-percent.desktop-tablet.omega,.two-quarter-percent.desktop-tablet.omega,.three-quarter-percent.desktop-tablet.omega
 		{
@@ -2076,7 +2076,7 @@ span.font-xx-large {
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
     */
-	
+
 }
 
 #header #header-cart {

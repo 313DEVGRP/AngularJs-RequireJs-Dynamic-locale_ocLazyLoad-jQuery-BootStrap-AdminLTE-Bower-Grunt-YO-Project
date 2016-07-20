@@ -14,11 +14,11 @@ define(
                               '$scope',
                               '$ocLazyLoad',
                               'devLayoutService',
-                              '$rootScope', 
-                              '$translate', 
+                              '$rootScope',
+                              '$translate',
                               '$interval',
                               function($scope, $ocLazyLoad, devLayoutService, $rootScope, $translate, $interval) {
-                                
+
                                 /**
                                  * Cache busting
                                  */
@@ -600,6 +600,10 @@ define(
                                                       {
                                                         name: 'frontendDevelopersController',
                                                         files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/controller.js']
+                                                      },
+                                                      {
+                                                        name: 'frontendDevelopersDirective',
+                                                        files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/directive.js']
                                                       },
                                                       'partials/layout/contents/DEV/stakeholder/frontendDevelopers/index.css'])
                                           .then(

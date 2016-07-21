@@ -613,6 +613,30 @@ define(
                                                     console.log(e);
                                                   });
                                 };
+                                $scope.systemEngineers = function() {
+                                  $ocLazyLoad
+                                          .load(
+                                                  [
+                                                      {
+                                                        name: 'systemEngineersService',
+                                                        files: ['partials/layout/contents/DEV/stakeholder/systemEngineers/service.js']
+                                                      },
+                                                      {
+                                                        name: 'systemEngineersController',
+                                                        files: ['partials/layout/contents/DEV/stakeholder/systemEngineers/controller.js']
+                                                      },
+                                                      {
+                                                        name: 'systemEngineersDirective',
+                                                        files: ['partials/layout/contents/DEV/stakeholder/systemEngineers/directive.js']
+                                                      },
+                                                      'partials/layout/contents/DEV/stakeholder/systemEngineers/index.css'])
+                                          .then(
+                                                  function() {
+                                                    $scope.contentWrapper = "partials/layout/contents/DEV/stakeholder/systemEngineers/";
+                                                  }, function(e) {
+                                                    console.log(e);
+                                                  });
+                                };
                               }]);// indexModule.controller
 
           devIndexModule.controller('devContentsController', ['$scope',

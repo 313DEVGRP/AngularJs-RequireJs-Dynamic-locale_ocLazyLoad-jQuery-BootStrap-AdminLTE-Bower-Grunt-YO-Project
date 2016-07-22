@@ -17,24 +17,27 @@ define(
                               '$rootScope',
                               '$translate',
                               '$interval',
-                              function($scope, $ocLazyLoad, devLayoutService, $rootScope, $translate, $interval) {
+                              function($scope, $ocLazyLoad, devLayoutService,
+                                      $rootScope, $translate, $interval) {
 
                                 /**
                                  * Cache busting
                                  */
-                                //$rootScope.VERSION_TAG = VERSION_TAG;
-
+                                // $rootScope.VERSION_TAG = VERSION_TAG;
                                 /**
                                  * Translations for the view
                                  */
                                 var pageTitleTranslationId = 'PAGE_TITLE';
                                 var pageContentTranslationId = 'PAGE_CONTENT';
 
-                                $translate(pageTitleTranslationId, pageContentTranslationId)
-                                  .then(function (translatedPageTitle, translatedPageContent) {
-                                    $rootScope.pageTitle = translatedPageTitle;
-                                    $rootScope.pageContent = translatedPageContent;
-                                  });
+                                $translate(pageTitleTranslationId,
+                                        pageContentTranslationId)
+                                        .then(
+                                                function(translatedPageTitle,
+                                                        translatedPageContent) {
+                                                  $rootScope.pageTitle = translatedPageTitle;
+                                                  $rootScope.pageContent = translatedPageContent;
+                                                });
 
                                 /**
                                  * $scope.locale
@@ -44,27 +47,34 @@ define(
                                 /**
                                  * Provides info about current route path
                                  */
-                                $rootScope.$on('$routeChangeSuccess', function (event, current) {
-                                  $scope.currentPath = current.$$route.originalPath;
-                                });
+                                $rootScope
+                                        .$on(
+                                                '$routeChangeSuccess',
+                                                function(event, current) {
+                                                  $scope.currentPath = current.$$route.originalPath;
+                                                });
 
                                 /**
                                  * Current time
                                  */
                                 $scope.currentTime = Date.now();
-                                $interval(function () {
+                                $interval(function() {
                                   $scope.currentTime = Date.now();
                                 }, 1000);
-
 
                                 /**
                                  * EVENTS
                                  */
-                                $rootScope.$on('$translateChangeSuccess', function (event, data) {
-                                  $scope.locale = data.language;
-                                  $rootScope.pageTitle = $translate.instant(pageTitleTranslationId);
-                                  $rootScope.pageContent = $translate.instant(pageContentTranslationId);
-                                });
+                                $rootScope
+                                        .$on(
+                                                '$translateChangeSuccess',
+                                                function(event, data) {
+                                                  $scope.locale = data.language;
+                                                  $rootScope.pageTitle = $translate
+                                                          .instant(pageTitleTranslationId);
+                                                  $rootScope.pageContent = $translate
+                                                          .instant(pageContentTranslationId);
+                                                });
 
                                 $scope.mainHeader = 'partials/layout/header/DEV/';
                                 $scope.mainSidebar = 'partials/layout/aside/DEV/';
@@ -594,12 +604,12 @@ define(
                                           .load(
                                                   [
                                                       {
-                                                        name: 'frontendDevelopersService',
-                                                        files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/service.js']
-                                                      },
-                                                      {
                                                         name: 'frontendDevelopersController',
                                                         files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/controller.js']
+                                                      },
+                                                      {
+                                                        name: 'frontendDevelopersService',
+                                                        files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/service.js']
                                                       },
                                                       {
                                                         name: 'frontendDevelopersDirective',

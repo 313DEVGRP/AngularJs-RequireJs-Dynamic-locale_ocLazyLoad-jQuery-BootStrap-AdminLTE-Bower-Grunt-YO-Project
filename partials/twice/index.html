@@ -3,15 +3,24 @@
 <head>
   <meta charset="UTF-8">
   
+  <!--
   <link rel="stylesheet" href="../../app/bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <script type="text/javascript" src="../../app/bower_components/angular/angular.min.js"></script>
   <script type="text/javascript" src="../../app/bower_components/jquery/dist/jquery.min.js"></script>
   
   <script type="text/javascript" src="../../app/bower_components/bootstrap/js/tab.js"></script>
   <script type="text/javascript" src="../../app/bower_components/bootstrap/js/dropdown.js"></script>
+  -->
   <!--  
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    -->
+
+  <link rel="stylesheet" href="../../lib/bootstrap/dist/css/bootstrap.min.css" />
+  <script type="text/javascript" src="../../lib/angular/angular.min.js"></script>
+  <script type="text/javascript" src="../../lib/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="../../lib/bootstrap/js/tab.js"></script>
+  <script type="text/javascript" src="../../lib/bootstrap/js/dropdown.js"></script>
+
   <script src="twice.js"></script>
   
 
@@ -45,7 +54,10 @@
       #cssvalid .ng-dirty{
         border-style: dashed;
       }
-       
+          
+      /* 05.user-defined */
+    . ng-scope {border: 1px solid red; padding: 5px;}
+    .msg-list-area { margin : 10px; height: 400px; border : lpx solid black;}
     </style>
   
   <title>Twice Group</title>
@@ -60,31 +72,93 @@
   <p>Click on the Tabs to display the active and previous tab.</p>
    -->
   <ul class="nav nav-tabs">
-    <li class="active"><a href="#todo">todo</a></li>
-    <li><a href="#menuList">MenuList</a></li>
-    <li><a href="#repeat">ng-repeat</a></li>
-    <li><a href="#ifswitch">if-switch</a></li>
+    <li class="active"><a href="#todo">02.todo</a></li>
+      <!--
+     <li><a href="#menuList">MenuList</a></li>
+     <li><a href="#repeat">ng-repeat</a></li>
+     <li><a href="#ifswitch">if-switch</a></li>
      <li><a href="#showhide">showhide</a></li>
      <li><a href="#ngcontroller">ng-controller</a></li>
-
+      -->
       <li role="presentation" class="dropdown">
-        <a id="drop5" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-          From-directive
+      <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+           03.DataBinding
           <span class="caret"></span>
         </a>
-        <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop5">
+        <ul id="menu1" class="dropdown-menu" role="menu" aria-labelledby="drop1">
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#menuList">menuList</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#repeat">repeat</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#ifswitch">ifswitch</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#showhide">showhide</a></li>
+          <li role="presentation"><a role="menuitem" tabindex="-1" href="#ngcontroller">ng-controller</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#input">input</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#checkbox">checkbox</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#select">select</a></li>
           <li role="presentation"><a role="menuitem" tabindex="-1" href="#cssvalid">cssvalid</a></li>
-          <!--
-          <li role="presentation" class="divider"></li>
-          <li role="presentation"><a role="menuitem" tabindex="-1" href="https://twitter.com/fat">Separated link</a></li>
-          -->
+        </ul>
+      </li>
+
+      <li role="presentation" class="dropdown">
+        <a id="drop2" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+          05.Scope
+          <span class="caret"></span>
+        </a>
+        <ul id="menu2" class="dropdown-menu" role="menu" aria-labelledby="drop2">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#scope">scope</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#user-defined">user-defined</a></li>
         </ul>
       </li>
 
 
+      <li role="presentation" class="dropdown">
+        <a id="drop3" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+          07.directive
+          <span class="caret"></span>
+        </a>
+        <ul id="menu3" class="dropdown-menu" role="menu" aria-labelledby="drop3">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#getStyle">getStyle</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directive01">directive01</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directive02">directive02</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directive03">directive03</a></li>              
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directiveScope01">directiveScope01</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directiveScope02">directiveScope02</a></li>
+
+        </ul>
+      </li>
+
+
+      <li role="presentation" class="dropdown">
+        <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+          08.dependency relation
+          <span class="caret"></span>
+        </a>
+        <ul id="menu4" class="dropdown-menu" role="menu" aria-labelledby="drop4">
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#helloService">helloService</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#ValueDefine">ValueDefine</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#FactoryDefine">FactoryDefine</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#ServiceDefine">ServiceDefine</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#ProviderDefine">ProviderDefine</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#ServiceProvider">ServiceProvider</a></li>
+              
+
+              <!--
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directive01">directive01</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directive02">directive02</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directive03">directive03</a></li>              
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directiveScope01">directiveScope01</a></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="#directiveScope02">directiveScope02</a></li>
+              -->
+        </ul>
+      </li>
+
+     <!--
+     <li><a href="#getStyle">07.getStyle</a></li>
+     <li><a href="#directive01">07.directive01</a></li>
+     <li><a href="#directive02">07.directive02</a></li>
+     <li><a href="#directive03">07.directive03</a></li>
+     <li><a href="#directiveScope01">07.directiveScope01</a></li>
+     <li><a href="#directiveScope02">07.directiveScope02</a></li>
+      -->
   </ul>
 
   <div class="tab-content">
@@ -317,7 +391,160 @@
 		핸드폰 번호: <input type="text" name="tel" ng-model="tel" ng-pattern="/^d{3}-\d{3,4}-\d{4}$/">
 	</form>
           
-  </div>  <!-- tan end -->
+  </div> 
+   
+
+
+  <div id="scope" class="tab-pane fade">
+    <h3>scope</h3>
+        <div ng-controller="parentCtrl">
+          <h1>부모이름:{{parent.name}}</h1>
+          <div ng-controller="childCtrl" style="padding-left: 20px;">
+            <h2>부모이름:{{parent.name}}</h2>
+            <h2>자식이름:{{child.name}}</h2>
+            <button ng-click="changeParentName()">부모이름변경</button>
+          </div>
+        </div>
+  </div>
+  
+  <div id="user-defined" class="tab-pane fade">
+    <h3>user-defined</h3>
+    
+    <div ng-controller="userController">
+      <input type="text" ng-model="noticeMsg" />
+      <input type="button" value="공지 전송" ng-click="broadcast(noticeMsg)" />
+      <div class="msg-list-area" ng-controller="chatMsgListCtrl">
+        <ul>
+          <li ng-repeat="msg in msgList track by $index">{{msg}}///</li>
+        </ul>
+      </div>
+      <div ng-controller="chatMsgInputCtrl">
+        <input type="text" ng-model="newMsg" />
+        <input type="button" value="전송" ng-click="submit(newMsg)" />
+      </div>
+    </div>
+  </div>
+
+
+    <div id="getStyle" class="tab-pane fade">
+    <h3>07.getStyle</h3>
+    
+    <div ng-controller="getStyleCtrl">
+      <p ng:style="getStyle()">hello</p>
+      <p class="ng_style: getStyle();">hello</p>
+      
+      <ng-form name="groupForm">
+        <form name="formA"><input type="text" /></form>
+        <form name="formB"><input type="text" /></form>
+      </ng-form>
+    </div>
+      <hr>
+  </div>
+  
+ 
+
+  <div id="directive01" class="tab-pane fade">
+    <h3>07.directive01</h3>
+
+    <div directive01 name="angularJS"></div>
+  </div>
+  
+
+  <div id="directive02" class="tab-pane fade">
+    <h3>07.directive02</h3>
+
+    <div directive02 name="angularJS"></div>
+  </div>
+ 
+  <div id="directive03" class="tab-pane fade">
+    <h3>07.directive03</h3>
+
+    <div directive03 name="angularJS"></div>
+  </div>
+  
+  <div id="directiveScope01" class="tab-pane fade">
+    <h3>07.directiveScope01</h3>
+
+    <div ng-controller="directiveScopeCtrl01">
+      <div hello1 name="google"></div>
+      <div hello1 name="naver"></div>
+      <div hello1 ></div>
+    </div>
+    
+  </div>
+  
+  
+  <div id="directiveScope02" class="tab-pane fade">
+    <h3>07.directiveScope02</h3>
+
+    <div ng-controller="directiveScopeCtrl02">
+      <div hello2 name="google"></div>
+      <div hello2 name="naver"></div>
+      <div hello2 ></div>
+    </div>
+    
+  </div>
+   
+
+
+   <div id="helloService" class="tab-pane fade">
+    <h3>08.helloService</h3>
+
+    <div ng-controller="helloCtrl">
+      <p>{{hello}}</p>
+    </div>
+    
+  </div>
+
+  <div id="ValueDefine" class="tab-pane fade">
+    <h3>08. Value로 정의하는 방법 </h3>
+    
+    <div ng-controller="serviceCtrl01">
+      <p>{{appNm}}</p>
+    </div>
+    
+  </div>
+  
+   
+   <div id="FactoryDefine" class="tab-pane fade">
+    <h3>08. Factory로 정의하는 방법 </h3>
+
+     <div ng-controller="serviceCtrl02">
+        <p>어플리케이션 이름 : {{appNm}}</p>
+        <div>
+          이름 : <input type="text" ng-model="newUser.name">, 이메일 : <input type="text" ng-model="newUser.email">
+          <button ng-click="addNewUser(newUser)">Add New User</button>
+        </div>
+        <ul><li ng-repeat="user in users">{{user.name}}, {{user.email}}</li></ul>
+     </div>
+   </div>
+
+    <div id="ServiceDefine" class="tab-pane fade">
+       <h3>08. Service로 정의하는 방법 </h3>
+       <div ng-controller="serviceCtrl03">
+          <p>10 + 3 = {{val1}}</p>
+          <p>20 - 10 = {{val2}}</p>
+       </div>
+    </div>
+
+    
+    <div id="ProviderDefine" class="tab-pane fade">
+       <h3>08.ProviderDefine 정의하는 방법 </h3>
+       <div ng-controller="serviceCtrl04">
+         
+       </div>
+    </div>
+
+
+     <div id="ServiceProvider" class="tab-pane fade">
+       <h3>08.ServiceProvider 정의하는 방법 </h3>
+       <div ng-controller="serviceProviderCtrl">         
+       </div>
+    </div>
+
+    
+
+
   <hr>
    
     <!--

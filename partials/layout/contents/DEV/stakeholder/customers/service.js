@@ -19,7 +19,7 @@ define(['projectWeb'], function () {
 
 					var jstreeDataTable = $('#jstreeTable').dataTable( {
 						"ajax": {
-							"url": "/egovframework/com/etc/jstree/springiBatis/monitor/list.do",
+							"url": "partials/layout/contents/DEV/stakeholder/customers/json/customers.json",
 							"dataSrc": "rows"
 						},
 						"processing": true,

@@ -19,7 +19,7 @@ define(['projectWeb'], function () {
 
 					var jstreeDataTable = $('#jstreeTable').dataTable( {
 						"ajax": {
-							"url": "partials/layout/contents/DEV/stakeholder/customers/json/customers.json",
+							"url": "partials/layout/contents/DEV/stakeholder/customers/json/customers.json",							
 							"dataSrc": "rows"
 						},
 						"processing": true,
@@ -31,14 +31,17 @@ define(['projectWeb'], function () {
 						"info": true,
 						"autoWidth": false,
 						"columns": [
-							{ "data": "cell.0" },
+							{ "data": "cell.0" ,
+								"render": function(data, type, row) {
+							        return '<img src="partials/layout/contents/DEV/stakeholder/customers/img/'+data+'" width="89" height="46" />';
+							    }
+							  	
+							},
 							{ "data": "cell.1" },
 							{ "data": "cell.2" },
 							{ "data": "cell.3" },
-							{ "data": "cell.4" },
-							{ "data": "cell.5" },
-							{ "data": "cell.6" },
-							{ "data": "cell.7" }
+							{ "data": "cell.4" }
+							
 						]
 					} );
 					});

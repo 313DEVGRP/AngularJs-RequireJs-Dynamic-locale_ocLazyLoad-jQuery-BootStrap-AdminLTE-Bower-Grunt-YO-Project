@@ -43,3 +43,34 @@
 		</div><!-- /.col -->
 	</div><!-- /.row -->
 </section>
+
+<section class="text" ng-controller="whyJsTreeController">
+  <ul class="text-list">
+    <li ng-repeat="work in workList">
+      <p>{{work.num}} : {{work.name}}</p>
+    </li>
+  </ul>
+  <div class="form-group">
+      <p class="control-label col-sm-2">체크 라디오</p>
+      <ul class="col-sm-10">
+        <li>
+          <label for="test-check1">1번</label>
+          <input type="radio" id="test-check1" ng-model="testCheck" value="1번">
+        </li>
+        <li>
+          <label for="test-check2">2번</label>
+          <input type="radio" id="test-check2" ng-model="testCheck" value="2번">
+        </li>
+      </ul>
+    </div>
+    <div class="check-box" ng-switch="testCheck">
+      <p class="check-01" ng-switch-when="1번" style="margin-left:100px">
+          1번 체크
+      </p>
+      <p class="check-02" ng-switch-when="2번" style="margin-left:100px">
+          2번 체크
+      </p>
+    </div>
+  </div>
+
+</section>

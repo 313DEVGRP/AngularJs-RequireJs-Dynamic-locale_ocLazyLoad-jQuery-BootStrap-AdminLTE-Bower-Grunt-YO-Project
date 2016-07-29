@@ -43,6 +43,9 @@
       <a href="#link18" class="label label-primary">scope설정</a>
       <a href="#link19" class="label label-primary">Transclude</a>
       <a href="#link20" class="label label-primary">Plugin</a>
+      <a href="#link21" class="label label-primary">Factory</a>
+      <a href="#link22" class="label label-primary">Provider</a>
+      <a href="#link23" class="label label-primary">$injector</a>
     </div>
 
     <!-- todoApp -->
@@ -716,7 +719,7 @@
     <script type="text/javascript" src="../../lib/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="plugin/jquery.sparkline.js"></script>
 
-    <div class="pannel panel-warning">
+    <div class="panel panel-warning">
       <div class="panel-heading">
         외부라이브러리인 스파크라인 플러그인을 이용한 미니차트
       </div>
@@ -733,7 +736,7 @@
       </div>
     </div>
 
-    <div class="pannel panel-warning">
+    <div class="panel panel-warning">
       <div class="panel-heading">
         데이터를 컨트롤러에서 가져오는 미니차트
       </div>
@@ -749,7 +752,7 @@
       </div>
     </div>
 
-    <div class="pannel panel-warning">
+    <div class="panel panel-warning">
       <div class="panel-heading">
         동적인 미니차트
       </div>
@@ -772,7 +775,7 @@
       </div>
     </div>
 
-    <div class="pannel panel-warning">
+    <div class="panel panel-warning">
       <div class="panel-heading">
         데이터바인딩 기능을 지원하는 컴포넌트 만들기
       </div>
@@ -804,6 +807,167 @@
     </div>
     <!-- plugin__e -->
 
+    <!-- factory -->
+    <div id="link21" class="page-header">
+      <h1><small></small>Factory</h1>
+    </div>
+    <div ng-controller="facory_hello">
+      <p>{{factory_hello}}</p>
+    </div>
+    <!-- factory__e -->
+
+    <!-- provider -->
+    <div id="link22" class="page-header">
+      <h1><small></small>provider</h1>
+    </div>
+    <div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          Value
+        </div>
+        <div class="panel-body" ng-controller="provider_value">
+          <p>{{appNm}}</p>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          factory
+        </div>
+        <div class="panel-body" ng-controller="provider_factory">
+          <p>어플리케이션 이름 : {{appName}}</p>
+          <ul class="list-unstyled list-inline">
+            <li>
+              <label for="nameInput">이름</label> :
+              <input type="text" id="nameInput" class="form-control" ng-model="newUser.name"/>
+            </li>
+            <li>
+              <label for="mailInput">이메일</label> :
+              <input type="text" id="nameInput" class="form-control" ng-model="newUser.mail"/>
+            </li>
+            <li>
+              <button type="button" name="button" class="btn btn-success" ng-click="addNewUser(newUser)">추가</button>
+            </li>
+          </ul>
+          <p class="bg-success">
+            <ul class="list-unstyled">
+              <li ng-repeat="user in userList">{{user.name}}, {{user.mail}}</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          service
+        </div>
+        <div class="panel-body" ng-controller="provider_service">
+          <p class="bg-success">
+            <p>10 + 3 = {{val1}} (factory를 이용하여 등록)</p>
+            <p>20 - 10 = {{val2}} (service를 이용하여 등록, 서비스를 주입받으려면 생성자함수에 인자로 넣어줌, factory보다 간단 )</p>
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          provider
+        </div>
+        <div class="panel-body" ng-controller="provider_provider">
+          <p>
+            콘솔확인
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          service provider
+        </div>
+        <div class="panel-body" ng-controller="service_provider">
+          <p>
+            사용자 정의 서비스는 대부분 factory나 service 메서드로 정의하는데 서비스를 주입하기 전에 별도의 설정을 해야 할 때가 있을 경우에는 provider 메서드를 이용해야한다.<br/>
+            이떄 .module API의 config함수를 사용할 수 있다.<br/>
+            Config 함수를 사용하려면 서비스 프로바이더가 사용할 수 있게 만들어져 있어야 한다.<br/>
+            Logger 서비스 프로바이더가 setDefaultLevel 메서드로 기본 로깅 레벨을 설정한다. 여기서 this가 가리키는 것이 서비스 프로바이더 자체다.<br/>
+            그리고 이 서비스 프로바이더는 module.config 메서드에서 주입되고 서비스 프로바이더 함수 내의 this 객체에 연결된 속성이나 메서드를 호출 할 수 있다. 그리고 AngularJs관례로 "서비스명+Provider"로 서비스 프로바이더 이름을 정의한다.
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          constatnt(상수)
+        </div>
+        <div class="panel-body">
+          <p>
+            <circle></circle>
+          </p>
+        </div>
+      </div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          주요 사항별 메서드 차이점
+        </div>
+        <table class="table text-center table-striped">
+          <thead>
+            <tr>
+              <th scope="col">&nbsp;</th>
+              <th scope="col">factory</th>
+              <th scope="col">service</th>
+              <th scope="col">value</th>
+              <th scope="col">constant</th>
+              <th scope="col">provider</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>다른 서비스 주입 가능?</th>
+              <td>O</td>
+              <td>O</td>
+              <td>X</td>
+              <td>X</td>
+              <td>O</td>
+            </tr>
+            <tr>
+              <th>타입 기반 주입 가능?</th>
+              <td>X</td>
+              <td>O</td>
+              <td>O</td>
+              <td>O</td>
+              <td>X</td>
+            </tr>
+            <tr>
+              <th>config 메서드에서 주입 가능?</th>
+              <td>X</td>
+              <td>X</td>
+              <td>X</td>
+              <td>O</td>
+              <td>O</td>
+            </tr>
+            <tr>
+              <th>함수/기본형 생성 가능?</th>
+              <td>O</td>
+              <td>X</td>
+              <td>O</td>
+              <td>O</td>
+              <td>O</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!-- provider__e -->
+
+    <!-- $injector -->
+    <div id="link22" class="page-header">
+      <h1><small></small>$injector</h1>
+    </div>
+    <div>
+      <div class="panel panel-success">
+        <div class="panel-heading">
+          $injoctor를 이용한 특정 서비스 객체 얻기
+        </div>
+        <div class="panel-body">
+        </div>
+      </div>
+    </div>
+    <!-- $injector__e -->
 
 </div>
 </body>

@@ -426,3 +426,202 @@ app.directive('ngSparkline4',[function(){
 // &apply(표현식or함수)
 // 주로 외부환경에서 AngularJs표현식을 실행할때 사용. 표현식은 계산해주고 함수는 실행시킨다.
 // 또한 내부적으로 &rootScope의 $digest(scope내 모든 wahtch리스너함수 실행)를 실행해 등록된 모든 $watch를 실행시킴.
+
+app.factory('sayHello',[function(){
+  var factoryHello='님 안녕하세요.';
+  return{
+    say:function(name){
+      return name+factoryHello;
+    }
+  };
+}])
+.controller('facory_hello',function($scope,sayHello){
+  $scope.factory_hello=sayHello.say('핑크');
+});
+
+app.value('appNm','demoapp')
+.controller('provider_value',function($scope,appNm){
+  $scope.appNm=appNm;
+})
+.factory('appName',function(){
+  return 'user List app';
+})
+.factory('userLib',function(){
+  var userList=[];
+  return{
+    addUser:function(newUser){
+      userList.push(newUser);
+    },
+    updateUser : function(idx, updatedUser){
+      userList[idx]=updatedUser;
+    },
+    deleteUser : function(idx){
+      userList[idx]=undefined;
+    },
+    selectUser : function(){
+      return userList;
+    }
+  };
+})
+.controller('provider_factory',function($scope,appName,userLib){
+  $scope.appName=appName;
+  $scope.userList=userLib.selectUser();
+  $scope.addNewUser=function(newUser){
+    userLib.addUser({
+      name:newUser.name,
+      mail:newUser.mail
+    });
+    $scope.newUser.name="";
+    $scope.newUser.mail="";
+  };
+});
+
+function Calc($log){
+  this.lastValue = 0;
+  this.add = function(a,b){
+    var returnV=a+b;
+    this.lastValue=returnV;
+    return returnV;
+  };
+  this.minus = function(a,b){
+    var returnV=a-b;
+    this.lastValue=returnV;
+    $log.log(returnV);
+    return returnV;
+  };
+}
+
+app.factory('CalcF',function(){
+  return new Calc();
+})
+.service('CalcS',Calc)
+.controller('provider_service',function($scope,CalcS,CalcF){
+  $scope.val1=CalcF.add(10,3);
+  $scope.val2=CalcS.minus(20,10);
+});
+
+app.provider('Logger',[function(){
+    function Logger(msg){
+      if(checkLogger) console.log(msg);
+    }
+    Logger.debug=function(msg) { if(checkLogger) console.debug(msg) };
+    Logger.info=function(msg) { if(checkLogger) console.info(msg) };
+
+    function checkLogger(){
+      if(console) return true
+      return false;
+    }
+
+    this.$get = [function(){
+      return Logger;
+    }];
+}])
+.controller('provider_provider', function($scope,Logger){
+  Logger("consle.log 출력");
+  Logger.debug("consle.debug 출력");
+});
+
+app.provider('log',[function(){
+  var defaultLevel="log";
+
+  function log(msg){
+    if(checkLog){
+      if(defaultLevel === "debug"){
+        console.debug(msg);
+        return;
+      }
+      if(defaultLevel === "info"){
+        console.info(msg);
+        return;
+      }
+      console.log(msg);
+    }
+  }
+
+  log.debug = function(msg) {if(checkLog) console.debug(msg);};
+  log.info = function(msg) {if(checkLog) console.info(msg);};
+
+  function checkLog(){
+    if(console) return true
+    return fasle;
+  }
+
+  this. setDefaultLevel = function(level){
+    switch (level) {
+      case "debug":
+        defaultLevel='debug'
+        break;
+      case "info":
+        defaultLevel="info"
+        break;
+      default:
+        defaultLevel='log'
+    }
+  };
+  this.$get=[function(){
+    return log;
+  }];
+}])
+.config(['logProvider',function(logProvider){
+  logProvider.setDefaultLevel("debug")
+}])
+.controller('service_provider',function($scope,log){
+  log("console.log 출력");
+  log.debug("console.debug 출력");
+});
+
+app.constant('PI',3.14159)
+.provider('Cal',[function(){
+  var defaultRadius=10;
+  this.setDefaultRadius=function(radius){
+    defaultRadius=radius;
+  };
+  this.$get=['PI',function(PI){
+    return{
+      getCircleArea:function(radius){
+        var r=radius || defaultRadius;
+        return r*r*PI;
+      }
+    };
+  }];
+}])
+.config(function (CalProvider,PI){
+  CalProvider.setDefaultRadius(5);
+  console.log(PI);
+})
+.directive('circle',['Cal','PI',function(Cal,PI){
+  return{
+    restrict : 'E',
+    template : '<canvas width="100" height="100"></canvas>',
+    link : function (scope, iElement, iAttrs){
+      var context = iElement.find("canvas")[0].getContext('2d');
+      var radius = 30;
+
+      context.beginPath();
+      context.arc(50, 50, radius, 0, 2*PI,false);
+      context.fillStyle='green';
+      context.fill();
+      context.lineWidth=5;
+      context.strokestyle ='#003300';
+      context.stroke();
+      iElement.append("<p>반지름 30px인 원의 넓이 : "+Cal.getCircleArea(radius)+"px</p>");
+    }
+  };
+}]);
+app.factory('Hellow',[function(){
+  return{
+    helloTo:function(name){
+      console.log('hellow '+name);
+    }
+  };
+}]);
+
+// AngularJS 웹앱 외부
+var injector = angular.injector(['ng','projectWeb']),
+  hasHellow = injector.has('Hellow'),
+  HellowSvc= null;
+
+  if(hasHellow){
+    HellowSvc=injector.get('Hellow');
+    HellowSvc.helloTo("핑크");
+  }

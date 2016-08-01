@@ -60,7 +60,7 @@ address,caption,cite,code,dfn,em,var,b {font-style: normal; font-weight: normal}
 .main-view .main-img.on:after { content:'선택함'; display: block; position: absolute; top: 0; left: 0; width: 40px; height: 40px; background-color: #444; color: #fff; font-size: 10px; }
 .main-view .main-img img { padding-left: 20px; margin-bottom: 10px; width:100%; height:auto; }
 .main-view .main-img .goods-img { float: left; width: 50%; }
-.main-view .main-img .goods-select { float: left; width: 50%; padding: 60px 15px 0; }
+.main-view .main-img .goods-select { float: left; width: 50%; padding: 60px 15px 0; -webkit-box-sizing: border-box; box-sizing: border-box; }
 .main-view .main-img .goods-select .goods-title { display: block;font-size: 30px; font-weight: bold; letter-spacing: -1px; }
 
 

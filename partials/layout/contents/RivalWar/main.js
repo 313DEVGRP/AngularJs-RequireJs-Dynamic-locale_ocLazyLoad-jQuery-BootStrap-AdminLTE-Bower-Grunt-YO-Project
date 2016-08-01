@@ -1,3 +1,2 @@
-(function(){
-	$('.grap-box .two').css({'width':'70%'});
-})();
+'use strict';
+

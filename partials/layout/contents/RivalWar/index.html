@@ -2,17 +2,18 @@
 <!-- 메인 작업 페이지 -->
 
  <!-- Main content -->
-   <section class="content-header">
-     <h1>
-       휴대폰 대결
-       <small>samsung vs iPhone</small>
-     </h1>
-   </section>
+<div ng-controller="rivalWarContentsController">
+<section class="content-header">
+  <h1>
+    {{mainTitle}}
+    <small>{{firstPlayer+'vs'+secondPlayer</small>
+  </h1>
+</section>
 <section class="main-box">
 	<div class="main-view">
 		<div class="grap-box">
-		<span class="one"><em>samsung</em></span>
-		<span class="two"><em>iPhone</em></span>
+		<span class="one"><em>{{firstPlayer}}</em></span>
+		<span class="two"><em>{{secondPlayer}}</em></span>
 		</div>
 		<p class="like-num"><span class="left"><em>20</em> Like</span><span class="right"><em>120</em> Like</span></p>
 		<div class="main-left">
@@ -60,7 +61,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
+				<tr ng-repeat="item in playerStatList">
 					<td>2.3GHz, 1,6GGz</td>
 					<td><span class="table-text">CPU 속도</span></td>
 					<td>2.3GHz, 1,6GGz</td>
@@ -124,9 +125,11 @@
 			              <p>text</p>
 			              <!-- Social sharing buttons -->
 			             <div class="like-box">
-			              <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
 			              <button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
-			              <span class="pull-right text-muted">45 좋아요 - 2 comments</span>
+			              <span class="pull-right text-muted">
+			              	<button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> 좋아요</button>
+			              	<button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-down"></i> 싫어요</button>
+			              </span>
 			             </div>
 			            </div>
 			            <!-- /.box-body -->
@@ -196,9 +199,11 @@
 			              <p>text</p>
 			              <!-- Social sharing buttons -->
 			             <div class="like-box">
-			              <button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>
 			              <button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
-			              <span class="pull-right text-muted">45 좋아요 - 2 comments</span>
+			              <span class="pull-right text-muted">
+			              	<button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> 좋아요</button>
+			              	<button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-down"></i> 싫어요</button>
+			              </span>
 			             </div>
 			            </div>
 			            <!-- /.box-body -->
@@ -247,3 +252,4 @@
 		</div>			
 	</div>
 </section>
+</div>

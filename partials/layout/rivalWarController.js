@@ -35,7 +35,17 @@ define(
 																		.fire();
 															} else if (file === 'partials/layout/contents/RivalWar/') {
 																$ocLazyLoad
-																		.load('partials/layout/contents/RivalWar/index.css');
+																.load(
+						                                                  [
+						                                                      {
+						                                                        name: 'RivalWarService',
+						                                                        files: ['partials/layout/contents/RivalWar/service.js']
+						                                                      },
+						                                                      {
+						                                                        name: 'RivalWarController',
+						                                                        files: ['partials/layout/contents/RivalWar/controller.js']
+						                                                      },
+						                                                      'partials/layout/contents/RivalWar/index.css']);
 																rivalWarLayoutService
 																		.fire();
 															} else if (file === 'partials/layout/footer/RivalWar/') {
@@ -48,5 +58,9 @@ define(
 														});
 
 									}]);// indexModule.controllerF
-
+			/*rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',
+                '$ocLazyLoad', 'rivalWarLayoutService',
+                function($scope, $ocLazyLoad, rivalWarLayoutService) {
+                  console.log('rivalWarContentsController');
+                }]);*/// rivalWarContentsController.controller
 		});

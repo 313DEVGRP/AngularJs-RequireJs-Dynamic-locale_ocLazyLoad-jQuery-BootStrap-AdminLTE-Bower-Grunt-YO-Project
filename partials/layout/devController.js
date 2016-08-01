@@ -604,12 +604,12 @@ define(
                                           .load(
                                                   [
                                                       {
-                                                        name: 'frontendDevelopersController',
-                                                        files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/controller.js']
-                                                      },
-                                                      {
                                                         name: 'frontendDevelopersService',
                                                         files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/service.js']
+                                                      },
+                                                      {
+                                                        name: 'frontendDevelopersController',
+                                                        files: ['partials/layout/contents/DEV/stakeholder/frontendDevelopers/controller.js']
                                                       },
                                                       {
                                                         name: 'frontendDevelopersDirective',
@@ -650,8 +650,7 @@ define(
                                 $scope.projectManagers = function() {
                                   $ocLazyLoad
                                           .load(
-                                                  [
-                                                      'partials/layout/contents/DEV/stakeholder/projectManagers/index.css'])
+                                                  ['partials/layout/contents/DEV/stakeholder/projectManagers/index.css'])
                                           .then(
                                                   function() {
                                                     $scope.contentWrapper = "partials/layout/contents/DEV/stakeholder/projectManagers/";

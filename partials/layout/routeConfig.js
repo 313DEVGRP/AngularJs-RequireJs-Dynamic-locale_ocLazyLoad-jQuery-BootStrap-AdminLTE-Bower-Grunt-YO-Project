@@ -61,14 +61,14 @@ define(
                   resolve: {
                     devIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([{
-                        name: 'devLayoutController',
-                        files: ['partials/layout/devController.js']
-                      }, {
                         name: 'devLayoutService',
                         files: ['partials/layout/devService.js']
                       }, {
                         name: 'devLayoutDirective',
                         files: ['partials/layout/devDirective.js']
+                      }, {
+                        name: 'devLayoutController',
+                        files: ['partials/layout/devController.js']
                       }]);
                     }]
                   }

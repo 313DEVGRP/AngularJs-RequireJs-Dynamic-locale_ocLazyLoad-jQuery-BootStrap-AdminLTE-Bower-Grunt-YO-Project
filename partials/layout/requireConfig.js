@@ -4,6 +4,17 @@ require
         .config({
           baseUrl: '',
           waitSeconds: 30,
+          onNodeCreated: function(node, config, moduleName, url) {
+            console.log('module ' + moduleName + ' is about to be loaded');
+
+            node.addEventListener('load', function() {
+              console.log('module ' + moduleName + ' has been loaded');
+            });
+
+            node.addEventListener('error', function() {
+              console.log('module ' + moduleName + ' could not be loaded');
+            });
+          },
 
           paths: {
             // jquery

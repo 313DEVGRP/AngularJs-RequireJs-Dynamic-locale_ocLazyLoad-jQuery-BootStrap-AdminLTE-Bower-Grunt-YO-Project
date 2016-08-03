@@ -6,18 +6,20 @@ require
           waitSeconds: 30,
 
           onNodeCreated: function(node, config, moduleName, url) {
-            console.log('module ' + moduleName + ' is about to be loaded');
 
             node.addEventListener('load', function() {
               var line = document.createElement("div");
               line.className = "requireLoadingText";
-              line.innerHTML = moduleName;
+              line.innerHTML = ">>" + moduleName
+                      + " has been loaded ( 200 OK )";
               document.body.appendChild(line);
-              console.log('module ' + moduleName + ' has been loaded');
             });
 
             node.addEventListener('error', function() {
-              console.log('module ' + moduleName + ' could not be loaded');
+              var line = document.createElement("div");
+              line.className = "requireLoadingText";
+              line.innerHTML = ">>" + 'module ' + moduleName
+                      + ' could not be loaded';
             });
           },
 

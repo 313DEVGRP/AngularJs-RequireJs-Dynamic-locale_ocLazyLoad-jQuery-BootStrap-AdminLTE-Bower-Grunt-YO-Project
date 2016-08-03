@@ -19,7 +19,7 @@ define(['projectWeb'], function() {
           console.error('There are no _LOCALES provided');
         }
         var _LOCALES_DISPLAY_NAMES = [];
-        
+
         _LOCALES.forEach(function(locale) {
           _LOCALES_DISPLAY_NAMES.push(localesObj[locale]);
         });
@@ -68,6 +68,7 @@ define(['projectWeb'], function() {
         return {
           fire: function() {
 
+            $(".requireLoadingText").remove();
             $.AdminLTE.layout.activate();
 
             $(".sidebar-menu li a").click(function() {

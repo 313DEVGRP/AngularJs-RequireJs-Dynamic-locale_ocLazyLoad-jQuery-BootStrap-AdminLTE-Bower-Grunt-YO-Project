@@ -4,12 +4,13 @@ require
         .config({
           baseUrl: '',
           waitSeconds: 30,
-          
+
           onNodeCreated: function(node, config, moduleName, url) {
             console.log('module ' + moduleName + ' is about to be loaded');
 
             node.addEventListener('load', function() {
               var line = document.createElement("div");
+              line.className = "requireLoadingText";
               line.innerHTML = moduleName;
               document.body.appendChild(line);
               console.log('module ' + moduleName + ' has been loaded');
@@ -108,7 +109,7 @@ require
           }
         });
 
-require(['projectWeb'], function(projectWeb, css) {
+require(['projectWeb'], function(projectWeb) {
   $(document).ready(function() {
     angular.bootstrap(document, ['projectWeb']);
   });

@@ -10,7 +10,7 @@ require
             node.addEventListener('load', function() {
               var line = document.createElement("div");
               line.className = "requireLoadingText";
-              line.innerHTML = ">>" + moduleName
+              line.innerHTML = ">> " + moduleName
                       + " has been loaded ( 200 OK )";
               document.body.appendChild(line);
             });

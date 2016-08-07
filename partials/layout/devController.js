@@ -701,6 +701,6 @@ define(
               '$ocLazyLoad', 'devLayoutService',
               function($scope, $ocLazyLoad, devLayoutService) {
                 console.log('devAsideController');
-              }]);// devContentsController.controller
+              }]);// devAsideController.controller
 
         });

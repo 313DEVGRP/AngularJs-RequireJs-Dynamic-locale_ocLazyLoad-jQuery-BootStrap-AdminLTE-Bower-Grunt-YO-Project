@@ -16,7 +16,7 @@ define(
               'en_US': 'English',
               'ko_KR': '한글'
             },
-            'preferredLocale': 'en_US'
+            'preferredLocale': 'English'
           }); // LOCALES end
 
           routeModule.config([

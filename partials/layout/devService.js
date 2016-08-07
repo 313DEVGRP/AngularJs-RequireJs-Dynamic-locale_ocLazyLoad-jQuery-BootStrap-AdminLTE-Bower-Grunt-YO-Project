@@ -21,12 +21,7 @@ define(['projectWeb'], function() {
         var _LOCALES_DISPLAY_NAMES = [];
 
         _LOCALES.forEach(function(locale) {
-          console.log(locale);
-          if(locale.length==0){
-           console.log('locale is empty'); 
-          }else{
             _LOCALES_DISPLAY_NAMES.push(localesObj[locale]);
-          }
         });
 
         var currentLocale = $translate.proposedLanguage();
@@ -83,7 +78,7 @@ define(['projectWeb'], function() {
 
           },// fire end
           getLocaleDisplayName: function() {
-            return localesObj[currentLocale];
+            return _LOCALES_DISPLAY_NAMES[0];
           },
           setLocaleByDisplayName: function(localeDisplayName) {
             setLocale(_LOCALES[_LOCALES_DISPLAY_NAMES
@@ -91,6 +86,7 @@ define(['projectWeb'], function() {
             ]);
           },
           getLocalesDisplayNames: function() {
+            console.log('getLocalesDisplayNames :' + _LOCALES_DISPLAY_NAMES);
             return _LOCALES_DISPLAY_NAMES;
           }
         };// return end

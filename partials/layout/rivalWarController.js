@@ -28,14 +28,34 @@ define(['projectWeb'], function() {
           } else if (file === 'partials/layout/sidebar/RivalWar/') {
             console.log(file);
           }
-          ;
         });
 
-      }]);// indexModule.controllerF
+      }]);// indexModule.controller
+  
+  rivalWarIndexModule
+  .controller(
+      'rivalWarContentsController',
+      [
+          '$scope',
+          '$ocLazyLoad',
+          'rivalWarLayoutService',
+          function($scope, $ocLazyLoad,
+              rivalWarLayoutService) {
 
-  rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',
-      '$ocLazyLoad', 'rivalWarLayoutService',
-      function($scope, $ocLazyLoad, rivalWarLayoutService) {
-        console.log('rivalWarContentsController');
-      }]);// devContentsController.controller
+            $ocLazyLoad
+                .load(
+                    [
+                        'partials/layout/content/main.css'
+
+                    ]).then(function() {
+                  rivalWarLayoutService.fire();
+                });
+            // 페이지 타이틀
+            $scope.mainTitle = 'ravalWar';
+            // 상품 이름
+            $scope.firstPlayer = 'samsung';
+            $scope.secondPlayer = 'iPhone';
+            // 스텟 리스트 정리
+          }
+      ]);// rivalWarContentsController.controller
 });

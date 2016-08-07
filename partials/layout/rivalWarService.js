@@ -9,6 +9,7 @@ define([ 'projectWeb' ], function() {
 				return {
 					fire : function() {
 
+					  $(".requireLoadingText").remove();
 						$.AdminLTE.layout.activate();
 
 						$("body").addClass('sidebar-collapse');

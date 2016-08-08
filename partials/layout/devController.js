@@ -99,7 +99,6 @@ define(
                                                   } else if (file === 'partials/layout/sidebar/DEV/') {
                                                     console.log(file);
                                                   }
-                                                  ;
                                                 });
 
                                 $scope
@@ -661,10 +660,8 @@ define(
                               }]);// indexModule.controller
 
           devIndexModule.directive(
-                  'ngTranslateLanguageSelect',
+                  "ngTranslateLanguageSelect",
                   function(devLayoutService) {
-                    'use strict';
-
                     return {
                       restrict: 'A',
                       replace: true,
@@ -691,12 +688,6 @@ define(
                     };
                   });
           
-          devIndexModule.controller('devContentsController', ['$scope',
-              '$ocLazyLoad', 'devLayoutService',
-              function($scope, $ocLazyLoad, devLayoutService) {
-                console.log('devContentsController');
-              }]);// devContentsController.controller
-
           devIndexModule.controller('devAsideController', ['$scope',
               '$ocLazyLoad', 'devLayoutService',
               function($scope, $ocLazyLoad, devLayoutService) {

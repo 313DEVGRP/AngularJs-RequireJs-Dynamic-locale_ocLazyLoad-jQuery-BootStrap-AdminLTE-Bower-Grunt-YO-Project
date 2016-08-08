@@ -19,64 +19,83 @@ define(
             'preferredLocale': 'English'
           }); // LOCALES end
 
-          routeModule.config([
-              '$routeProvider',
-              '$stateProvider',
-              '$locationProvider',
-              '$urlRouterProvider',
-              '$ocLazyLoadProvider',
-              function($routeProvider, $stateProvider, $locationProvider,
-                      $urlRouterProvider, $ocLazyLoadProvider) {
+          routeModule
+                  .config([
+                      '$routeProvider',
+                      '$stateProvider',
+                      '$locationProvider',
+                      '$urlRouterProvider',
+                      '$ocLazyLoadProvider',
+                      function($routeProvider, $stateProvider,
+                              $locationProvider, $urlRouterProvider,
+                              $ocLazyLoadProvider) {
 
-                $urlRouterProvider.otherwise("/");
-                $locationProvider.hashPrefix("StandardDevelopment#");
+                        $urlRouterProvider.otherwise("/");
+                        $locationProvider.hashPrefix("StandardDevelopment#");
 
-                $stateProvider.state('rivalWar', {
-                  url: "/",
-                  views: {
-                    '': {
-                      controller: 'rivalWarLayoutController',
-                      templateUrl: 'partials/layout/rivalWarIndex.html'
-                    }
-                  },
-                  resolve: {
-                    rivalWarIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                      return $ocLazyLoad.load([{
-                        name: 'rivalWarContentsController',
-                        files: ['partials/layout/contents/RivalWar/controller.js']
-                      }, {
-                        name: 'rivalWarLayoutService',
-                        files: ['partials/layout/rivalWarService.js']
-                      }, {
-                        name: 'rivalWarLayoutController',
-                        files: ['partials/layout/rivalWarController.js']
-                      }]);
-                    }]
-                  }
-                }).state('dev', {
-                  url: "/dev",
-                  views: {
-                    '': {
-                      controller: 'devLayoutController',
-                      templateUrl: 'partials/layout/devIndex.html'
-                    }
-                  },
-                  resolve: {
-                    devIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
-                      return $ocLazyLoad.load([{
-                        name: 'devLayoutService',
-                        files: ['partials/layout/devService.js']
-                      }, {
-                        name: 'devLayoutDirective',
-                        files: ['partials/layout/devDirective.js']
-                      }, {
-                        name: 'devLayoutController',
-                        files: ['partials/layout/devController.js']
-                      }]);
-                    }]
-                  }
-                });
-              }]); // routeModule.config
+                        $stateProvider
+                                .state(
+                                        'rivalWar',
+                                        {
+                                          url: "/",
+                                          views: {
+                                            '': {
+                                              controller: 'rivalWarLayoutController',
+                                              templateUrl: 'partials/layout/rivalWarIndex.html'
+                                            }
+                                          },
+                                          resolve: {
+                                            rivalWarIndexCtrl: [
+                                                '$ocLazyLoad',
+                                                function($ocLazyLoad) {
+                                                  return $ocLazyLoad
+                                                          .load([
+                                                              {
+                                                                name: 'rivalWarContentsController',
+                                                                files: ['partials/layout/contents/RivalWar/controller.js']
+                                                              },
+                                                              {
+                                                                name: 'rivalWarLayoutService',
+                                                                files: ['partials/layout/rivalWarService.js']
+                                                              },
+                                                              {
+                                                                name: 'rivalWarLayoutController',
+                                                                files: ['partials/layout/rivalWarController.js']
+                                                              }]);
+                                                }]
+                                          }
+                                        })
+                                .state(
+                                        'dev',
+                                        {
+                                          url: "/dev",
+                                          views: {
+                                            '': {
+                                              controller: 'devLayoutController',
+                                              templateUrl: 'partials/layout/devIndex.html'
+                                            }
+                                          },
+                                          resolve: {
+                                            devIndexCtrl: [
+                                                '$ocLazyLoad',
+                                                function($ocLazyLoad) {
+                                                  return $ocLazyLoad
+                                                          .load([{
+                                                            name: 'devContentsController',
+                                                                files: ['partials/layout/contents/DEV/controller.js']
+                                                              },
+                                                              {
+                                                                name: 'devLayoutService',
+                                                                files: ['partials/layout/devService.js']
+                                                              },
+                                                              {
+                                                                name: 'devLayoutController',
+                                                                files: ['partials/layout/devController.js']
+                                                              }]);
+                                                }]
+                                          }
+                                        });
+                      }]); // routeModule.config
 
           routeModule.config(function($compileProvider, DEBUG_MODE) {
             if (!DEBUG_MODE) {

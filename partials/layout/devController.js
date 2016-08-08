@@ -58,9 +58,6 @@ define(
                                  * Current time
                                  */
                                 $scope.currentTime = Date.now();
-                                $interval(function() {
-                                  $scope.currentTime = Date.now();
-                                }, 1000);
 
                                 /**
                                  * EVENTS
@@ -690,11 +687,6 @@ define(
                               }
                             };
                           });
-
-          devIndexModule.controller('devContentsController', ['$scope',
-              '$ocLazyLoad', function($scope, $ocLazyLoad) {
-                console.log('devContentsController');
-              }]);// devContentsController.controller
 
           devIndexModule.controller('devAsideController', ['$scope',
               '$ocLazyLoad', 'devLayoutService',

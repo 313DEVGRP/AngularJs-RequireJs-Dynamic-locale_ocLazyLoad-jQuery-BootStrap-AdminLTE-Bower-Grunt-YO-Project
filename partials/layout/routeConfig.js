@@ -42,10 +42,13 @@ define(
                   resolve: {
                     rivalWarIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([{
+                        name: 'rivalWarContentsController',
+                        files: ['partials/layout/contents/RivalWar/controller.js']
+                      }, {
                         name: 'rivalWarLayoutService',
                         files: ['partials/layout/rivalWarService.js']
                       }, {
-                        name: 'rivalWarContentsController',
+                        name: 'rivalWarLayoutController',
                         files: ['partials/layout/rivalWarController.js']
                       }]);
                     }]

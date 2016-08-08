@@ -21,7 +21,7 @@ define(['projectWeb'], function() {
         var _LOCALES_DISPLAY_NAMES = [];
 
         _LOCALES.forEach(function(locale) {
-            _LOCALES_DISPLAY_NAMES.push(localesObj[locale]);
+          _LOCALES_DISPLAY_NAMES.push(localesObj[locale]);
         });
 
         var currentLocale = $translate.proposedLanguage();

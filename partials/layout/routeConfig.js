@@ -51,10 +51,6 @@ define(
                                                   return $ocLazyLoad
                                                           .load([
                                                               {
-                                                                name: 'rivalWarContentsController',
-                                                                files: ['partials/layout/contents/RivalWar/controller.js']
-                                                              },
-                                                              {
                                                                 name: 'rivalWarLayoutService',
                                                                 files: ['partials/layout/rivalWarService.js']
                                                               },
@@ -80,10 +76,7 @@ define(
                                                 '$ocLazyLoad',
                                                 function($ocLazyLoad) {
                                                   return $ocLazyLoad
-                                                          .load([{
-                                                            name: 'devContentsController',
-                                                                files: ['partials/layout/contents/DEV/controller.js']
-                                                              },
+                                                          .load([
                                                               {
                                                                 name: 'devLayoutService',
                                                                 files: ['partials/layout/devService.js']

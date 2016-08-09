@@ -9,6 +9,7 @@ define(
               'ngSanitize', 'ngTouch', 'pascalprecht.translate',
               'tmh.dynamicLocale']);
 
+          // constand setting
           routeModule.constant('DEBUG_MODE', true);
           routeModule.constant('VERSION_TAG', new Date().getTime());
           routeModule.constant('LOCALES', {
@@ -19,6 +20,7 @@ define(
             'preferredLocale': 'English'
           }); // LOCALES end
 
+          // route config
           routeModule.config([
               '$routeProvider',
               '$stateProvider',
@@ -40,7 +42,7 @@ define(
                     }
                   },
                   resolve: {
-                    rivalWarIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                    rivalWarIndex: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([{
                         name: 'rivalWarLayoutService',
                         files: ['partials/layout/rivalWarService.js']
@@ -59,22 +61,20 @@ define(
                     }
                   },
                   resolve: {
-                    devIndexCtrl: ['$ocLazyLoad', function($ocLazyLoad) {
+                    devIndex: ['$ocLazyLoad', function($ocLazyLoad) {
                       return $ocLazyLoad.load([{
                         name: 'devLayoutController',
                         files: ['partials/layout/devController.js']
-                      }]);
-                    }],
-                    devIndexService: ['$ocLazyLoad', function($ocLazyLoad) {
-                      return $ocLazyLoad.load([{
+                      }, {
                         name: 'devLayoutService',
                         files: ['partials/layout/devService.js']
-                      }]);
-                    }]
-                  }
-                });
-              }]); // routeModule.config
+                      }]); //$ocLazyLoad end
+                    }] //devIndex end
+                  } // resolve end
+                }); //state end
+              }]); // routeModule.config end
 
+          //이하 다국어 처리 부
           routeModule.config(function($compileProvider, DEBUG_MODE) {
             if (!DEBUG_MODE) {
               $compileProvider.debugInfoEnabled(false);

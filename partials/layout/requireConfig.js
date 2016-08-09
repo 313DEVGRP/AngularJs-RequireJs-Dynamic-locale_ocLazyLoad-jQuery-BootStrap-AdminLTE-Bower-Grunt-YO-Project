@@ -5,8 +5,8 @@ require
           baseUrl: '',
           waitSeconds: 30,
 
+          // Loading Text
           onNodeCreated: function(node, config, moduleName, url) {
-
             node.addEventListener('load', function() {
               var line = document.createElement("div");
               line.className = "requireLoadingText";
@@ -23,6 +23,7 @@ require
             });
           },
 
+          // requirejs config
           paths: {
             // jquery
             'jquery': 'lib/jquery/dist/jquery.min',
@@ -70,6 +71,7 @@ require
             'projectWeb': 'partials/layout/routeConfig'
           },
 
+          // dependency config
           shim: {
             'jquery-migrate': ['jquery'],
             'jquery-ui': ['jquery-migrate'],
@@ -116,13 +118,5 @@ require(['projectWeb'], function(projectWeb) {
     angular.bootstrap(document, ['projectWeb']);
   });
 
-  function loadCss(url) {
-    var link = document.createElement("link");
-    link.type = "text/css";
-    link.rel = "stylesheet";
-    link.href = url;
-    document.getElementsByTagName("head")[0].appendChild(link);
-  }
-  ;
 }// $(document).ready
 );// require

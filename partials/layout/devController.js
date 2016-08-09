@@ -20,10 +20,7 @@ define(
                               function($scope, $ocLazyLoad, devLayoutService,
                                       $rootScope, $translate, $interval) {
 
-                                /**
-                                 * Cache busting
-                                 */
-                                // $rootScope.VERSION_TAG = VERSION_TAG;
+                                // 다국어 처리 부
                                 /**
                                  * Translations for the view
                                  */
@@ -73,12 +70,14 @@ define(
                                                           .instant(pageContentTranslationId);
                                                 });
 
+                                // ng-include 처리부
                                 $scope.mainHeader = 'partials/layout/header/DEV/';
                                 $scope.mainSidebar = 'partials/layout/aside/DEV/';
                                 $scope.contentWrapper = 'partials/layout/contents/DEV/';
                                 $scope.mainFooter = 'partials/layout/footer/DEV/';
                                 $scope.controlSidebar = 'partials/layout/sidebar/DEV/';
 
+                                // load per excute
                                 $scope
                                         .$on(
                                                 '$includeContentLoaded',
@@ -98,6 +97,7 @@ define(
                                                   }
                                                 });
 
+                                // child 페이지에서 상위 컨트롤러로 이벤트 드리븐 부분
                                 $scope
                                         .$on(
                                                 'goToHome',
@@ -111,6 +111,7 @@ define(
                                                   console.log("goToHome");
                                                 });
 
+                                // 나머지 버튼 처리.
                                 $scope.whyJsTree = function() {
                                   $ocLazyLoad
                                           .load(

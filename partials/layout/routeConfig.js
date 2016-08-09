@@ -70,12 +70,6 @@ define(
                         name: 'devLayoutService',
                         files: ['partials/layout/devService.js']
                       }]);
-                    }],
-                    devIndexDirectives: ['$ocLazyLoad', function($ocLazyLoad) {
-                      return $ocLazyLoad.load([{
-                        name: 'devLayoutDirectives',
-                        files: ['partials/layout/devDirective.js']
-                      }]);
                     }]
                   }
                 });

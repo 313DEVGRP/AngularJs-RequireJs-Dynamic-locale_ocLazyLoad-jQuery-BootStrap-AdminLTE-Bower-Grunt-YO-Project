@@ -667,14 +667,13 @@ define(
                               restrict: 'A',
                               replace: true,
                               template: ''
-                                      + '<div class="language-select" ng-if="visible">'
-                                      + '<label>'
-                                      + '{{"directives.language-select.Language" | translate}}:'
-                                      + '<select ng-model="currentLocaleDisplayName"'
-                                      + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames"'
-                                      + 'ng-change="changeLanguage(currentLocaleDisplayName)">'
-                                      + '</select>' + '</label>' + '</div>'
-                                      + '',
+                                + '<div ng-if="visible" style="margin-top : 7px;margin-right : 6px;">'
+                                + '<select class="form-control select2" ng-model="currentLocaleDisplayName"'
+                                + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">'
+                                + '</select>'
+                                + '</div>'
+                                + '<!-- /.form-group -->',
+                                      
                               controller: function($scope) {
                                 $scope.currentLocaleDisplayName = devLayoutService
                                         .getLocaleDisplayName();

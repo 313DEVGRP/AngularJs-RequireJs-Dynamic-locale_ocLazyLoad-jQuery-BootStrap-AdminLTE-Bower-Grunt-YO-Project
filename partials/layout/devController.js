@@ -667,13 +667,12 @@ define(
                               restrict: 'A',
                               replace: true,
                               template: ''
-                                + '<div ng-if="visible" style="margin-top : 7px;margin-right : 6px;">'
-                                + '<select class="form-control select2" ng-model="currentLocaleDisplayName"'
-                                + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">'
-                                + '</select>'
-                                + '</div>'
-                                + '<!-- /.form-group -->',
-                                      
+                                      + '<div ng-if="visible" style="margin-top : 7px;margin-right : 6px;">'
+                                      + '<select class="form-control select2" ng-model="currentLocaleDisplayName"'
+                                      + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">'
+                                      + '</select>' + '</div>'
+                                      + '<!-- /.form-group -->',
+
                               controller: function($scope) {
                                 $scope.currentLocaleDisplayName = devLayoutService
                                         .getLocaleDisplayName();
@@ -700,6 +699,9 @@ define(
               '$ocLazyLoad', 'devLayoutService',
               function($scope, $ocLazyLoad, devLayoutService) {
                 console.log('devContentsController');
+                $('#carousel-example-generic').carousel({
+                  interval: 1500
+                });
               }]);// devContentsController.controller
 
         });

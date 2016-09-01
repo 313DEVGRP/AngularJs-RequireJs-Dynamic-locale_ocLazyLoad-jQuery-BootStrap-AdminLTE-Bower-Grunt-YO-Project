@@ -19,9 +19,11 @@ define(
                               '$interval',
                               '$stateParams',
                               function($scope, $ocLazyLoad, devLayoutService,
-                                      $rootScope, $translate, $interval, $stateParams) {
+                                      $rootScope, $translate, $interval,
+                                      $stateParams) {
 
-                                console.log("=====" + $stateParams.subModule +"====");
+                                console.log("=====" + $stateParams.subModule
+                                        + "====");
                                 // 다국어 처리 부
                                 /**
                                  * Translations for the view
@@ -111,6 +113,33 @@ define(
                                                           'active');
                                                   devLayoutService.fire();
                                                   console.log("goToHome");
+                                                });
+
+                                $scope
+                                        .$on(
+                                                'emitSubModule',
+                                                function() {
+                                                  console.log('emitSubModule');
+                                                  $ocLazyLoad
+                                                          .load(
+                                                                  [
+                                                                      {
+                                                                        name: 'springMyBatisService',
+                                                                        files: ['partials/layout/contents/DEV/jstree/springMyBatis/service.js']
+                                                                      },
+                                                                      {
+                                                                        name: 'springMyBatisController',
+                                                                        files: ['partials/layout/contents/DEV/jstree/springMyBatis/controller.js']
+                                                                      },
+                                                                      'partials/layout/contents/DEV/jstree/springMyBatis/index.css'])
+                                                          .then(
+                                                                  function() {
+                                                                    $scope.contentWrapper = "partials/layout/contents/DEV/jstree/springMyBatis/";
+                                                                  },
+                                                                  function(e) {
+                                                                    console
+                                                                            .log(e);
+                                                                  });
                                                 });
 
                                 // 나머지 버튼 처리.
@@ -698,9 +727,18 @@ define(
               }]);// devAsideController.controller
 
           devIndexModule.controller('devContentsController', ['$scope',
-              '$ocLazyLoad', 'devLayoutService',
-              function($scope, $ocLazyLoad, devLayoutService) {
+              '$ocLazyLoad', '$stateParams', 'devLayoutService',
+              function($scope, $ocLazyLoad, $stateParams, devLayoutService) {
                 console.log('devContentsController');
+                console.log("----" + $stateParams.subModule + "----");
+                
+                angular.element(document).ready(function() {
+                  console.log('fire');
+                  if($stateParams.subModule){
+                    $scope.$emit('emitSubModule');
+                  }
+                });
+
                 $('#carousel-example-generic').carousel({
                   interval: 1500
                 });

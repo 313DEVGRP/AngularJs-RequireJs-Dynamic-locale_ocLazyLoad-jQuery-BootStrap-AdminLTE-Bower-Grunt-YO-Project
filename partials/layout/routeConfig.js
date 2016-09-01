@@ -71,8 +71,8 @@ define(
                       }]); //$ocLazyLoad end
                     }] //devIndex end
                   } // resolve end
-                }).state('devSubModule', {
-                  url: "/dev/:subModule",
+                }).state('dev.SubModule', {
+                  url: "/:subModule",
                   views: {
                     '': {
                       controller: 'devLayoutController',

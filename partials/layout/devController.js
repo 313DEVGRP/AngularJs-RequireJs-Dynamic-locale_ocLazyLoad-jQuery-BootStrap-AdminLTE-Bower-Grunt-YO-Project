@@ -22,8 +22,6 @@ define(
                                       $rootScope, $translate, $interval,
                                       $stateParams) {
 
-                                console.log("=====" + $stateParams.subModule
-                                        + "====");
                                 // 다국어 처리 부
                                 /**
                                  * Translations for the view
@@ -115,11 +113,11 @@ define(
                                                   console.log("goToHome");
                                                 });
 
+                                // SubModule 을 URL로 처리하는 경우
                                 $scope
                                         .$on(
                                                 'emitSubModule',
                                                 function() {
-                                                  console.log('emitSubModule');
                                                   $ocLazyLoad
                                                           .load(
                                                                   [
@@ -733,14 +731,13 @@ define(
                 console.log("----" + $stateParams.subModule + "----");
                 
                 angular.element(document).ready(function() {
-                  console.log('fire');
                   if($stateParams.subModule){
                     $scope.$emit('emitSubModule');
                   }
                 });
 
                 $('#carousel-example-generic').carousel({
-                  interval: 1500
+                  interval: 2000
                 });
               }]);// devContentsController.controller
 

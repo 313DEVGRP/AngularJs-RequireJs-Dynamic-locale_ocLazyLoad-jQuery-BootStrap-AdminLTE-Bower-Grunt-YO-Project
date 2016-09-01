@@ -71,6 +71,25 @@ define(
                       }]); //$ocLazyLoad end
                     }] //devIndex end
                   } // resolve end
+                }).state('devSubModule', {
+                  url: "/dev/:subModule",
+                  views: {
+                    '': {
+                      controller: 'devLayoutController',
+                      templateUrl: 'partials/layout/devIndex.html'
+                    }
+                  },
+                  resolve: {
+                    devIndex: ['$ocLazyLoad', function($ocLazyLoad) {
+                      return $ocLazyLoad.load([{
+                        name: 'devLayoutController',
+                        files: ['partials/layout/devController.js']
+                      }, {
+                        name: 'devLayoutService',
+                        files: ['partials/layout/devService.js']
+                      }]); //$ocLazyLoad end
+                    }] //devIndex end
+                  } // resolve end
                 }); //state end
               }]); // routeModule.config end
 

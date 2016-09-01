@@ -17,9 +17,11 @@ define(
                               '$rootScope',
                               '$translate',
                               '$interval',
+                              '$stateParams',
                               function($scope, $ocLazyLoad, devLayoutService,
-                                      $rootScope, $translate, $interval) {
+                                      $rootScope, $translate, $interval, $stateParams) {
 
+                                console.log("=====" + $stateParams.subModule +"====");
                                 // 다국어 처리 부
                                 /**
                                  * Translations for the view

@@ -151,7 +151,7 @@ define(['projectWeb'], function () {
 	        		  		// All the options are almost the same as jQuery's AJAX (read the docs)
 	        		  		"ajax" : {
 	        		  			// the URL to fetch the data
-	        		  			"url" : "/egovframework/com/etc/jstree/springiBatis/core/getChildNode.do",
+	        		  			"url" : "/com/ext/jstree/springiBatis/core/getChildNode.do",
 	        		  			// the `data` function is executed in the instance's scope
 	        		  			// the parameter is the node being loaded 
 	        		  			// (may be -1, 0, or undefined when loading the root nodes)
@@ -168,7 +168,7 @@ define(['projectWeb'], function () {
 	        		  		// As this has been a common question - async search
 	        		  		// Same as above - the `ajax` config option is actually jQuery's AJAX object
 	        		  		"ajax" : {
-	        		  			"url" : "/egovframework/com/etc/jstree/springiBatis/core/searchNode.do",
+	        		  			"url" : "/com/ext/jstree/springiBatis/core/searchNode.do",
 	        		  				// You get the search string as a parameter
 	        		  				"data" : function (str) {
 	        		  					return { 
@@ -238,7 +238,7 @@ define(['projectWeb'], function () {
 	        		  	})
 	        		  	.bind("create.jstree", function (e, data) {
 	        		  		$.post(
-	        		  			"/egovframework/com/etc/jstree/springiBatis/core/addNode.do",
+	        		  			"/com/ext/jstree/springiBatis/core/addNode.do",
 	        		  			{ 
 	        		  				"ref" : data.rslt.parent.attr("id").replace("node_","").replace("copy_",""), 
 	        		  				"c_position" : data.rslt.position,
@@ -265,7 +265,7 @@ define(['projectWeb'], function () {
 	        		  			$.ajax({
 	        		  				async : false,
 	        		  				type: 'POST',
-	        		  				url: "/egovframework/com/etc/jstree/springiBatis/core/removeNode.do",
+	        		  				url: "/com/ext/jstree/springiBatis/core/removeNode.do",
 	        		  				data : { 
 	        		  					"c_id" : this.id.replace("node_","").replace("copy_","")
 	        		  				}, 
@@ -281,7 +281,7 @@ define(['projectWeb'], function () {
 	        		  	})
 	        		  	.bind("rename.jstree", function (e, data) {
 	        		  		$.post(
-	        		  			"/egovframework/com/etc/jstree/springiBatis/core/alterNode.do",
+	        		  			"/com/ext/jstree/springiBatis/core/alterNode.do",
 	        		  			{ 
 	        		  					"c_id" : data.rslt.obj.attr("id").replace("node_","").replace("copy_",""),
 	        		  					"c_title" : data.rslt.new_name,
@@ -301,7 +301,7 @@ define(['projectWeb'], function () {
 	        		  	})
 	        		  	.bind("set_type.jstree", function (e, data) {
 	        		  		$.post(
-	        		  			"/egovframework/com/etc/jstree/springiBatis/core/alterNodeType.do",
+	        		  			"/com/ext/jstree/springiBatis/core/alterNodeType.do",
 	        		  			{ 
 	        		  					"c_id" : data.rslt.obj.attr("id").replace("node_","").replace("copy_",""),
 	        		  					"c_title" : data.rslt.new_name,
@@ -321,7 +321,7 @@ define(['projectWeb'], function () {
 	        		  			$.ajax({
 	        		  				async : false,
 	        		  				type: 'POST',
-	        		  				url: "/egovframework/com/etc/jstree/springiBatis/core/moveNode.do",
+	        		  				url: "/com/ext/jstree/springiBatis/core/moveNode.do",
 	        		  				data : { 
 	        		  					"c_id" : $(this).attr("id").replace("node_","").replace("copy_",""), 
 	        		  					"ref" : data.rslt.cr === -1 ? 1 : data.rslt.np.attr("id").replace("node_","").replace("copy_",""), 
@@ -362,7 +362,7 @@ define(['projectWeb'], function () {
 
 					var jstreeDataTable = $('#jstreeTable').dataTable( {
 						"ajax": {
-							"url": "/egovframework/com/etc/jstree/springiBatis/monitor/list.do",
+							"url": "/com/ext/jstree/springiBatis/monitor/list.do",
 							"dataSrc": "rows"
 						},
 						"processing": true,

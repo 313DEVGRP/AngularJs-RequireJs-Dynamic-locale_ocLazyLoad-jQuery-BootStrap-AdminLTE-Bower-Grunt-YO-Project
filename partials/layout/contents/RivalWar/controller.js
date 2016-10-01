@@ -18,11 +18,11 @@ define(
 									'rivalWarLayoutService',
 									function($scope, $ocLazyLoad,
 											rivalWarLayoutService) {
-
+										
 										$ocLazyLoad
 												.load(
 														[
-																'partials/layout/content/main.css'
+																'partials/layout/content/main.js'
 
 														]).then(function() {
 													rivalWarLayoutService.fire();

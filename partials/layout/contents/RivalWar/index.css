@@ -97,7 +97,7 @@ address,caption,cite,code,dfn,em,var,b {font-style: normal; font-weight: normal}
 .like-num .right { float: right; }
 
 .main-text-view { background-color: #ecf0f5; }
-.main-text-view > li { margin-bottom: 10px; }
+.main-text-view > li +li { margin-top: 10px; }
 .main-text-view .like-box { margin-top:10px; }
 .main-view .box-footer { padding:10px 0; }
 .main-view .box-comments .comment-text { margin-left: 0px; }

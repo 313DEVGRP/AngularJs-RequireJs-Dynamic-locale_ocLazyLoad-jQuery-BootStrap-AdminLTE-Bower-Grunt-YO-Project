@@ -22,7 +22,7 @@ define(
 										$ocLazyLoad
 												.load(
 														[
-																'partials/layout/content/main.js'
+																'partials/layout/content/RivalWar/main.js'
 
 														]).then(function() {
 													rivalWarLayoutService.fire();

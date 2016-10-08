@@ -45,7 +45,7 @@ define(['projectWeb'], function() {
             $ocLazyLoad
                 .load(
                     [
-                        'partials/layout/content/main.css'
+                        'partials/layout/content/RivalWar/index.css'
 
                     ]).then(function() {
                   rivalWarLayoutService.fire();
@@ -53,7 +53,7 @@ define(['projectWeb'], function() {
             // 페이지 타이틀
             $scope.mainTitle = 'ravalWar';
             // 상품 이름
-            $scope.firstPlayer = 'samsung';
+            $scope.firstPlayer = 'Samsung';
             $scope.secondPlayer = 'iPhone';
             // 스텟 리스트 정리
           }

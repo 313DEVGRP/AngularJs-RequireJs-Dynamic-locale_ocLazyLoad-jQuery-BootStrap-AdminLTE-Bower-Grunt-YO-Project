@@ -12,7 +12,9 @@ define([ 'projectWeb' ], function() {
 					  $(".requireLoadingText").remove();
 						$.AdminLTE.layout.activate();
 
+						$("body").addClass('sidebar-mini');
 						$("body").addClass('sidebar-collapse');
+						$("body").addClass('skin-blue');
 						
 						$(".sidebar-menu li a").click(function() {
 							$('li .active').removeClass('active');

@@ -117,22 +117,23 @@ define(
                                 $scope
                                         .$on(
                                                 'emitSubModule',
-                                                function() {
+                                                function(event, args) {
+                                                	console.log(args.message);
                                                   $ocLazyLoad
                                                           .load(
                                                                   [
                                                                       {
                                                                         name: 'springMyBatisService',
-                                                                        files: ['partials/layout/contents/DEV/jstree/springMyBatis/service.js']
+                                                                        files: ['partials/layout/contents/DEV/jstree/'+args.message+'/service.js']
                                                                       },
                                                                       {
                                                                         name: 'springMyBatisController',
-                                                                        files: ['partials/layout/contents/DEV/jstree/springMyBatis/controller.js']
+                                                                        files: ['partials/layout/contents/DEV/jstree/'+args.message+'/controller.js']
                                                                       },
-                                                                      'partials/layout/contents/DEV/jstree/springMyBatis/index.css'])
+                                                                      'partials/layout/contents/DEV/jstree/'+args.message+'/index.css'])
                                                           .then(
                                                                   function() {
-                                                                    $scope.contentWrapper = "partials/layout/contents/DEV/jstree/springMyBatis/";
+                                                                    $scope.contentWrapper = "partials/layout/contents/DEV/jstree/"+args.message+"/";
                                                                   },
                                                                   function(e) {
                                                                     console
@@ -731,8 +732,10 @@ define(
                 console.log("----" + $stateParams.subModule + "----");
                 
                 angular.element(document).ready(function() {
-                  if($stateParams.subModule){
-                    $scope.$emit('emitSubModule');
+                  if(typeof $stateParams.subModule != 'undefined'){
+                	console.log($stateParams.subModule);  
+                	$scope.subName = $stateParams.subModule;
+                    $scope.$emit('emitSubModule',  {message: $scope.subName});
                   }
                 });
 

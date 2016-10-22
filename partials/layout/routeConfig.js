@@ -34,7 +34,7 @@ define(
                 $locationProvider.hashPrefix("StandardDevelopment#");
 
                 $stateProvider.state('rivalWar', {
-                  url: "/rivalWar",
+                  url: "/",
                   views: {
                     '': {
                       controller: 'rivalWarLayoutController',
@@ -53,7 +53,7 @@ define(
                     }]
                   }
                 }).state('dev', {
-                  url: "/",
+                  url: "/dev",
                   views: {
                     '': {
                       controller: 'devLayoutController',
@@ -77,7 +77,7 @@ define(
                     '': {
                       controller: 'devLayoutController',
                       templateUrl: 'partials/layout/devIndex.html'
-                    }
+                    },
                   },
                   resolve: {
                     devIndex: ['$ocLazyLoad', function($ocLazyLoad) {

@@ -77,7 +77,7 @@ define(['projectWeb'], function() {
             $ocLazyLoad
                 .load(
                     [
-                        'partials/layout/content/RivalWar/index.css'
+                        'partials/layout/contents/RivalWar/index.css'
 
                     ]).then(function() {
                   rivalWarLayoutService.fire();

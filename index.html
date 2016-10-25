@@ -25,7 +25,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<!-- Tell the browser to be responsive to screen width -->
 		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-		
+
 		<meta name="robots" content="ALL, INDEX, FOLLOW"/>
 		<meta name="Subject" content="Frontside Web Project"/>
 		<meta name="Filename" content="index.html"/>
@@ -47,7 +47,7 @@
 		<meta name="Copyright" content="CopyRight @ 313 Developer Group. All Rights Reserved"/>
 		<meta name="title" content="313 DEV GRP Project Support Standard System" />
 		<meta name="revisit-after" content="7 days" />
-		<meta name="siteinfo" content="http://www.313.co.kr/robots.txt" /> 
+		<meta name="siteinfo" content="http://www.313.co.kr/robots.txt" />
 		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes"> -->
 		<!-- <meta name="description" content="dongmin.lee" /> -->
 		<!-- <meta name="keywords" content="" /> -->
@@ -58,14 +58,14 @@
 		<meta property="og:title" content="313 DEV GRP Project Support Standard System">
 		<meta property="og:url" content="http://www.313.co.kr/">
 		<meta property="og:site_name" content="313 DEV GRP Project Support Standard System">
-		
+
 		<!-- favicon -->
 		<link rel="icon" href="partials/common/img/community/favicon.ico" type="image/x-icon" />
 		<link rel="shortcut icon" href="partials/common/img/community/favicon.ico" type="image/x-icon" />
-		
+
 		<!-- normalize.css -->
         <link rel="stylesheet" href="lib/normalize-css/normalize.css">
-        
+
         <!-- Bootstrap 3.3.6 -->
 		<link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
 		<!-- Font Awesome -->
@@ -74,7 +74,7 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
 		<!-- Theme style -->
 		<link rel="stylesheet" href="AdminLTE-2.3.3/dist/css/AdminLTE.custom.css">
-		
+
 		<!-- AdminLTE Skins. Choose a skin from the css/skins
        	folder instead of downloading all of them to reduce the load. -->
 		<link rel="stylesheet" href="AdminLTE-2.3.3/dist/css/skins/_all-skins.min.css">
@@ -90,7 +90,9 @@
 		<link rel="stylesheet" href="AdminLTE-2.3.3/plugins/daterangepicker/daterangepicker-bs3.css">
 		<!-- bootstrap wysihtml5 - text editor -->
 		<link rel="stylesheet" href="AdminLTE-2.3.3/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-		
+
+     <link rel="stylesheet" href="./partials/common/css/custom.css">
+
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 		<!--[if lt IE 9]>
@@ -122,10 +124,13 @@
 			wcs_do();
 		</script>
 		<!-- NAVER ANALYTICS END -->
-		
-        <script type="text/javascript" data-main="partials/layout/requireConfig" src="lib/requirejs/require.js" charset="UTF-8"></script>
     </head>
-    <body class="hold-transition skin-blue sidebar-mini">
+    <body class="hold-transition sidebar-mini sidebar-collapse skin-blue" >
+    <!-- loading -->
+    <div id="loading">
+      <div id="status"></div>
+    </div>
 		<ui-view></ui-view>
+    <script type="text/javascript" data-main="partials/layout/requireConfig" src="lib/requirejs/require.js" charset="UTF-8"></script>
     </body>
 </html>

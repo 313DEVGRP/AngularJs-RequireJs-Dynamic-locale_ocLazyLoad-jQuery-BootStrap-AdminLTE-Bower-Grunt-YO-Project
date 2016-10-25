@@ -34,7 +34,7 @@ define(
                 $locationProvider.hashPrefix("StandardDevelopment#");
 
                 $stateProvider.state('rivalWar', {
-                  url: "/",
+                  url: "/rivalWar",
                   views: {
                     '': {
                       controller: 'rivalWarLayoutController',
@@ -53,7 +53,7 @@ define(
                     }]
                   }
                 }).state('dev', {
-                  url: "/dev",
+                  url: "/",
                   views: {
                     '': {
                       controller: 'devLayoutController',

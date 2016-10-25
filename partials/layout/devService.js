@@ -10,7 +10,7 @@ define(['projectWeb'], function() {
       'tmhDynamicLocale',
       'LOCALES',
       function($translate, $rootScope, tmhDynamicLocale, LOCALES) {
-        
+
         // 다국어 처리부 시작.
         // VARS
         var localesObj = LOCALES.locales;
@@ -68,11 +68,12 @@ define(['projectWeb'], function() {
         });
 
         //다국어 처리부 끝
-        
+
         //함수 시작.
         return {
           fire: function() {
 
+            $("#loading").remove();
             $(".requireLoadingText").remove();
             $.AdminLTE.layout.activate();
 
@@ -82,7 +83,7 @@ define(['projectWeb'], function() {
             });
 
           },// fire end
-          
+
           //다국어 처리 함수
           getLocaleDisplayName: function() {
             return _LOCALES_DISPLAY_NAMES[0];

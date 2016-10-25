@@ -30,8 +30,40 @@ define(['projectWeb'], function() {
           }
         });
 
+        $scope.$on('goToHome',
+          function() {
+            $scope.contentWrapper = "partials/layout/contents/RivalWar/";
+            $ocLazyLoad.load('partials/layout/contents/RivalWar/index.css');
+            $('li .active').removeClass('active');
+            rivalWarLayoutService.fire();
+            console.log("goToHome");
+          });
+
+        $scope.broadcastGoToHome = function () {
+          $scope.$broadcast('goToHome')
+        };
+
+        $scope.testPage = function () {
+          console.log("testPage");
+          $ocLazyLoad.load([
+            {
+              name : 'testPageService',
+              files : ['partials/layout/contents/RivalWar/test/service.js']
+            },
+            {
+              name : 'testPageController',
+              files : ['partials/layout/contents/RivalWar/test/controller.js']
+            },
+            'partials/layout/contents/RivalWar/test/index.css'
+          ]).then(function () {
+            $scope.contentWrapper = 'partials/layout/contents/RivalWar/test/';
+          }, function (e) {
+            console.log(e)
+          })
+        }
+
       }]);// indexModule.controller
-  
+
   rivalWarIndexModule
   .controller(
       'rivalWarContentsController',

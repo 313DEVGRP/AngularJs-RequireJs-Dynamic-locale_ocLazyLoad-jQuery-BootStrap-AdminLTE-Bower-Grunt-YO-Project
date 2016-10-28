@@ -6,7 +6,7 @@ define(
 
           var routeModule = angular.module('projectWeb', ['ui.router',
               'oc.lazyLoad', 'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute',
-              'ngSanitize', 'ngTouch','timer', 'pascalprecht.translate',
+              'ngSanitize', 'ngTouch', 'pascalprecht.translate',
               'tmh.dynamicLocale']);
 
           // constand setting

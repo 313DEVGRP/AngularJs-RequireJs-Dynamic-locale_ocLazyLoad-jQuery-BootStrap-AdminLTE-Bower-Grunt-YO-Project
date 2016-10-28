@@ -41,7 +41,7 @@ require
             'ngResource': 'lib/angular-resource/angular-resource.min',
             'ngSanitize': 'lib/angular-sanitize/angular-sanitize.min',
             'ngTouch': 'lib/angular-touch/angular-touch.min',
-            'timer' : 'lib/angular-timer/dist/angular-timer.min',
+            //'timer' : 'lib/angular-timer/dist/angular-timer.min',
 
             'ui.router': 'lib/angular-ui-router/release/angular-ui-router',
 
@@ -85,9 +85,9 @@ require
             'ngResource': ['ngCookies'],
             'ngSanitize': ['ngResource'],
             'ngTouch': ['ngSanitize'],
-            'timer': ['ngTouch'],
+            //'timer': ['ngTouch'],
 
-            'ui.router': ['timer'],
+            'ui.router': ['ngTouch'],
             'pascalprecht.translate': ['ui.router'],
             'pascalprecht.translateLoaderStaticFiles': ['pascalprecht.translate'],
             'pascalprecht.translateStorageLocal': ['pascalprecht.translateLoaderStaticFiles'],

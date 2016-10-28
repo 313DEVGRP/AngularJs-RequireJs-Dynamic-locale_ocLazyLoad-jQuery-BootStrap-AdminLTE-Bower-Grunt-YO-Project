@@ -64,6 +64,7 @@ img {
 /* header */
 .main-header .logo img{
   width:100%;
+  max-width:200px;
 }
 .skin-blue .main-header .logo{
   background-color: #222d32;

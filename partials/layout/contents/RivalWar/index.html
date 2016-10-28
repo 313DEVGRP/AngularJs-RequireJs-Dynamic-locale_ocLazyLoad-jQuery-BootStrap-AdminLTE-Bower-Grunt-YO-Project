@@ -1,318 +1,209 @@
-
-<!-- 메인 작업 페이지 -->
+<!-- Content Header (Page header) -->
+<section class="content-header">
+	<h1>
+		jsTree Sevice Engine
+		<small>Support System</small>
+	</h1>
+	<ol class="breadcrumb">
+		<li>
+			<a href="#StandardDevelopment#/dev">
+				<i class="fa fa-dashboard"></i>
+				Home
+			</a>
+		</li>
+		<li class="active">Dashboard</li>
+	</ol>
+</section>
 
 <!-- Main content -->
-<div ng-controller="rivalWarContentsController">
-	<section class="content-header">
-		<h1>
-			{{mainTitle}}
-			<small>{{firstPlayer}} 'vs' {{secondPlayer}}</small>
-		</h1>
-	</section>
-	<section class="main-box">
-		<div class="main-view">
-			<div class="grap-box">
-				<span class="one">
-					<em>{{firstPlayer}}</em>
-				</span>
-				<span class="two">
-					<em>{{secondPlayer}}</em>
-				</span>
-			</div>
-			<p class="like-num">
-				<span class="left">
-					<em>20</em>
-					Like
-				</span>
-				<span class="right">
-					<em>120</em>
-					Like
-				</span>
-			</p>
-			<div class="main-left">
-				<p class="main-img">
-					<span class="goods-img">
-						<img src="partials/layout/contents/RivalWar/img/sam.png" alt="">
-					</span>
-					<span class="goods-select">
-						<em class="goods-title rival-item1-1">Galaxy S6</em>
-						<span class="radio-box">
-							<input type="radio" id="main-radio01" class="radio" name="main-radio">
-							<label for="main-radio01">제품 선택하기</label>
-						</span>
-					</span>
-				</p>
-			</div>
-			<div class="main-center">
-				<p class="main-vs">
-					<span>VS</span>
-					<img src="partials/layout/contents/RivalWar/img/main-bg.png" alt="">
-				</p>
-			</div>
-			<div class="main-right">
-				<p class="main-img ">
-					<span class="goods-img">
-						<img src="partials/layout/contents/RivalWar/img/iphone5.png" alt="">
-					</span>
-					<span class="goods-select">
-						<em class="goods-title rival-item1-2">iPhone 6</em>
-						<span class="radio-box">
-							<input type="radio" id="main-radio02" class="radio" name="main-radio">
-							<label for="main-radio02">제품 선택하기</label>
-						</span>
-					</span>
-				</p>
-			</div>
-		</div>
-		<p class="main-mes">선택한 후에는 변경이 불가능합니다.</p>
-		<div class="main-table">
-			<table>
-				<caption>기본 비교</caption>
-				<colgroup>
-					<col width="40%">
-					<col width="20%">
-					<col width="40%">
-				</colgroup>
-				<thead>
-					<tr>
-						<th>Samsung Galaxy S6</th>
-						<th>
-							<span class="table-text">기본 스펙</span>
-						</th>
-						<th>iPhone 6</th>
-					</tr>
-				</thead>
-				<tbody class="spec-view">
-					<tr ng-repeat="item in playerStatList">
-						<td>2.3GHz, 1,6GGz</td>
-						<td>
-							<span class="table-text">#CPU 속도</span>
-						</td>
-						<td>2.3GHz, 1,6GGz</td>
-					</tr>
-					<tr>
-						<td>Octa-Core</td>
-						<td>
-							<span class="table-text">#CPU 종류</span>
-						</td>
-						<td>Octa-Core</td>
-					</tr>
-					<tr>
-						<td>129.2mm</td>
-						<td>
-							<span class="table-text">#크기 (Main)</span>
-						</td>
-						<td>129.2mm</td>
-					</tr>
-					<tr>
-						<td>2560x1440 (Quad HD)</td>
-						<td>
-							<span class="table-text">#해상도 (Main)</span>
-						</td>
-						<td>2560x1440 (Quad HD)</td>
-					</tr>
-					<tr>
-						<td>Super AMOLED</td>
-						<td>
-							<span class="table-text">#종류 (Main)</span>
-						</td>
-						<td>Super AMOLED</td>
-					</tr>
-					<tr>
-						<td>16M</td>
-						<td>
-							<span class="table-text">#색심도 (Main)</span>
-						</td>
-						<td>16M</td>
-					</tr>
-					<tr>
-						<td>아니오</td>
-						<td>
-							<span class="table-text">#S펜 지원</span>
-						</td>
-						<td>아니오</td>
-					</tr>
-				</tbody>
-			</table>
-			<button type="button" class="table-more-view">더보기</button>
-		</div>
-		<div class="pa-box">
-			<div class="main-write">
-				<textarea class="form-control" rows="2" placeholder="댓글 입력"></textarea>
-				<button type="button" class="btn btn-default">등록</button>
-			</div>
-		</div>
-		<div class="main-view">
-			<div class="">
-				<ul class="main-text-view">
-					<li class="">
-						<div class="box box-widget">
-							<div class="box-header with-border">
-								<div class="user-block">
-									<span class="username rival-item1-1">
-										<a href="#">삼성덕후</a>
-									</span>
-									<span class="description">7:30 PM Today</span>
-								</div>
-								<!-- /.user-block -->
+<section class="content" ng-controller="rivalWarContentsController">
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-solid">
+				<!-- /.box-header -->
+				<div class="box-body">
+					<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+						<ol class="carousel-indicators">
+							<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+							<li data-target="#carousel-example-generic" data-slide-to="1" class=""></li>
+							<li data-target="#carousel-example-generic" data-slide-to="2" class=""></li>
+						</ol>
+						<div class="carousel-inner">
+							<div class="item active">
+								<img src="http://placehold.it/900x500/39CCCC/ffffff&text=jsTree+Engine+의+단순한+알고리즘은" alt="First slide">
+
+								<div class="carousel-caption">jsTree Engine 의 조합 트리 알고리즘</div>
 							</div>
-							<!-- /.box-header -->
-							<div class="box-body">
-								<!-- post text -->
-								<p>휴대폰은 당연히 삼성폰이죠</p>
-								<p>text</p>
-								<!-- Social sharing buttons -->
-								<div class="like-box">
-									<button type="button" class="btn btn-default btn-xs">
-										<i class="fa fa-chevron-down"></i>
-										댓글보기
-									</button>
-									<span class="pull-right text-muted">
-										<button type="button" class="btn btn-default btn-xs">
-											<i class="fa fa-thumbs-o-up"></i>
-											좋아요
-										</button>
-										<button type="button" class="btn btn-default btn-xs">
-											<i class="fa fa-thumbs-o-down"></i>
-											싫어요
-										</button>
-									</span>
-								</div>
+							<div class="item">
+								<img src="http://placehold.it/900x500/3c8dbc/ffffff&text=쉽고+빠르게+어플리케이션을+개발할+수+있고" alt="Second slide">
+
+								<div class="carousel-caption">jsTree Engine 의 전자정부 프레임워크와의 통합</div>
 							</div>
-							<!-- /.box-body -->
-							<div class="box-footer box-comments">
-								<div class="box-comment">
-									<!-- User image -->
-									<div class="comment-text">
-										<span class="username rival-item1-2">
-											Maria Gonzales
-											<span class="text-muted pull-right">8:03 PM Today</span>
-										</span>
-										<!-- /.username -->
-										안드오이드라 쓰기 너무 힘들어요
-									</div>
-									<!-- /.comment-text -->
-								</div>
-								<!-- /.box-comment -->
-								<div class="box-comment">
-									<!-- User image -->
-									<div class="comment-text">
-										<span class="username rival-item1-1">
-											Nora Havisham
-											<span class="text-muted pull-right">8:03 PM Today</span>
-										</span>
-										<!-- /.username -->
-										요즘 안드로이드가 얼마나 좋은데요
-									</div>
-									<div class="box-comment">
-										<div class="comment-text">
-											<span class="username rival-item1-1">
-												Nora Havisham
-												<span class="text-muted pull-right">8:03 PM Today</span>
-											</span>
-											<!-- /.username -->
-											요즘 안드로이드가 얼마나 좋은데요
-										</div>
-									</div>
-									<!-- /.comment-text -->
-								</div>
-								<!-- /.box-comment -->
+							<div class="item">
+								<img src="http://placehold.it/900x500/f39c12/ffffff&text=I+Love+Bootstrap" alt="Third slide">
+
+								<div class="carousel-caption">jsTree Engine 의 표준 개발 및 표준 개발 환경</div>
 							</div>
-							<!-- /.box-footer -->
-							<div class="box-footer">
-								<form action="#" method="post">
-									<!-- .img-push is used to add margin to elements next to floating images -->
-									<div class="input-group img-push">
-										<input type="text" class="form-control input-sm">
-										<span class="input-group-btn">
-											<button type="button" class="btn btn-sm btn-flat">등록</button>
-										</span>
-									</div>
-								</form>
-							</div>
-							<!-- /.box-footer -->
 						</div>
-					</li>
-					<li class="">
-						<div class="box box-widget">
-							<div class="box-header with-border">
-								<div class="user-block">
-									<span class="username rival-item1-2">
-										<a href="#">아이폰 덕후</a>
-									</span>
-									<span class="description">7:30 PM Today</span>
-								</div>
-								<!-- /.user-block -->
-							</div>
-							<!-- /.box-header -->
-							<div class="box-body">
-								<!-- post text -->
-								<p>뭐니뭐니해도 앱등이</p>
-								<p>text</p>
-								<!-- Social sharing buttons -->
-								<div class="like-box">
-									<button type="button" class="btn btn-default btn-xs">
-										<i class="fa fa-chevron-down"></i>
-										댓글보기
-									</button>
-									<span class="pull-right text-muted">
-										<button type="button" class="btn btn-default btn-xs">
-											<i class="fa fa-thumbs-o-up"></i>
-											좋아요
-										</button>
-										<button type="button" class="btn btn-default btn-xs">
-											<i class="fa fa-thumbs-o-down"></i>
-											싫어요
-										</button>
-									</span>
-								</div>
-							</div>
-							<!-- /.box-body -->
-							<div class="box-footer box-comments">
-								<div class="box-comment">
-									<!-- User image -->
-									<div class="comment-text">
-										<span class="username rival-item1-2">
-											Maria Gonzales
-											<span class="text-muted pull-right">8:03 PM Today</span>
-										</span>
-										<!-- /.username -->
-										보안 때문에 아이폰이 짱
-									</div>
-									<!-- /.comment-text -->
-								</div>
-								<!-- /.box-comment -->
-								<div class="box-comment">
-									<!-- User image -->
-									<div class="comment-text">
-										<span class="username rival-item1-2">
-											Nora Havisham
-											<span class="text-muted pull-right">8:03 PM Today</span>
-										</span>
-										<!-- /.username -->
-										무조건 아이폰
-									</div>
-									<!-- /.comment-text -->
-								</div>
-								<!-- /.box-comment -->
-							</div>
-							<!-- /.box-footer -->
-							<div class="box-footer">
-								<form action="#" method="post">
-									<!-- .img-push is used to add margin to elements next to floating images -->
-									<div class="input-group img-push">
-										<input type="text" class="form-control input-sm">
-										<span class="input-group-btn">
-											<button type="button" class="btn btn-sm btn-flat">등록</button>
-										</span>
-									</div>
-								</form>
-							</div>
-							<!-- /.box-footer -->
-						</div>
-					</li>
-				</ul>
+						<a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+							<span class="fa fa-angle-left"></span>
+						</a>
+						<a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+							<span class="fa fa-angle-right"></span>
+						</a>
+					</div>
+				</div>
+				<!-- /.box-body -->
 			</div>
+			<!-- /.box -->
 		</div>
-	</section>
-</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+
+	<!-- Small boxes (Stat box) -->
+	<div class="row">
+		<!-- ./col -->
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box bg-gray">
+				<span class="info-box-icon">
+					<i class="fa fa-recycle"></i>
+				</span>
+
+				<div class="info-box-content">
+					<span class="info-box-text">향상된</span>
+					<span class="info-box-text">프로젝트</span>
+
+					<div class="progress">
+						<div class="progress-bar" style="width: 100%"></div>
+					</div>
+					<span class="progress-description">아키텍쳐</span>
+				</div>
+				<!-- /.info-box-content -->
+			</div>
+			<!-- /.info-box -->
+		</div>
+		<!-- /.col -->
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box bg-gray">
+				<span class="info-box-icon">
+					<i class="fa fa-object-group"></i>
+				</span>
+
+				<div class="info-box-content">
+					<span class="info-box-text">국가표준</span>
+					<span class="info-box-text">전자정부</span>
+
+					<div class="progress">
+						<div class="progress-bar" style="width: 100%"></div>
+					</div>
+					<span class="progress-description">통합</span>
+				</div>
+				<!-- /.info-box-content -->
+			</div>
+			<!-- /.info-box -->
+		</div>
+		<!-- /.col -->
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box bg-gray">
+				<span class="info-box-icon">
+					<i class="fa fa-television"></i>
+				</span>
+
+				<div class="info-box-content">
+					<span class="info-box-text">글로벌</span>
+					<span class="info-box-text">프로젝트</span>
+
+					<div class="progress">
+						<div class="progress-bar" style="width: 100%"></div>
+					</div>
+					<span class="progress-description">시스템</span>
+				</div>
+				<!-- /.info-box-content -->
+			</div>
+			<!-- /.info-box -->
+		</div>
+		<!-- /.col -->
+		<div class="col-md-3 col-sm-6 col-xs-12">
+			<div class="info-box bg-gray">
+				<span class="info-box-icon">
+					<i class="fa fa-globe"></i>
+				</span>
+
+				<div class="info-box-content">
+					<span class="info-box-text">국제표준</span>
+					<span class="info-box-text">프로젝트</span>
+
+					<div class="progress">
+						<div class="progress-bar" style="width: 100%"></div>
+					</div>
+					<span class="progress-description">관리</span>
+				</div>
+				<!-- /.info-box-content -->
+			</div>
+			<!-- /.info-box -->
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+
+	<!-- Info boxes -->
+	<div class="row">
+		<div class="col-md-12">
+			<div class="box box-primary">
+				<div class="box-header with-border">
+					<h3 class="box-title">jTSE Concept</h3>
+
+					<div class="box-tools pull-right">
+						<button type="button" class="btn btn-box-tool" data-widget="collapse">
+							<i class="fa fa-minus"></i>
+						</button>
+						<div class="btn-group">
+							<button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
+								<i class="fa fa-wrench"></i>
+							</button>
+							<ul class="dropdown-menu" role="menu">
+								<li>
+									<a href="#StandardDevelopment#/dev">Action</a>
+								</li>
+								<li>
+									<a href="#StandardDevelopment#/dev">Another action</a>
+								</li>
+								<li>
+									<a href="#StandardDevelopment#/dev">Something else here</a>
+								</li>
+								<li class="divider"></li>
+								<li>
+									<a href="#StandardDevelopment#/dev">Separated link</a>
+								</li>
+							</ul>
+						</div>
+						<button type="button" class="btn btn-box-tool" data-widget="remove">
+							<i class="fa fa-times"></i>
+						</button>
+					</div>
+				</div>
+				<!-- /.box-header -->
+				<div class="box-body">
+					<img class="img-responsive pad centered" src="partials/common/img/community/index.png" alt="Concept">
+
+					<button type="button" class="btn btn-default btn-xs">
+						<i class="fa fa-share"></i>
+						Share
+					</button>
+					<button type="button" class="btn btn-default btn-xs">
+						<i class="fa fa-thumbs-o-up"></i>
+						Like
+					</button>
+					<span class="pull-right text-muted">313 likes - 31 comments</span>
+				</div>
+			</div>
+			<!-- /.box -->
+		</div>
+		<!-- /.col -->
+	</div>
+	<!-- /.row -->
+
+</section>
+<!-- /.content -->

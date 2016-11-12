@@ -11,10 +11,9 @@
 </a>
 
 <!-- Header Navbar: style can be found in header.less -->
-<nav class="navbar navbar-static-top clearfix">
+<nav class="navbar navbar-static-top clearfix"  ng-controller="headerController">
   <!-- Sidebar toggle button-->
-  <a href="#" class="sidebar-toggle" data-toggle="offcanvas"
-     role="button">
+  <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button" ng-click="asideToggle()">
     <span class="sr-only">Toggle navigation</span>
   </a>
   <!-- 진행 중인 비교 리스트 -->
@@ -23,7 +22,7 @@
       <h2 class="rivalList-title">
         비교 진행중인 라이벌 콘텐츠
       </h2>
-      <ul class="rivalList-content" ng-controller="rivalListController">
+      <ul class="rivalList-content" ng-controller="raivalListController">
         <li ng-repeat="rivalList in warList">
           <a href="#">[<span class="highLight">{{rivalList.category}}</span>] 비교 종료까지 <span class="highLight type2">{{rivalList.dDay}}</span> 남았습니다.</a>
         </li>
@@ -61,6 +60,9 @@
             <option>중국어</option>
           </select>
         </div>
+      </li>
+      <li>
+        <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
       </li>
     </ul>
   </div>

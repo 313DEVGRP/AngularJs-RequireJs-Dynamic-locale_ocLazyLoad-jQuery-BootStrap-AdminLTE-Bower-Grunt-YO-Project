@@ -40,6 +40,8 @@ sub, sup{
 img {
   vertical-align: top;
 }
+.ir{display:block; text-indent:100%;white-space:nowrap;overflow:hidden}
+.box.box-purple{ border-top-color: #605ca8}
 
 /* --- loading --- */
 #loading {
@@ -185,4 +187,19 @@ img {
 }
 .rivalList-content li:hover a{
   font-weight:bold;
+}
+
+.blind{
+  position:absolute;
+  top:0; right:0; bottom:0; left:0;
+  background-color:#000;
+  opacity: 0;
+}
+
+
+@media all and (max-width:767px){
+  .sidebar-open .content-wrapper{
+    transform: unset;
+    -webkit-transform: unset;
+  }
 }

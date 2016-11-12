@@ -719,10 +719,10 @@ define(
                             };
                           });
 
-          rivalWarIndexModule.controller('rivalListController', ['$rootScope','$scope', '$ocLazyLoad', 'rivalWarLayoutService',
+          rivalWarIndexModule.controller('raivalListController', ['$rootScope','$scope', '$ocLazyLoad', 'rivalWarLayoutService',
             function ($rootScope, $scope, $ocLazyLoad, rivalWarLayoutService) {
 
-
+              console.log("aaa")
 
               $scope.timer = function () {
 
@@ -775,6 +775,42 @@ define(
                 }
               });
           }]);
+
+          rivalWarIndexModule.controller('headerController', ['$scope', '$ocLazyLoad', 'rivalWarLayoutService',
+            function ($scope, $ocLazyLoad, rivalWarLayoutService) {
+              var flag = true;
+              $scope.asideToggle = function () {
+                var $body = $('body'),
+                    blind = '<div class="blind"></div>';
+                if(flag === true){
+                  flag = false;
+                  $body.append(blind).find('.blind').fadeTo(500, 0.5);
+                }else if(flag === false){
+                  flag = true;
+                  $('.blind').fadeTo(500, 0, function () {
+                    $(this).remove();
+                  })
+                }
+              };
+              $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
+                .then(function() {
+                  var $body = $('body'),
+                      $sidebarToggle = $('.sidebar-toggle'),
+                      blind = '<div class="blind"></div>',
+                      flag = true;
+                  // $sidebarToggle.on('click', function () {
+                  //   if(flag === true){
+                  //     flag = false;
+                  //     $body.append(blind).find('.blind').fadeTo(500, 0.5);
+                  //   }else if(flag === false){
+                  //     flag = true;
+                  //     $('.blind').fadeTo(500, 0, function () {
+                  //       $(this).remove();
+                  //     })
+                  //   }
+                  // });
+                });
+            }]);
 
           rivalWarIndexModule.controller('rivalWarAsideController', ['$scope', '$ocLazyLoad', 'rivalWarLayoutService',
             function ($scope, $ocLazyLoad, rivalWarLayoutService) {

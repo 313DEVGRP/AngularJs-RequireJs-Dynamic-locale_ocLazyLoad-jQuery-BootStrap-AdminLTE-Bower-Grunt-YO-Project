@@ -794,21 +794,7 @@ define(
               };
               $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
                 .then(function() {
-                  var $body = $('body'),
-                      $sidebarToggle = $('.sidebar-toggle'),
-                      blind = '<div class="blind"></div>',
-                      flag = true;
-                  // $sidebarToggle.on('click', function () {
-                  //   if(flag === true){
-                  //     flag = false;
-                  //     $body.append(blind).find('.blind').fadeTo(500, 0.5);
-                  //   }else if(flag === false){
-                  //     flag = true;
-                  //     $('.blind').fadeTo(500, 0, function () {
-                  //       $(this).remove();
-                  //     })
-                  //   }
-                  // });
+
                 });
             }]);
 

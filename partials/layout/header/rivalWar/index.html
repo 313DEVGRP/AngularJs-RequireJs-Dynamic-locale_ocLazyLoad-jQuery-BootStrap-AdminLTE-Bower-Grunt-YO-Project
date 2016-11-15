@@ -22,7 +22,7 @@
       <h2 class="rivalList-title">
         비교 진행중인 라이벌 콘텐츠
       </h2>
-      <ul class="rivalList-content" ng-controller="raivalListController">
+      <ul class="rivalList-content" ng-controller="rivalListController">
         <li ng-repeat="rivalList in warList">
           <a href="#">[<span class="highLight">{{rivalList.category}}</span>] 비교 종료까지 <span class="highLight type2">{{rivalList.dDay}}</span> 남았습니다.</a>
         </li>
@@ -34,7 +34,7 @@
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
       <li>
-        <a href="#">
+        <a href="#" ng-click="signIn()">
           <i class="fa fa-lock"></i>
           로그인
         </a>

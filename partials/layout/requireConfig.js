@@ -67,6 +67,8 @@ require.config({
     'dataTables.bootstrap': 'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min',
     'dataTables.responsive': 'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min',
 
+    //'callAjax' : 'partials/common/js/callAjax',
+
     'projectWeb': 'partials/layout/routeConfig'
   },
 

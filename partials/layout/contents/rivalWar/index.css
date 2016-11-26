@@ -4,7 +4,13 @@
     margin-right: auto;
 }
 
+.rival-content{
+	position: relative;
+}
 
+.rival-content .timeline > li{
+	/*margin:0;*/
+}
 /* bg 없애기 */
 
 .box-comment.item-A,
@@ -76,19 +82,42 @@ background-color: rgba(255, 255, 255, .4);
 .link-list li + li {
 	border-top: 1px solid #dedede;
 }
-.item-table .table th,
-.item-table .table td{
-text-align: center;
+/* 스펙 */
+.item-table ul{
+	border: 1px solid #dedede;
+	margin: 0 0 20px 0;
 }
-.item-table .table tr th:nth-child(1),
-.item-table .table tr td:nth-child(1){
-	background-color: rgba(211,75,57,.5);
-	
+.item-table .title {
+    background: #f2f2f2;
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #dedede;
 }
-.item-table .table tr th:nth-child(3),
-.item-table .table tr td:nth-child(3){
-	background-color: rgba(0,192,239,.5);
+.item-table .title .btn {
+    float: right;
+    margin-top: -4px;
 }
+.item-table .dl-box {
+    display: block;
+    overflow: hidden;
+}
+.item-table .dl-box dt {
+    float: left;
+    width: 100px;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid #dedede;
+}
+.item-table .dl-box dd {
+    overflow: hidden;
+    padding: 7px 10px;
+    text-align: left;
+    border-bottom: 1px solid #dedede;
+}
+
+
+
 
 .msg { 
 	padding: 10px; 
@@ -144,19 +173,27 @@ text-align: center;
 }
 
 /*글쓰기 */
-.message-box {  }
+.message-box { 
+	position: relative;	
+	padding-right: 80px;
+}
 .message-box .text-write { 
 	width: 100%;
 	padding: 10px; 
 	border: 1px solid #dedede; 
 	resize: none;
+	height: 60px;
 }
 .message-box .write-btn{
+	position: absolute;
+	top:0;
+	right:0;
 	background-color: #444;
 	color: #fff;
 	padding: 10px 0;
 	border: none;
-	width: 100%;
+	width: 70px;
+	height: 60px;
 	text-align: center;
 }
 
@@ -196,8 +233,8 @@ text-align: center;
 
 .share-box{
 	position: absolute;
-	right: 40px;
-	top: 22px;
+	right: 15px;
+	top: 0px;
 	z-index:10;
 }
 /* 타임라인별 */
@@ -243,8 +280,7 @@ text-align: center;
 .compare-grap-box .text{
 	margin-bottom: 3px;
 	font-size: 12px;
-	margin-right: 20px;
-	float: right;
+	float: left;
 }
 .compare-grap-box .point{
 	margin-bottom: 3px;
@@ -254,7 +290,7 @@ text-align: center;
 }
 .compare-grap-box .grap-logo{
 	position: absolute;
-	bottom: 2px;
+	bottom: 22px;
 	left: 33%;
 	margin-left: -16px;
 }
@@ -267,8 +303,7 @@ text-align: center;
 
 }
 .compare-grap-box .right .text{
-	float: left;
-	margin-left: 20px;
+	float: right;
 }
 .compare-grap-box .right .point{
 	float: right;
@@ -303,5 +338,46 @@ text-align: center;
 	.reduce-text{
 		display: none;
 	}
+	.compare-view .col-xs-6{
+		width:100%;
+		padding: 0;
+	}
+	.rival-content .timeline-item{
+	 margin:;
+	}
+	.rival-content .col-sm-6,
+	.rival-content .compare-grap-box{
+	 padding: 0;
+	}
+	.compare-grap-box .grap-logo {
+    bottom: 22px;
+	}
+	.rival-content .timeline > li{
+		margin-right: 0;
+	}
+	.rival-content .timeline:before{
+		left: 13px;
+	}
+	.rival-content .timeline > li > .timeline-item{
+		margin: 0 0 0 35px;
+	}
+	.rival-content .timeline > li > .fa{
+		left: 0px;
+	}
 	
+	/* 상품 */
+	.main-item .item-img{
+		float:right;
+	}
+	.rival-content .user-comment .comment-text{
+  	  position: relative;
+	}
+	.box-comments .text-muted{
+		position: absolute;
+	    bottom: 0;
+	    right: 10px;
+	}
+	.text-hidden{
+		display: none;
+	}
 }

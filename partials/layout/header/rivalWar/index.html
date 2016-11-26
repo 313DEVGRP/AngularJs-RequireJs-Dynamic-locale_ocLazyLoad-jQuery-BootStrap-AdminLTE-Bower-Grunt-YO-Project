@@ -24,7 +24,7 @@
       </h2>
       <ul class="rivalList-content" ng-controller="rivalListController">
         <li ng-repeat="rivalList in warList">
-          <a href="#">[<span class="highLight">{{rivalList.category}}</span>] 비교 종료까지 <span class="highLight type2">{{rivalList.dDay}}</span> 남았습니다.</a>
+          <a href="#">[<span class="highLight">{{rivalList.category}}</span>] <span class="hide-text">비교 종료까지</span> <span class="highLight type2">{{rivalList.dDay}}</span> <span class="hide-text">남았습니다.</span></a>
         </li>
       </ul>
     </div>
@@ -33,7 +33,7 @@
   <!-- Navbar Right Menu -->
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
-      <li>
+      <li class="login-click">
         <a href="#" ng-click="signIn()">
           <i class="fa fa-lock"></i>
           로그인
@@ -61,9 +61,9 @@
           </select>
         </div>
       </li>
-      <li>
+      <!-- <li>
         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-      </li>
+      </li> -->
     </ul>
   </div>
 </nav>

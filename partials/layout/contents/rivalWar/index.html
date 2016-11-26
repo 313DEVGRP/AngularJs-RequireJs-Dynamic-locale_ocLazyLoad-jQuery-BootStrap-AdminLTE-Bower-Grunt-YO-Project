@@ -1,5 +1,5 @@
 <!-- Content Header (Page header) -->
-<section class="content-header">
+<!-- <section class="content-header">
 	<h1>
 		jsTree Sevice Engine
 		<small>Support System</small>
@@ -13,7 +13,7 @@
 		</li>
 		<li class="active">Dashboard</li>
 	</ol>
-</section>
+</section> -->
 
 <!-- Main content -->
 <section class="content" ng-controller="rivalWarContentsController">
@@ -21,9 +21,11 @@
 	<div class="row rival-content">
 		<div class="box-tools share-box">
         	<button type="button" class="btn btn-default"><i class="fa fa-mail-forward"></i>공유하기</button>
-        	<a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
-        	<a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
-        	<a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+        	<span>
+	        	<a class="btn btn-social-icon btn-facebook"><i class="fa fa-facebook"></i></a>
+	        	<a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
+	        	<a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
+        	</span>
         </div>
 		<div class="col-md-12">
           <!-- The time line -->
@@ -95,15 +97,15 @@
 				        <div class="compare-grap-box">
 				        	<div class="compare-grap">
 				        		<div class="left">
-				        			<span class="text">Top50 Versus Score</span>
 				        			<span class="point">25,504 points</span>
 				        			<div class="item-A"></div>
+				        			<span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
 				        		</div>
 				        		<span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png" alt="logo"></span>
 				        		<div class="right">
 				        			<span class="point">25,504 points</span>
-				        			<span class="text"><span>Top50 Versus Score</span></span>
 				        			<div class="item-B"></div>
+				        			<span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
 				        		</div>
 				        	</div>
 				        	<div class="compare-text">
@@ -127,7 +129,7 @@
 		              <h3 class="box-title">비교현황 및 정보</h3>
 
 		              <div class="box-tools pull-right">
-		              <button type="button" class="btn bg-purple btn-xs">선택은 신중하게 해주세요. 변경이 불가능합니다.</button>
+		              <button type="button" class="btn bg-purple btn-xs"><span class="text-hidden">선택은 신중하게 해주세요. </span>변경이 불가능합니다.</button>
 		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
 		                </button>
 		              </div>
@@ -244,47 +246,58 @@
 		            <!-- /.box-header -->
 		            <div class="box-body">
 		              <div class="item-table">
-		              	<table class="table table-bordered table-hover">
-			                <colgroup>
-			                	<col width="33.3334%">
-			                	<col width="33.3334%">
-			                	<col width="33.3334%">
-			                </colgroup>
-			                <thead>
-				                <tr>
-				                  <th>Samsung Galaxy 6</th>
-				                  <th>#기본 스펙</th>
-				                  <th>Apple iphone 6</th>
-				                </tr>
-			                </thead>
-			                <tbody>
-			                <tr>
-			                  <td>안드로이드5.1</td>
-			                  <td>#운영체제</td>
-			                  <td>iOS10</td>
-			                </tr>
-			                <tr>
-			                  <td>5.7"</td>
-			                  <td>#화면 크기</td>
-			                  <td>4.7"</td>
-			                </tr>
-			                <tr>
-			                  <td>2.1GHz+1.5GHz</td>
-			                  <td>#cpu</td>
-			                  <td>2.4GHz</td>
-			                </tr>
-			                <tr>
-			                  <td>4G</td>
-			                  <td>#램</td>
-			                  <td>2G</td>
-			                </tr>
-			                <tr>
-			                  <td>32G내장</td>
-			                  <td>#내장메모리</td>
-			                  <td>32G내장</td>
-			                </tr>
-			                </tbody>
-			              </table>
+						 <ul>
+							<li>
+								<a class="title">#운영체제<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+								                </button></a>
+								<dl class="dl-box">
+									<dt>Galaxy 6</dt>
+									<dd>안드로이드5.1</dd>
+									<dt>iphone 6</dt>
+									<dd>iOS10</dd>			
+								</dl>
+							</li>
+							<li>
+								<a class="title">#화면 크기<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+								                </button></a>
+								<dl class="dl-box">
+									<dt>Galaxy 6</dt>
+									<dd>5.7</dd>
+									<dt>iphone 6</dt>
+									<dd>4.7</dd>				
+								</dl>
+							</li>
+							<li>
+								<a class="title">##cpu<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+								                </button></a>
+								<dl class="dl-box">
+									<dt>Galaxy 6</dt>
+									<dd>2.1GHz+1.5GHz</dd>
+									<dt>iphone 6</dt>
+									<dd>2.4GHz</dd>				
+								</dl>
+							</li>
+							<li>
+								<a class="title">#램<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+								                </button></a>
+								<dl class="dl-box">
+									<dt>Galaxy 6</dt>
+									<dd>4G</dd>
+									<dt>iphone 6</dt>
+									<dd>2G</dd>				
+								</dl>
+							</li>
+							<li>
+								<a class="title">#내장메모리<button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-plus"></i>
+								                </button></a>
+								<dl class="dl-box">
+									<dt>Galaxy 6</dt>
+									<dd>32G내장</dd>
+									<dt>iphone 6</dt>
+									<dd>32G내장</dd>				
+								</dl>
+							</li>
+						</ul> 
 		              </div>
 
 		              <ul class="pagination pagination-sm no-margin pull-right">
@@ -370,12 +383,14 @@
 			                      <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>14</i></span>기계적사고방식
 			                        <small class="label item-A">Iphone</small>
+			                        <span class="pull-right">8:03 PM Today</span>
 			                        <span class="text-muted pull-right">
 			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-			                        8:03 PM Today</span>
+			                        </span>
 			                      </span><!-- /.username -->
 			                 	<p class="text">아이폰 사용은 좋은 점은 분명이 있지만 일반사용자가 사용하기에는 처음에 어려움이 너무 많습니다.</p>
+			                	<p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
 			                </div>
 			                <!-- /.comment-text -->
 			              </div>
@@ -386,15 +401,14 @@
 			                      <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq2.png" alt="icon"/><i>57</i></span>koreaMan
 			                        <small class="label item-B">Galaxy</small>
+			                        <span class="pull-right">8:03 PM Today</span>
 			                        <span class="text-muted pull-right">
-			                        <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
+			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-			                        8:03 PM Today
-
 			                        </span>
 			                      </span><!-- /.username -->
-
 			                 	<p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
+			               		<p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
 			                </div>
 			                <!-- /.comment-text -->
 			              </div>
@@ -448,12 +462,14 @@
 			                      <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>23</i></span>biteapple
 			                        <small class="label item-A">Iphone</small>
+			                        <span class="pull-right">8:03 PM Today</span>
 			                        <span class="text-muted pull-right">
 			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-			                        8:03 PM Today</span>
+			                        </span>
 			                      </span><!-- /.username -->
 			                 	<p class="text">너무 쓸데없는 앱들이 설치 되어 있는데 삭제도 안되니 더 불편한거 아닌가요?</p>
+			                	<p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
 			                </div>
 			                <!-- /.comment-text -->
 			              </div>
@@ -464,15 +480,15 @@
 			                      <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>10</i></span>koreaMan
 			                        <small class="label item-B">Galaxy</small>
+			                        <span class="pull-right">8:03 PM Today</span>
 			                        <span class="text-muted pull-right">
-			                        <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
+			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-			                        8:03 PM Today
-
 			                        </span>
 			                      </span><!-- /.username -->
 
 			                 	<p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
+			                	<p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
 			                </div>
 			                <!-- /.comment-text -->
 			              </div>

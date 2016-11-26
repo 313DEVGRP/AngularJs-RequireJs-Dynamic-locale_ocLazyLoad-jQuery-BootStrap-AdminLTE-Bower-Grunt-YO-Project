@@ -203,3 +203,37 @@ img {
     -webkit-transform: unset;
   }
 }
+@media all and (max-width:460px){
+  .main-header .sidebar-toggle{
+  	margin-top:-50px;
+  	color: #fff;
+  }
+  .rivalList-outerWrap .hide-text{
+  	display:none;
+  }
+  .main-header .multilingual .form-group{
+  	display:none;
+  }
+  .main-header .multilingual{
+    padding: 14px 15px;
+  }
+  .main-header .multilingual .fa-globe{
+	font-size: 20px;
+  }
+  .navbar-custom-menu > .navbar-nav > li.login-click{
+  	position: absolute;
+    top: -50px;
+    right: 0;
+  }
+  .skin-blue .main-header .navbar .nav > li > a.login-click{
+    color: #fff;
+  }
+  
+  .rivalList-outerWrap{
+  	width: 100%;
+    padding-right: 100px;
+  }
+  .navbar-custom-menu .navbar-nav{
+  	margin-top: -50px;
+  }
+}

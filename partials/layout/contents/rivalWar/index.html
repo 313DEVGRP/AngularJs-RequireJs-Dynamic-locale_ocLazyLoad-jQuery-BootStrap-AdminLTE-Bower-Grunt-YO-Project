@@ -42,9 +42,8 @@
             <!-- timeline time label -->
             <li class="time-label">
                   <span class="bg-red">
-                    2016년 11월 4일
+                    {{warTime}}
                   </span>
-
             </li>
 
             <!-- /.timeline-label -->
@@ -77,7 +76,7 @@
 				                <div class="progress-bar" style="width: 30%"></div>
 				              </div>
 				                  <span class="progress-description">
-				                    Apple iphone 6(37%)
+				                    {{itemList.itemA.brand}} {{itemList.itemA.name}}(37%)
 				                  </span>
 				            </div>
 				            <!-- /.info-box-content -->
@@ -95,7 +94,7 @@
 				                <div class="progress-bar" style="width: 70%"></div>
 				              </div>
 				                  <span class="progress-description">
-				                    Samsung Galaxy 6(63%)
+				                    {{itemList.itemB.brand}} {{itemList.itemB.name}}(63%)
 				                  </span>
 				            </div>
 				            <!-- /.info-box-content -->
@@ -257,9 +256,9 @@
 		              <div class="item-table">
 		              
 		              	<div class="spec-title">
-		              		<span class="item-A">Galaxy 6</span>
+		              		<span class="item-A">{{itemList.itemA.name}}</span>
 		              		<span>#기본스펙</span>
-		              		<span class="item-B">iphone 6</span>
+		              		<span class="item-B">{{itemList.itemB.name}}</span>
 		              	</div>
 						 <ul>
 							<li>

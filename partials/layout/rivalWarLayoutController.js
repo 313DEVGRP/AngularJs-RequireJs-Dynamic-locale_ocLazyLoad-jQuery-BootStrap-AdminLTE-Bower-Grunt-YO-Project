@@ -860,7 +860,18 @@ define(
                 		}
                 	});
                 /* 데이터 적용 */
-                	
+                	$scope.warTime ='2016년 11월 4일'	
+                	$scope.itemList ={
+                		itemA:{
+                			name : 'Galaxy 6',
+                			brand: 'Samsung'
+                		},
+	                	itemB:{
+            				name : 'iphone 6',
+                			brand: 'Apple'
+	                	}	
+                			
+                	}	
                 	
               }]);// rivalWarContentsController.controller
 

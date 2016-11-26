@@ -182,9 +182,15 @@ background-color: rgba(255, 255, 255, .4);
  border-top: none;
  padding-top:4px;
 }
-
+	
 .rival-content .user-comment .comment-text{
- padding: 0 10px;
+	position: relative;
+	padding: 0 10px;
+}
+.box-comments .text-muted{
+	position: absolute;
+    bottom: 0;
+    right: 10px;
 }
 .rival-content .box-comments .box-comment:first-of-type{
  padding-top: 10px;
@@ -203,7 +209,8 @@ background-color: rgba(255, 255, 255, .4);
 /*글쓰기 */
 .message-box { 
 	position: relative;	
-	padding-right: 80px;
+	padding-right: 70px;
+    height: 60px;
 }
 .message-box .text-write { 
 	width: 100%;
@@ -400,14 +407,7 @@ background-color: rgba(255, 255, 255, .4);
 	.main-item .item-img{
 		float:right;
 	}
-	.rival-content .user-comment .comment-text{
-  	  position: relative;
-	}
-	.box-comments .text-muted{
-		position: absolute;
-	    bottom: 0;
-	    right: 10px;
-	}
+	
 	.text-hidden{
 		display: none;
 	}
@@ -415,7 +415,9 @@ background-color: rgba(255, 255, 255, .4);
 }
 @media all and (max-width:480px) {
 	/* 스펙 */
-
+	.share-box .social-icon-line{
+		display:none;
+	}
 	.item-table .spec-title{
 		display:none;
 	}
@@ -460,5 +462,6 @@ background-color: rgba(255, 255, 255, .4);
 	    border-bottom: 1px solid #dedede;
 	    background-color: #fff;
 	     opacity: 1;
+	     color:#444;
 	}
 }

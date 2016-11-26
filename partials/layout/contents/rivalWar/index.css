@@ -99,7 +99,7 @@ background-color: rgba(255, 255, 255, .4);
     margin-top: -4px;
 }
 .item-table .dl-box {
-    display: block;
+    display: none;
     overflow: hidden;
 }
 .item-table .dl-box dt {

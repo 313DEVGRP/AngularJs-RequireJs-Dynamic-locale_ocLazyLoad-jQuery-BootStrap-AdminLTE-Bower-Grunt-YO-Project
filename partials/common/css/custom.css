@@ -196,20 +196,47 @@ img {
   opacity: 0;
 }
 
+/* 소셜로그인 */
+.rival-war-login .modal-header h1{
+	font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.btn-kakaotalk{
+	color: #ffffff;
+    background-color: #fff100;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-band{
+	color: #ffffff;
+    background-color: #5c5b65;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+.btn-kakaostory{
+	color: #ffffff;
+    background-color: #fec10d;
+    border-color: rgba(0, 0, 0, 0.2);
+	
+}
+.btn-kakaotalk img,
+.btn-band img,
+.btn-kakaostory img{
+	width: 100%;
+	height: auto;
+}
 
 @media all and (max-width:767px){
   .sidebar-open .content-wrapper{
     transform: unset;
     -webkit-transform: unset;
   }
+  
 }
-@media all and (max-width:460px){
+@media all and (max-width:720px){
   .main-header .sidebar-toggle{
   	margin-top:-50px;
   	color: #fff;
-  }
-  .rivalList-outerWrap .hide-text{
-  	display:none;
   }
   .main-header .multilingual .form-group{
   	display:none;
@@ -225,8 +252,14 @@ img {
     top: -50px;
     right: 0;
   }
-  .skin-blue .main-header .navbar .nav > li > a.login-click{
+  .skin-blue .main-header .navbar .nav > .login-click a,
+  .skin-blue .main-header .navbar .sidebar-toggle{
     color: #fff;
+  }
+  .skin-blue .main-header .navbar .nav > .login-click a:hover,
+  .skin-blue .main-header .navbar .sidebar-toggle:hover{
+    color: #fff;
+    background-color: rgba(255, 255, 255, .1);
   }
   
   .rivalList-outerWrap{
@@ -235,5 +268,13 @@ img {
   }
   .navbar-custom-menu .navbar-nav{
   	margin-top: -50px;
+	position: relative;
+    z-index: 10;
+  }
+}
+
+@media all and (max-width:480px){
+  .rivalList-outerWrap .hide-text{
+  	display:none;
   }
 }

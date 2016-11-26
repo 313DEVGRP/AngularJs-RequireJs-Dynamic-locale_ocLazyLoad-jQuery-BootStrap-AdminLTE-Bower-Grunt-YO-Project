@@ -72,6 +72,9 @@ background-color: rgba(255, 255, 255, .4);
 .link-list li { 
 	padding: 5px 0; 
 	list-style: none; 
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 .link-list li a { 
 	color: #888;
@@ -83,26 +86,46 @@ background-color: rgba(255, 255, 255, .4);
 	border-top: 1px solid #dedede;
 }
 /* 스펙 */
+
+.item-table .spec-title{
+	border: 1px solid #dedede;
+	border-bottom: none;
+}
+.item-table .spec-title:after{
+	content:'';
+	display:table;
+	clear:both;
+}
+.item-table .spec-title span{
+	float:left;
+	width: 33.3334%;
+	padding: 10px;
+	text-align: center;
+}
 .item-table ul{
 	border: 1px solid #dedede;
 	margin: 0 0 20px 0;
 }
 .item-table .title {
-    background: #f2f2f2;
     display: block;
-    text-align: left;
+    position: absolute;
+    width: 33.3334%;
+    left: 33.334%;
+    text-align: center;
     padding: 10px;
     border-bottom: 1px solid #dedede;
 }
 .item-table .title .btn {
+	display:none;
     float: right;
     margin-top: -4px;
 }
 .item-table .dl-box {
-    display: none;
+    display: block;
     overflow: hidden;
 }
 .item-table .dl-box dt {
+	display:none;
     float: left;
     width: 100px;
     text-align: left;
@@ -110,13 +133,18 @@ background-color: rgba(255, 255, 255, .4);
     border-bottom: 1px solid #dedede;
 }
 .item-table .dl-box dd {
-    overflow: hidden;
-    padding: 7px 10px;
-    text-align: left;
+    width: 33.334%;
+    padding: 10px;
+    text-align: center;
     border-bottom: 1px solid #dedede;
+	opacity: .7;
 }
-
-
+.item-table .dl-box dd.item-A {
+    float: left;
+}
+.item-table .dl-box dd.item-B {
+	float: right;
+}
 
 
 .msg { 
@@ -233,7 +261,7 @@ background-color: rgba(255, 255, 255, .4);
 
 .share-box{
 	position: absolute;
-	right: 15px;
+	right: 40px;
 	top: 0px;
 	z-index:10;
 }
@@ -335,6 +363,9 @@ background-color: rgba(255, 255, 255, .4);
 
 /* 미디어 쿼리 */
 @media all and (max-width:600px) {
+	.share-box {
+	    right: 15px;
+    }
 	.reduce-text{
 		display: none;
 	}
@@ -379,5 +410,55 @@ background-color: rgba(255, 255, 255, .4);
 	}
 	.text-hidden{
 		display: none;
+	}
+	
+}
+@media all and (max-width:480px) {
+	/* 스펙 */
+
+	.item-table .spec-title{
+		display:none;
+	}
+	
+	.item-table ul{
+		border: 1px solid #dedede;
+		margin: 0 0 20px 0;
+	}
+	.item-table .title {
+		position: inherit;
+	    background: #f2f2f2;
+	    width: 100%;
+	    display: block;
+	    text-align: left;
+	    padding: 10px;
+	    border-bottom: 1px solid #dedede;
+	}
+	.item-table .title .btn {
+		display: block;
+	    float: right;
+	    margin-top: -4px;
+	}
+	.item-table .dl-box {
+	    display: none;
+	    overflow: hidden;
+	}
+	.item-table .dl-box dt {
+	    display:block;
+	    float: left;
+	    width: 100px;
+	    text-align: left;
+	    padding: 7px 10px;
+	    border-bottom: 1px solid #dedede;
+	}
+	.item-table .dl-box dd.item-A,
+	.item-table .dl-box dd.item-B{
+		float:none;
+	    overflow: hidden;
+	    width: inherit;
+	    padding: 7px 10px;
+	    text-align: left;
+	    border-bottom: 1px solid #dedede;
+	    background-color: #fff;
+	     opacity: 1;
 	}
 }

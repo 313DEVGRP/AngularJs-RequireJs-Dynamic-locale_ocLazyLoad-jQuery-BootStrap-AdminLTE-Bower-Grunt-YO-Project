@@ -831,8 +831,9 @@ define(
           rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',
               '$ocLazyLoad', '$stateParams', 'rivalWarLayoutService',
               function($scope, $ocLazyLoad, $stateParams, rivalWarLayoutService) {
+        	  	/* 컨텐츠 영역 */
                 console.log("----" + $stateParams.subModule + "----");
-
+                
                 angular.element(document).ready(function() {
                   if(typeof $stateParams.subModule != 'undefined'){
                 	console.log($stateParams.subModule);
@@ -840,10 +841,26 @@ define(
                     $scope.$emit('emitSubModule',  {message: $scope.subName});
                   }
                 });
-
+                
                 $('#carousel-example-generic').carousel({
                   interval: 2000
                 });
+                
+                /* 토글 슬라이드 이벤트 */
+                
+                	$('.item-table li').on('click',function(){
+                		var viewWidth = $('.rival-content').outerWidth();
+                		if(viewWidth < 460){
+	                		if($(this).find('.fa').hasClass('fa-plus')){
+	                			$(this).find('.fa').attr('class','fa fa-minus');
+	                			$(this).find('.dl-box').slideDown();
+	                		}else{
+	                			$(this).find('.fa').attr('class','fa fa-plus');
+	                			$(this).find('.dl-box').slideUp();
+	                		}
+                		}
+                	});
+                
               }]);// rivalWarContentsController.controller
 
           rivalWarIndexModule.directive('signInModal', function () {

@@ -38,6 +38,7 @@
 
 /* 메인 아이템 */
 .main-item{
+	margin-bottom: 10px;
 	border: 1px solid #dedede;
 }
 .main-item .inner{
@@ -101,6 +102,8 @@ background-color: rgba(255, 255, 255, .4);
 	width: 33.3334%;
 	padding: 10px;
 	text-align: center;
+	opacity: .7;
+	font-weight: bold;
 }
 .item-table ul{
 	border: 1px solid #dedede;
@@ -379,6 +382,9 @@ background-color: rgba(255, 255, 255, .4);
 	.compare-view .col-xs-6{
 		width:100%;
 		padding: 0;
+	}
+	.compare-view .box-body .col-xs-6+.col-xs-6{
+		margin-top:20px;
 	}
 	.rival-content .timeline-item{
 	 margin:;

@@ -847,7 +847,6 @@ define(
                 });
                 
                 /* 토글 슬라이드 이벤트 */
-                
                 	$('.item-table li').on('click',function(){
                 		var viewWidth = $('.rival-content').outerWidth();
                 		if(viewWidth < 460){
@@ -860,7 +859,9 @@ define(
 	                		}
                 		}
                 	});
-                
+                /* 데이터 적용 */
+                	
+                	
               }]);// rivalWarContentsController.controller
 
           rivalWarIndexModule.directive('signInModal', function () {

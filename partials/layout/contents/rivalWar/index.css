@@ -478,11 +478,18 @@ background-color: rgba(255, 255, 255, .4);
 	border-bottom: 5px solid #000;
 }
 
+.title_area img {
+	width: 58px;
+}
+
 .title_area .tit_txt {
-	font-size: 23px;color: #000;
+	font-size: 26px;color: #000;
+	padding-bottom: 24px;
+    padding-top: 10px;
 }
 
 p.priveiw {
 	font-size: 15px;color: #000;
-	padding-bottom: 15px;
+	padding-bottom: 3px;
+    padding-top: 7px;
 }

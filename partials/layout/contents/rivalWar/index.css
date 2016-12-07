@@ -269,10 +269,12 @@
 	color: #444;
 }
 .btn-like .fa{
-	color: blue;
+	color: #444;
+	/*color: blue;*/
 }
 .btn-hate .fa{
-    color: red;
+	color: #FF008A
+    /*color: red;*/
 }
 .sub-write {
 	padding: 0 10px 10px;

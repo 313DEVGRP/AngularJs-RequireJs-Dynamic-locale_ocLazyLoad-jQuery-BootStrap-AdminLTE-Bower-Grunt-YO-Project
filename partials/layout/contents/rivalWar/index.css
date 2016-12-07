@@ -277,16 +277,20 @@ background-color: rgba(255, 255, 255, .4);
 }
 /* 타임라인별 */
 .result-view .box{
-	border-color: #00a65a !important;
+	border-color: #000 !important;
+	/*border-color: #00a65a !important;*/
 }
 .compare-view .box{
-	border-color: #605ca8 !important;
+	border-color: #000 !important;
+	/*border-color: #605ca8 !important;*/
 }
 .spec-view .box{
-	border-color: #0073b7 !important;
+	border-color: #000 !important;
+	/*border-color: #0073b7 !important;*/
 }
 .writing-view .box{
-    border-color: #f39c12 !important;
+	border-color: #000 !important;
+    /*border-color: #f39c12 !important;*/
 }
 .compare-grap-box {
 	padding: 0 15px;
@@ -494,4 +498,8 @@ p.priveiw {
 	font-size: 15px;color: #000;
 	padding-bottom: 3px;
     padding-top: 7px;
+}
+
+.compare-grap-box .grap-logo img {
+	width: 28px;
 }

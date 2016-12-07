@@ -21,19 +21,23 @@
 }
 
 .item-A{
-	background-color: #dd4b39;
-	color: #fff;
+	background: url('partials/layout/contents/rivalWar/img/bg_h1.gif') repeat-x;
+	/*background-color: #dd4b39;*/
+	color: #000;
 }
 .item-B{
-	background-color: #00c0ef;
-	color: #fff;
+	background: url('partials/layout/contents/rivalWar/img/bg_h2.gif') repeat-x;
+	/*background-color: #00c0ef;*/
+	color: #000;
 }
 
 .hash-list.item-A .hash {
-	color: #dd4b39;
+	color:#444;
+	/*color: #dd4b39;*/
 }
 .hash-list.item-B .hash {
-	color: #00c0ef;
+	color: #FF008A;
+	/*color: #00c0ef;*/
 }
 
 /* 메인 아이템 */
@@ -56,7 +60,7 @@
 	width: 30%;
 }
 .main-item .item-graph .box-pane-right{
-background-color: rgba(255, 255, 255, .4);
+	/*background-color: rgba(255, 255, 255, .4);*/
 }
 .main-item.right .item-img,
 .main-item.right .item-graph{

@@ -486,16 +486,32 @@ background-color: rgba(255, 255, 255, .4);
 
 .title_area .tit_txt {
 	font-size: 26px;
-	color: #000;
+	color: #fff;
     padding-top: 10px;
-    padding-left: 37px;
+    padding-bottom: 10px;
+    padding-left: 50px;
 }
 
-.title_are .tit_box {
-	margin-bottom: 24px;
+.title_area .tit_box {
+	position: relative;
+	background: #28A7E1;
+    border-radius: 5px;
 }
 
-p.priveiw {
+.title_area .ico_pri {
+	display: block;
+    background: #000;
+    color: #fff;
+    border-radius: 7px;
+    width: 55px;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+}
+
+.pad30 {padding:30px;}
+
+p.priview {
 	font-size: 15px;color: #000;
 	padding-bottom: 3px;
     padding-top: 7px;
@@ -516,9 +532,9 @@ p.priveiw {
     height: 2px;
     display: block;
     position: absolute;
-    top:37%;
-    left: 1%;
-    background: #28A7E1;
+    top:47%;
+    left: 10px;
+    background: #fff;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .title_area .tit_icon:before {
@@ -530,7 +546,7 @@ p.priveiw {
     position: absolute;
     left: 1%;
     content: '';
-    background: #28A7E1;
+    background: #fff;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -543,7 +559,7 @@ p.priveiw {
     position: absolute;
     left: 1%;
     content: '';
-    background: #28A7E1;
+    background: #fff;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 

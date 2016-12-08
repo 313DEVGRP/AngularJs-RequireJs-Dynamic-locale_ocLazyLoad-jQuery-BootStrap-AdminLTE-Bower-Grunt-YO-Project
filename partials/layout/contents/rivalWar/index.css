@@ -518,7 +518,7 @@ p.priveiw {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 .title_area .tit_icon:before {
-	top: -7px;
+	top: -8px;
     width: 22px;
     height: 2px;
     content: '';
@@ -531,7 +531,7 @@ p.priveiw {
 }
 
 .title_area .tit_icon:after {
-	top: 7px;
+	top: 8px;
     width: 22px;
     height: 2px;
     content: '';

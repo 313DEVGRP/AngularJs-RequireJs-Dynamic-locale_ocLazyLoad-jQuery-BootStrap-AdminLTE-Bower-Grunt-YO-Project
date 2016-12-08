@@ -488,6 +488,7 @@ background-color: rgba(255, 255, 255, .4);
 	font-size: 26px;color: #000;
 	padding-bottom: 24px;
     padding-top: 10px;
+    padding-left: 37px;
 }
 
 p.priveiw {
@@ -509,9 +510,9 @@ p.priveiw {
 	top: 24px;
     width: 22px;
     height: 2px;
-    margin-left: -9px;
     display: block;
     position: absolute;
+    top:37%;
     left: 1%;
     background: #28A7E1;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
@@ -520,7 +521,6 @@ p.priveiw {
 	top: -7px;
     width: 22px;
     height: 2px;
-    margin-left: -11px;
     content: '';
     display: block;
     position: absolute;
@@ -534,7 +534,6 @@ p.priveiw {
 	top: 7px;
     width: 22px;
     height: 2px;
-    margin-left: -11px;
     content: '';
     display: block;
     position: absolute;

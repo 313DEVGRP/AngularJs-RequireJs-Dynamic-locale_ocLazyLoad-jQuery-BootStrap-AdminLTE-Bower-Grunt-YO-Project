@@ -544,4 +544,19 @@ p.priveiw {
     box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+.title_area span {
+	display: block;
+    color: #fff;
+    margin-top: 11px;
+}
+
+
+.screen_out {
+	position: absolute;
+    width: 0;
+    height: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
 

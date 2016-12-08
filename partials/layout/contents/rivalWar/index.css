@@ -485,10 +485,14 @@ background-color: rgba(255, 255, 255, .4);
 }
 
 .title_area .tit_txt {
-	font-size: 26px;color: #000;
-	padding-bottom: 24px;
+	font-size: 26px;
+	color: #000;
     padding-top: 10px;
     padding-left: 37px;
+}
+
+.title_are .tit_box {
+	margin-bottom: 24px;
 }
 
 p.priveiw {

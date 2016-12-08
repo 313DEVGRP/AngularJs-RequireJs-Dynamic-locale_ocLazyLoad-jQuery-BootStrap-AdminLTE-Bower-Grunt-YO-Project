@@ -14,14 +14,12 @@
 		<li class="active">Dashboard</li>
 	</ol>
 </section> -->
-
 <!-- Main content -->
 <section class="content" ng-controller="rivalWarContentsController">
-
-	<div class="row rival-content">
-		<div class="box-tools share-box">
-        	<button type="button" class="btn btn-default"><i class="fa fa-mail-forward"></i>공유하기</button>
-        	<span class="social-icon-line">
+    <div class="row rival-content">
+        <div class="box-tools share-box">
+            <button type="button" class="btn btn-default"><i class="fa fa-mail-forward"></i>공유하기</button>
+            <span class="social-icon-line">
         		<a href="#" class="btn btn-social-icon btn-kakaotalk">
 	            	<i class="fa fa-kakaotalk"><img src="partials/common/img/etc/icon-brand-kakaotalk.png" alt="카카오톡"/></i>
 	         	</a>
@@ -36,502 +34,524 @@
 	        	<a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
         	</span>
         </div>
-		<div class="col-md-12">
-          <!-- The time line -->
-          <ul class="timeline">
-            <!-- timeline time label -->
-            <li class="time-label">
-                  <span class="bg-red">
+        <div class="col-md-12">
+            <!-- The time line -->
+            <ul class="timeline">
+                <!-- timeline time label -->
+                <li class="time-label">
+                    <span class="bg-red">
                     {{warTime}}
                   </span>
-            </li>
-
-            <!-- /.timeline-label -->
-            <!-- timeline item -->
-            <li>
-              <i class="fa fa-bar-chart bg-green"></i>
-				<div class="timeline-item result-view">
-	              <div class="box box-warning">
-		            <div class="box-header with-border">
-		              <h3 class="box-title">누적집계결과</h3>
-
-		              <div class="box-tools pull-right">
-		              	<button type="button" class="btn btn-success btn-xs">좀 더 자세한 결과보기</button>
-		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-		                </button>
-		              </div>
-		              <!-- /.box-tools -->
-		            </div>
-		            <!-- /.box-header -->
-		            <div class="box-body">
-		              <div>
-		              	<div class="col-sm-6 col-xs-12">
-				          <div class="info-box item-A">
-				            <span class="info-box-icon"><i class="fa fa-thumbs-o-down"></i></span>
-
-				            <div class="info-box-content">
-				              <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 1232<br>
+                </li>
+                <!-- /.timeline-label -->
+                <!-- ADD timeline item -->
+                <li>
+                    <div class="timeline-item result-view">
+                        <div class="box box-warning">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">ONE WEEK 비교 주제</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-xs">더보기</button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="title_area">
+                                    <h2 class="tit_txt">애플 아이폰 VS 삼성 갤럭시 여러분의 선택은?</h2>
+                                    <img src="partials/layout/contents/rivalWar/img/btn_priview.png" alt="">
+                                    <p class="priveiw">
+                                        카메라는 아이폰이다 생각하시는 분들 많은데요 현재는 그 차이가 더 벌어지는거 같네요....
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </li>
+                <!-- /.ADD timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-bar-chart bg-green"></i>
+                    <div class="timeline-item result-view">
+                        <div class="box box-warning">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">누적집계결과</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-success btn-xs">좀 더 자세한 결과보기</button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="info-box item-A">
+                                            <span class="info-box-icon"><i class="fa fa-thumbs-o-down"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 1232<br>
 									총 등록 글 : 5,230 총 등록된 해시 태그 : 1210</span>
-				              <div class="progress">
-				                <div class="progress-bar" style="width: 30%"></div>
-				              </div>
-				                  <span class="progress-description">
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 30%"></div>
+                                                </div>
+                                                <span class="progress-description">
 				                    {{itemList.itemA.brand}} {{itemList.itemA.name}}(37%)
 				                  </span>
-				            </div>
-				            <!-- /.info-box-content -->
-				          </div>
-				          <!-- /.info-box -->
-				        </div>
-		              	<div class="col-sm-6 col-xs-12">
-				          <div class="info-box item-B">
-				            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
-
-				            <div class="info-box-content">
-				              <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <div class="col-sm-6 col-xs-12">
+                                        <div class="info-box item-B">
+                                            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>
 									총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
-				              <div class="progress">
-				                <div class="progress-bar" style="width: 70%"></div>
-				              </div>
-				                  <span class="progress-description">
+                                                <div class="progress">
+                                                    <div class="progress-bar" style="width: 70%"></div>
+                                                </div>
+                                                <span class="progress-description">
 				                    {{itemList.itemB.brand}} {{itemList.itemB.name}}(63%)
 				                  </span>
-				            </div>
-				            <!-- /.info-box-content -->
-				          </div>
-				          <!-- /.info-box -->
-				        </div>
-				        <!-- 그래프 영역 -->
-				        <div class="compare-grap-box">
-				        	<div class="compare-grap">
-				        		<div class="left">
-				        			<span class="point">25,504 points</span>
-				        			<div class="item-A"></div>
-				        			<span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
-				        		</div>
-				        		<span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png" alt="logo"></span>
-				        		<div class="right">
-				        			<span class="point">25,504 points</span>
-				        			<div class="item-B"></div>
-				        			<span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
-				        		</div>
-				        	</div>
-				        	<div class="compare-text">
-								등록된 글 총합 : 19,23, 좋아요 선택 총합 : 2,443(21.2%), 추가된 스펙개수: 7개 등록된 해시태그 총합 13,233개,<br>
-								표중오차 : .64821, 평균 : 3.1234, 등분상 가정 유의확률: .124, 유의확률 : . 823, 99%, 신뢰구간 하한 : -.23134, 상한: .235421, T분포결과 : 8.423
-							</div>
-				        </div>
-		              </div>
-		            </div>
-		            <!-- /.box-body -->
-		          </div>
-	            </div>
-            </li>
-            <!-- END timeline item -->
-            <!-- timeline item -->
-            <li>
-              <i class="fa fa-camera bg-purple"></i>
-              <div class="timeline-item compare-view">
-	              <div class="box box-purple">
-		            <div class="box-header with-border">
-		              <h3 class="box-title">비교현황 및 정보</h3>
-
-		              <div class="box-tools pull-right">
-		              <button type="button" class="btn bg-purple btn-xs"><span class="text-hidden">선택은 신중하게 해주세요. </span>변경이 불가능합니다.</button>
-		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-		                </button>
-		              </div>
-		              <!-- /.box-tools -->
-		            </div>
-		            <!-- /.box-header -->
-		            <div class="box-body">
-		              <div>
-		              	<div class="col-xs-6 col-xs-12">
-				          <!-- small box -->
-				          <div class="small-box main-item">
-				            <div class="inner">
-				              <div class="item-img">
-				              	<img src="partials/layout/contents/rivalWar/img/iphone5.png" alt="">
-				              </div>
-				              <div class="item-graph item-A">
-				                  <div class="pad box-pane-right " style="min-height: 280px">
-				                    <div class="description-block margin-bottom">
-				                      <div class="sparkbar pad" data-color="#fff"><canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-				                      <h5 class="description-header">8390</h5>
-				                      <span class="description-text">Visits</span>
-				                    </div>
-				                    <!-- /.description-block -->
-				                    <div class="description-block margin-bottom">
-				                      <div class="sparkbar pad" data-color="#fff"><canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-				                      <h5 class="description-header">30%</h5>
-				                      <span class="description-text">Referrals</span>
-				                    </div>
-				                    <!-- /.description-block -->
-				                    <div class="description-block">
-				                      <div class="sparkbar pad" data-color="#fff"><canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-				                      <h5 class="description-header">70%</h5>
-				                      <span class="description-text">Organic</span>
-				                    </div>
-				                    <!-- /.description-block -->
-				                  </div>
-				                </div>
-				            </div>
-
-				            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				          </div>
-				          <ul class="link-list">
-		              			<li><a href="#link">'무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
-								<li><a href="#link">'아이폰7' 출시 첫날 불법보조금 기승…</a></li>
-								<li><a href="#link">아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
-								<li><a href="#link">아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
-								<li><a href="#link">소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
-		              		</ul>
-
-				        </div>
-
-		              	<div class="col-xs-6 col-xs-12">
-				          <!-- small box -->
-				          <div class="small-box main-item right">
-				            <div class="inner">
-				              <div class="item-img">
-				              	<img src="partials/layout/contents/rivalWar/img/sam.png" alt="">
-				              </div>
-				              <div class="item-graph item-B">
-				                  <div class="pad box-pane-right " style="min-height: 280px">
-				                    <div class="description-block margin-bottom">
-				                      <div class="sparkbar pad" data-color="#fff"><canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-				                      <h5 class="description-header">8390</h5>
-				                      <span class="description-text">Visits</span>
-				                    </div>
-				                    <!-- /.description-block -->
-				                    <div class="description-block margin-bottom">
-				                      <div class="sparkbar pad" data-color="#fff"><canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-				                      <h5 class="description-header">30%</h5>
-				                      <span class="description-text">Referrals</span>
-				                    </div>
-				                    <!-- /.description-block -->
-				                    <div class="description-block">
-				                      <div class="sparkbar pad" data-color="#fff"><canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas></div>
-				                      <h5 class="description-header">70%</h5>
-				                      <span class="description-text">Organic</span>
-				                    </div>
-				                    <!-- /.description-block -->
-				                  </div>
-				                </div>
-				            </div>
-
-				            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-				          </div>
-				          <ul class="link-list">
-		              			<li><a href="#link">'무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
-								<li><a href="#link">'아이폰7' 출시 첫날 불법보조금 기승…</a></li>
-								<li><a href="#link">아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
-								<li><a href="#link">아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
-								<li><a href="#link">소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
-		              		</ul>
-				        </div>
-
-		              </div>
-		            </div>
-		            <!-- /.box-body -->
-		          </div>
-	            </div>
-            </li>
-            <li>
-              <i class="fa fa-balance-scale bg-blue"></i>
-              <div class="timeline-item spec-view">
-	              <div class="box box-primary">
-		            <div class="box-header with-border">
-		              <h3 class="box-title">비교 상세스펙</h3>
-
-		              <div class="box-tools pull-right">
-		              	<button type="button" class="btn bg-primary btn-xs">spec +192</button>
-		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-		                </button>
-		              </div>
-		              <!-- /.box-tools -->
-		            </div>
-		            <!-- /.box-header -->
-		            <div class="box-body">
-		              <div class="item-table">
-		              
-		              	<div class="spec-title">
-		              		<span class="item-A">{{itemList.itemA.name}}</span>
-		              		<span>#기본스펙</span>
-		              		<span class="item-B">{{itemList.itemB.name}}</span>
-		              	</div>
-						 <ul>
-							<li>
-								<a class="title">#운영체제
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- 그래프 영역 -->
+                                    <div class="compare-grap-box">
+                                        <div class="compare-grap">
+                                            <div class="left">
+                                                <span class="point">25,504 points</span>
+                                                <div class="item-A"></div>
+                                                <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+                                            </div>
+                                            <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png" alt="logo"></span>
+                                            <div class="right">
+                                                <span class="point">25,504 points</span>
+                                                <div class="item-B"></div>
+                                                <span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
+                                            </div>
+                                        </div>
+                                        <div class="compare-text">
+                                            등록된 글 총합 : 19,23, 좋아요 선택 총합 : 2,443(21.2%), 추가된 스펙개수: 7개 등록된 해시태그 총합 13,233개,
+                                            <br> 표중오차 : .64821, 평균 : 3.1234, 등분상 가정 유의확률: .124, 유의확률 : . 823, 99%, 신뢰구간 하한 : -.23134, 상한: .235421, T분포결과 : 8.423
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <!-- timeline item -->
+                <li>
+                    <i class="fa fa-camera bg-purple"></i>
+                    <div class="timeline-item compare-view">
+                        <div class="box box-purple">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">비교현황 및 정보</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn bg-purple btn-xs"><span class="text-hidden">선택은 신중하게 해주세요. </span>변경이 불가능합니다.</button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div>
+                                    <div class="col-xs-6 col-xs-12">
+                                        <!-- small box -->
+                                        <div class="small-box main-item">
+                                            <div class="inner">
+                                                <div class="item-img">
+                                                    <img src="partials/layout/contents/rivalWar/img/iphone5.png" alt="">
+                                                </div>
+                                                <div class="item-graph item-A">
+                                                    <div class="pad box-pane-right " style="min-height: 280px">
+                                                        <div class="description-block margin-bottom">
+                                                            <div class="sparkbar pad" data-color="#fff">
+                                                                <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                            </div>
+                                                            <h5 class="description-header">8390</h5>
+                                                            <span class="description-text">Visits</span>
+                                                        </div>
+                                                        <!-- /.description-block -->
+                                                        <div class="description-block margin-bottom">
+                                                            <div class="sparkbar pad" data-color="#fff">
+                                                                <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                            </div>
+                                                            <h5 class="description-header">30%</h5>
+                                                            <span class="description-text">Referrals</span>
+                                                        </div>
+                                                        <!-- /.description-block -->
+                                                        <div class="description-block">
+                                                            <div class="sparkbar pad" data-color="#fff">
+                                                                <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                            </div>
+                                                            <h5 class="description-header">70%</h5>
+                                                            <span class="description-text">Organic</span>
+                                                        </div>
+                                                        <!-- /.description-block -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                        <ul class="link-list">
+                                            <li><a href="#link">'무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
+                                            <li><a href="#link">'아이폰7' 출시 첫날 불법보조금 기승…</a></li>
+                                            <li><a href="#link">아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
+                                            <li><a href="#link">아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
+                                            <li><a href="#link">소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-xs-6 col-xs-12">
+                                        <!-- small box -->
+                                        <div class="small-box main-item right">
+                                            <div class="inner">
+                                                <div class="item-img">
+                                                    <img src="partials/layout/contents/rivalWar/img/sam.png" alt="">
+                                                </div>
+                                                <div class="item-graph item-B">
+                                                    <div class="pad box-pane-right " style="min-height: 280px">
+                                                        <div class="description-block margin-bottom">
+                                                            <div class="sparkbar pad" data-color="#fff">
+                                                                <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                            </div>
+                                                            <h5 class="description-header">8390</h5>
+                                                            <span class="description-text">Visits</span>
+                                                        </div>
+                                                        <!-- /.description-block -->
+                                                        <div class="description-block margin-bottom">
+                                                            <div class="sparkbar pad" data-color="#fff">
+                                                                <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                            </div>
+                                                            <h5 class="description-header">30%</h5>
+                                                            <span class="description-text">Referrals</span>
+                                                        </div>
+                                                        <!-- /.description-block -->
+                                                        <div class="description-block">
+                                                            <div class="sparkbar pad" data-color="#fff">
+                                                                <canvas width="34" height="30" style="display: inline-block; width: 34px; height: 30px; vertical-align: top;"></canvas>
+                                                            </div>
+                                                            <h5 class="description-header">70%</h5>
+                                                            <span class="description-text">Organic</span>
+                                                        </div>
+                                                        <!-- /.description-block -->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                                        </div>
+                                        <ul class="link-list">
+                                            <li><a href="#link">'무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
+                                            <li><a href="#link">'아이폰7' 출시 첫날 불법보조금 기승…</a></li>
+                                            <li><a href="#link">아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
+                                            <li><a href="#link">아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
+                                            <li><a href="#link">소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-balance-scale bg-blue"></i>
+                    <div class="timeline-item spec-view">
+                        <div class="box box-primary">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">비교 상세스펙</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn bg-primary btn-xs">spec +192</button>
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div class="item-table">
+                                    <div class="spec-title">
+                                        <span class="item-A">{{itemList.itemA.name}}</span>
+                                        <span>#기본스펙</span>
+                                        <span class="item-B">{{itemList.itemB.name}}</span>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a class="title">#운영체제
 									<button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
 								</a>
-								<dl class="dl-box">
-									<dt>Galaxy 6</dt>
-									<dd class="item-A">안드로이드5.1</dd>
-									<dt>iphone 6</dt>
-									<dd class="item-B">iOS10</dd>			
-								</dl>
-							</li>
-							<li>
-								<a class="title">#화면 크기
+                                            <dl class="dl-box">
+                                                <dt>Galaxy 6</dt>
+                                                <dd class="item-A">안드로이드5.1</dd>
+                                                <dt>iphone 6</dt>
+                                                <dd class="item-B">iOS10</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <a class="title">#화면 크기
 									<button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
 								</a>
-								<dl class="dl-box">
-									<dt>Galaxy 6</dt>
-									<dd class="item-A">5.7</dd>
-									<dt>iphone 6</dt>
-									<dd class="item-B">4.7</dd>				
-								</dl>
-							</li>
-							<li>
-								<a class="title">##cpu
+                                            <dl class="dl-box">
+                                                <dt>Galaxy 6</dt>
+                                                <dd class="item-A">5.7</dd>
+                                                <dt>iphone 6</dt>
+                                                <dd class="item-B">4.7</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <a class="title">##cpu
 									<button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
 								</a>
-								<dl class="dl-box">
-									<dt>Galaxy 6</dt>
-									<dd class="item-A">2.1GHz+1.5GHz</dd>
-									<dt>iphone 6</dt>
-									<dd class="item-B">2.4GHz</dd>				
-								</dl>
-							</li>
-							<li>
-								<a class="title">#램
+                                            <dl class="dl-box">
+                                                <dt>Galaxy 6</dt>
+                                                <dd class="item-A">2.1GHz+1.5GHz</dd>
+                                                <dt>iphone 6</dt>
+                                                <dd class="item-B">2.4GHz</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <a class="title">#램
 									<button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
 								</a>
-								<dl class="dl-box">
-									<dt>Galaxy 6</dt>
-									<dd class="item-A">4G</dd>
-									<dt>iphone 6</dt>
-									<dd class="item-B">2G</dd>				
-								</dl>
-							</li>
-							<li>
-								<a class="title">#내장메모리
+                                            <dl class="dl-box">
+                                                <dt>Galaxy 6</dt>
+                                                <dd class="item-A">4G</dd>
+                                                <dt>iphone 6</dt>
+                                                <dd class="item-B">2G</dd>
+                                            </dl>
+                                        </li>
+                                        <li>
+                                            <a class="title">#내장메모리
 									<button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
 								</a>
-								<dl class="dl-box">
-									<dt>Galaxy 6</dt>
-									<dd class="item-A">32G내장</dd>
-									<dt>iphone 6</dt>
-									<dd class="item-B">32G내장</dd>				
-								</dl>
-							</li>
-						</ul> 
-		              </div>
-
-		              <ul class="pagination pagination-sm no-margin pull-right">
-		                <li class="paginate_button previous disabled">
-		                	<a href="#">이전</a>
-		                </li>
-		                <li><a href="#">1</a></li>
-		                <li><a href="#">2</a></li>
-		                <li><a href="#">3</a></li>
-		                <li><a href="#">4</a></li>
-		                <li><a href="#">5</a></li>
-		                <li class="paginate_button next">
-		               		<a href="#">다음</a>
-		                </li>
-		              </ul>
-
-		            </div>
-		            <!-- /.box-body -->
-		          </div>
-	            </div>
-            </li>
-            <li>
-              <i class="fa fa-comments bg-yellow"></i>
-              <div class="timeline-item writing-view">
-	              <div class="box box-warning">
-		            <div class="box-header with-border">
-		              <h3 class="box-title">비교토론</h3>
-
-		              <div class="box-tools pull-right">
-		                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
-		                </button>
-		              </div>
-		              <!-- /.box-tools -->
-		            </div>
-		            <!-- /.box-header -->
-		            <div class="box-body">
-		            	<p class="msg">알림 : <span>욕설, 비방 허위사실 유포시 계정에 대한 제제를 받을 수 있습니다.</span></p>
-		            	<div class="message-box">
-			            	<textarea class="text-write"></textarea>
-			            	<button type="button" class="write-btn" >글쓰기</button>
-			            </div>
-		            </div>
-		            <!-- /.box-body -->
-		          </div>
-	            </div>
-
-	            <div class="timeline-item user-comment">
-	              <div class="box box-warning">
-	              	<div class="bar item-A"></div>
-		            <div class="box-header with-border">
-		              <div class="user-block">
-		                <span class="name">
+                                            <dl class="dl-box">
+                                                <dt>Galaxy 6</dt>
+                                                <dd class="item-A">32G내장</dd>
+                                                <dt>iphone 6</dt>
+                                                <dd class="item-B">32G내장</dd>
+                                            </dl>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <ul class="pagination pagination-sm no-margin pull-right">
+                                    <li class="paginate_button previous disabled">
+                                        <a href="#">이전</a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li class="paginate_button next">
+                                        <a href="#">다음</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <i class="fa fa-comments bg-yellow"></i>
+                    <div class="timeline-item writing-view">
+                        <div class="box box-warning">
+                            <div class="box-header with-border">
+                                <h3 class="box-title">비교토론</h3>
+                                <div class="box-tools pull-right">
+                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                                    </button>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <p class="msg">알림 : <span>욕설, 비방 허위사실 유포시 계정에 대한 제제를 받을 수 있습니다.</span></p>
+                                <div class="message-box">
+                                    <textarea class="text-write"></textarea>
+                                    <button type="button" class="write-btn">글쓰기</button>
+                                </div>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                    <div class="timeline-item user-comment">
+                        <div class="box box-warning">
+                            <div class="bar item-A"></div>
+                            <div class="box-header with-border">
+                                <div class="user-block">
+                                    <span class="name">
 		                	<a href="#"><span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq4.png" alt="icon"/><i>89</i></span>IphoneLove</a>
-		                </span>
-		              </div>
-		              <div class="box-tools">
-		                <span class="description">7:30 PM Today</span>
-		              </div>
-
-		              <!-- /.box-tools -->
-		            </div>
-		            <!-- /.box-header -->
-		            <div class="box-body">
-		            	<div>
-		            		<div>
-		            			<p>아이폰이기 때문에 쓰는 것이지 않을까요?</p>
-		            			<p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#브랜드</span></p>
-		            		</div>
-		            		<p>
-		            			<button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
-			            		<span class="pull-right">
+                                    </span>
+                                </div>
+                                <div class="box-tools">
+                                    <span class="description">7:30 PM Today</span>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div>
+                                    <div>
+                                        <p>아이폰이기 때문에 쓰는 것이지 않을까요?</p>
+                                        <p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#브랜드</span></p>
+                                    </div>
+                                    <p>
+                                        <button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
+                                        <span class="pull-right">
 			            			 <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
 			            		</span>
-		            		</p>
-		            	</div>
-			            <div class="box-comments">
-			              <div class="box-comment item-A">
-			                <!-- User image -->
-			                <div class="comment-text">
-			                      <span class="username">
+                                    </p>
+                                </div>
+                                <div class="box-comments">
+                                    <div class="box-comment item-A">
+                                        <!-- User image -->
+                                        <div class="comment-text">
+                                            <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>14</i></span>기계적사고방식
-			                        <small class="label item-A">Iphone</small>
-			                        <span class="pull-right">8:03 PM Today</span>
-			                        <span class="text-muted pull-right">
+                                            <small class="label item-A">Iphone</small>
+                                            <span class="pull-right">8:03 PM Today</span>
+                                            <span class="text-muted pull-right">
 			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
 			                        </span>
-			                      </span><!-- /.username -->
-			                 	<p class="text">아이폰 사용은 좋은 점은 분명이 있지만 일반사용자가 사용하기에는 처음에 어려움이 너무 많습니다.</p>
-			                	<p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
-			                </div>
-			                <!-- /.comment-text -->
-			              </div>
-			              <!-- /.box-comment -->
-			              <div class="box-comment item-B">
-			                <!-- User image -->
-			                <div class="comment-text">
-			                      <span class="username">
+                                            </span>
+                                            <!-- /.username -->
+                                            <p class="text">아이폰 사용은 좋은 점은 분명이 있지만 일반사용자가 사용하기에는 처음에 어려움이 너무 많습니다.</p>
+                                            <p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
+                                        </div>
+                                        <!-- /.comment-text -->
+                                    </div>
+                                    <!-- /.box-comment -->
+                                    <div class="box-comment item-B">
+                                        <!-- User image -->
+                                        <div class="comment-text">
+                                            <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq2.png" alt="icon"/><i>57</i></span>koreaMan
-			                        <small class="label item-B">Galaxy</small>
-			                        <span class="pull-right">8:03 PM Today</span>
-			                        <span class="text-muted pull-right">
+                                            <small class="label item-B">Galaxy</small>
+                                            <span class="pull-right">8:03 PM Today</span>
+                                            <span class="text-muted pull-right">
 			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
 			                        </span>
-			                      </span><!-- /.username -->
-			                 	<p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
-			               		<p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
-			                </div>
-			                <!-- /.comment-text -->
-			              </div>
-			              <!-- /.box-comment -->
-			            </div>
-		            </div>
-	            	<div class="input-group input-group-sm sub-write">
-		                <input type="text" class="form-control">
-		                    <span class="input-group-btn">
+                                            </span>
+                                            <!-- /.username -->
+                                            <p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
+                                            <p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
+                                        </div>
+                                        <!-- /.comment-text -->
+                                    </div>
+                                    <!-- /.box-comment -->
+                                </div>
+                            </div>
+                            <div class="input-group input-group-sm sub-write">
+                                <input type="text" class="form-control">
+                                <span class="input-group-btn">
 		                      <button type="button" class="btn btn-flat">등록</button>
 		                    </span>
-		              </div>
-		            <!-- /.box-body -->
-		          </div>
-	            </div>
-	            <!-- 타입 b -->
-	            <div class="timeline-item user-comment">
-	              <div class="box box-warning">
-	              	<div class="bar item-B"></div>
-		            <div class="box-header with-border">
-		              <div class="user-block">
-		                <span class="name">
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                    <!-- 타입 b -->
+                    <div class="timeline-item user-comment">
+                        <div class="box box-warning">
+                            <div class="bar item-B"></div>
+                            <div class="box-header with-border">
+                                <div class="user-block">
+                                    <span class="name">
 		                	<a href="#"><span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq2.png" alt="icon"/><i>46</i></span>Android robot</a>
-		                </span>
-		              </div>
-		              <div class="box-tools">
-		                <span class="description">7:30 PM Today</span>
-		              </div>
-
-		              <!-- /.box-tools -->
-		            </div>
-		            <!-- /.box-header -->
-		            <div class="box-body">
-		            	<div>
-		            		<div>
-		            			<p>휴대폰 샀을 때부터 이것저것 설치 되어 있는 것은 뭘 설치해야되는지 잘 모르는 사람들한테는 도움이 많이 됨</p>
-		            			<p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
-		            		</div>
-		            		<p>
-		            			<button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
-			            		<span class="pull-right">
+                                    </span>
+                                </div>
+                                <div class="box-tools">
+                                    <span class="description">7:30 PM Today</span>
+                                </div>
+                                <!-- /.box-tools -->
+                            </div>
+                            <!-- /.box-header -->
+                            <div class="box-body">
+                                <div>
+                                    <div>
+                                        <p>휴대폰 샀을 때부터 이것저것 설치 되어 있는 것은 뭘 설치해야되는지 잘 모르는 사람들한테는 도움이 많이 됨</p>
+                                        <p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
+                                    </div>
+                                    <p>
+                                        <button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
+                                        <span class="pull-right">
 			            			 <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
 			            		</span>
-		            		</p>
-		            	</div>
-			            <div class="box-comments">
-			              <div class="box-comment item-A">
-			                <!-- User image -->
-			                <div class="comment-text">
-			                      <span class="username">
+                                    </p>
+                                </div>
+                                <div class="box-comments">
+                                    <div class="box-comment item-A">
+                                        <!-- User image -->
+                                        <div class="comment-text">
+                                            <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>23</i></span>biteapple
-			                        <small class="label item-A">Iphone</small>
-			                        <span class="pull-right">8:03 PM Today</span>
-			                        <span class="text-muted pull-right">
+                                            <small class="label item-A">Iphone</small>
+                                            <span class="pull-right">8:03 PM Today</span>
+                                            <span class="text-muted pull-right">
 			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
 			                        </span>
-			                      </span><!-- /.username -->
-			                 	<p class="text">너무 쓸데없는 앱들이 설치 되어 있는데 삭제도 안되니 더 불편한거 아닌가요?</p>
-			                	<p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
-			                </div>
-			                <!-- /.comment-text -->
-			              </div>
-			              <!-- /.box-comment -->
-			              <div class="box-comment item-B">
-			                <!-- User image -->
-			                <div class="comment-text">
-			                      <span class="username">
+                                            </span>
+                                            <!-- /.username -->
+                                            <p class="text">너무 쓸데없는 앱들이 설치 되어 있는데 삭제도 안되니 더 불편한거 아닌가요?</p>
+                                            <p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
+                                        </div>
+                                        <!-- /.comment-text -->
+                                    </div>
+                                    <!-- /.box-comment -->
+                                    <div class="box-comment item-B">
+                                        <!-- User image -->
+                                        <div class="comment-text">
+                                            <span class="username">
 			                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>10</i></span>koreaMan
-			                        <small class="label item-B">Galaxy</small>
-			                        <span class="pull-right">8:03 PM Today</span>
-			                        <span class="text-muted pull-right">
+                                            <small class="label item-B">Galaxy</small>
+                                            <span class="pull-right">8:03 PM Today</span>
+                                            <span class="text-muted pull-right">
 			                         <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
 			            			<button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
 			                        </span>
-			                      </span><!-- /.username -->
-
-			                 	<p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
-			                	<p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
-			                </div>
-			                <!-- /.comment-text -->
-			              </div>
-			              <!-- /.box-comment -->
-			            </div>
-		            </div>
-	            	<div class="input-group input-group-sm sub-write">
-		                <input type="text" class="form-control">
-		                    <span class="input-group-btn">
+                                            </span>
+                                            <!-- /.username -->
+                                            <p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
+                                            <p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
+                                        </div>
+                                        <!-- /.comment-text -->
+                                    </div>
+                                    <!-- /.box-comment -->
+                                </div>
+                            </div>
+                            <div class="input-group input-group-sm sub-write">
+                                <input type="text" class="form-control">
+                                <span class="input-group-btn">
 		                      <button type="button" class="btn btn-flat">등록</button>
 		                    </span>
-		              </div>
-		            <!-- /.box-body -->
-		          </div>
-	            </div>
-
-            </li>
-            <!-- END timeline item -->
-
-            <li>
-              <i class="fa fa-clock-o bg-gray"></i>
-            </li>
-          </ul>
+                            </div>
+                            <!-- /.box-body -->
+                        </div>
+                    </div>
+                </li>
+                <!-- END timeline item -->
+                <li>
+                    <i class="fa fa-clock-o bg-gray"></i>
+                </li>
+            </ul>
         </div>
-	</div>
-	<!-- /.row -->
-
+    </div>
+    <!-- /.row -->
 </section>
 <!-- /.content -->

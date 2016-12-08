@@ -67,20 +67,20 @@ background-color: rgba(255, 255, 255, .4);
 }
 
 /* 링크 리스트 */
-.link-list { 
-	padding: 0; 
+.link-list {
+	padding: 0;
 }
-.link-list li { 
-	padding: 5px 0; 
-	list-style: none; 
+.link-list li {
+	padding: 5px 0;
+	list-style: none;
 	text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
 }
-.link-list li a { 
+.link-list li a {
 	color: #888;
 }
-.link-list li a:hover { 
+.link-list li a:hover {
 	color: #3c8dbc;
 }
 .link-list li + li {
@@ -150,15 +150,15 @@ background-color: rgba(255, 255, 255, .4);
 }
 
 
-.msg { 
-	padding: 10px; 
-	text-align: center; 
+.msg {
+	padding: 10px;
+	text-align: center;
 }
-.msg span { 
-	background-color: #fbf1f0; 
-	color: #c6254f; 
-	-webkit-border-radius: 3px; 
-	border-radius: 3px; 
+.msg span {
+	background-color: #fbf1f0;
+	color: #c6254f;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
 }
 
 .user-comment .comment-text{
@@ -185,7 +185,7 @@ background-color: rgba(255, 255, 255, .4);
  border-top: none;
  padding-top:4px;
 }
-	
+
 .rival-content .user-comment .comment-text{
 	position: relative;
 	padding: 0 10px;
@@ -210,15 +210,15 @@ background-color: rgba(255, 255, 255, .4);
 }
 
 /*글쓰기 */
-.message-box { 
-	position: relative;	
+.message-box {
+	position: relative;
 	padding-right: 70px;
     height: 60px;
 }
-.message-box .text-write { 
+.message-box .text-write {
 	width: 100%;
-	padding: 10px; 
-	border: 1px solid #dedede; 
+	padding: 10px;
+	border: 1px solid #dedede;
 	resize: none;
 	height: 60px;
 }
@@ -235,9 +235,9 @@ background-color: rgba(255, 255, 255, .4);
 	text-align: center;
 }
 
-.user-comment .user-block .name a { 
-	color: #444; 
-	font-weight: bold; 
+.user-comment .user-block .name a {
+	color: #444;
+	font-weight: bold;
 }
 /* 버튼 수정 */
 .btn-like,
@@ -257,7 +257,7 @@ background-color: rgba(255, 255, 255, .4);
 }
 
 .hash-list {
-	
+
 }
 .hash-list .hash {
 	font-weight: bold;
@@ -293,7 +293,7 @@ background-color: rgba(255, 255, 255, .4);
 }
 .compare-grap {
 	position: relative;
-	overflow: hidden; 
+	overflow: hidden;
 	width: 100%;
 	padding-bottom: 12px;
 }
@@ -313,7 +313,7 @@ background-color: rgba(255, 255, 255, .4);
 	width: 100%;
 }
 .compare-grap-box .left{
-	
+
 }
 .compare-grap-box .text{
 	margin-bottom: 3px;
@@ -324,7 +324,7 @@ background-color: rgba(255, 255, 255, .4);
 	margin-bottom: 3px;
 	font-size: 12px;
 	float: left;
-	
+
 }
 .compare-grap-box .grap-logo{
 	position: absolute;
@@ -348,25 +348,25 @@ background-color: rgba(255, 255, 255, .4);
 }
 
 .level-icon {
-	display: inline-block; 
-	position: relative; 
+	display: inline-block;
+	position: relative;
 	margin-right: 5px;
-	width: 25px; 
+	width: 25px;
 	height: 28px;
-    vertical-align: middle; 
+    vertical-align: middle;
 }
-.rival-content .level-icon img{ 
-	width: 100% !important; 
-	height: 100% !important; 
+.rival-content .level-icon img{
+	width: 100% !important;
+	height: 100% !important;
 }
-.level-icon i { 
-	position: absolute; 
-	top: 0; 
-	left: 0; 
-	padding-top: 2px; 
-	width: 100%; 
-	text-align: center; 
-	color: #444; 
+.level-icon i {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 2px;
+	width: 100%;
+	text-align: center;
+	color: #444;
 	font-weight: bold;
 	font-style: normal;
 }
@@ -408,16 +408,16 @@ background-color: rgba(255, 255, 255, .4);
 	.rival-content .timeline > li > .fa{
 		left: 0px;
 	}
-	
+
 	/* 상품 */
 	.main-item .item-img{
 		float:right;
 	}
-	
+
 	.text-hidden{
 		display: none;
 	}
-	
+
 }
 @media all and (max-width:480px) {
 	/* 스펙 */
@@ -427,7 +427,7 @@ background-color: rgba(255, 255, 255, .4);
 	.item-table .spec-title{
 		display:none;
 	}
-	
+
 	.item-table ul{
 		border: 1px solid #dedede;
 		margin: 0 0 20px 0;
@@ -470,4 +470,30 @@ background-color: rgba(255, 255, 255, .4);
 	     opacity: 1;
 	     color:#444;
 	}
+}
+
+/* add title css */
+
+.title_area {
+	border-bottom: 5px solid #000;
+}
+
+.title_area img {
+	width: 58px;
+}
+
+.title_area .tit_txt {
+	font-size: 26px;color: #000;
+	padding-bottom: 24px;
+    padding-top: 10px;
+}
+
+p.priveiw {
+	font-size: 15px;color: #000;
+	padding-bottom: 3px;
+    padding-top: 7px;
+}
+
+.compare-grap-box .grap-logo img {
+	width: 28px;
 }

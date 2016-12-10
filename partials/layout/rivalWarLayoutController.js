@@ -751,37 +751,28 @@ define(
               $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
               .then(function() {
                 var $rivalListOuterWrap = $('.rivalList-outerWrap'),
-                     $rivalList = $('.rivalList-content li'),
-                     idx = 0;
+                    $rivalList = $('.rivalList-content li'),
+                    idx = 0;
 
                 var relList = setInterval(function () {
-                  movement($rivalList, idx, 0, "-100%");
+                  rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
                   idx +=1;
-                  movement($rivalList, idx, "100%", 0);
+                  if(idx === $rivalList.length) idx = 0;
+                  rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
                 },5000);
 
-                $rivalListOuterWrap.on({
-                  mouseenter : function(){
-                    clearInterval(relList)
-                  },
-                  mouseleave : function () {
-                    relList = setInterval(function () {
-                      movement($rivalList, idx, 0, "-100%");
-                      idx +=1;
-                      movement($rivalList, idx, "100%", 0);
-                    },3000);
-                  }
-                });
-
-                function movement(el, index, s, e) {
-                  var leng = el.length;
-                  el.eq(index).addClass('on').siblings().removeClass('on');
-                  el.eq(index).css({display:'block', top:s}).stop().animate({top:e},800);
-                  if(index == leng){
-                    idx = 0;
-                    movement(el, idx, "100%", 0)
-                  }
-                }
+                // $rivalListOuterWrap.on({
+                //   mouseenter : function(){
+                //     clearInterval(relList)
+                //   },
+                //   mouseleave : function () {
+                //     relList = setInterval(function () {
+                //       rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
+                //       idx +=1;
+                //       rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
+                //     },3000);
+                //   }
+                // });
               });
           }]);
 
@@ -831,6 +822,32 @@ define(
           rivalWarIndexModule.controller('rivalWarAsideController', ['$scope', '$ocLazyLoad', 'rivalWarLayoutService',
             function ($scope, $ocLazyLoad, rivalWarLayoutService) {
               console.log('rivalWarAsideController');
+
+              $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
+                .then(function() {
+                  var $treemenuList = $('.treeview-menu li'),
+                      idx = 0;
+
+                  var asideRelList = setInterval(function () {
+                    rivalWarLayoutService.addOn($treemenuList.eq(idx));
+                    idx +=1;
+                    if(idx === $treemenuList.length) idx = 0;
+                    rivalWarLayoutService.addOn($treemenuList.eq(idx));
+                  },5000);
+
+                  // $rivalListOuterWrap.on({
+                  //   mouseenter : function(){
+                  //     clearInterval(relList)
+                  //   },
+                  //   mouseleave : function () {
+                  //     relList = setInterval(function () {
+                  //       rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
+                  //       idx +=1;
+                  //       rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
+                  //     },3000);
+                  //   }
+                  // });
+                });
             }]);
 
           rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',

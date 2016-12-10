@@ -691,6 +691,11 @@ define(
                                 $scope.signIn = function() {
                                   $scope.showSingIn = !$scope.showSingIn;
                                 };
+
+                                $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
+                                  .then(function() {
+                                    rivalWarLayoutService.sideView();
+                                  });
                           }]);// indexModule.controller
 
           rivalWarIndexModule
@@ -833,7 +838,7 @@ define(
               function($scope, $ocLazyLoad, $stateParams, rivalWarLayoutService) {
         	  	/* 컨텐츠 영역 */
                 console.log("----" + $stateParams.subModule + "----");
-                
+
                 angular.element(document).ready(function() {
                   if(typeof $stateParams.subModule != 'undefined'){
                 	console.log($stateParams.subModule);
@@ -841,11 +846,11 @@ define(
                     $scope.$emit('emitSubModule',  {message: $scope.subName});
                   }
                 });
-                
+
                 $('#carousel-example-generic').carousel({
                   interval: 2000
                 });
-                
+
                 /* 토글 슬라이드 이벤트 */
                 	$('.item-table li').on('click',function(){
                 		var viewWidth = $('.rival-content').outerWidth();
@@ -860,7 +865,7 @@ define(
                 		}
                 	});
                 /* 데이터 적용 */
-                	$scope.warTime ='2016년 11월 4일'	
+                	$scope.warTime ='2016년 11월 4일'
                 	$scope.itemList ={
                 		itemA:{
                 			name : 'Galaxy 6',
@@ -869,10 +874,10 @@ define(
 	                	itemB:{
             				name : 'iphone 6',
                 			brand: 'Apple'
-	                	}	
-                			
-                	}	
-                	
+	                	}
+
+                	}
+
               }]);// rivalWarContentsController.controller
 
           rivalWarIndexModule.directive('signInModal', function () {

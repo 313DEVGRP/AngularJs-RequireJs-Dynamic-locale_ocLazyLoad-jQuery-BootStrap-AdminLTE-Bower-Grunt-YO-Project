@@ -13,6 +13,8 @@ define(['projectWeb'], function() {
       'LOCALES',
       function($translate, $rootScope, tmhDynamicLocale, LOCALES) {
 
+        var idx = null;
+
         // 다국어 처리부 시작.
         // VARS
         var localesObj = LOCALES.locales;
@@ -116,7 +118,14 @@ define(['projectWeb'], function() {
                 else if (winWid >= 1025) $body.removeClass('sidebar-collapse');
               }
             }).trigger('resize');
-          }
+          },
+          addOn : function(select){
+            select.addClass('on').siblings().removeClass()
+          },
+          movement : function(el, index, s, e) {
+          this.addOn(el.eq(index));
+          el.eq(index).css({display:'block', top:s}).stop().animate({top:e},800);
+        }
         };// return end
       }]);// .define function end
 });

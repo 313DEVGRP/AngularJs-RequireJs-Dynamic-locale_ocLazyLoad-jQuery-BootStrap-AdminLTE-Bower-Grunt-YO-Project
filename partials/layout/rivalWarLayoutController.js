@@ -825,16 +825,17 @@ define(
 
               $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
                 .then(function() {
-                  var $treemenuList = $('.treeview-menu > li'),
+                  var $repeatList = $('.repeatList > li'),
                       idx = 0;
 
-                  $treemenuList.eq(idx).addClass('on');
+                  $repeatList.eq(idx).addClass('on');
 
                   var asideRelList = setInterval(function () {
-                    rivalWarLayoutService.addOn($treemenuList.eq(idx));
+                    rivalWarLayoutService.addOn($repeatList.eq(idx));
                     idx +=1;
-                    if(idx === $treemenuList.length) idx = 0;
-                    rivalWarLayoutService.addOn($treemenuList.eq(idx));
+                    if(idx === $repeatList.length) idx = 0;
+                    console.log($repeatList.length)
+                    rivalWarLayoutService.addOn($repeatList.eq(idx));
                   },4000);
 
                   // $rivalListOuterWrap.on({

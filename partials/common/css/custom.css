@@ -240,11 +240,6 @@ img {
 	width: 100%;
 	height: auto;
 }
-
-.title_area.rival{
-  padding-bottom:10px;
-  border:0 none
-}
 @media all and (min-width:1024px){
   .main-sidebar{
     width:230px;

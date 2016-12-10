@@ -759,7 +759,7 @@ define(
                   idx +=1;
                   if(idx === $rivalList.length) idx = 0;
                   rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
-                },5000);
+                },4000);
 
                 // $rivalListOuterWrap.on({
                 //   mouseenter : function(){
@@ -825,15 +825,17 @@ define(
 
               $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
                 .then(function() {
-                  var $treemenuList = $('.treeview-menu li'),
+                  var $treemenuList = $('.treeview-menu > li'),
                       idx = 0;
+
+                  $treemenuList.eq(idx).addClass('on');
 
                   var asideRelList = setInterval(function () {
                     rivalWarLayoutService.addOn($treemenuList.eq(idx));
                     idx +=1;
                     if(idx === $treemenuList.length) idx = 0;
                     rivalWarLayoutService.addOn($treemenuList.eq(idx));
-                  },5000);
+                  },4000);
 
                   // $rivalListOuterWrap.on({
                   //   mouseenter : function(){

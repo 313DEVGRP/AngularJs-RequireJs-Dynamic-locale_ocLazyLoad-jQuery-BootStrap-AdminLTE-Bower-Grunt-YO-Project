@@ -241,13 +241,24 @@ img {
 	height: auto;
 }
 
+.title_area.rival{
+  padding-bottom:10px;
+  border:0 none
+}
+@media all and (min-width:1024px){
+  .main-sidebar{
+    width:230px;
+  }
+}
+
 @media all and (max-width:767px){
   .sidebar-open .content-wrapper{
     transform: unset;
     -webkit-transform: unset;
   }
-  
+
 }
+
 @media all and (max-width:720px){
   .main-header .sidebar-toggle{
   	margin-top:-50px;
@@ -276,7 +287,7 @@ img {
     color: #fff;
     background-color: rgba(255, 255, 255, .2);
   }
-  
+
   .rivalList-outerWrap{
   	width: 100%;
     padding-right: 100px;

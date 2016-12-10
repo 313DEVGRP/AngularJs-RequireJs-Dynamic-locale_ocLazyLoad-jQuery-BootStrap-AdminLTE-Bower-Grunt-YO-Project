@@ -105,6 +105,17 @@ define(['projectWeb'], function() {
           getLocalesDisplayNames: function() {
             console.log('getLocalesDisplayNames :' + _LOCALES_DISPLAY_NAMES);
             return _LOCALES_DISPLAY_NAMES;
+          },
+          sideView : function(){
+            $(window).on({
+              resize: function(){
+                var winWid = $(window).width(),
+                    $body = $('body');
+
+                if(winWid < 1024) $body.addClass('sidebar-collapse');
+                else if (winWid >= 1025) $body.removeClass('sidebar-collapse');
+              }
+            }).trigger('resize');
           }
         };// return end
       }]);// .define function end

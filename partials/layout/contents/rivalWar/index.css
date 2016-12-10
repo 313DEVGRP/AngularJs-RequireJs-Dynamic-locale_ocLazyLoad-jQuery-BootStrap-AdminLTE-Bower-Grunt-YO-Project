@@ -389,7 +389,7 @@ background-color: rgba(255, 255, 255, .4);
 		margin-top:20px;
 	}
 	.rival-content .timeline-item{
-	 margin:;
+
 	}
 	.rival-content .col-sm-6,
 	.rival-content .compare-grap-box{
@@ -552,16 +552,15 @@ p.priview {
 }
 
 .title_area .tit_icon:after {
-	top: 8px;
-    width: 22px;
-    height: 2px;
-    content: '';
-    display: block;
-    position: absolute;
-    left: 1%;
-    content: '';
-    background: #fff;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+  content: '';
+  width: 22px;
+  height: 2px;
+  display: block;
+  position: absolute;
+  top: 8px;
+  left: 1%;
+  background: #fff;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .title_area span {
@@ -570,6 +569,10 @@ p.priview {
     margin-top: 11px;
 }
 
+.title_area.rival{
+  padding-bottom:10px;
+  border:0 none
+}
 
 .screen_out {
 	position: absolute;

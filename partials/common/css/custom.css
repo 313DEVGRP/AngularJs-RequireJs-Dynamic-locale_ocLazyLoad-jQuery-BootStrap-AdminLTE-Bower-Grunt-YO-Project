@@ -240,7 +240,6 @@ img {
 	width: 100%;
 	height: auto;
 }
-.skin-blue .treeview-menu>li:first-child>a,
 .skin-blue .treeview-menu>li.on>a{
   color:#fff;
 }

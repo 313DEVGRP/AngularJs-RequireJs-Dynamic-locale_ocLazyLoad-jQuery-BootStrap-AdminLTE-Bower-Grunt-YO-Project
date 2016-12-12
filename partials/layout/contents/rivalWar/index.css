@@ -543,7 +543,8 @@
 }
 
 .title_area .logo-tit {
-	margin-top: 0;
+	margin-top: -4px;
+    margin-left: 20px;
 	float: left;
 }
 

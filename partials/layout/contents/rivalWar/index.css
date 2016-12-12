@@ -529,6 +529,23 @@
         opacity: 1;
         color: #444;
     }
+
+    .title_area .tit_box{
+    	display: inherit;
+    	height: inherit;
+    }
+
+    .title_area .tit_txt {
+	    font-size: 15px;
+	    padding: 10px 0px 4px;
+	}
+
+	.title_area img{
+		max-width: 40px;
+		margin-top: -5px;
+	}
+
+
 }
 
 

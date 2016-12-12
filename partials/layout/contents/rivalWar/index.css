@@ -541,8 +541,8 @@
 	}
 
 	.title_area img{
-		max-width: 30px!important;
-		margin-top: 0px!important;
+		max-width: 20px!important;
+		margin-top: 4px!important;
 	}
 
 }
@@ -560,15 +560,15 @@
 
 .title_area img{
 	width: 100%;
-	max-width: 45px;
-	margin-top: -7px;
+	max-width: 35px;
+	margin-top: -2px;
 }
 
 .title_area .tit_txt {
     text-align: center;
     font-size: 26px;
     color: #fff;
-    padding-top: 13px;
+    padding-top: 10px;
     line-height: 25px;
 }
 
@@ -576,7 +576,7 @@
     position: relative;
     background: #222d32;
     border-radius: 5px;
-    height: 55px;
+    height: 50px;
 }
 
 .title_area .ico_pri {

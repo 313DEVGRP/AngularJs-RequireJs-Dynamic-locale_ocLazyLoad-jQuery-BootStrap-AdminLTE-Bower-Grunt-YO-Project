@@ -532,12 +532,12 @@
 
     .title_area .tit_box{
     	display: inherit;
-    	height: inherit;
+    	height: inherit!important;
     }
 
     .title_area .tit_txt {
 	    font-size: 15px!important;
-	    padding: 10px 0px 4px;
+	    padding: 10px 0px 10px;
 	}
 
 	.title_area img{
@@ -568,7 +568,7 @@
     text-align: center;
     font-size: 26px;
     color: #fff;
-    padding-top: 10px;
+    padding: 10px 0px 10px;
     line-height: 25px;
 }
 

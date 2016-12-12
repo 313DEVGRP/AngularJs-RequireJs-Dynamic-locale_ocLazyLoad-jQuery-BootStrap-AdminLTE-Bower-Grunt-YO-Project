@@ -542,15 +542,10 @@
     width: 58px;
 }
 
-.title_area .logo-tit {
-	margin-top: -4px;
-    margin-left: 20px;
-	float: left;
-}
-
-.title_area .logo-tit img{
+.title_area img{
 	width: 100%;
 	max-width: 58px;
+	margin-top: -13px;
 }
 
 .title_area .tit_txt {
@@ -558,14 +553,15 @@
     font-size: 26px;
     color: #fff;
     padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 50px;
+    line-height: 25px;
+    height: 40px;
 }
 
 .title_area .tit_box {
     position: relative;
     background: #222d32;
     border-radius: 5px;
+    height: 50px;
 }
 
 .title_area .ico_pri {

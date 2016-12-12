@@ -541,8 +541,8 @@
 	}
 
 	.title_area img{
-		max-width: 40px!important;
-		margin-top: -5px!important;
+		max-width: 30px!important;
+		margin-top: 0px!important;
 	}
 
 }
@@ -560,8 +560,8 @@
 
 .title_area img{
 	width: 100%;
-	max-width: 58px;
-	margin-top: -13px;
+	max-width: 45px;
+	margin-top: -7px;
 }
 
 .title_area .tit_txt {

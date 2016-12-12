@@ -536,15 +536,14 @@
     }
 
     .title_area .tit_txt {
-	    font-size: 15px;
+	    font-size: 15px!important;
 	    padding: 10px 0px 4px;
 	}
 
 	.title_area img{
-		max-width: 40px;
-		margin-top: -5px;
+		max-width: 40px!important;
+		margin-top: -5px!important;
 	}
-
 
 }
 

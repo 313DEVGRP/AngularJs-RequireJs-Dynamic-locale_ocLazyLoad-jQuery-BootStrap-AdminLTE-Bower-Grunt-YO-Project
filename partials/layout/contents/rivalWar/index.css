@@ -568,16 +568,15 @@
     text-align: center;
     font-size: 26px;
     color: #fff;
-    padding-top: 10px;
+    padding-top: 13px;
     line-height: 25px;
-    height: 40px;
 }
 
 .title_area .tit_box {
     position: relative;
     background: #222d32;
     border-radius: 5px;
-    height: 50px;
+    height: 55px;
 }
 
 .title_area .ico_pri {

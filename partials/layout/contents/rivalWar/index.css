@@ -23,12 +23,14 @@
 }
 
 .item-A {
-    background-color: #dd4b39;
+    background-color:#f26ca7;
+    /*background-color: #dd4b39;*/
     color: #fff;
 }
 
 .item-B {
-    background-color: #00c0ef;
+    background-color:#00acee;
+    /*background-color: #00c0ef;*/
     color: #fff;
 }
 
@@ -234,11 +236,13 @@
 }
 
 .box-comment.item-A {
-    border-left: 3px solid #dd4b39;
+    border-left: 3px solid #f26ca7;
+    /*border-left: 3px solid #dd4b39;*/
 }
 
 .box-comment.item-B {
-    border-left: 3px solid #00c0ef;
+    border-left: 3px solid #00acee;
+    /*border-left: 3px solid #00c0ef;*/
 }
 
 .box-comment .text {

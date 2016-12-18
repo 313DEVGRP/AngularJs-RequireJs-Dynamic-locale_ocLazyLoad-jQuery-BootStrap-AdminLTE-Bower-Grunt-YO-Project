@@ -23,8 +23,8 @@
 }
 
 .item-A {
-    background-color:#f26ca7;
-    /*background-color: #dd4b39;*/
+    /*background-color:#f26ca7;*/
+    background-color: #dd4b39;
     color: #fff;
 }
 
@@ -236,8 +236,8 @@
 }
 
 .box-comment.item-A {
-    border-left: 3px solid #f26ca7;
-    /*border-left: 3px solid #dd4b39;*/
+    /*border-left: 3px solid #f26ca7;*/
+    border-left: 3px solid #dd4b39;
 }
 
 .box-comment.item-B {

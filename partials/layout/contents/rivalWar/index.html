@@ -362,186 +362,63 @@ Home
                     </div>
                 </li>
                 <li>
-                    <i class="fa fa-comments bg-yellow"></i>
-                    <div class="timeline-item writing-view">
-                        <div class="box box-warning">
-                            <div class="box-header with-border">
-                                <h3 class="box-title">비교토론</h3>
-                                <div class="box-tools pull-right">
-                                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                                </div>
-                                <!-- /.box-tools -->
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <p class="msg">알림 : <span>욕설, 비방 허위사실 유포시 계정에 대한 제제를 받을 수 있습니다.</span></p>
-                                <div class="message-box">
-                                    <textarea class="text-write"></textarea>
-                                    <button type="button" class="write-btn">글쓰기</button>
-                                </div>
-                            </div>
-                            <!-- /.box-body -->
+                  <i class="fa fa-comments bg-yellow"></i>
+                  <!-- 타입 b -->
+                  <div class="timeline-item">
+                    <!-- Construct the box with style you want. Here we are using box-danger -->
+                    <!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
+                    <!-- The contextual class should match the box, so we are using direct-chat-danger -->
+                    <div class="box box-danger direct-chat direct-chat-danger">
+                      <div class="box-header with-border">
+                        <h3 class="box-title">Direct Chat</h3>
+                        <div class="box-tools pull-right">
+                          <span data-toggle="tooltip" title="3 New Messages" class="badge bg-red">3</span>
+                          <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                          <!-- In box-tools add this button if you intend to use the contacts pane -->
+                          <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+                          <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
                         </div>
-                    </div>
-                    <div class="timeline-item user-comment">
-                        <div class="box box-warning">
-                            <div class="bar item-A"></div>
-                            <div class="box-header with-border">
-                                <div class="user-block">
-                                    <span class="name">
-                    <a href="#"><span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq4.png" alt="icon"/><i>89</i></span>IphoneLove</a>
-                                    </span>
-                                </div>
-                                <div class="box-tools">
-                                    <span class="description">7:30 PM Today</span>
-                                </div>
-                                <!-- /.box-tools -->
+                      </div><!-- /.box-header -->
+                      <div class="box-body">
+                        <!-- Conversations are loaded here -->
+                        <ul class="direct-chat-messages clearfix">
+                          <!-- Message. Default to the left -->
+                          <li class="direct-chat-msg type-left" ng-repeat="chat in directChatList">
+                            <div class="direct-chat-user">
+                              <img src="../dist/img/user1-128x128.jpg" alt="message user image"><!-- /.direct-chat-img -->
+                              <span>Level</span>
                             </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <div>
-                                    <div>
-                                        <p>아이폰이기 때문에 쓰는 것이지 않을까요?</p>
-                                        <p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#브랜드</span></p>
-                                    </div>
-                                    <p>
-                                        <button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
-                                        <span class="pull-right">
-                      <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
-                      <button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-                    </span>
-                                    </p>
-                                </div>
-                                <div class="box-comments">
-                                    <div class="box-comment item-A">
-                                        <!-- User image -->
-                                        <div class="comment-text">
-                                            <span class="username">
-                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>14</i></span>기계적사고방식
-                                            <small class="label item-A">Iphone</small>
-                                            <span class="pull-right">8:03 PM Today</span>
-                                            <span class="text-muted pull-right">
-                          <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
-                          <button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-                        </span>
-                                            </span>
-                                            <!-- /.username -->
-                                            <p class="text">아이폰 사용은 좋은 점은 분명이 있지만 일반사용자가 사용하기에는 처음에 어려움이 너무 많습니다.</p>
-                                            <p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
-                                        </div>
-                                        <!-- /.comment-text -->
-                                    </div>
-                                    <!-- /.box-comment -->
-                                    <div class="box-comment item-B">
-                                        <!-- User image -->
-                                        <div class="comment-text">
-                                            <span class="username">
-                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq2.png" alt="icon"/><i>57</i></span>koreaMan
-                                            <small class="label item-B">Galaxy</small>
-                                            <span class="pull-right">8:03 PM Today</span>
-                                            <span class="text-muted pull-right">
-                          <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
-                          <button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-                        </span>
-                                            </span>
-                                            <!-- /.username -->
-                                            <p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
-                                            <p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
-                                        </div>
-                                        <!-- /.comment-text -->
-                                    </div>
-                                    <!-- /.box-comment -->
-                                </div>
-                            </div>
-                            <div class="input-group input-group-sm sub-write">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                  <button type="button" class="btn btn-flat">등록</button>
-                </span>
-                            </div>
-                            <!-- /.box-body -->
+                            <div class="direct-chat-text">
+                              <div class=written-info>
+                                <span class="direct-chat-name pull-left">{{chat.user}}</span>
+                                <span class="direct-chat-timestamp pull-right">{{chat.date}}</span>
+                              </div>
+                              <p>{{chat.text}}</p>
+                              <div class="clearfix">
+                                <button class="info-box-icon chat-type type-up"><i class="fa fa-thumbs-o-up"></i>2</button>
+                                <button class="info-box-icon chat-type type-down"><i class="fa fa-thumbs-o-down"></i>0</button>
+                                <button class="info-box-icon chat-type type-reply"><i class="fa fa-comment-o"></i>답글</button>
+                              </div>
+                              <div class="">
+
+                              </div>
+                            </div><!-- /.direct-chat-text -->
+                          </li><!-- /.direct-chat-msg -->
+                        </ul><!--/.direct-chat-messages-->
+                      </div><!-- /.box-body -->
+                      <div class="box-footer">
+                        <p>
+                          *** 님께 댓글을 작성중입니다.
+                        </p>
+                        <div class="input-group">
+                          <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-danger btn-flat">Send</button>
+                          </span>
                         </div>
-                    </div>
-                    <!-- 타입 b -->
-                    <div class="timeline-item user-comment">
-                        <div class="box box-warning">
-                            <div class="bar item-B"></div>
-                            <div class="box-header with-border">
-                                <div class="user-block">
-                                    <span class="name">
-                      <a href="#"><span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq2.png" alt="icon"/><i>46</i></span>Android robot</a>
-                                    </span>
-                                </div>
-                                <div class="box-tools">
-                                    <span class="description">7:30 PM Today</span>
-                                </div>
-                                <!-- /.box-tools -->
-                            </div>
-                            <!-- /.box-header -->
-                            <div class="box-body">
-                                <div>
-                                    <div>
-                                        <p>휴대폰 샀을 때부터 이것저것 설치 되어 있는 것은 뭘 설치해야되는지 잘 모르는 사람들한테는 도움이 많이 됨</p>
-                                        <p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
-                                    </div>
-                                    <p>
-                                        <button type="button" class="btn btn-default btn-xs"><i class="fa fa-chevron-down"></i> 댓글보기</button>
-                                        <span class="pull-right">
-                        <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
-                        <button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-                      </span>
-                                    </p>
-                                </div>
-                                <div class="box-comments">
-                                    <div class="box-comment item-A">
-                                        <!-- User image -->
-                                        <div class="comment-text">
-                                            <span class="username">
-                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>23</i></span>biteapple
-                                            <small class="label item-A">Iphone</small>
-                                            <span class="pull-right">8:03 PM Today</span>
-                                            <span class="text-muted pull-right">
-                          <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
-                          <button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-                        </span>
-                                            </span>
-                                            <!-- /.username -->
-                                            <p class="text">너무 쓸데없는 앱들이 설치 되어 있는데 삭제도 안되니 더 불편한거 아닌가요?</p>
-                                            <p class="hash-list item-A"><span class="hash">#Iphone</span><span class="hash">#안드로이드</span></p>
-                                        </div>
-                                        <!-- /.comment-text -->
-                                    </div>
-                                    <!-- /.box-comment -->
-                                    <div class="box-comment item-B">
-                                        <!-- User image -->
-                                        <div class="comment-text">
-                                            <span class="username">
-                        <span class="level-icon"><img src="partials/layout/contents/rivalWar/img/img-iq.png" alt="icon"/><i>10</i></span>koreaMan
-                                            <small class="label item-B">Galaxy</small>
-                                            <span class="pull-right">8:03 PM Today</span>
-                                            <span class="text-muted pull-right">
-                          <button type="button" class="btn btn-like btn-xs"><i class="fa fa-thumbs-o-up"></i> 342</button>
-                          <button type="button" class="btn btn-hate btn-xs"><i class="fa fa-thumbs-o-down"></i> 123</button>
-                        </span>
-                                            </span>
-                                            <!-- /.username -->
-                                            <p class="text">한국에서 사용하는 측면에서 봤을 때는 불편한 부분들이 많이 있어요</p>
-                                            <p class="hash-list item-B"><span class="hash">#Galaxy</span><span class="hash">#안드로이드</span></p>
-                                        </div>
-                                        <!-- /.comment-text -->
-                                    </div>
-                                    <!-- /.box-comment -->
-                                </div>
-                            </div>
-                            <div class="input-group input-group-sm sub-write">
-                                <input type="text" class="form-control">
-                                <span class="input-group-btn">
-                  <button type="button" class="btn btn-flat">등록</button>
-                </span>
-                            </div>
-                            <!-- /.box-body -->
-                        </div>
-                    </div>
+                      </div><!-- /.box-footer-->
+                    </div><!--/.direct-chat -->
+                  </div>
                 </li>
                 <!-- END timeline item -->
                 <li>

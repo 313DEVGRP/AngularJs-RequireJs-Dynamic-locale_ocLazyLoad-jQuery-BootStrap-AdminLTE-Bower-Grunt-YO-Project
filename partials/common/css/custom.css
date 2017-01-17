@@ -199,51 +199,133 @@ img {
 
 /* 소셜로그인 */
 .rival-war-login .modal-header h1{
-	font-size: 24px;
-    text-align: center;
-    font-weight: bold;
+  font-size: 24px;
+  text-align: center;
+  font-weight: bold;
 }
 
 .btn-kakaotalk{
-	position: relative;
-	color: #ffffff;
-    background-color: #fff100;
-    border-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  color: #ffffff;
+  background-color: #fff100;
+  border-color: rgba(0, 0, 0, 0.2);
 }
 .btn-band{
-	position: relative;
-	color: #ffffff;
-    background-color: #5c5b65;
-    border-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  color: #ffffff;
+  background-color: #5c5b65;
+  border-color: rgba(0, 0, 0, 0.2);
 }
 .btn-kakaostory{
-	position: relative;
-	color: #ffffff;
-    background-color: #fec10d;
-    border-color: rgba(0, 0, 0, 0.2);
+  position: relative;
+  color: #ffffff;
+  background-color: #fec10d;
+  border-color: rgba(0, 0, 0, 0.2);
 }
 .btn-kakaotalk:hover:after,
 .btn-band:hover:after,
 .btn-kakaostory:hover:after{
-    background: rgba(0,0,0,.1);
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+  background: rgba(0,0,0,.1);
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .btn-kakaotalk img,
 .btn-band img,
 .btn-kakaostory img{
-	width: 100%;
-	height: auto;
+  width: 100%;
+  height: auto;
 }
 .skin-blue .treeview-menu>li.on>a{
   color:#fff;
 }
 
+/* --- 댓글 --- */
+.direct-chat-messages{
+  height:auto;
+}
+.direct-chat-msg{
+  margin-bottom:20px;
+}
+.direct-chat-user{
+  width:68px;
+}
+.direct-chat-text{
+  width:75%;
+  margin:0;
+  background:none;
+}
+.direct-chat-text:before,
+.direct-chat-text:after{
+  right:inherit;
+  left:inherit;
+  border-right-color:transparent;
+}
+.direct-chat-box{
+  width:100%;
+  height:auto;
+}
+.direct-chat-box.type-left .direct-chat-user,
+.direct-chat-box.type-left .direct-chat-text{
+  float:left;
+}
+.direct-chat-box.type-right .direct-chat-user,
+.direct-chat-box.type-right .direct-chat-text{
+  float:right;
+}
+.direct-chat-box.type-left .direct-chat-text{
+  margin-left:10px;
+  border-left:5px solid #95e7f2
+}
+.direct-chat-box.type-right .direct-chat-text{
+  margin-right:10px;
+  border-right:5px solid #fdbab1
+}
+.direct-chat-box.type-left .direct-chat-text:before,
+.direct-chat-box.type-left .direct-chat-text:after{
+  right:100%;
+  border-right-color:#fff;
+}
+.direct-chat-box.type-right .direct-chat-text:before,
+.direct-chat-box.type-right .direct-chat-text:after{
+  left:100%;
+  border-left-color:#fff;
+}
+.written-info{
+  margin-bottom:15px;
+  overflow:hidden;
+}
+.info-box-icon.chat-type{
+  width:auto;
+  height:24px;
+  margin-right:5px;
+  padding:0 7px;
+  font-size:16px;
+  line-height:24px;
+  color:#fff;
+  border-radius:3px;
+  border:1px solid;
+}
+.info-box-icon.chat-type i{
+  margin-right:10px;
+}
+.info-box-icon.type-up{
+  background-color:#21c9e4;
+  border-color:#10acc5
+}
+.info-box-icon.type-down{
+  background-color:#f0543b;
+  border-color:#ec4028
+}
+.info-box-icon.type-reply{
+  color:#666;
+  background-color:transparent;
+  border-color:#e7e7e7
+}
 @media all and (min-width:1024px){
   .main-sidebar{
     width:230px;
@@ -255,25 +337,25 @@ img {
     transform: unset;
     -webkit-transform: unset;
   }
-
+  
 }
 
 @media all and (max-width:720px){
   .main-header .sidebar-toggle{
-  	margin-top:-50px;
-  	color: #fff;
+    margin-top:-50px;
+    color: #fff;
   }
   .main-header .multilingual .form-group{
-  	display:none;
+    display:none;
   }
   .main-header .multilingual{
     padding: 14px 15px;
   }
   .main-header .multilingual .fa-globe{
-	font-size: 20px;
+    font-size: 20px;
   }
   .navbar-custom-menu > .navbar-nav > li.login-click{
-  	position: absolute;
+    position: absolute;
     top: -50px;
     right: 0;
   }
@@ -286,20 +368,20 @@ img {
     color: #fff;
     background-color: rgba(255, 255, 255, .2);
   }
-
+  
   .rivalList-outerWrap{
-  	width: 100%;
+    width: 100%;
     padding-right: 100px;
   }
   .navbar-custom-menu .navbar-nav{
-  	margin-top: -50px;
-	position: relative;
+    margin-top: -50px;
+    position: relative;
     z-index: 10;
   }
 }
 
 @media all and (max-width:480px){
   .rivalList-outerWrap .hide-text{
-  	display:none;
+    display:none;
   }
 }

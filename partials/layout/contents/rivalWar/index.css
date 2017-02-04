@@ -118,6 +118,10 @@
 .spec-con .item-table tfoot td{
   padding:5px 0;
 }
+.btn-spec-view{
+  visibility: hidden;
+}
+
 .msg {
     padding: 10px;
     text-align: center;

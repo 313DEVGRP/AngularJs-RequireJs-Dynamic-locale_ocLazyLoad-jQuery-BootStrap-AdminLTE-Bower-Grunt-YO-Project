@@ -250,88 +250,47 @@ Home
               </div>
               <!-- /.box-header -->
               <div class="box-body">
-                <div class="item-table">
-                  <div class="spec-title">
-                    <span class="item-A">{{itemList.itemA.name}}</span>
-                    <span>#기본스펙</span>
-                    <span class="item-B">{{itemList.itemB.name}}</span>
+  
+                <div class="box spec-con pull-left" ng-controller="specCtrlLeft">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">{{theme}}</h3>
+                    <div class="box-tools pull-right">
+                      <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+                      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
                   </div>
-                  <ul>
-                    <li>
-                      <a class="title">#운영체제
-                        <button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
-                      </a>
-                      <dl class="dl-box">
-                        <dt>Galaxy 6</dt>
-                        <dd class="item-A">안드로이드5.1</dd>
-                        <dt>iphone 6</dt>
-                        <dd class="item-B">iOS10</dd>
-                      </dl>
-                    </li>
-                    <li>
-                      <a class="title">#화면 크기
-                        <button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
-                      </a>
-                      <dl class="dl-box">
-                        <dt>Galaxy 6</dt>
-                        <dd class="item-A">5.7</dd>
-                        <dt>iphone 6</dt>
-                        <dd class="item-B">4.7</dd>
-                      </dl>
-                    </li>
-                    <li>
-                      <a class="title">##cpu
-                        <button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
-                      </a>
-                      <dl class="dl-box">
-                        <dt>Galaxy 6</dt>
-                        <dd class="item-A">2.1GHz+1.5GHz</dd>
-                        <dt>iphone 6</dt>
-                        <dd class="item-B">2.4GHz</dd>
-                      </dl>
-                    </li>
-                    <li>
-                      <a class="title">#램
-                        <button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
-                      </a>
-                      <dl class="dl-box">
-                        <dt>Galaxy 6</dt>
-                        <dd class="item-A">4G</dd>
-                        <dt>iphone 6</dt>
-                        <dd class="item-B">2G</dd>
-                      </dl>
-                    </li>
-                    <li>
-                      <a class="title">#내장메모리
-                        <button type="button" class="btn btn-box-tool"  data-action="ccordion-btn"><i class="fa fa-plus"></i></button>
-                      </a>
-                      <dl class="dl-box">
-                        <dt>Galaxy 6</dt>
-                        <dd class="item-A">32G내장</dd>
-                        <dt>iphone 6</dt>
-                        <dd class="item-B">32G내장</dd>
-                      </dl>
-                    </li>
-                  </ul>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <div class="item-table">
+                      <spec-table-reverse class="reverse"></spec-table-reverse>
+                      <spec-table class="normal"></spec-table>
+                    </div>
+                  </div>
                 </div>
-                <ul class="pagination pagination-sm no-margin pull-right">
-                  <li class="paginate_button previous disabled">
-                    <a href="#">이전</a>
-                  </li>
-                  <li><a href="#">1</a></li>
-                  <li><a href="#">2</a></li>
-                  <li><a href="#">3</a></li>
-                  <li><a href="#">4</a></li>
-                  <li><a href="#">5</a></li>
-                  <li class="paginate_button next">
-                    <a href="#">다음</a>
-                  </li>
-                </ul>
+  
+                <div class="box spec-con pull-right" ng-controller="specCtrlRight">
+                  <div class="box-header with-border">
+                    <h3 class="box-title">{{theme}}</h3>
+                    <div class="box-tools pull-right">
+                      <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+                      <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    </div>
+                    <!-- /.box-tools -->
+                  </div>
+                  <!-- /.box-header -->
+                  <div class="box-body">
+                    <div class="item-table">
+                      <spec-table></spec-table>
+                    </div>
+                  </div>
+                </div>
               </div>
               <!-- /.box-body -->
             </div>
           </div>
         </li>
+        
         <li>
           <i class="fa fa-comments bg-yellow"></i>
           <!-- 타입 b -->

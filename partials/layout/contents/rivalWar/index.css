@@ -109,78 +109,15 @@
 
 
 /* 스펙 */
-
-.item-table .spec-title {
-    border: 1px solid #dedede;
-    border-bottom: none;
+.spec-con{
+  width:49%;
 }
-
-.item-table .spec-title:after {
-    content: '';
-    display: table;
-    clear: both;
+.spec-con .normal{
+  display:none;
 }
-
-.item-table .spec-title span {
-    float: left;
-    width: 33.3334%;
-    padding: 10px;
-    text-align: center;
-    opacity: .7;
-    font-weight: bold;
+.spec-con tfoot td{
+  padding:5px 0;
 }
-
-.item-table ul {
-    border: 1px solid #dedede;
-    margin: 0 0 20px 0;
-}
-
-.item-table .title {
-    display: block;
-    position: absolute;
-    width: 33.3334%;
-    left: 33.334%;
-    text-align: center;
-    padding: 10px;
-    border-bottom: 1px solid #dedede;
-}
-
-.item-table .title .btn {
-    display: none;
-    float: right;
-    margin-top: -4px;
-}
-
-.item-table .dl-box {
-    display: block;
-    overflow: hidden;
-}
-
-.item-table .dl-box dt {
-    display: none;
-    float: left;
-    width: 100px;
-    text-align: left;
-    padding: 7px 10px;
-    border-bottom: 1px solid #dedede;
-}
-
-.item-table .dl-box dd {
-    width: 33.334%;
-    padding: 10px;
-    text-align: center;
-    border-bottom: 1px solid #dedede;
-    opacity: .7;
-}
-
-.item-table .dl-box dd.item-A {
-    float: left;
-}
-
-.item-table .dl-box dd.item-B {
-    float: right;
-}
-
 .msg {
     padding: 10px;
     text-align: center;
@@ -328,19 +265,24 @@
 /* 타임라인별 */
 
 .result-view .box {
-    border-color: #00a65a !important;
+    border-color: #00a65a;
 }
 
 .compare-view .box {
-    border-color: #605ca8 !important;
+    border-color: #605ca8;
 }
 
 .spec-view .box {
-    border-color: #0073b7 !important;
+    border-color: #0073b7;
 }
-
+.spec-view .spec-con{
+  border-color: #e2e2e2;
+}
+.spec-con .btn-xs{
+  background-color: #e2e2e2;
+}
 .writing-view .box {
-    border-color: #f39c12 !important;
+    border-color: #f39c12;
 }
 
 .compare-grap-box {

@@ -115,7 +115,7 @@
 .spec-con .normal{
   display:none;
 }
-.spec-con tfoot td{
+.spec-con .item-table tfoot td{
   padding:5px 0;
 }
 .msg {

@@ -300,11 +300,11 @@ img {
 }
 .direct-chat-box.type-left .direct-chat-text{
   margin-left:10px;
-  border-left:5px solid #95e7f2
+  border-right:5px solid #fdbab1
 }
 .direct-chat-box.type-right .direct-chat-text{
   margin-right:10px;
-  border-right:5px solid #fdbab1
+  border-left:5px solid #95e7f2
 }
 .direct-chat-box.type-left .direct-chat-text:before,
 .direct-chat-box.type-left .direct-chat-text:after{

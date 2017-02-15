@@ -1,10 +1,10 @@
 <table class="table table-striped table-condensed table-hover">
   <thead>
   <tr>
-    <th class="spec-label align-c">label</th>
+    <th class="spec-label">label</th>
     <th class="spec-progress" custom-sort order="'progress'" sort="sort">Progress</th>
-    <th class="spec-tag-name"># Name</th>
-    <th class="spec-rank align-c">Rank</th>
+    <th class="tag-name">Name</th>
+    <th class="id">Id</th>
   </tr>
   </thead>
   <tfoot>
@@ -30,14 +30,14 @@
   </tfoot>
   <tbody>
   <tr ng-repeat="item in pagedItems[currentPage] | orderBy:sort.sortingOrder:sort.reverse">
-    <td class="align-c"><span class="badge bg-red">{{item.progress}}%</span></td>
+    <td><span class="badge bg-red">{{item.progress}}%</span></td>
     <td>
       <div class="progress progress-xs progress-striped active">
         <div class="progress-bar" style="width: {{item.progress}}%"></div>
       </div>
     </td>
     <td>{{item.specTag}}</td>
-    <td class="align-c">{{$index + 1 + (currentPage * gap)}}</td>
+    <td>{{$index+1}}</td>
   </tr>
   </tbody>
 </table>

@@ -457,6 +457,10 @@
     .text-hidden {
         display: none;
     }
+    /* 비교 스펙 그래프 */
+    .spec-con{
+      width: 100%;
+    }
 }
 
 @media all and (max-width:480px) {

@@ -15,12 +15,11 @@ define(
           '$ocLazyLoad',
           'rivalWarLayoutService',
           '$rootScope',
-          '$window',
           '$translate',
           '$interval',
           '$stateParams',
           function($scope, $ocLazyLoad, rivalWarLayoutService,
-                   $rootScope, $window, $translate, $interval,
+                   $rootScope, $translate, $interval,
                    $stateParams) {
 
             // 다국어 처리 부
@@ -697,17 +696,6 @@ define(
               .then(function() {
                 rivalWarLayoutService.sideView();
               });
-  
-            $scope.winWid = $window.innerWidth;
-            angular.element($window).bind('resize', function () {
-              $scope.winWid = $window.innerWidth;
-              if($scope.winWid >= 768){
-                $scope.itemsPerPage  = 5;
-              }else if($scope.winWid <= 768){
-                $scope.itemsPerPage  = 3;
-              }
-              console.log($scope.itemsPerPage);
-            });
           }]);// indexModule.controller
 
     rivalWarIndexModule
@@ -792,14 +780,14 @@ define(
       function ($scope, $window, $ocLazyLoad, rivalWarLayoutService) {
         var flag = true;
 
-        $scope.winWid = $window.innerWidth;
+        $scope.testWid = $window.innerWidth;
 
         angular.element($window).bind('resize', function () {
           $scope.testWid = $window.innerWidth;
-          if($scope.winWid <= 768){
+          if($scope.testWid <= 768){
             flag = true;
             $('body').removeClass('sidebar-open');
-          }else if($scope.winWid >= 768){
+          }else if($scope.testWid >= 768){
             //flag = true;
             //$('body').removeClass('.sidebar-open');
             $('.blind').fadeTo(500, 0, function () {
@@ -811,7 +799,7 @@ define(
         $scope.asideToggle = function (e) {
           var $body = $('body'),
             blind = '<div class="blind"></div>';
-          if($scope.winWid <= 767){
+          if($scope.testWid <= 767){
             if(flag === true){
               flag = false;
               $body.append(blind).find('.blind').fadeTo(500, 0.5);
@@ -821,7 +809,7 @@ define(
                 $(this).remove();
               })
             }
-          }else if($scope.winWid >=768){
+          }else if($scope.testWid >=768){
 
           }
         };
@@ -989,12 +977,7 @@ define(
     });
     
     // 비교상세스펙 - 왼쪽
-    rivalWarIndexModule.controller('specCtrlLeft', function ($window, $rootScope, $scope, $filter) {
-      
-      // responds
-      console.log("spec");
-      console.log($rootScope.itemsPerPage + "spec")
-      
+    rivalWarIndexModule.controller('specCtrlLeft', function ($scope, $filter) {
       // init
       $scope.theme = "Galaxy 6";
       $scope.sort = {
@@ -1129,8 +1112,6 @@ define(
     
       // functions have been describe process the data for display
       $scope.search();
-      
-      
       
     });
   

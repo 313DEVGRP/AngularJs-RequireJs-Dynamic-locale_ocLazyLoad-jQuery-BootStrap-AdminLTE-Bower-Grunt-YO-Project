@@ -3,10 +3,10 @@
 define(
   ['projectWeb'],
   function() {
-
+    
     var rivalWarIndexModule = angular.module('projectWeb', ['ui.router',
       'oc.lazyLoad', 'rivalWarLayoutService']);
-
+    
     rivalWarIndexModule
       .controller(
         'rivalWarLayoutController',
@@ -15,20 +15,21 @@ define(
           '$ocLazyLoad',
           'rivalWarLayoutService',
           '$rootScope',
+          '$window',
           '$translate',
           '$interval',
           '$stateParams',
           function($scope, $ocLazyLoad, rivalWarLayoutService,
-                   $rootScope, $translate, $interval,
+                   $rootScope, $window, $translate, $interval,
                    $stateParams) {
-
+            
             // 다국어 처리 부
             /**
              * Translations for the view
              */
             var pageTitleTranslationId = 'PAGE_TITLE';
             var pageContentTranslationId = 'PAGE_CONTENT';
-
+            
             $translate(pageTitleTranslationId,
               pageContentTranslationId)
               .then(
@@ -37,12 +38,12 @@ define(
                   $rootScope.pageTitle = translatedPageTitle;
                   $rootScope.pageContent = translatedPageContent;
                 });
-
+            
             /**
              * $scope.locale
              */
             $scope.locale = $translate.use();
-
+            
             /**
              * Provides info about current route path
              */
@@ -52,12 +53,12 @@ define(
                 function(event, current) {
                   $scope.currentPath = current.$$route.originalPath;
                 });
-
+            
             /**
              * Current time
              */
             $scope.currentTime = Date.now();
-
+            
             /**
              * EVENTS
              */
@@ -71,14 +72,14 @@ define(
                   $rootScope.pageContent = $translate
                     .instant(pageContentTranslationId);
                 });
-
+            
             // ng-include 처리부
             $scope.mainHeader = 'partials/layout/header/rivalWar/';
             $scope.mainSidebar = 'partials/layout/aside/rivalWar/';
             $scope.contentWrapper = 'partials/layout/contents/rivalWar/';
             $scope.mainFooter = 'partials/layout/footer/rivalWar/';
             $scope.controlSidebar = 'partials/layout/sidebar/rivalWar/';
-
+            
             // load per excute
             $scope
               .$on(
@@ -98,7 +99,7 @@ define(
                     console.log(file);
                   }
                 });
-
+            
             // child 페이지에서 상위 컨트롤러로 이벤트 드리븐 부분
             $scope
               .$on(
@@ -112,7 +113,7 @@ define(
                   rivalWarLayoutService.fire();
                   console.log("goToHome");
                 });
-
+            
             // SubModule 을 URL로 처리하는 경우
             $scope
               .$on(
@@ -140,7 +141,7 @@ define(
                           .log(e);
                       });
                 });
-
+            
             // 나머지 버튼 처리.
             $scope.whyJsTree = function() {
               $ocLazyLoad
@@ -162,7 +163,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.jsTreeArchitecture = function() {
               $ocLazyLoad
                 .load(
@@ -183,7 +184,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.strutsiBatis = function() {
               $ocLazyLoad
                 .load(
@@ -204,7 +205,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.springMyBatis = function() {
               $ocLazyLoad
                 .load(
@@ -225,7 +226,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.springHibernate = function() {
               $ocLazyLoad
                 .load(
@@ -246,7 +247,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.dwr = function() {
               $ocLazyLoad
                 .load(
@@ -267,7 +268,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.lucene = function() {
               $ocLazyLoad
                 .load(
@@ -288,7 +289,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.hadoop = function() {
               $ocLazyLoad
                 .load(
@@ -309,7 +310,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.machineLearning = function() {
               $ocLazyLoad
                 .load(
@@ -330,7 +331,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.confluence = function() {
               $ocLazyLoad
                 .load(
@@ -351,7 +352,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.jira = function() {
               $ocLazyLoad
                 .load(
@@ -372,7 +373,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.github = function() {
               $ocLazyLoad
                 .load(
@@ -393,7 +394,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.fisheyeCrucible = function() {
               $ocLazyLoad
                 .load(
@@ -414,7 +415,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.nas = function() {
               $ocLazyLoad
                 .load(
@@ -435,7 +436,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.nexus = function() {
               $ocLazyLoad
                 .load(
@@ -456,7 +457,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.bamboo = function() {
               $ocLazyLoad
                 .load(
@@ -477,7 +478,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.hudson = function() {
               $ocLazyLoad
                 .load(
@@ -498,7 +499,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.maven = function() {
               $ocLazyLoad
                 .load(
@@ -519,7 +520,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.sonar = function() {
               $ocLazyLoad
                 .load(
@@ -540,7 +541,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.google = function() {
               $ocLazyLoad
                 .load(
@@ -561,7 +562,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.naver = function() {
               $ocLazyLoad
                 .load(
@@ -582,7 +583,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.backendDevelopers = function() {
               $ocLazyLoad
                 .load(
@@ -603,9 +604,9 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.customers = function() {
-
+              
               $ocLazyLoad
                 .load(
                   [
@@ -625,7 +626,7 @@ define(
                     console.log(e);
                   });
             };
-
+            
             $scope.frontendDevelopers = function() {
               $ocLazyLoad
                 .load(
@@ -685,25 +686,36 @@ define(
                     console.log(e);
                   });
             };
-
+            
             // 로그인
             $scope.showSingIn = false;
             $scope.signIn = function() {
               $scope.showSingIn = !$scope.showSingIn;
             };
-
+            
             $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
               .then(function() {
                 rivalWarLayoutService.sideView();
               });
+            
+            $scope.winWid = $window.innerWidth;
+            angular.element($window).bind('resize', function () {
+              $scope.winWid = $window.innerWidth;
+              if($scope.winWid >= 768){
+                $scope.itemsPerPage  = 5;
+              }else if($scope.winWid <= 768){
+                $scope.itemsPerPage  = 3;
+              }
+              console.log($scope.itemsPerPage);
+            });
           }]);// indexModule.controller
-
+    
     rivalWarIndexModule
       .directive(
         'ngTranslateLanguageSelect',
         function(rivalWarLayoutService) {
           'use strict';
-
+          
           return {
             restrict: 'A',
             replace: true,
@@ -713,7 +725,7 @@ define(
             + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">'
             + '</select>' + '</div>'
             + '<!-- /.form-group -->',
-
+            
             controller: function($scope) {
               $scope.currentLocaleDisplayName = rivalWarLayoutService
                 .getLocaleDisplayName();
@@ -721,7 +733,7 @@ define(
                 .getLocalesDisplayNames();
               $scope.visible = $scope.localesDisplayNames
                 && $scope.localesDisplayNames.length > 1;
-
+              
               $scope.changeLanguage = function(locale) {
                 rivalWarLayoutService
                   .setLocaleByDisplayName(locale);
@@ -729,14 +741,14 @@ define(
             }
           };
         });
-
+    
     rivalWarIndexModule.controller('rivalListController', ['$rootScope','$scope', '$ocLazyLoad', 'rivalWarLayoutService',
       function ($rootScope, $scope, $ocLazyLoad, rivalWarLayoutService) {
-
+        
         $scope.timer = function () {
-
+          
         };
-
+        
         $scope.warList = [
           {category : "스마트폰", dDay : "3일 22시간 31분", con : "아이폰 vs 삼성"},
           {category : "카메라", dDay : "6일 11시간 47분", con : 'SONY vs Cannon'},
@@ -746,21 +758,21 @@ define(
           {category : "음식", dDay : "2일 23시간 51분", con : '맥도날드 vs 버거킹'},
           {category : "신발", dDay : "3일 03시간 01분", con :'나이키 vs 아디다스'}
         ];
-
-
+        
+        
         $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
           .then(function() {
             var $rivalListOuterWrap = $('.rivalList-outerWrap'),
               $rivalList = $('.rivalList-content li'),
               idx = 0;
-
+            
             var relList = setInterval(function () {
               rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
               idx +=1;
               if(idx === $rivalList.length) idx = 0;
               rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
             },4000);
-
+            
             // $rivalListOuterWrap.on({
             //   mouseenter : function(){
             //     clearInterval(relList)
@@ -775,19 +787,19 @@ define(
             // });
           });
       }]);
-
+    
     rivalWarIndexModule.controller('headerController', ['$scope', '$window', '$ocLazyLoad', 'rivalWarLayoutService',
       function ($scope, $window, $ocLazyLoad, rivalWarLayoutService) {
         var flag = true;
-
-        $scope.testWid = $window.innerWidth;
-
+        
+        $scope.winWid = $window.innerWidth;
+        
         angular.element($window).bind('resize', function () {
           $scope.testWid = $window.innerWidth;
-          if($scope.testWid <= 768){
+          if($scope.winWid <= 768){
             flag = true;
             $('body').removeClass('sidebar-open');
-          }else if($scope.testWid >= 768){
+          }else if($scope.winWid >= 768){
             //flag = true;
             //$('body').removeClass('.sidebar-open');
             $('.blind').fadeTo(500, 0, function () {
@@ -795,11 +807,11 @@ define(
             });
           }
         });
-
+        
         $scope.asideToggle = function (e) {
           var $body = $('body'),
             blind = '<div class="blind"></div>';
-          if($scope.testWid <= 767){
+          if($scope.winWid <= 767){
             if(flag === true){
               flag = false;
               $body.append(blind).find('.blind').fadeTo(500, 0.5);
@@ -809,27 +821,27 @@ define(
                 $(this).remove();
               })
             }
-          }else if($scope.testWid >=768){
-
+          }else if($scope.winWid >=768){
+            
           }
         };
         $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
           .then(function() {
-
+            
           });
       }]);
-
+    
     rivalWarIndexModule.controller('rivalWarAsideController', ['$scope', '$ocLazyLoad', 'rivalWarLayoutService',
       function ($scope, $ocLazyLoad, rivalWarLayoutService) {
         console.log('rivalWarAsideController');
-
+        
         $ocLazyLoad.load( ['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
           .then(function() {
             var $repeatList = $('.repeatList > li'),
               idx = 0;
-
+            
             $repeatList.eq(idx).addClass('on');
-
+            
             var asideRelList = setInterval(function () {
               rivalWarLayoutService.addOn($repeatList.eq(idx));
               idx +=1;
@@ -837,7 +849,7 @@ define(
               console.log($repeatList.length)
               rivalWarLayoutService.addOn($repeatList.eq(idx));
             },4000);
-
+            
             // $rivalListOuterWrap.on({
             //   mouseenter : function(){
             //     clearInterval(relList)
@@ -852,13 +864,13 @@ define(
             // });
           });
       }]);
-
+    
     rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',
       '$ocLazyLoad', '$stateParams', 'rivalWarLayoutService',
       function($scope, $ocLazyLoad, $stateParams, rivalWarLayoutService) {
         /* 컨텐츠 영역 */
         console.log("----" + $stateParams.subModule + "----");
-
+        
         angular.element(document).ready(function() {
           if(typeof $stateParams.subModule != 'undefined'){
             console.log($stateParams.subModule);
@@ -866,11 +878,11 @@ define(
             $scope.$emit('emitSubModule',  {message: $scope.subName});
           }
         });
-
+        
         $('#carousel-example-generic').carousel({
           interval: 2000
         });
-
+        
         /* 토글 슬라이드 이벤트 */
         $('.item-table li').on('click',function(){
           var viewWidth = $('.rival-content').outerWidth();
@@ -886,9 +898,9 @@ define(
         });
         /* 데이터 적용 */
         $scope.warTime ='2016년 11월 4일';
-
+        
         /* 댓글 */
-
+        
         $scope.directChatList = [ // 원글
           {
             support : true,
@@ -907,7 +919,7 @@ define(
             text : "아이폰 사용의 좋은 점이 분명히 있지만, 처음 사용자가 쓰기에는 어려움이 너무 많습니다."
           }
         ];
-  
+        
         $scope.chatReplyList = [ // 답글
           {
             support : true,
@@ -927,9 +939,9 @@ define(
         
         $scope.goReply = false;
         $scope.replyTo = false;
-
+        
       }]);// rivalWarContentsController.controller
-
+    
     rivalWarIndexModule.directive('signInModal', function () {
       return {
         restrict : "A",
@@ -957,7 +969,7 @@ define(
         }
       }
     });
-  
+    
     rivalWarIndexModule.directive('specTable', function () {
       return {
         restrict : "E",
@@ -966,7 +978,7 @@ define(
         templateUrl:'./partials/layout/contents/rivalWar/specTable.html'
       }
     });
-  
+    
     rivalWarIndexModule.directive('specTableReverse', function () {
       return {
         restrict : "E",
@@ -977,7 +989,12 @@ define(
     });
     
     // 비교상세스펙 - 왼쪽
-    rivalWarIndexModule.controller('specCtrlLeft', function ($scope, $filter) {
+    rivalWarIndexModule.controller('specCtrlLeft', function ($window, $rootScope, $scope, $filter) {
+      
+      // responds
+      console.log("spec");
+      console.log($rootScope.itemsPerPage + "spec")
+      
       // init
       $scope.theme = "Galaxy 6";
       $scope.sort = {
@@ -1042,14 +1059,14 @@ define(
         {"specTag":"tag name 49", "progress":39},
         {"specTag":"tag name 50", "progress":93}
       ];
-    
+      
       var searchMatch = function (haystack, needle) {
         if (!needle) {
           return true;
         }
         return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
       };
-    
+      
       // init the filtered items
       $scope.search = function () {
         $scope.filteredItems = $filter('filter')($scope.items, function (item) {
@@ -1071,7 +1088,7 @@ define(
       // calculate page in place
       $scope.groupToPages = function () {
         $scope.pagedItems = [];
-      
+        
         for (var i = 0; i < $scope.filteredItems.length; i++) {
           if (i % $scope.itemsPerPage === 0) {
             $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ];
@@ -1080,10 +1097,10 @@ define(
           }
         }
       };
-    
+      
       $scope.range = function (size,start, end) {
         var ret = [];
-      
+        
         if (size < end) {
           end = size;
           start = size-$scope.gap;
@@ -1093,28 +1110,30 @@ define(
         }
         return ret;
       };
-    
+      
       $scope.prevPage = function () {
         if ($scope.currentPage > 0) {
           $scope.currentPage--;
         }
       };
-    
+      
       $scope.nextPage = function () {
         if ($scope.currentPage < $scope.pagedItems.length - 1) {
           $scope.currentPage++;
         }
       };
-    
+      
       $scope.setPage = function () {
         $scope.currentPage = this.n;
       };
-    
+      
       // functions have been describe process the data for display
       $scope.search();
       
+      
+      
     });
-  
+    
     // 비교상세스펙 - 오른쪽
     rivalWarIndexModule.controller('specCtrlRight', function ($scope, $filter) {
       // init
@@ -1187,7 +1206,7 @@ define(
         }
         return haystack.toLowerCase().indexOf(needle.toLowerCase()) !== -1;
       };
-    
+      
       // init the filtered items
       $scope.search = function () {
         $scope.filteredItems = $filter('filter')($scope.items, function (item) {
@@ -1205,11 +1224,11 @@ define(
         // now group by pages
         $scope.groupToPages();
       };
-    
+      
       // calculate page in place
       $scope.groupToPages = function () {
         $scope.pagedItems = [];
-      
+        
         for (var i = 0; i < $scope.filteredItems.length; i++) {
           if (i % $scope.itemsPerPage === 0) {
             $scope.pagedItems[Math.floor(i / $scope.itemsPerPage)] = [ $scope.filteredItems[i] ];
@@ -1218,10 +1237,10 @@ define(
           }
         }
       };
-    
+      
       $scope.range = function (size,start, end) {
         var ret = [];
-      
+        
         if (size < end) {
           end = size;
           start = size-$scope.gap;
@@ -1231,27 +1250,27 @@ define(
         }
         return ret;
       };
-    
+      
       $scope.prevPage = function () {
         if ($scope.currentPage > 0) {
           $scope.currentPage--;
         }
       };
-    
+      
       $scope.nextPage = function () {
         if ($scope.currentPage < $scope.pagedItems.length - 1) {
           $scope.currentPage++;
         }
       };
-    
+      
       $scope.setPage = function () {
         $scope.currentPage = this.n;
       };
-    
+      
       // functions have been describe process the data for display
       $scope.search();
-    
+      
     });
     
-
+    
   }); // define end

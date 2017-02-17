@@ -1,15 +1,15 @@
 .centered {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .rival-content {
-    position: relative;
+  position: relative;
 }
 
 .rival-content .timeline > li {
-    /*margin:0;*/
+  /*margin:0;*/
 }
 
 
@@ -19,98 +19,101 @@
 .box-comment.item-B,
 .hash-list.item-A,
 .hash-list.item-B {
-    background: none;
+  background: none;
 }
 
 .item-A {
-    /*background-color:#f26ca7;*/
-    background-color: #dd4b39;
-    color: #fff;
+  /*background-color:#f26ca7;*/
+  background-color: #dd4b39;
+  color: #fff;
 }
 
 .item-B {
-    background-color:#00acee;
-    /*background-color: #00c0ef;*/
-    color: #fff;
+  background-color:#00acee;
+  /*background-color: #00c0ef;*/
+  color: #fff;
 }
 
 .hash-list.item-A .hash {
-    color: #dd4b39;
+  color: #dd4b39;
 }
 
 .hash-list.item-B .hash {
-    color: #00c0ef;
+  color: #00c0ef;
 }
 
 
 /* 메인 아이템 */
 
 .main-item {
-    margin-bottom: 10px;
-    border: 1px solid #dedede;
+  margin-bottom: 10px;
+  border: 1px solid #dedede;
 }
 
 .main-item .inner {
-    overflow: hidden;
-    padding: 5px;
-    border: 1px solid #dedede;
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #dedede;
 }
 
 .main-item .item-img {
-    float: left;
-    width: 70%;
-    text-align: center;
+  float: left;
+  width: 70%;
+  text-align: center;
 }
 
 .main-item .item-graph {
-    float: left;
-    width: 30%;
+  float: left;
+  width: 30%;
 }
 
 .main-item .item-graph .box-pane-right {
-    background-color: rgba(255, 255, 255, .4);
+  background-color: rgba(255, 255, 255, .4);
 }
 
 .main-item.right .item-img,
 .main-item.right .item-graph {
-    float: right;
+  float: right;
 }
 
 .main-item .small-box-footer {
-    clear: both;
+  clear: both;
 }
 
 
 /* 링크 리스트 */
 
 .link-list {
-    padding: 0;
+  padding: 0;
 }
 
 .link-list li {
-    padding: 5px 0;
-    list-style: none;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
+  padding: 5px 0;
+  list-style: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .link-list li a {
-    color: #888;
+  color: #888;
 }
 
 .link-list li a:hover {
-    color: #3c8dbc;
+  color: #3c8dbc;
 }
 
 .link-list li + li {
-    border-top: 1px solid #dedede;
+  border-top: 1px solid #dedede;
 }
 
 
 /* 스펙 */
 .spec-con{
   width:49%;
+}
+.spec-con .table{
+  margin-bottom:0;
 }
 .spec-con .normal{
   display:none;
@@ -121,108 +124,120 @@
 .btn-spec-view{
   visibility: hidden;
 }
+.table .align-c{
+  text-align:center;
+}
+.table .spec-rank,
+.table .spec-label{
+  width:10%;
+  max-width:50px;
+}
+.table .spec-tag-name{
+  width:37%;
+  max-width:120px;
+}
 
 .msg {
-    padding: 10px;
-    text-align: center;
+  padding: 10px;
+  text-align: center;
 }
 
 .msg span {
-    background-color: #fbf1f0;
-    color: #c6254f;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
+  background-color: #fbf1f0;
+  color: #c6254f;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
 }
 
 .user-comment .comment-text {
-    margin-left: 0;
+  margin-left: 0;
 }
 
 .timeline-item.user-comment {}
 
 .timeline-item.user-comment .bar {
-    position: absolute;
-    top: 0;
-    height: 4px;
+  position: absolute;
+  top: 0;
+  height: 4px;
 }
 
 .timeline-item.user-comment .bar.item-A {
-    left: 0;
-    width: 33%;
+  left: 0;
+  width: 33%;
 }
 
 .timeline-item.user-comment .bar.item-B {
-    right: 0;
-    width: 67%;
+  right: 0;
+  width: 67%;
 }
 
 .timeline-item.user-comment .box {
-    border-top: none;
-    padding-top: 4px;
+  border-top: none;
+  padding-top: 4px;
 }
 
 .rival-content .user-comment .comment-text {
-    position: relative;
-    padding: 0 10px;
+  position: relative;
+  padding: 0 10px;
 }
 
 .box-comments .text-muted {
-    position: absolute;
-    bottom: 0;
-    right: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
 }
 
 .rival-content .box-comments .box-comment:first-of-type {
-    padding-top: 10px;
+  padding-top: 10px;
 }
 
 .box-comment.item-A {
-    /*border-left: 3px solid #f26ca7;*/
-    border-left: 3px solid #dd4b39;
+  /*border-left: 3px solid #f26ca7;*/
+  border-left: 3px solid #dd4b39;
 }
 
 .box-comment.item-B {
-    border-left: 3px solid #00acee;
-    /*border-left: 3px solid #00c0ef;*/
+  border-left: 3px solid #00acee;
+  /*border-left: 3px solid #00c0ef;*/
 }
 
 .box-comment .text {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 
 /*글쓰기 */
 
 .message-box {
-    position: relative;
-    padding-right: 70px;
-    height: 60px;
+  position: relative;
+  padding-right: 70px;
+  height: 60px;
 }
 
 .message-box .text-write {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #dedede;
-    resize: none;
-    height: 60px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #dedede;
+  resize: none;
+  height: 60px;
 }
 
 .message-box .write-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-color: #444;
-    color: #fff;
-    padding: 10px 0;
-    border: none;
-    width: 70px;
-    height: 60px;
-    text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #444;
+  color: #fff;
+  padding: 10px 0;
+  border: none;
+  width: 70px;
+  height: 60px;
+  text-align: center;
 }
 
 .user-comment .user-block .name a {
-    color: #444;
-    font-weight: bold;
+  color: #444;
+  font-weight: bold;
 }
 
 
@@ -230,54 +245,54 @@
 
 .btn-like,
 .btn-hate {
-    border: 1px solid #ddd;
-    background-color: #fff;
-    color: #444;
+  border: 1px solid #ddd;
+  background-color: #fff;
+  color: #444;
 }
 
 .btn-like .fa {
-    color: blue;
+  color: blue;
 }
 
 .btn-hate .fa {
-    color: red;
+  color: red;
 }
 
 .sub-write {
-    padding: 0 10px 10px;
+  padding: 0 10px 10px;
 }
 
 .hash-list {}
 
 .hash-list .hash {
-    font-weight: bold;
-    color: blue;
+  font-weight: bold;
+  color: blue;
 }
 
 .hash-list .hash +.hash {
-    margin-left: 6px;
+  margin-left: 6px;
 }
 
 .share-box {
-    position: absolute;
-    right: 40px;
-    top: 0px;
-    z-index: 10;
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  z-index: 10;
 }
 
 
 /* 타임라인별 */
 
 .result-view .box {
-    border-color: #00a65a;
+  border-color: #00a65a;
 }
 
 .compare-view .box {
-    border-color: #605ca8;
+  border-color: #605ca8;
 }
 
 .spec-view .box {
-    border-color: #0073b7;
+  border-color: #0073b7;
 }
 .spec-view .spec-con{
   border-color: #e2e2e2;
@@ -286,299 +301,310 @@
   background-color: #e2e2e2;
 }
 .writing-view .box {
-    border-color: #f39c12;
+  border-color: #f39c12;
 }
 
 .compare-grap-box {
-    padding: 0 15px;
+  padding: 0 15px;
 }
 
 .compare-grap {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-bottom: 12px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 12px;
 }
 
 .compare-grap .left {
-    float: left;
-    width: 33%;
+  float: left;
+  width: 33%;
 }
 
 .compare-grap .right {
-    float: left;
-    width: 67%;
+  float: left;
+  width: 67%;
 }
 
 .compare-grap .item-A,
 .compare-grap .item-B {
-    clear: both;
-    margin-top: 5px;
-    height: 10px;
-    width: 100%;
+  clear: both;
+  margin-top: 5px;
+  height: 10px;
+  width: 100%;
 }
 
 .compare-grap-box .left {}
 
 .compare-grap-box .text {
-    margin-bottom: 3px;
-    font-size: 12px;
-    float: left;
+  margin-bottom: 3px;
+  font-size: 12px;
+  float: left;
 }
 
 .compare-grap-box .point {
-    margin-bottom: 3px;
-    font-size: 12px;
-    float: left;
+  margin-bottom: 3px;
+  font-size: 12px;
+  float: left;
 }
 
 .compare-grap-box .grap-logo {
-    position: absolute;
-    bottom: 22px;
-    left: 33%;
-    margin-left: -16px;
+  position: absolute;
+  bottom: 22px;
+  left: 33%;
+  margin-left: -16px;
 }
 
 .compare-grap-box .compare-text {
-    font-size: 12px;
-    color: #888;
-    line-height: 1.4;
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
 }
 
 .compare-grap-box .right {}
 
 .compare-grap-box .right .text {
-    float: right;
+  float: right;
 }
 
 .compare-grap-box .right .point {
-    float: right;
+  float: right;
 }
 
 .level-icon {
-    display: inline-block;
-    position: relative;
-    margin-right: 5px;
-    /*width: 25px;*/
-    /*height: 28px;*/
-    vertical-align: middle;
+  display: inline-block;
+  position: relative;
+  margin-right: 5px;
+  /*width: 25px;*/
+  /*height: 28px;*/
+  vertical-align: middle;
 }
 
 .rival-content .level-icon img {
-    width: 100% !important;
-    height: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .level-icon i {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding-top: 2px;
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    /*color: #444;*/
-    font-weight: bold;
-    font-style: normal;
-    font-size: smaller;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 2px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  /*color: #444;*/
+  font-weight: bold;
+  font-style: normal;
+  font-size: smaller;
 }
 
 
 /* 미디어 쿼리 */
+@media all and (max-width:767px) {
+  .spec-con .reverse{
+    display:none;
+  }
+  .spec-con .normal{
+    display:table;
+  }
+  .spec-con{
+    width:100%;
+    border-top:1px solid;
+    border-left:5px solid;
+  }
+  .spec-con.pull-left{ border-left-color:#fdbab1 }
+  .spec-con.pull-right{ border-left-color:#95e7f2 }
+  .btn-spec-view{
+    visibility: visible;
+  }
+}
 
 @media all and (max-width:600px) {
-    .share-box {
-        right: 15px;
-    }
-    .reduce-text {
-        display: none;
-    }
-    .compare-view .col-xs-6 {
-        width: 100%;
-        padding: 0;
-    }
-    .compare-view .box-body .col-xs-6+.col-xs-6 {
-        margin-top: 20px;
-    }
-    .rival-content .timeline-item {}
-    .rival-content .col-sm-6,
-    .rival-content .compare-grap-box {
-        padding: 0;
-    }
-    .compare-grap-box .grap-logo {
-        bottom: 22px;
-    }
-    .rival-content .timeline > li {
-        margin-right: 0;
-    }
-    .rival-content .timeline:before {
-        left: 13px;
-    }
-    .rival-content .timeline > li > .timeline-item {
-        margin: 0 0 0 35px;
-    }
-    .rival-content .timeline > li > .fa {
-        left: 0px;
-    }
-    /* 상품 */
-    .main-item .item-img {
-        float: right;
-    }
-    .text-hidden {
-        display: none;
-    }
-    /* 비교 스펙 그래프 */
-    .spec-con{
-      width: 100%;
-    }
+  .share-box {
+    right: 15px;
+  }
+  .reduce-text {
+    display: none;
+  }
+  .compare-view .col-xs-6 {
+    width: 100%;
+    padding: 0;
+  }
+  .compare-view .box-body .col-xs-6+.col-xs-6 {
+    margin-top: 20px;
+  }
+  .rival-content .col-sm-6,
+  .rival-content .compare-grap-box {
+    padding: 0;
+  }
+  .timeline:before,
+  .timeline > li > .fa{
+    display:none;
+  }
+  .timeline > li {
+    margin-right: 0;
+  }
+  .timeline > li > .timeline-item {
+    margin: 0;
+  }
+  .compare-grap-box .grap-logo {
+    bottom: 22px;
+  }
+  /* 상품 */
+  .main-item .item-img {
+    float: right;
+  }
+  .text-hidden {
+    display: none;
+  }
 }
 
 @media all and (max-width:480px) {
-    /* 스펙 */
-    .share-box .social-icon-line {
-        display: none;
-    }
-    .item-table .spec-title {
-        display: none;
-    }
-    .item-table ul {
-        border: 1px solid #dedede;
-        margin: 0 0 20px 0;
-    }
-    .item-table .title {
-        position: inherit;
-        background: #f2f2f2;
-        width: 100%;
-        display: block;
-        text-align: left;
-        padding: 10px;
-        border-bottom: 1px solid #dedede;
-    }
-    .item-table .title .btn {
-        display: block;
-        float: right;
-        margin-top: -4px;
-    }
-    .item-table .dl-box {
-        display: none;
-        overflow: hidden;
-    }
-    .item-table .dl-box dt {
-        display: block;
-        float: left;
-        width: 100px;
-        text-align: left;
-        padding: 7px 10px;
-        border-bottom: 1px solid #dedede;
-    }
-    .item-table .dl-box dd.item-A,
-    .item-table .dl-box dd.item-B {
-        float: none;
-        overflow: hidden;
-        width: inherit;
-        padding: 7px 10px;
-        text-align: left;
-        border-bottom: 1px solid #dedede;
-        background-color: #fff;
-        opacity: 1;
-        color: #444;
-    }
-
-    .title_area .tit_box{
-    	display: inherit;
-    	height: inherit!important;
-    }
-
-    .title_area .tit_txt {
-	    font-size: 15px!important;
-	    padding: 10px 0px 10px;
-	}
-
-	.title_area img{
-		max-width: 20px!important;
-		margin-top: 4px!important;
-	}
-
+  /* 스펙 */
+  .share-box .social-icon-line {
+    display: none;
+  }
+  .item-table .spec-title {
+    display: none;
+  }
+  .item-table ul {
+    border: 1px solid #dedede;
+    margin: 0 0 20px 0;
+  }
+  .item-table .title {
+    position: inherit;
+    background: #f2f2f2;
+    width: 100%;
+    display: block;
+    text-align: left;
+    padding: 10px;
+    border-bottom: 1px solid #dedede;
+  }
+  .item-table .title .btn {
+    display: block;
+    float: right;
+    margin-top: -4px;
+  }
+  .item-table .dl-box {
+    display: none;
+    overflow: hidden;
+  }
+  .item-table .dl-box dt {
+    display: block;
+    float: left;
+    width: 100px;
+    text-align: left;
+    padding: 7px 10px;
+    border-bottom: 1px solid #dedede;
+  }
+  .item-table .dl-box dd.item-A,
+  .item-table .dl-box dd.item-B {
+    float: none;
+    overflow: hidden;
+    width: inherit;
+    padding: 7px 10px;
+    text-align: left;
+    border-bottom: 1px solid #dedede;
+    background-color: #fff;
+    opacity: 1;
+    color: #444;
+  }
+  
+  .title_area .tit_box{
+    display: inherit;
+    height: inherit!important;
+  }
+  
+  .title_area .tit_txt {
+    font-size: 15px!important;
+    padding: 10px 0px 10px;
+  }
+  
+  .title_area img{
+    max-width: 20px!important;
+    margin-top: 4px!important;
+  }
+  
 }
 
 
 /* add title css */
 
 .title_area {
-    border-bottom: 5px solid #000;
+  border-bottom: 5px solid #000;
 }
 
 .title_area img {
-    width: 58px;
+  width: 58px;
 }
 
 .title_area img{
-	width: 100%;
-	max-width: 35px;
-	margin-top: -2px;
+  width: 100%;
+  max-width: 35px;
+  margin-top: -2px;
 }
 
 .title_area .tit_txt {
-    text-align: center;
-    font-size: 26px;
-    color: #fff;
-    padding: 10px 0px 10px;
-    line-height: 25px;
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  padding: 10px 0px 10px;
+  line-height: 25px;
 }
 
 .title_area .tit_box {
-    position: relative;
-    background: #222d32;
-    border-radius: 5px;
-    height: 50px;
+  position: relative;
+  background: #222d32;
+  border-radius: 5px;
+  height: 50px;
 }
 
 .title_area .ico_pri {
-    display: block;
-    background: #000;
-    color: #fff;
-    border-radius: 7px;
-    width: 55px;
-    height: 20px;
-    text-align: center;
-    font-size: 13px;
+  display: block;
+  background: #000;
+  color: #fff;
+  border-radius: 7px;
+  width: 55px;
+  height: 20px;
+  text-align: center;
+  font-size: 13px;
 }
 
 .pad20 {
-    padding: 20px;
+  padding: 20px;
 }
 
 p.priview {
-    font-size: 15px;
-    color: #000;
-    padding-bottom: 3px;
-    padding-top: 7px;
+  font-size: 15px;
+  color: #000;
+  padding-bottom: 3px;
+  padding-top: 7px;
 }
 
 .compare-grap-box .grap-logo img {
-    width: 28px;
+  width: 28px;
 }
 
 .title_area .ico_com {
-    background-image: none;
-    overflow: visible;
+  background-image: none;
+  overflow: visible;
 }
 
 .title_area span {
-    display: block;
-    color: #fff;
-    margin-top: 11px;
+  display: block;
+  color: #fff;
+  margin-top: 11px;
 }
 
 .title_area.rival {
-    padding-bottom: 10px;
-    border: 0 none
+  padding-bottom: 10px;
+  border: 0 none
 }
 
 .screen_out {
-    position: absolute;
-    width: 0;
-    height: 0;
-    line-height: 0;
-    text-indent: -9999px;
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
 }

@@ -385,6 +385,49 @@ img {
   padding-left:7px;
 }
 
+/* --- sign In --- */
+#signIn{
+  width:94%;
+  max-width:500px;
+}
+#signIn .modal-header{
+  padding:0;
+  position:relative;
+}
+#signIn .modal-header img{
+  width:100%;
+}
+#signIn .close{
+  padding:5px 10px;
+  position:absolute;
+  top:0; right:0;
+}
+#signIn .btn-naver {
+  color: #ffffff;
+  background-color: #1dc800;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+#signIn .login-box-msg{
+  width:65%;
+  margin:0 auto;
+  padding:0 20px;
+  word-break:keep-all;
+}
+#signIn .btn-block{
+  width:193px;
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:60px;
+}
+#signIn .btn-kakao {
+  color: #503700;
+  background-color: #ffeb00;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+#signIn .btn-social > :first-child{
+  left:10px;
+  border-right:0 none;
+}
 @media all and (min-width:1024px){
   .main-sidebar{
     width:230px;
@@ -437,6 +480,13 @@ img {
     position: relative;
     z-index: 10;
   }
+}
+@media all and (max-width:540px){
+  #signIn{
+    margin-left:2%;
+    margin-right:2%;
+  }
+  
 }
 
 @media all and (max-width:480px){

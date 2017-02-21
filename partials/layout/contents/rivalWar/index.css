@@ -399,6 +399,88 @@
 }
 
 
+/* add title css */
+
+.title_area {
+  border-bottom: 5px solid #000;
+}
+
+.title_area img {
+  width: 58px;
+}
+
+.title_area img{
+  width: 100%;
+  max-width: 35px;
+  margin-top: -2px;
+}
+
+.title_area .tit_txt {
+  text-align: center;
+  font-size: 26px;
+  color: #fff;
+  padding: 10px 0px 10px;
+  line-height: 25px;
+}
+
+.title_area .tit_box {
+  position: relative;
+  background: #222d32;
+  border-radius: 5px;
+  height: 50px;
+}
+
+.title_area .ico_pri {
+  display: block;
+  background: #000;
+  color: #fff;
+  border-radius: 7px;
+  width: 55px;
+  height: 20px;
+  text-align: center;
+  font-size: 13px;
+}
+
+.pad20 {
+  padding: 20px;
+}
+
+p.priview {
+  font-size: 15px;
+  color: #000;
+  padding-bottom: 3px;
+  padding-top: 7px;
+}
+
+.compare-grap-box .grap-logo img {
+  width: 28px;
+}
+
+.title_area .ico_com {
+  background-image: none;
+  overflow: visible;
+}
+
+.title_area span {
+  display: block;
+  color: #fff;
+  margin-top: 11px;
+}
+
+.title_area.rival {
+  padding-bottom: 10px;
+  border: 0 none
+}
+
+.screen_out {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+
 /* 미디어 쿼리 */
 @media all and (max-width:767px) {
   .spec-con .reverse{
@@ -525,86 +607,4 @@
     margin-top: 4px!important;
   }
   
-}
-
-
-/* add title css */
-
-.title_area {
-  border-bottom: 5px solid #000;
-}
-
-.title_area img {
-  width: 58px;
-}
-
-.title_area img{
-  width: 100%;
-  max-width: 35px;
-  margin-top: -2px;
-}
-
-.title_area .tit_txt {
-  text-align: center;
-  font-size: 26px;
-  color: #fff;
-  padding: 10px 0px 10px;
-  line-height: 25px;
-}
-
-.title_area .tit_box {
-  position: relative;
-  background: #222d32;
-  border-radius: 5px;
-  height: 50px;
-}
-
-.title_area .ico_pri {
-  display: block;
-  background: #000;
-  color: #fff;
-  border-radius: 7px;
-  width: 55px;
-  height: 20px;
-  text-align: center;
-  font-size: 13px;
-}
-
-.pad20 {
-  padding: 20px;
-}
-
-p.priview {
-  font-size: 15px;
-  color: #000;
-  padding-bottom: 3px;
-  padding-top: 7px;
-}
-
-.compare-grap-box .grap-logo img {
-  width: 28px;
-}
-
-.title_area .ico_com {
-  background-image: none;
-  overflow: visible;
-}
-
-.title_area span {
-  display: block;
-  color: #fff;
-  margin-top: 11px;
-}
-
-.title_area.rival {
-  padding-bottom: 10px;
-  border: 0 none
-}
-
-.screen_out {
-  position: absolute;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  text-indent: -9999px;
 }

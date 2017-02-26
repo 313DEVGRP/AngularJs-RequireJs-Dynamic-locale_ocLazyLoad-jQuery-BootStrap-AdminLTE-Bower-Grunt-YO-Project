@@ -23,20 +23,30 @@
 }
 
 .item-A {
-  /*background-color:#f26ca7;*/
   background-color: #dd4b39;
   color: #fff;
 }
 
 .item-B {
   background-color:#00acee;
-  /*background-color: #00c0ef;*/
   color: #fff;
 }
 
 .item-C  {
   background-color: #46c377;
   color:#fff;
+}
+
+/* text-color */
+
+.item-color-A {
+  color: #dd4b39;
+}
+.item-color-B {
+  color:#00acee;
+}
+.item-color-C {
+  color: #46c377;
 }
 
 
@@ -198,13 +208,11 @@
 }
 
 .box-comment.item-A {
-  /*border-left: 3px solid #f26ca7;*/
   border-left: 3px solid #dd4b39;
 }
 
 .box-comment.item-B {
   border-left: 3px solid #00acee;
-  /*border-left: 3px solid #00c0ef;*/
 }
 
 .box-comment .text {
@@ -303,6 +311,10 @@
 .spec-view .spec-con{
   border-color: #e2e2e2;
 }
+.spec-view .spec-con + .spec-con{
+  margin-left: 6px;
+}
+
 .spec-con .btn-xs{
   background-color: #e2e2e2;
 }
@@ -327,7 +339,7 @@
 }
 .compare-grap .center {
     float: left;
-    idth: 33%;
+    width: 33%;
 }
 .compare-grap .right {
   float: left;
@@ -357,10 +369,13 @@
   float: left;
 }
 
+.compare-grap-box .center .point{
+  margin-left: 15px;
+}
+
 .compare-grap-box .grap-logo {
   position: absolute;
   bottom: 22px;
-  left: 33%;
   margin-left: -16px;
 }
 

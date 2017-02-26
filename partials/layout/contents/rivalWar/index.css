@@ -312,7 +312,13 @@
 .spec-view .box {
   border-color: #0073b7;
 }
+
+.spec-view .spec-con:nth-child(1){
+  margin-left: 0!important;
+}
+
 .spec-view .spec-con{
+  margin-left: 5px;
   border-color: #e2e2e2;
 }
 
@@ -516,9 +522,11 @@ p.priview {
   }
   .spec-con{
     width:100%;
+    margin-left: 0!important;
     border-top:1px solid;
     border-left:5px solid;
   }
+
   .spec-con.pull-left.item-bd-A{
     border-left-color:#fdbab1;
   }

@@ -34,6 +34,12 @@
   color: #fff;
 }
 
+.item-C  {
+  background-color: #46c377;
+  color:#fff;
+}
+
+
 .hash-list.item-A .hash {
   color: #dd4b39;
 }
@@ -58,7 +64,7 @@
 
 .main-item .item-img {
   float: left;
-  width: 70%;
+  width: 100%;
   text-align: center;
 }
 
@@ -110,7 +116,7 @@
 
 /* 스펙 */
 .spec-con{
-  width:49%;
+  width:33%;
 }
 .spec-con .table{
   margin-bottom:0;
@@ -319,14 +325,18 @@
   float: left;
   width: 33%;
 }
-
+.compare-grap .center {
+    float: left;
+    idth: 33%;
+}
 .compare-grap .right {
   float: left;
-  width: 67%;
+  width: 33%;
 }
 
 .compare-grap .item-A,
-.compare-grap .item-B {
+.compare-grap .item-B,
+.compare-grap .item-C {
   clear: both;
   margin-top: 5px;
   height: 10px;
@@ -591,20 +601,20 @@ p.priview {
     opacity: 1;
     color: #444;
   }
-  
+
   .title_area .tit_box{
     display: inherit;
     height: inherit!important;
   }
-  
+
   .title_area .tit_txt {
     font-size: 15px!important;
     padding: 10px 0px 10px;
   }
-  
+
   .title_area img{
     max-width: 20px!important;
     margin-top: 4px!important;
   }
-  
+
 }

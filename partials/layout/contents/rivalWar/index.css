@@ -115,6 +115,10 @@
   color: #888;
 }
 
+.link-list .news img {
+  width: 24px;
+}
+
 .link-list li a:hover {
   color: #3c8dbc;
 }

@@ -561,6 +561,9 @@ p.priview {
   .compare-grap-box .grap-logo {
     bottom: 22px;
   }
+  .timeline-item.compare-view .box-body .col-xs-12{
+    width: 100%!important;
+  }
   /* 상품 */
   .main-item .item-img {
     float: right;

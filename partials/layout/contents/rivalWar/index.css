@@ -540,6 +540,15 @@ p.priview {
   .btn-spec-view{
     visibility: visible;
   }
+  .timeline-item.compare-view .box-body .col-xs-12{
+    width: 100%!important;
+  }
+}
+
+@media all and (min-width: 768px) {
+  .timeline-item.compare-view .box-body .col-xs-12{
+    width: 100%!important;
+  }
 }
 
 @media all and (max-width:600px) {

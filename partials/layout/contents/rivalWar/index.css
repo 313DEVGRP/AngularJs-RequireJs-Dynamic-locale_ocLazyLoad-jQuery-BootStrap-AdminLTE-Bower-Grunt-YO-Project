@@ -548,6 +548,7 @@ p.priview {
 @media all and (max-width: 768px) {
   .timeline-item.compare-view .box-body .col-xs-12{
     width: 100%!important;
+    margin-left: 0!important;
   }
 }
 

@@ -605,6 +605,7 @@ p.priview {
   /* 상품 */
   .main-item .item-img {
     float: right;
+    height: inherit!important;
   }
   .text-hidden {
     display: none;

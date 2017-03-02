@@ -429,6 +429,17 @@
   font-size: smaller;
 }
 
+.box-header.with-border.bd-bottom-A{
+  border-bottom:1px solid #fdbab1;
+}
+
+.box-header.with-border.bd-bottom-B{
+  border-bottom: 1px solid #46c377;
+}
+.box-header.with-border.bd-bottom-C{
+  border-bottom: 1px solid #95e7f2;
+}
+
 
 /* add title css */
 

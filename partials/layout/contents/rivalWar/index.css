@@ -434,10 +434,10 @@
 }
 
 .box-header.with-border.bd-bottom-B{
-  border-bottom: 1px solid #46c377;
+   border-bottom: 1px solid #95e7f2;
 }
 .box-header.with-border.bd-bottom-C{
-  border-bottom: 1px solid #95e7f2;
+   border-bottom: 1px solid #46c377;
 }
 
 

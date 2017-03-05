@@ -542,7 +542,11 @@ p.priview {
     border-top:1px solid;
     border-left:5px solid;
   }
-
+.box-header.with-border.bd-bottom-A,
+.box-header.with-border.bd-bottom-B,
+.box-header.with-border.bd-bottom-C{
+  border-bottom: none!important;
+}
   .spec-con.pull-left.item-bd-A{
     border-left-color:#fdbab1;
   }

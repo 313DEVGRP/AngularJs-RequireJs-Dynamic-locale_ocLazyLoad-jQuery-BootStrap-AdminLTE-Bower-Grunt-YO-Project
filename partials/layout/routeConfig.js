@@ -3,12 +3,12 @@
 define(
   ['projectWeb'],
   function() {
-    
+
     var routeModule = angular.module('projectWeb', ['ui.router',
       'oc.lazyLoad', 'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute',
       'ngSanitize', 'ngTouch', 'pascalprecht.translate',
       'tmh.dynamicLocale']);
-    
+
     // constand setting
     routeModule.constant('DEBUG_MODE', true);
     routeModule.constant('VERSION_TAG', new Date().getTime());
@@ -19,7 +19,7 @@ define(
       },
       'preferredLocale': 'English'
     }); // LOCALES end
-    
+
     // route config
     routeModule.config([
       '$routeProvider',
@@ -29,30 +29,11 @@ define(
       '$ocLazyLoadProvider',
       function($routeProvider, $stateProvider, $locationProvider,
                $urlRouterProvider, $ocLazyLoadProvider) {
-        
+
         $urlRouterProvider.otherwise("/");
         $locationProvider.hashPrefix("StandardDevelopment#");
-        
-        $stateProvider.state('admin', {
-          url: "/admin",
-          views: {
-            '': {
-              controller: 'adminLayoutController',
-              templateUrl: 'partials/layout/adminLayoutIndex.html'
-            }
-          },
-          resolve: {
-            rivalWarIndex: ['$ocLazyLoad', function($ocLazyLoad) {
-              return $ocLazyLoad.load([{
-                name: 'adminLayoutService',
-                files: ['partials/layout/adminLayoutService.js']
-              }, {
-                name: 'adminLayoutController',
-                files: ['partials/layout/adminLayoutController.js']
-              }]);
-            }]
-          }
-        }).state('rivalWar', {
+
+        $stateProvider.state('rivalWar', {
           url: "/",
           views: {
             '': {
@@ -92,14 +73,14 @@ define(
           } // resolve end
         }); //state end
       }]); // routeModule.config end
-    
+
     //이하 다국어 처리 부
     routeModule.config(function($compileProvider, DEBUG_MODE) {
       if (!DEBUG_MODE) {
         $compileProvider.debugInfoEnabled(false);
       }
     });// $compileProvider end
-    
+
     routeModule.config(function($translateProvider, DEBUG_MODE, LOCALES) {
       if (DEBUG_MODE) {
         $translateProvider.useMissingTranslationHandlerLog();// warns
@@ -108,16 +89,16 @@ define(
         prefix: 'partials/common/lang/locale-',
         suffix: '.json'
       });
-      
+
       $translateProvider.useSanitizeValueStrategy('escapeParameters');
       $translateProvider.preferredLanguage(LOCALES.preferredLocale);
       $translateProvider.useLocalStorage();
     });// $translateProvider end
-    
+
     routeModule
       .config(function(tmhDynamicLocaleProvider) {
         tmhDynamicLocaleProvider
           .localeLocationPattern('lib/angular-i18n/angular-locale_{{locale}}.js');
       }); // tmhDynamicLocaleProvider end
-    
+
   }); // function end

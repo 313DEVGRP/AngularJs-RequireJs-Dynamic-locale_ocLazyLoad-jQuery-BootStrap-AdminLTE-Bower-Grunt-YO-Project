@@ -20,7 +20,7 @@
   <div class="rivalList-outerWrap">
     <div class="rivalList-innerWrap">
       <h2 class="rivalList-title">
-        비교 진행중인 라이벌 컨텐츠
+        비교 진행중인 라이벌 콘텐츠
       </h2>
       <ul class="rivalList-content" ng-controller="rivalListController">
         <li ng-repeat="rivalList in warList">
@@ -53,13 +53,7 @@
       </li>
       <li class="multilingual">
         <i class="fa fa-globe"></i>
-        <div class="form-group">
-          <label class="hide">Minimal</label>
-          <select class="form-control select2" style="width: 100%;">
-            <option selected="selected">한국어</option>
-            <option>영어</option>
-          </select>
-        </div>
+        <div ng-translate-language-select></div>
       </li>
       <!-- <li>
         <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>

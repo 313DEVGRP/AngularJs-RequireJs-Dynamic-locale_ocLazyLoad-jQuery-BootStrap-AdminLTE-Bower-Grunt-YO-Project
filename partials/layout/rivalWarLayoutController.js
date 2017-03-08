@@ -124,9 +124,9 @@ define(['projectWeb'], function () {
         restrict: 'A',
         replace: true,
         template: ''
-        + '<div ng-if="visible" style="margin-top : 7px;margin-right : 6px;">'
-        + '<select class="form-control select2" ng-model="currentLocaleDisplayName"'
-        + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">'
+        + '<div ng-if="visible" class="form-group">'
+        + '<label class="hide">Minimal</label> <select class="form-control select2" ng-model="currentLocaleDisplayName"'
+        + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)" style="width: 100%;">'
         + '</select>' + '</div>'
         + '<!-- /.form-group -->',
 

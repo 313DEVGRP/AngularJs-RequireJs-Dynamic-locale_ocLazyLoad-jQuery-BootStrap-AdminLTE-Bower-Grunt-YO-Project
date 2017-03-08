@@ -1,34 +1,24 @@
 'use strict';
 
-define(
-  ['projectWeb'],
-  function() {
-
-    var routeModule = angular.module('projectWeb', ['ui.router',
-      'oc.lazyLoad', 'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute',
-      'ngSanitize', 'ngTouch', 'pascalprecht.translate',
-      'tmh.dynamicLocale']);
+define(['projectWeb'],
+  function () {
+    var routeModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'ngAnimate', 'ngCookies', 'ngResource', 'ngRoute',
+      'ngSanitize', 'ngTouch', 'pascalprecht.translate', 'tmh.dynamicLocale']);
 
     // constand setting
     routeModule.constant('DEBUG_MODE', true);
     routeModule.constant('VERSION_TAG', new Date().getTime());
     routeModule.constant('LOCALES', {
       'locales': {
-        'en_US': 'English',
-        'ko_KR': '한글'
+        'ko_KR': '한글',
+        'en_US': 'English'
       },
-      'preferredLocale': 'English'
+      'preferredLocale': 'ko_KR'
     }); // LOCALES end
 
     // route config
-    routeModule.config([
-      '$routeProvider',
-      '$stateProvider',
-      '$locationProvider',
-      '$urlRouterProvider',
-      '$ocLazyLoadProvider',
-      function($routeProvider, $stateProvider, $locationProvider,
-               $urlRouterProvider, $ocLazyLoadProvider) {
+    routeModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
+      function ($routeProvider, $stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
         $urlRouterProvider.otherwise("/");
         $locationProvider.hashPrefix("StandardDevelopment#");
@@ -42,7 +32,7 @@ define(
             }
           },
           resolve: {
-            devIndex: ['$ocLazyLoad', function($ocLazyLoad) {
+            devIndex: ['$ocLazyLoad', function ($ocLazyLoad) {
               return $ocLazyLoad.load([{
                 name: 'rivalWarLayoutController',
                 files: ['partials/layout/rivalWarLayoutController.js']
@@ -61,7 +51,7 @@ define(
             },
           },
           resolve: {
-            devIndex: ['$ocLazyLoad', function($ocLazyLoad) {
+            devIndex: ['$ocLazyLoad', function ($ocLazyLoad) {
               return $ocLazyLoad.load([{
                 name: 'rivalWarLayoutController',
                 files: ['partials/layout/rivalWarLayoutController.js']
@@ -75,13 +65,13 @@ define(
       }]); // routeModule.config end
 
     //이하 다국어 처리 부
-    routeModule.config(function($compileProvider, DEBUG_MODE) {
+    routeModule.config(function ($compileProvider, DEBUG_MODE) {
       if (!DEBUG_MODE) {
         $compileProvider.debugInfoEnabled(false);
       }
     });// $compileProvider end
 
-    routeModule.config(function($translateProvider, DEBUG_MODE, LOCALES) {
+    routeModule.config(function ($translateProvider, DEBUG_MODE, LOCALES) {
       if (DEBUG_MODE) {
         $translateProvider.useMissingTranslationHandlerLog();// warns
       }
@@ -95,10 +85,8 @@ define(
       $translateProvider.useLocalStorage();
     });// $translateProvider end
 
-    routeModule
-      .config(function(tmhDynamicLocaleProvider) {
-        tmhDynamicLocaleProvider
-          .localeLocationPattern('lib/angular-i18n/angular-locale_{{locale}}.js');
-      }); // tmhDynamicLocaleProvider end
+    routeModule.config(function (tmhDynamicLocaleProvider) {
+      tmhDynamicLocaleProvider.localeLocationPattern('lib/angular-i18n/angular-locale_{{locale}}.js');
+    }); // tmhDynamicLocaleProvider end
 
   }); // function end

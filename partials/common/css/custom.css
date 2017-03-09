@@ -439,16 +439,13 @@ img {
     transform: unset;
     -webkit-transform: unset;
   }
-  
+
 }
 
 @media all and (max-width:720px){
   .main-header .sidebar-toggle{
     margin-top:-50px;
     color: #fff;
-  }
-  .main-header .multilingual .form-group{
-    display:none;
   }
   .main-header .multilingual{
     padding: 14px 15px;
@@ -470,7 +467,7 @@ img {
     color: #fff;
     background-color: rgba(255, 255, 255, .2);
   }
-  
+
   .rivalList-outerWrap{
     width: 100%;
     padding-right: 100px;
@@ -486,7 +483,7 @@ img {
     margin-left:2%;
     margin-right:2%;
   }
-  
+
 }
 
 @media all and (max-width:480px){

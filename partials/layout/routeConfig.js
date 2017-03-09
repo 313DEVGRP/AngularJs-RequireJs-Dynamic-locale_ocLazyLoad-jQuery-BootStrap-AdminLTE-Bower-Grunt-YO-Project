@@ -39,6 +39,9 @@ define(['projectWeb'],
               }, {
                 name: 'rivalWarLayoutService',
                 files: ['partials/layout/rivalWarLayoutService.js']
+              }, {
+                name: 'rivalWarLayoutDirective',
+                files: ['partials/layout/rivalWarLayoutDirective.js']
               }]); //$ocLazyLoad end
             }] //devIndex end
           } // resolve end

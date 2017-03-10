@@ -34,13 +34,19 @@
 				<span>진행중인 비교보기</span>
 				<i class="fa fa-angle-left pull-right"></i>
 			</a>
-			<ul class="treeview-menu repeatList" ng-controller="rivalListController">
-				<li ng-repeat="nowList in warList">
+			<ul class="treeview-menu repeatList" ng-repeat="nowList in warList" ng-switch on="nowList.c_position">
+				<li ng-switch-when='0' class="on">
 					<a href="#StandardDevelopment#/dev">
 						<i class="fa text-aqua">{{$index+1}}</i>
-						{{nowList.con}}
+						{{nowList.c_title}}
 					</a>
 				</li>
+        <li ng-switch-default>
+          <a href="#StandardDevelopment#/dev">
+            <i class="fa text-aqua">{{$index+1}}</i>
+            {{nowList.c_title}}
+          </a>
+        </li>
 			</ul>
 		</li>
 	</ul>

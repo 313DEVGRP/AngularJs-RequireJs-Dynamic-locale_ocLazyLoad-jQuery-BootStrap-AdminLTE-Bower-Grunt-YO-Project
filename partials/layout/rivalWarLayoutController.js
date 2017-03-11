@@ -149,49 +149,6 @@ define(['projectWeb'], function () {
         });
     }]);
 
-  rivalWarIndexModule.controller('headerController', ['$scope', '$window', '$ocLazyLoad', 'rivalWarLayoutService',
-    function ($scope, $window, $ocLazyLoad, rivalWarLayoutService) {
-      var flag = true;
-
-      $scope.winWid = $window.innerWidth;
-
-      angular.element($window).bind('resize', function () {
-        $scope.testWid = $window.innerWidth;
-        if ($scope.winWid <= 768) {
-          flag = true;
-          $('body').removeClass('sidebar-open');
-        } else if ($scope.winWid >= 768) {
-          //flag = true;
-          //$('body').removeClass('.sidebar-open');
-          $('.blind').fadeTo(500, 0, function () {
-            $(this).remove();
-          });
-        }
-      });
-
-      $scope.asideToggle = function (e) {
-        var $body = $('body'),
-          blind = '<div class="blind"></div>';
-        if ($scope.winWid <= 767) {
-          if (flag === true) {
-            flag = false;
-            $body.append(blind).find('.blind').fadeTo(500, 0.5);
-          } else if (flag === false) {
-            flag = true;
-            $('.blind').fadeTo(500, 0, function () {
-              $(this).remove();
-            })
-          }
-        } else if ($scope.winWid >= 768) {
-
-        }
-      };
-      $ocLazyLoad.load(['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
-        .then(function () {
-
-        });
-    }]);
-
   rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',
     '$ocLazyLoad', '$stateParams', 'rivalWarLayoutService',
     function ($scope, $ocLazyLoad, $stateParams, rivalWarLayoutService) {

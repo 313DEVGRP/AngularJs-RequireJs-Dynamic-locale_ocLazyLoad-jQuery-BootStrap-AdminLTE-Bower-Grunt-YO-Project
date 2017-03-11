@@ -2,10 +2,10 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarAsideControllerModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'rivalWarLayoutService']);
+  var rivalWarAsideControllerModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 
-  rivalWarAsideControllerModule.controller('rivalWarAsideController', ['$scope', '$ocLazyLoad', 'rivalWarLayoutService', '$http',
-    function ($scope, $ocLazyLoad, rivalWarLayoutService, $http) {
+  rivalWarAsideControllerModule.controller('rivalWarAsideController', ['$scope', '$ocLazyLoad', '$http',
+    function ($scope, $ocLazyLoad, $http) {
 
       console.log('rivalWarAsideController');
 
@@ -20,7 +20,7 @@ define(['projectWeb'], function () {
       /* AJAX 통신 처리 */
       $http({
         method: 'GET', //방식
-        url: 'http://www.313.co.kr/rivalWar/api/menu/getChildMenu.do?c_id=2', /* 통신할 URL */
+        url: '/rivalWar/api/menu/getChildMenu.do?c_id=2', /* 통신할 URL */
         /* data: dataObject, 파라메터로 보낼 데이터 */
         headers: {'Content-Type': 'application/json; charset=utf-8'} //헤더
       })

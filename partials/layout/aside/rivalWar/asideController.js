@@ -20,7 +20,7 @@ define(['projectWeb'], function () {
       /* AJAX 통신 처리 */
       $http({
         method: 'GET', //방식
-        url: 'http://localhost:8080/rivalWar/api/menu/getChildMenu.do?c_id=2', /* 통신할 URL */
+        url: '/rivalWar/api/menu/getChildMenu.do?c_id=2', /* 통신할 URL */
         /* data: dataObject, 파라메터로 보낼 데이터 */
         headers: {'Content-Type': 'application/json; charset=utf-8'} //헤더
       })

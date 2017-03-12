@@ -35,13 +35,16 @@ define(['projectWeb'],
             devIndex: ['$ocLazyLoad', function ($ocLazyLoad) {
               return $ocLazyLoad.load([{
                 name: 'rivalWarLayoutController',
-                files: ['partials/layout/rivalWarLayoutController.js']
+                files: ['partials/layout/rivalWarLayoutController.js'],
+                cache: false
               }, {
                 name: 'rivalWarLayoutService',
-                files: ['partials/layout/rivalWarLayoutService.js']
+                files: ['partials/layout/rivalWarLayoutService.js'],
+                cache: false
               }, {
                 name: 'rivalWarLayoutDirective',
-                files: ['partials/layout/rivalWarLayoutDirective.js']
+                files: ['partials/layout/rivalWarLayoutDirective.js'],
+                cache: false
               }]); //$ocLazyLoad end
             }] //devIndex end
           } // resolve end

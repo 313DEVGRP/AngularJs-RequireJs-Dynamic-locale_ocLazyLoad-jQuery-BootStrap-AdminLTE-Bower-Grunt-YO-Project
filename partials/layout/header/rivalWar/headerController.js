@@ -58,7 +58,7 @@ define(['projectWeb'], function () {
         /* data: dataObject, 파라메터로 보낼 데이터 */
         headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'} //헤더
       })
-        .success(function (data, status, headers, config) {
+        .success(function (data) {
           if (data) {
             /* 성공적으로 결과 데이터가 넘어 왔을 때 처리 */
             $scope.headerList = data;
@@ -67,9 +67,12 @@ define(['projectWeb'], function () {
             /* 통신한 URL에서 데이터가 넘어오지 않았을 때 처리 */
           }
         })
-        .error(function (data, status, headers, config) {
+        .error(function (data, status) {
           /* 서버와의 연결이 정상적이지 않을 때 처리 */
           console.log(status);
+        })
+        .finally(function() {
+          console.log("finally finished repos");
         });
 
     }]);

@@ -56,7 +56,7 @@ define(['projectWeb'], function () {
         method: 'GET', //방식
         url: '/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=2', /* 통신할 URL */
         /* data: dataObject, 파라메터로 보낼 데이터 */
-        headers: {'Content-Type': 'application/json; charset=utf-8'} //헤더
+        headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'} //헤더
       })
         .success(function (data, status, headers, config) {
           if (data) {

@@ -4,17 +4,17 @@ define(['projectWeb'], function () {
 
   var rivalWarHeaderControllerModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 
-  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['$scope', '$ocLazyLoad', '$http', '$window',
-    function ($scope, $ocLazyLoad, $http, $window) {
+  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['$scope', '$ocLazyLoad', '$http', '$window', '$timeout',
+    function ($scope, $ocLazyLoad, $http, $window, $timeout) {
 
-      angular.element(document).ready(function () {
+      $timeout(function(){
         var parameters = {
           c_id: 1
         };
         var config = {
           params: parameters
         };
-        $http.get('/com/ext/jstree/springHibernate/core/getChildNode.do', config)
+        $http.get('http://localhost:8080/com/ext/jstree/springHibernate/core/getChildNode.do', config)
           .success(function (data, status, headers, config) {
             $scope.headerList = data;
           })

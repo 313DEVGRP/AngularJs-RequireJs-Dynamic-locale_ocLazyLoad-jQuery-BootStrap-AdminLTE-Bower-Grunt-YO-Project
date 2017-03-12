@@ -4,8 +4,8 @@ define(['projectWeb'], function () {
 
   var rivalWarHeaderControllerModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
 
-  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['$scope', '$http', '$window',
-    function ($scope, $http, $window) {
+  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['$scope', '$ocLazyLoad', '$http', '$window',
+    function ($scope, $ocLazyLoad, $http, $window) {
 
       console.log('rivalWarHeaderController');
 
@@ -24,7 +24,7 @@ define(['projectWeb'], function () {
         }
       });
 
-      $scope.asideToggle = function (e) {
+      $scope.asideToggle = function () {
         var $body = $('body'),
           blind = '<div class="blind"></div>';
         if ($scope.winWid <= 767) {

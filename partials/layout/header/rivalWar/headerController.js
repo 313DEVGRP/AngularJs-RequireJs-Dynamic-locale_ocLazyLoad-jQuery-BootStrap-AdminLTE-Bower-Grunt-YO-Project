@@ -7,6 +7,22 @@ define(['projectWeb'], function () {
   rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['$scope', '$ocLazyLoad', '$http', '$window',
     function ($scope, $ocLazyLoad, $http, $window) {
 
+      angular.element(document).ready(function () {
+        var parameters = {
+          c_id: 1
+        };
+        var config = {
+          params: parameters
+        };
+        $http.get('/com/ext/jstree/springHibernate/core/getChildNode.do', config)
+          .success(function (data, status, headers, config) {
+            $scope.headerList = data;
+          })
+          .error(function (data, status, header, config) {
+            console.log(status);
+          });
+      });
+
       console.log('rivalWarHeaderController');
 
       var flag = true;
@@ -41,20 +57,6 @@ define(['projectWeb'], function () {
 
         }
       };
-
-      var parameters = {
-        c_id: 1
-      };
-      var config = {
-        params: parameters
-      };
-      $http.get('/com/ext/jstree/springHibernate/core/getChildNode.do', config)
-        .success(function (data, status, headers, config) {
-          $scope.headerList = data;
-        })
-        .error(function (data, status, header, config) {
-          console.log(status);
-        });
 
     }]);
 

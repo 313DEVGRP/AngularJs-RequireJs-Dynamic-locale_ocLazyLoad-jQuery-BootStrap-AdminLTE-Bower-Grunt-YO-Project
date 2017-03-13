@@ -12,7 +12,7 @@ define(['projectWeb'], function () {
         $http({
           method: 'GET',
           cache: false,
-          url: 'http://localhost:8080/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=2',
+          url: 'http://www.313.co.kr/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=2',
           headers: {
             'X-Requested-With': ' XMLHttpRequest'
           }

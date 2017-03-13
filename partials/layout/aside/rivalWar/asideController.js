@@ -14,7 +14,7 @@ define(['projectWeb'], function () {
             $http({
             method: 'GET' ,
             cache: false,
-            url: 'http://localhost:8080/rivalWar/api/menu/getChildMenu.do?c_id=2',
+            url: 'http://www.313.co.kr/rivalWar/api/menu/getChildMenu.do?c_id=2',
             headers: {
               'X-Requested-With':' XMLHttpRequest'
             }

@@ -2,7 +2,7 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarAsideModule = angular.module('projectWeb', []);
+  var rivalWarAsideModule = angular.module('rivalWarAsideControllerModule', []);
 
   rivalWarAsideModule.controller('rivalWarAsideController',
     function ($rootScope, $scope, $http, $q) {
@@ -14,7 +14,7 @@ define(['projectWeb'], function () {
             $http({
             method: 'GET' ,
             cache: false,
-            url: '/rivalWar/api/menu/getChildMenu.do?c_id=2',
+            url: 'http://localhost:8080/rivalWar/api/menu/getChildMenu.do?c_id=2',
             headers: {
               'X-Requested-With':' XMLHttpRequest'
             }

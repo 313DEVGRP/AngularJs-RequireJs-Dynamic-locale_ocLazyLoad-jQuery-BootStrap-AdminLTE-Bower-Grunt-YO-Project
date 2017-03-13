@@ -20,6 +20,12 @@ define(['projectWeb'],
     routeModule.config(['$routeProvider', '$stateProvider', '$locationProvider', '$urlRouterProvider', '$ocLazyLoadProvider',
       function ($routeProvider, $stateProvider, $locationProvider, $urlRouterProvider, $ocLazyLoadProvider) {
 
+        $ocLazyLoadProvider.config({
+          debug: true,
+          events: true,
+          suppressBootstrapWarning: true
+        });
+
         $urlRouterProvider.otherwise("/");
         $locationProvider.hashPrefix("StandardDevelopment#");
 
@@ -32,38 +38,19 @@ define(['projectWeb'],
             }
           },
           resolve: {
-            devIndex: ['$ocLazyLoad', function ($ocLazyLoad) {
+            Index: ['$ocLazyLoad', function ($ocLazyLoad) {
               return $ocLazyLoad.load([{
-                name: 'rivalWarLayoutController',
+                name: 'rivalWarLayoutControllerModule',
                 files: ['partials/layout/rivalWarLayoutController.js'],
                 cache: false
               }, {
-                name: 'rivalWarLayoutService',
+                name: 'rivalWarLayoutServiceModule',
                 files: ['partials/layout/rivalWarLayoutService.js'],
                 cache: false
               }, {
-                name: 'rivalWarLayoutDirective',
+                name: 'rivalWarLayoutDirectiveModule',
                 files: ['partials/layout/rivalWarLayoutDirective.js'],
                 cache: false
-              }]); //$ocLazyLoad end
-            }] //devIndex end
-          } // resolve end
-        }).state('rivalWar.SubModule', {
-          url: "/:subModule",
-          views: {
-            '': {
-              controller: 'rivalWarLayoutController',
-              templateUrl: 'partials/layout/rivalWarLayoutIndex.html'
-            },
-          },
-          resolve: {
-            devIndex: ['$ocLazyLoad', function ($ocLazyLoad) {
-              return $ocLazyLoad.load([{
-                name: 'rivalWarLayoutController',
-                files: ['partials/layout/rivalWarLayoutController.js']
-              }, {
-                name: 'rivalWarLayoutService',
-                files: ['partials/layout/rivalWarLayoutService.js']
               }]); //$ocLazyLoad end
             }] //devIndex end
           } // resolve end

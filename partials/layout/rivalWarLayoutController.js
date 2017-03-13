@@ -2,7 +2,7 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarIndexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'rivalWarLayoutService']);
+  var rivalWarIndexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'rivalWarLayoutServiceModule']);
 
   rivalWarIndexModule.controller('rivalWarLayoutController', [
     '$scope', '$ocLazyLoad', 'rivalWarLayoutService', '$rootScope', '$window', '$translate', '$interval', '$stateParams',
@@ -41,6 +41,24 @@ define(['projectWeb'], function () {
           $('li .active').removeClass('active');
           rivalWarLayoutService.fire();
           console.log("goToHome");
+        }
+      );
+
+      // load per excute
+      $scope.$on('$includeContentLoaded',
+        function (event, file) {
+          if (file === 'partials/layout/header/rivalWar/') {
+            console.log(file);
+          } else if (file === 'partials/layout/aside/rivalWar/') {
+            rivalWarLayoutService.fire();
+          } else if (file === 'partials/layout/contents/rivalWar/') {
+            $ocLazyLoad.load('partials/layout/contents/rivalWar/index.css');
+            rivalWarLayoutService.fire();
+          } else if (file === 'partials/layout/footer/rivalWar/') {
+            rivalWarLayoutService.fire();
+          } else if (file === 'partials/layout/sidebar/rivalWar/') {
+            console.log(file);
+          }
         }
       );
 

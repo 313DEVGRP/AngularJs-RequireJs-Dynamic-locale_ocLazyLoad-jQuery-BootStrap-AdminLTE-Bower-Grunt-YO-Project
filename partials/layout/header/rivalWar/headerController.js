@@ -2,7 +2,7 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarHeaderControllerModule = angular.module('projectWeb', []);
+  var rivalWarHeaderControllerModule = angular.module('rivalWarHeaderControllerModule', ['rivalWarLayoutServiceModule']);
 
   rivalWarHeaderControllerModule.controller('rivalWarHeaderController',
     function ($scope, $http, $window, $q) {
@@ -12,7 +12,7 @@ define(['projectWeb'], function () {
           $http({
             method: 'GET' ,
             cache: false,
-            url: '/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=1',
+            url: 'http://localhost:8080/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=1',
             headers: {
               'X-Requested-With':' XMLHttpRequest'
             }

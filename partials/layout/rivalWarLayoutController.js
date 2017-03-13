@@ -33,31 +33,6 @@ define(['projectWeb'], function () {
         }
       );
 
-      // ng-include 처리부
-      $scope.mainHeader = 'partials/layout/header/rivalWar/';
-      $scope.mainSidebar = 'partials/layout/aside/rivalWar/';
-      $scope.contentWrapper = 'partials/layout/contents/rivalWar/';
-      $scope.mainFooter = 'partials/layout/footer/rivalWar/';
-      $scope.controlSidebar = 'partials/layout/sidebar/rivalWar/';
-
-      // load per excute
-      $scope.$on('$includeContentLoaded',
-        function (event, file) {
-          if (file === 'partials/layout/header/rivalWar/') {
-            console.log(file);
-          } else if (file === 'partials/layout/aside/rivalWar/') {
-            rivalWarLayoutService.fire();
-          } else if (file === 'partials/layout/contents/rivalWar/') {
-            $ocLazyLoad.load('partials/layout/contents/rivalWar/index.css');
-            rivalWarLayoutService.fire();
-          } else if (file === 'partials/layout/footer/rivalWar/') {
-            rivalWarLayoutService.fire();
-          } else if (file === 'partials/layout/sidebar/rivalWar/') {
-            console.log(file);
-          }
-        }
-      );
-
       // child 페이지에서 상위 컨트롤러로 이벤트 드리븐 부분
       $scope.$on('goToHome',
         function () {

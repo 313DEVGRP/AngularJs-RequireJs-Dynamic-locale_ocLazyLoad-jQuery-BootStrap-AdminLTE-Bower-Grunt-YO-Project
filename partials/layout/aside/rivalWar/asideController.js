@@ -2,31 +2,30 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarAsideModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
+  var rivalWarAsideModule = angular.module('projectWeb', []);
 
-  rivalWarAsideModule.controller('rivalWarAsideController', ['$rootScope', '$scope', '$ocLazyLoad', '$http', '$timeout',
-    function ($rootScope, $scope, $ocLazyLoad, $http, $timeout) {
+  rivalWarAsideModule.controller('rivalWarAsideController',
+    function ($rootScope, $scope, $http, $q) {
 
       console.log('rivalWarAsideController');
 
-      // in controller
-      $timeout(function(){
-        // check if there is query in url
-        // and fire search in case its value is not empty
-        var parameters = {
-          c_id: 2
-        };
-        var config = {
-          params: parameters
-        };
-        $http.get('http://localhost:8080/rivalWar/api/menu/getChildMenu.do', config)
-          .success(function (data, status, headers, config) {
-            $scope.warList = data;
-          })
-          .error(function (data, status, header, config) {
-            console.log(status);
+      $scope.init = function () {
+        var def = $q.defer();
+            $http({
+            method: 'GET' ,
+            cache: false,
+            url: '/rivalWar/api/menu/getChildMenu.do?c_id=2',
+            headers: {
+              'X-Requested-With':' XMLHttpRequest'
+            }
+          }).success(function(response) {
+            $scope.warList = response;
+            def.resolve(response);
+          }).finally(function() {
+            console.log('good');
           });
-      });
+        return def.promise;
+      };
 
-    }]);
+    });
 });

@@ -2,26 +2,28 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarHeaderControllerModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad']);
+  var rivalWarHeaderControllerModule = angular.module('projectWeb', []);
 
-  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['$scope', '$ocLazyLoad', '$http', '$window', '$timeout',
-    function ($scope, $ocLazyLoad, $http, $window, $timeout) {
+  rivalWarHeaderControllerModule.controller('rivalWarHeaderController',
+    function ($scope, $http, $window, $q) {
 
-      $timeout(function(){
-        var parameters = {
-          c_id: 1
-        };
-        var config = {
-          params: parameters
-        };
-        $http.get('http://localhost:8080/com/ext/jstree/springHibernate/core/getChildNode.do', config)
-          .success(function (data, status, headers, config) {
-            $scope.headerList = data;
-          })
-          .error(function (data, status, header, config) {
-            console.log(status);
+      $scope.init = function() {
+        var def = $q.defer();
+          $http({
+            method: 'GET' ,
+            cache: false,
+            url: '/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=1',
+            headers: {
+              'X-Requested-With':' XMLHttpRequest'
+            }
+          }).success(function(response) {
+            $scope.headerList = response;
+            def.resolve(response);
+          }).finally(function() {
+            console.log('good');
           });
-      });
+        return def.promise;
+      };
 
       console.log('rivalWarHeaderController');
 
@@ -58,6 +60,6 @@ define(['projectWeb'], function () {
         }
       };
 
-    }]);
+    });
 
 });

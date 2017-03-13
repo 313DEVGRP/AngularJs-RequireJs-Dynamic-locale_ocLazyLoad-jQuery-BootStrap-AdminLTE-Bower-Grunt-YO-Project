@@ -48,16 +48,16 @@ define(['projectWeb'], function () {
       $scope.$on('$includeContentLoaded',
         function (event, file) {
           if (file === 'partials/layout/header/rivalWar/') {
-            console.log(file);
+            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/aside/rivalWar/') {
-            rivalWarLayoutService.fire();
+            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/contents/rivalWar/') {
             $ocLazyLoad.load('partials/layout/contents/rivalWar/index.css');
-            rivalWarLayoutService.fire();
+            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/footer/rivalWar/') {
-            rivalWarLayoutService.fire();
+            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/sidebar/rivalWar/') {
-            console.log(file);
+            rivalWarLayoutService.fire();
           }
         }
       );
@@ -109,115 +109,6 @@ define(['projectWeb'], function () {
       });
     }]);// indexModule.controller
 
-  rivalWarIndexModule.controller('rivalListController', ['$rootScope', '$scope', '$ocLazyLoad', 'rivalWarLayoutService',
-    function ($rootScope, $scope, $ocLazyLoad, rivalWarLayoutService) {
-
-      $scope.timer = function () {
-
-      };
-
-      $scope.warList = [
-        {category: "스마트폰", dDay: "3일 22시간 31분", con: "아이폰 vs 삼성"},
-        {category: "카메라", dDay: "6일 11시간 47분", con: 'SONY vs Cannon'},
-        {category: "히어로", dDay: "1일 19시간 38분", con: '슈퍼맨 vs 배트맨'},
-        {category: "탄산음료", dDay: "4일 01시간 20분", con: '코카콜라 vs 펩시'},
-        {category: "노트북", dDay: "5일 07시간 17분", con: '맥북프로 vs 서피스5'},
-        {category: "음식", dDay: "2일 23시간 51분", con: '맥도날드 vs 버거킹'},
-        {category: "신발", dDay: "3일 03시간 01분", con: '나이키 vs 아디다스'}
-      ];
-
-
-      $ocLazyLoad.load(['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
-        .then(function () {
-          var $rivalListOuterWrap = $('.rivalList-outerWrap'),
-            $rivalList = $('.rivalList-content li'),
-            idx = 0;
-
-          var relList = setInterval(function () {
-            rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
-            idx += 1;
-            if (idx === $rivalList.length) idx = 0;
-            rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
-          }, 4000);
-        });
-    }]);
-
-  rivalWarIndexModule.controller('rivalWarContentsController', ['$scope',
-    '$ocLazyLoad', '$stateParams', 'rivalWarLayoutService',
-    function ($scope, $ocLazyLoad, $stateParams, rivalWarLayoutService) {
-      /* 컨텐츠 영역 */
-      console.log("----" + $stateParams.subModule + "----");
-
-      angular.element(document).ready(function () {
-        if (typeof $stateParams.subModule != 'undefined') {
-          console.log($stateParams.subModule);
-          $scope.subName = $stateParams.subModule;
-          $scope.$emit('emitSubModule', {message: $scope.subName});
-        }
-      });
-
-      $('#carousel-example-generic').carousel({
-        interval: 2000
-      });
-
-      /* 토글 슬라이드 이벤트 */
-      $('.item-table li').on('click', function () {
-        var viewWidth = $('.rival-content').outerWidth();
-        if (viewWidth < 460) {
-          if ($(this).find('.fa').hasClass('fa-plus')) {
-            $(this).find('.fa').attr('class', 'fa fa-minus');
-            $(this).find('.dl-box').slideDown();
-          } else {
-            $(this).find('.fa').attr('class', 'fa fa-plus');
-            $(this).find('.dl-box').slideUp();
-          }
-        }
-      });
-      /* 데이터 적용 */
-      $scope.warTime = '2016년 11월 4일';
-
-      /* 댓글 */
-
-      $scope.directChatList = [ // 원글
-        {
-          support: true,
-          userName: "Ryan Heywood",
-          userImg: "./partials/common/img/community/user1.jpg",
-          userRank: "./partials/common/img/community/level1.jpg",
-          date: "01월 16일 14:59",
-          text: "안드로이드의 경우 사용하지 않는 앱들이 설치되어 있는데 삭제도 안되니 더 불편한거 아닌가요?"
-        },
-        {
-          support: false,
-          userName: "Ryan Heywood",
-          userImg: "./partials/common/img/community/user2.jpg",
-          userRank: "./partials/common/img/community/level2.jpg",
-          date: "01월 16일 17:31",
-          text: "아이폰 사용의 좋은 점이 분명히 있지만, 처음 사용자가 쓰기에는 어려움이 너무 많습니다."
-        }
-      ];
-
-      $scope.chatReplyList = [ // 답글
-        {
-          support: true,
-          userName: "Ryan Heywood",
-          userImg: "./partials/common/img/community/user1.jpg",
-          date: "01월 16일 14:59",
-          text: "안드로이드의 경우 사용하지 않는 앱들이 설치되어 있는데 삭제도 안되니 더 불편한거 아닌가요?"
-        },
-        {
-          support: false,
-          userName: "Ryan Heywood",
-          userImg: "./partials/common/img/community/user2.jpg",
-          date: "01월 16일 17:31",
-          text: "아이폰 사용의 좋은 점이 분명히 있지만, 처음 사용자가 쓰기에는 어려움이 너무 많습니다."
-        }
-      ];
-
-      $scope.goReply = false;
-      $scope.replyTo = false;
-
-    }]);// rivalWarContentsController.controller
 
   rivalWarIndexModule.directive('signInModal', function () {
     return {

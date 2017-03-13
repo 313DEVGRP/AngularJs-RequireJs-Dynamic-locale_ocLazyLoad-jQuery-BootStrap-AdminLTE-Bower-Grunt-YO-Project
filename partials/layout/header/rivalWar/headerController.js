@@ -4,26 +4,43 @@ define(['projectWeb'], function () {
 
   var rivalWarHeaderControllerModule = angular.module('rivalWarHeaderControllerModule', ['rivalWarLayoutServiceModule']);
 
-  rivalWarHeaderControllerModule.controller('rivalWarHeaderController',
-    function ($scope, $http, $window, $q) {
+  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['rivalWarLayoutService', '$scope', '$http', '$window', '$q',
+    function (rivalWarLayoutService, $scope, $http, $window, $q) {
 
-      $scope.init = function() {
+      $scope.init = function () {
         var def = $q.defer();
-          $http({
-            method: 'GET' ,
-            cache: false,
-            url: 'http://localhost:8080/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=1',
-            headers: {
-              'X-Requested-With':' XMLHttpRequest'
+        $http({
+          method: 'GET',
+          cache: false,
+          url: 'http://localhost:8080/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=2',
+          headers: {
+            'X-Requested-With': ' XMLHttpRequest'
+          }
+        }).success(function (response) {
+          $scope.headerList = response;
+
+          $scope.timer = function () {
+          };
+          var $rivalListOuterWrap = $('.rivalList-outerWrap'),
+            $rivalList = $('.rivalList-content li'),
+            idx = 0;
+
+          var relList = setInterval(function () {
+            rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
+            idx += 1;
+            if (idx === $rivalList.length) {
+              idx = 0;
+              rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
             }
-          }).success(function(response) {
-            $scope.headerList = response;
-            def.resolve(response);
-          }).finally(function() {
-            console.log('good');
-          });
+          }, 4000);
+          def.resolve(response);
+
+        }).finally(function () {
+          console.log('good');
+        });
         return def.promise;
       };
+      $scope.init();
 
       console.log('rivalWarHeaderController');
 
@@ -60,6 +77,7 @@ define(['projectWeb'], function () {
         }
       };
 
-    });
+
+    }]);
 
 });

@@ -1,16 +1,17 @@
-<div oc-lazy-load="[{ name: 'rivalWarContentsControllerModule', files: ['partials/layout/contents/rivalWar/contentsController.js'] ,cache: false }]">
-<section class="content" ng-controller="rivalWarContentsController">
-  <div class="title_area rival">
-    <div class="tit_box">
-      <h2 class="tit_txt">
-      대한민국 제 19대 대통령 선거
-      <img src="partials/layout/contents/rivalWar/img/tit_vs.png" alt="타이틀 아이콘">
-      당신의 선택은?</h2>
+<div
+  oc-lazy-load="[{ name: 'rivalWarContentsControllerModule', files: ['partials/layout/contents/rivalWar/contentsController.js'] ,cache: false },{ name: 'contentsAnalysisControllerModule', files: ['partials/layout/contents/rivalWar/contentsAnalysisController.js'] ,cache: false },{ name: 'contentsInfoControllerModule', files: ['partials/layout/contents/rivalWar/contentsInfoController.js'] ,cache: false },{ name: 'contentsSpecControllerModule', files: ['partials/layout/contents/rivalWar/contentsSpecController.js'] ,cache: false },{ name: 'contentsChatControllerModule', files: ['partials/layout/contents/rivalWar/contentsChatController.js'] ,cache: false }]">
+  <section class="content" ng-controller="rivalWarContentsController">
+    <div class="title_area rival">
+      <div class="tit_box">
+        <h2 class="tit_txt">
+          대한민국 제 19대 대통령 선거
+          <img src="partials/layout/contents/rivalWar/img/tit_vs.png" alt="타이틀 아이콘">
+          당신의 선택은?</h2>
+      </div>
     </div>
-  </div>
-  <div class="row rival-content">
-    <div class="box-tools share-box">
-      <button type="button" class="btn btn-default"><i class="fa fa-mail-forward"></i>공유하기</button>
+    <div class="row rival-content">
+      <div class="box-tools share-box">
+        <button type="button" class="btn btn-default"><i class="fa fa-mail-forward"></i>공유하기</button>
       <span class="social-icon-line">
         <a href="#" class="btn btn-social-icon btn-kakaotalk">
           <i class="fa fa-kakaotalk"><img src="partials/common/img/etc/icon-brand-kakaotalk.png" alt="카카오톡"/></i>
@@ -25,350 +26,407 @@
         <a class="btn btn-social-icon btn-google"><i class="fa fa-google-plus"></i></a>
         <a class="btn btn-social-icon btn-twitter"><i class="fa fa-twitter"></i></a>
       </span>
-    </div>
-    <div class="col-md-12">
-      <!-- The time line -->
-      <ul class="timeline">
-        <!-- timeline time label -->
-        <li class="time-label">
-          <span class="bg-red" style="background-color: #00acee!important">{{warTime}}</span>
-        </li>
-        <!-- /.timeline-label -->
-        <!-- timeline item -->
-        <li>
-          <a href="#" class="fa fa-bar-chart bg-green location-a"></a>
-          <div class="timeline-item result-view">
-            <div class="box box-warning">
-              <div class="box-header with-border">
-                <h3 class="box-title">누적집계결과</h3>
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn btn-success btn-xs">좀 더 자세한 결과보기</button>
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                </div>
-                <!-- /.box-tools -->
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <div>
-                  <div class="col-sm-4 col-xs-12">
-                    <div class="info-box item-A">
-                      <span class="info-box-icon"><i class="fa fa-thumbs-o-down"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 1232<br>총 등록 글 : 5,230 총 등록된 해시 태그 : 1210</span>
-                        <div class="progress">
-                          <div class="progress-bar" style="width: 30%"></div>
-                        </div>
-                        <span class="progress-description">{{itemList.itemA.brand}} {{itemList.itemA.name}}(37%)</span>
-                      </div>
-                      <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                  </div>
-                  <div class="col-sm-4 col-xs-12">
-                    <div class="info-box item-C">
-                      <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
-                        <div class="progress">
-                          <div class="progress-bar" style="width: 20%"></div>
-                        </div>
-                        <span class="progress-description">{{itemList.itemB.brand}} {{itemList.itemB.name}}(30%)</span>
-                      </div>
-                      <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                  </div>
-                  <div class="col-sm-4 col-xs-12">
-                    <div class="info-box item-B">
-                      <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
-                      <div class="info-box-content">
-                        <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
-                        <div class="progress">
-                          <div class="progress-bar" style="width: 70%"></div>
-                        </div>
-                        <span class="progress-description">{{itemList.itemB.brand}} {{itemList.itemB.name}}(33%)</span>
-                      </div>
-                      <!-- /.info-box-content -->
-                    </div>
-                    <!-- /.info-box -->
-                  </div>
-                  <!-- 그래프 영역 -->
-                  <div class="compare-grap-box">
-                    <div class="compare-grap">
-                      <div class="left">
-                        <span class="point">25,504 points</span>
-                        <div class="item-A"></div>
-                        <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
-                      </div>
-                      <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png" alt="logo"></span>
-                      <div class="center">
-                        <span class="point">25,504 points</span>
-                        <div class="item-C"></div>
-                        <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
-                      </div>
-                      <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png" alt="logo"></span>
-                      <div class="right">
-                        <span class="point">25,504 points</span>
-                        <div class="item-B"></div>
-                        <span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
-                      </div>
-                    </div>
-                    <div class="compare-text">
-                      등록된 글 총합 : 19,23, 좋아요 선택 총합 : 2,443(21.2%), 추가된 스펙개수: 7개 등록된 해시태그 총합 13,233개,
-                      <br> 표중오차 : .64821, 평균 : 3.1234, 등분상 가정 유의확률: .124, 유의확률 : . 823, 99%, 신뢰구간 하한 : -.23134, 상한: .235421, T분포결과 : 8.423
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-            </div>
-          </div>
-        </li>
-        <!-- END timeline item -->
-        <!-- timeline item -->
-        <li>
-          <i class="fa fa-camera bg-purple"></i>
-          <div class="timeline-item compare-view">
-            <div class="box box-purple">
-              <div class="box-header with-border">
-                <h3 class="box-title">비교현황 및 정보</h3>
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn bg-purple btn-xs"><span class="text-hidden">선택은 신중하게 해주세요. </span>변경이 불가능합니다.</button>
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                </div>
-                <!-- /.box-tools -->
-              </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <div>
-                  <div class="col-xs-4 col-xs-12">
-                    <!-- small box -->
-                    <div class="small-box main-item">
-                      <div class="inner">
-                        <div class="item-img">
-                          <img src="partials/layout/contents/rivalWar/img/presidency01.jpg" alt="">
-                        </div>
-                      </div>
-                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                    <ul class="link-list">
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png"> '무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon02.png"> '아이폰7' 출시 첫날 불법보조금 기승…</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon03.png"> 아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon04.png"> 아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png"> 소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
-                    </ul>
-                  </div>
-                  <div class="col-xs-4 col-xs-12">
-                    <!-- small box -->
-                    <div class="small-box main-item right">
-                      <div class="inner">
-                        <div class="item-img">
-                          <img src="partials/layout/contents/rivalWar/img/presidency02.jpg" alt="">
-                        </div>
-                      </div>
-                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                    <ul class="link-list">
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png"> '무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon02.png"> '아이폰7' 출시 첫날 불법보조금 기승…</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon03.png"> 아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon04.png"> 아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png"> 소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
-                    </ul>
-                  </div>
-                  <div class="col-xs-4 col-xs-12">
-                    <!-- small box -->
-                    <div class="small-box main-item right">
-                      <div class="inner">
-                        <div class="item-img">
-                          <img src="partials/layout/contents/rivalWar/img/presidency03.jpg" alt="">
-                        </div>
-                      </div>
-                      <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-                    </div>
-                    <ul class="link-list">
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png"> '무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon02.png"> '아이폰7' 출시 첫날 불법보조금 기승…</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon03.png"> 아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon04.png"> 아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
-                      <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png"> 소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
-            </div>
-          </div>
-        </li>
+      </div>
+      <div class="col-md-12">
+        <!-- The time line -->
+        <ul class="timeline">
+          <!-- timeline time label -->
+          <li class="time-label">
+            <span class="bg-red" style="background-color: #00acee!important">{{warTime}}</span>
+          </li>
+          <!-- /.timeline-label -->
+          <!-- timeline item -->
+          <li ng-controller="contentsAnalysisController">
+            <a href="#" class="fa fa-bar-chart bg-green location-a"></a>
 
-        <li>
-          <i class="fa fa-balance-scale bg-blue"></i>
-          <div class="timeline-item spec-view">
-            <div class="box box-primary">
-              <div class="box-header with-border">
-                <h3 class="box-title">비교 상세스펙</h3>
-                <div class="box-tools pull-right">
-                  <button type="button" class="btn bg-primary btn-xs">spec +192</button>
-                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+            <div class="timeline-item result-view">
+              <div class="box box-warning">
+                <div class="box-header with-border">
+                  <h3 class="box-title">누적집계결과</h3>
+
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-success btn-xs">좀 더 자세한 결과보기</button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                  </div>
+                  <!-- /.box-tools -->
                 </div>
-                <!-- /.box-tools -->
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <div>
+                    <div class="col-sm-4 col-xs-12">
+                      <div class="info-box item-A">
+                        <span class="info-box-icon"><i class="fa fa-thumbs-o-down"></i></span>
+
+                        <div class="info-box-content">
+                          <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 1232<br>총 등록 글 : 5,230 총 등록된 해시 태그 : 1210</span>
+
+                          <div class="progress">
+                            <div class="progress-bar" style="width: 30%"></div>
+                          </div>
+                          <span
+                            class="progress-description">{{itemList.itemA.brand}} {{itemList.itemA.name}}(37%)</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                      </div>
+                      <!-- /.info-box -->
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                      <div class="info-box item-C">
+                        <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+                        <div class="info-box-content">
+                          <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
+
+                          <div class="progress">
+                            <div class="progress-bar" style="width: 20%"></div>
+                          </div>
+                          <span
+                            class="progress-description">{{itemList.itemB.brand}} {{itemList.itemB.name}}(30%)</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                      </div>
+                      <!-- /.info-box -->
+                    </div>
+                    <div class="col-sm-4 col-xs-12">
+                      <div class="info-box item-B">
+                        <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+                        <div class="info-box-content">
+                          <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
+
+                          <div class="progress">
+                            <div class="progress-bar" style="width: 70%"></div>
+                          </div>
+                          <span
+                            class="progress-description">{{itemList.itemB.brand}} {{itemList.itemB.name}}(33%)</span>
+                        </div>
+                        <!-- /.info-box-content -->
+                      </div>
+                      <!-- /.info-box -->
+                    </div>
+                    <!-- 그래프 영역 -->
+                    <div class="compare-grap-box">
+                      <div class="compare-grap">
+                        <div class="left">
+                          <span class="point">25,504 points</span>
+
+                          <div class="item-A"></div>
+                          <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+                        </div>
+                        <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png"
+                                                     alt="logo"></span>
+
+                        <div class="center">
+                          <span class="point">25,504 points</span>
+
+                          <div class="item-C"></div>
+                          <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+                        </div>
+                        <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png"
+                                                     alt="logo"></span>
+
+                        <div class="right">
+                          <span class="point">25,504 points</span>
+
+                          <div class="item-B"></div>
+                          <span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
+                        </div>
+                      </div>
+                      <div class="compare-text">
+                        등록된 글 총합 : 19,23, 좋아요 선택 총합 : 2,443(21.2%), 추가된 스펙개수: 7개 등록된 해시태그 총합 13,233개,
+                        <br> 표중오차 : .64821, 평균 : 3.1234, 등분상 가정 유의확률: .124, 유의확률 : . 823, 99%, 신뢰구간 하한 : -.23134, 상한:
+                        .235421, T분포결과 : 8.423
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.box-body -->
               </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <div class="box spec-con pull-left item-bd-A" ng-controller="specCtrlLeft">
-                  <div class="box-header with-border bd-bottom-A">
-                    <h3 class="box-title item-color-A">{{theme}}</h3>
-                    <div class="box-tools pull-right">
-                      <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
-                      <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    </div>
-                    <!-- /.box-tools -->
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body">
-                    <div class="item-table">
-                      <spec-table-reverse class="reverse"></spec-table-reverse>
-                      <spec-table class="normal"></spec-table>
-                    </div>
-                  </div>
-                </div>
-                <div class="box spec-con pull-left item-bd-C" ng-controller="specCtrlLeft">
-                  <div class="box-header with-border bd-bottom-C">
-                    <h3 class="box-title item-color-C">{{theme}}</h3>
-                    <div class="box-tools pull-right">
-                      <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
-                      <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    </div>
-                    <!-- /.box-tools -->
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body">
-                    <div class="item-table">
-                      <spec-table-reverse class="reverse"></spec-table-reverse>
-                      <spec-table class="normal"></spec-table>
-                    </div>
-                  </div>
-                </div>
-                <div class="box spec-con pull-left item-bd-B" ng-controller="specCtrlRight">
-                  <div class="box-header with-border bd-bottom-B">
-                    <h3 class="box-title item-color-B">{{theme}}</h3>
-                    <div class="box-tools pull-right">
-                      <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
-                      <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                    </div>
-                    <!-- /.box-tools -->
-                  </div>
-                  <!-- /.box-header -->
-                  <div class="box-body">
-                    <div class="item-table">
-                      <spec-table></spec-table>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- /.box-body -->
             </div>
-          </div>
-        </li>
-        <li>
-          <i class="fa fa-comments bg-yellow"></i>
-          <!-- 타입 b -->
-          <div class="timeline-item">
-            <!-- Construct the box with style you want. Here we are using box-danger -->
-            <!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
-            <!-- The contextual class should match the box, so we are using direct-chat-danger -->
-            <div class="box box-danger direct-chat direct-chat-danger">
-              <div class="box-header with-border">
-                <h3 class="box-title">Direct Chat</h3>
-                <div class="box-tools pull-right">
-                  <span data-toggle="tooltip" title="3 New Messages" class="badge bg-red">3</span>
-                  <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                  <!-- In box-tools add this button if you intend to use the contacts pane -->
-                  <!-- 대기
-                  <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
-                  <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-                  -->
+          </li>
+          <!-- END timeline item -->
+          <!-- timeline item -->
+          <li ng-controller="contentsInfoController">
+            <i class="fa fa-camera bg-purple"></i>
+
+            <div class="timeline-item compare-view">
+              <div class="box box-purple">
+                <div class="box-header with-border">
+                  <h3 class="box-title">비교현황 및 정보</h3>
+
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn bg-purple btn-xs"><span class="text-hidden">선택은 신중하게 해주세요. </span>변경이
+                      불가능합니다.
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                  </div>
+                  <!-- /.box-tools -->
                 </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <div>
+                    <div class="col-xs-4 col-xs-12">
+                      <!-- small box -->
+                      <div class="small-box main-item">
+                        <div class="inner">
+                          <div class="item-img">
+                            <img src="partials/layout/contents/rivalWar/img/presidency01.jpg" alt="">
+                          </div>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                      </div>
+                      <ul class="link-list">
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png">
+                          '무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon02.png">
+                          '아이폰7' 출시 첫날 불법보조금 기승…</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon03.png">
+                          아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon04.png">
+                          아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png">
+                          소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-4 col-xs-12">
+                      <!-- small box -->
+                      <div class="small-box main-item right">
+                        <div class="inner">
+                          <div class="item-img">
+                            <img src="partials/layout/contents/rivalWar/img/presidency02.jpg" alt="">
+                          </div>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                      </div>
+                      <ul class="link-list">
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png">
+                          '무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon02.png">
+                          '아이폰7' 출시 첫날 불법보조금 기승…</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon03.png">
+                          아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon04.png">
+                          아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png">
+                          소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
+                      </ul>
+                    </div>
+                    <div class="col-xs-4 col-xs-12">
+                      <!-- small box -->
+                      <div class="small-box main-item right">
+                        <div class="inner">
+                          <div class="item-img">
+                            <img src="partials/layout/contents/rivalWar/img/presidency03.jpg" alt="">
+                          </div>
+                        </div>
+                        <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                      </div>
+                      <ul class="link-list">
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png">
+                          '무혈입성' 아이폰7…삼성 없는 한국 '추풍낙엽'</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon02.png">
+                          '아이폰7' 출시 첫날 불법보조금 기승…</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon03.png">
+                          아이폰7, 애플워치2 구매 전에 꼭 알아야 할</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon04.png">
+                          아이폰7에 무엇을 기대하나요? 한 달 사용기</a></li>
+                        <li><a href="#link" class="news"><img src="./partials/common/img/community/news-icon01.png">
+                          소프트뱅크의 아이폰 일본 시장 독점 공급 5.8 </a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.box-body -->
               </div>
-              <!-- /.box-header -->
-              <div class="box-body">
-                <!-- Conversations are loaded here -->
-                <ul class="direct-chat-messages clearfix">
-                  <!-- Message. Default to the left -->
-                  <li class="direct-chat-msg clearfix" ng-repeat="chat in directChatList">
-                    <div class="direct-chat-box" ng-class="chat.support ? 'type-left' : 'type-right' ">
-                      <div class="direct-chat-user">
+            </div>
+          </li>
+
+          <li ng-controller="contentsSpecController">
+            <i class="fa fa-balance-scale bg-blue"></i>
+
+            <div class="timeline-item spec-view">
+              <div class="box box-primary">
+                <div class="box-header with-border">
+                  <h3 class="box-title">비교 상세스펙</h3>
+
+                  <div class="box-tools pull-right">
+                    <button type="button" class="btn bg-primary btn-xs">spec +192</button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                    </button>
+                  </div>
+                  <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <div class="box spec-con pull-left item-bd-A" ng-controller="specCtrlLeft">
+                    <div class="box-header with-border bd-bottom-A">
+                      <h3 class="box-title item-color-A">{{theme}}</h3>
+
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+                        <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i
+                          class="fa fa-minus"></i></button>
+                      </div>
+                      <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <div class="item-table">
+                        <spec-table-reverse class="reverse"></spec-table-reverse>
+                        <spec-table class="normal"></spec-table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box spec-con pull-left item-bd-C" ng-controller="specCtrlLeft">
+                    <div class="box-header with-border bd-bottom-C">
+                      <h3 class="box-title item-color-C">{{theme}}</h3>
+
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+                        <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i
+                          class="fa fa-minus"></i></button>
+                      </div>
+                      <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <div class="item-table">
+                        <spec-table-reverse class="reverse"></spec-table-reverse>
+                        <spec-table class="normal"></spec-table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box spec-con pull-left item-bd-B" ng-controller="specCtrlRight">
+                    <div class="box-header with-border bd-bottom-B">
+                      <h3 class="box-title item-color-B">{{theme}}</h3>
+
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+                        <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i
+                          class="fa fa-minus"></i></button>
+                      </div>
+                      <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                      <div class="item-table">
+                        <spec-table></spec-table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+          </li>
+          <li ng-controller="contentsChatController">
+            <i class="fa fa-comments bg-yellow"></i>
+            <!-- 타입 b -->
+            <div class="timeline-item">
+              <!-- Construct the box with style you want. Here we are using box-danger -->
+              <!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
+              <!-- The contextual class should match the box, so we are using direct-chat-danger -->
+              <div class="box box-danger direct-chat direct-chat-danger">
+                <div class="box-header with-border">
+                  <h3 class="box-title">Direct Chat</h3>
+
+                  <div class="box-tools pull-right">
+                    <span data-toggle="tooltip" title="3 New Messages" class="badge bg-red">3</span>
+                    <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                    <!-- In box-tools add this button if you intend to use the contacts pane -->
+                    <!-- 대기
+                    <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+                    <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                    -->
+                  </div>
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body">
+                  <!-- Conversations are loaded here -->
+                  <ul class="direct-chat-messages clearfix">
+                    <!-- Message. Default to the left -->
+                    <li class="direct-chat-msg clearfix" ng-repeat="chat in directChatList">
+                      <div class="direct-chat-box" ng-class="chat.support ? 'type-left' : 'type-right' ">
+                        <div class="direct-chat-user">
                         <span class="user-lev">
                           <img ng-src="{{chat.userRank}}" alt="user level">
                         </span>
                         <span class="user-img">
                           <img ng-src="{{chat.userImg}}" alt="message user image">
                         </span>
-                      </div>
-                      <div class="direct-chat-text">
-                        <div class="written-info">
-                          <span class="direct-chat-name pull-left">{{chat.userName}}</span>
-                          <span class="direct-chat-timestamp pull-right">{{chat.date}}</span>
                         </div>
-                        <p>{{chat.text}}</p>
-                        <div class="clearfix">
-                          <button class="info-box-icon chat-type type-up"><i class="fa fa-thumbs-o-up"></i>2</button>
-                          <button class="info-box-icon chat-type type-down"><i class="fa fa-thumbs-o-down"></i>0</button>
-                          <button class="info-box-icon chat-type type-reply" ng-click="goReply = !goReply"><i class="fa fa-comment-o"></i>답글</button>
-                        </div>
-                        <ul class="reply-wrap" ng-show="goReply">
-                          <li class="reply-msg clearfix" ng-repeat="reply in chatReplyList">
-                            <div class="reply-content">
-                              <div class="written-info">
+                        <div class="direct-chat-text">
+                          <div class="written-info">
+                            <span class="direct-chat-name pull-left">{{chat.userName}}</span>
+                            <span class="direct-chat-timestamp pull-right">{{chat.date}}</span>
+                          </div>
+                          <p>{{chat.text}}</p>
+
+                          <div class="clearfix">
+                            <button class="info-box-icon chat-type type-up"><i class="fa fa-thumbs-o-up"></i>2</button>
+                            <button class="info-box-icon chat-type type-down"><i class="fa fa-thumbs-o-down"></i>0
+                            </button>
+                            <button class="info-box-icon chat-type type-reply" ng-click="goReply = !goReply"><i
+                              class="fa fa-comment-o"></i>답글
+                            </button>
+                          </div>
+                          <ul class="reply-wrap" ng-show="goReply">
+                            <li class="reply-msg clearfix" ng-repeat="reply in chatReplyList">
+                              <div class="reply-content">
+                                <div class="written-info">
                                 <span class="user-img">
                                   <img ng-src="{{reply.userImg}}" alt="message user image">
                                 </span>
-                                <span class="direct-chat-name pull-left">{{reply.userName}}</span>
-                                <span class="direct-chat-timestamp pull-right">{{reply.date}}</span>
+                                  <span class="direct-chat-name pull-left">{{reply.userName}}</span>
+                                  <span class="direct-chat-timestamp pull-right">{{reply.date}}</span>
+                                </div>
+                                <p>{{reply.text}}</p>
+
+                                <div class="clearfix">
+                                  <button class="info-box-icon chat-type type-up">좋아요 2</button>
+                                  <button class="info-box-icon chat-type type-reply" ng-click="replyTop = !replyTo">답글
+                                    달기
+                                  </button>
+                                </div>
                               </div>
-                              <p>{{reply.text}}</p>
-                              <div class="clearfix">
-                                <button class="info-box-icon chat-type type-up">좋아요 2</button>
-                                <button class="info-box-icon chat-type type-reply" ng-click="replyTop = !replyTo">답글 달기</button>
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
+                            </li>
+                          </ul>
+                        </div>
+                        <!-- /.direct-chat-text -->
                       </div>
-                      <!-- /.direct-chat-text -->
-                    </div>
-                  </li>
-                  <!-- /.direct-chat-msg -->
-                </ul>
-                <!--/.direct-chat-messages-->
-              </div>
-              <!-- /.box-body -->
-              <div class="box-footer">
-                <div class="reply-to" ng-show="replyTo">
-                  <p>*** 님께 댓글을 작성중입니다.</p>
-                  <button class="btn btn-box-tool"><i class="fa fa-times"></i></button>
+                    </li>
+                    <!-- /.direct-chat-msg -->
+                  </ul>
+                  <!--/.direct-chat-messages-->
                 </div>
-                <div class="input-group">
-                  <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                <!-- /.box-body -->
+                <div class="box-footer">
+                  <div class="reply-to" ng-show="replyTo">
+                    <p>*** 님께 댓글을 작성중입니다.</p>
+                    <button class="btn btn-box-tool"><i class="fa fa-times"></i></button>
+                  </div>
+                  <div class="input-group">
+                    <input type="text" name="message" placeholder="Type Message ..." class="form-control">
                   <span class="input-group-btn">
                     <button type="button" class="btn btn-danger btn-flat">Send</button>
                   </span>
+                  </div>
                 </div>
+                <!-- /.box-footer-->
               </div>
-              <!-- /.box-footer-->
+              <!--/.direct-chat -->
             </div>
-            <!--/.direct-chat -->
-          </div>
-        </li>
-        <!-- END timeline item -->
-        <li>
-          <i class="fa fa-clock-o bg-gray"></i>
-        </li>
-      </ul>
+          </li>
+          <!-- END timeline item -->
+          <li>
+            <i class="fa fa-clock-o bg-gray"></i>
+          </li>
+        </ul>
+      </div>
     </div>
-  </div>
-  <!-- /.row -->
-</section>
-<!-- /.content -->
+    <!-- /.row -->
+  </section>
+  <!-- /.content -->
 </div>

@@ -8,11 +8,7 @@ define(['projectWeb'], function () {
     '$ocLazyLoad', '$stateParams', 'rivalWarLayoutService',
     function ($scope, $ocLazyLoad, $stateParams, rivalWarLayoutService) {
 
-
-        console.log('rivalWarContentsController');
-
-      /* 컨텐츠 영역 */
-      console.log("----" + $stateParams.subModule + "----");
+      console.log('rivalWarContentsController');
 
       angular.element(document).ready(function () {
         if (typeof $stateParams.subModule != 'undefined') {

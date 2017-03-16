@@ -88,6 +88,7 @@ require.config({
     'dataTables.bootstrap': ['twitterBootstrap'],
     'dataTables.responsive': ['twitterBootstrap'],
 
+    'angular': ['jquery'],
     'ngRoute': ['angular'],
     'ngAnimate': ['angular'],
     'ngCookies': ['angular'],

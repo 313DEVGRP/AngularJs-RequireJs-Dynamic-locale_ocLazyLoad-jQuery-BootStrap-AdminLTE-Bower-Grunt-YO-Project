@@ -110,8 +110,7 @@ require.config({
     'dataTables.responsive': ['text'],
 
     'adminLte': ['text'],
-    'demo': ['adminLte'],
-    'projectWeb': ['demo']
+    'projectWeb': ['adminLte']
   }
 });
 

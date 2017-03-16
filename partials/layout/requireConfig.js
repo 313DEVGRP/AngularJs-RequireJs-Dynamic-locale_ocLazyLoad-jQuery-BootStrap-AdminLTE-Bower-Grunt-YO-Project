@@ -89,24 +89,23 @@ require.config({
     'dataTables.responsive': ['twitterBootstrap'],
 
     'ngRoute': ['angular'],
-    'ngAnimate': ['ngRoute'],
-    'ngCookies': ['ngAnimate'],
-    'ngResource': ['ngCookies'],
-    'ngSanitize': ['ngResource'],
-    'ngTouch': ['ngSanitize'],
-    // 'timer': ['ngTouch'],
+    'ngAnimate': ['angular'],
+    'ngCookies': ['angular'],
+    'ngResource': ['angular'],
+    'ngSanitize': ['angular'],
+    'ngTouch': ['angular'],
+    'ui.router': ['angular'],
 
-    'ui.router': ['ngTouch'],
-    'pascalprecht.translate': ['ui.router'],
+    'pascalprecht.translate': ['angular'],
     'pascalprecht.translateLoaderStaticFiles': ['pascalprecht.translate'],
     'pascalprecht.translateStorageLocal': ['pascalprecht.translateLoaderStaticFiles'],
     'pascalprecht.translateHandlerLog': ['pascalprecht.translateStorageLocal'],
     'pascalprecht.translateStorageCookie': ['pascalprecht.translateHandlerLog'],
     'tmh.dynamicLocale': ['pascalprecht.translateStorageCookie'],
 
-    'oc.lazyLoad': ['tmh.dynamicLocale'],
+    'oc.lazyLoad': ['angular'],
 
-    'adminLte': ['twitterBootstrap','oc.lazyLoad'],
+    'adminLte': ['ngRoute', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', 'ui.router', 'twitterBootstrap', 'tmh.dynamicLocale', 'oc.lazyLoad'],
     'projectWeb': ['adminLte']
   }
 });

@@ -74,11 +74,20 @@ require.config({
 
   // dependency config
   shim: {
-    'jquery-migrate': ['jquery'],
     'jquery-ui': ['jquery'],
-    'twitterBootstrap': ['jquery'],
+    'jquery-migrate': ['jquery-ui'],
+    'twitterBootstrap': ['jquery-migrate'],
 
-    'angular': ['twitterBootstrap'],
+    'fastclick': ['twitterBootstrap'],
+    'sparkline': ['twitterBootstrap'],
+    'jvectormap': ['twitterBootstrap'],
+    'jvectormapWorld': ['twitterBootstrap'],
+    'slimScroll': ['twitterBootstrap'],
+    'chartjs': ['twitterBootstrap'],
+    'dataTables': ['twitterBootstrap'],
+    'dataTables.bootstrap': ['twitterBootstrap'],
+    'dataTables.responsive': ['twitterBootstrap'],
+
     'ngRoute': ['angular'],
     'ngAnimate': ['ngRoute'],
     'ngCookies': ['ngAnimate'],
@@ -96,20 +105,8 @@ require.config({
     'tmh.dynamicLocale': ['pascalprecht.translateStorageCookie'],
 
     'oc.lazyLoad': ['tmh.dynamicLocale'],
-    'text': ['oc.lazyLoad'],
-    'css': ['text'],
 
-    'fastclick': ['text'],
-    'sparkline': ['text'],
-    'jvectormap': ['text'],
-    'jvectormapWorld': ['text'],
-    'slimScroll': ['text'],
-    'chartjs': ['text'],
-    'dataTables': ['text'],
-    'dataTables.bootstrap': ['text'],
-    'dataTables.responsive': ['text'],
-
-    'adminLte': ['text'],
+    'adminLte': ['twitterBootstrap','oc.lazyLoad'],
     'projectWeb': ['adminLte']
   }
 });

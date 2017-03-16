@@ -39,7 +39,6 @@ define(['projectWeb'], function () {
           $scope.contentWrapper = "partials/layout/contents/rivalWar/";
           $ocLazyLoad.load('partials/layout/contents/rivalWar/index.css');
           $('li .active').removeClass('active');
-          rivalWarLayoutService.fire();
           console.log("goToHome");
         }
       );
@@ -48,14 +47,10 @@ define(['projectWeb'], function () {
       $scope.$on('$includeContentLoaded',
         function (event, file) {
           if (file === 'partials/layout/header/rivalWar/') {
-            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/aside/rivalWar/') {
-            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/contents/rivalWar/') {
             $ocLazyLoad.load('partials/layout/contents/rivalWar/index.css');
-            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/footer/rivalWar/') {
-            //rivalWarLayoutService.fire();
           } else if (file === 'partials/layout/sidebar/rivalWar/') {
             rivalWarLayoutService.fire();
           }

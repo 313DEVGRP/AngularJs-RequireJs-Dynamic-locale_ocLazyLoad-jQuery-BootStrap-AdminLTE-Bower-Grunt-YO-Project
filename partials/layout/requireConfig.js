@@ -62,8 +62,7 @@ require.config({
     'slimScroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
     'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
     'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
-    'demo': 'AdminLTE-2.3.3/dist/js/demo',
-    'dataTables': 'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min',
+    'dataTables.jquery': 'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min',
     'dataTables.bootstrap': 'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min',
     'dataTables.responsive': 'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min',
 
@@ -75,8 +74,8 @@ require.config({
   // dependency config
   shim: {
     'jquery-ui': ['jquery'],
-    'jquery-migrate': ['jquery-ui'],
-    'twitterBootstrap': ['jquery-migrate'],
+    'jquery-migrate': ['jquery'],
+    'twitterBootstrap': ['jquery'],
 
     'fastclick': ['twitterBootstrap'],
     'sparkline': ['twitterBootstrap'],
@@ -84,9 +83,9 @@ require.config({
     'jvectormapWorld': ['twitterBootstrap'],
     'slimScroll': ['twitterBootstrap'],
     'chartjs': ['twitterBootstrap'],
-    'dataTables': ['twitterBootstrap'],
-    'dataTables.bootstrap': ['twitterBootstrap'],
-    'dataTables.responsive': ['twitterBootstrap'],
+    'dataTables.jquery': ['twitterBootstrap'],
+    'dataTables.bootstrap': ['dataTables.jquery'],
+    'dataTables.responsive': ['dataTables.bootstrap'],
 
     'angular': ['jquery'],
     'ngRoute': ['angular'],
@@ -106,7 +105,10 @@ require.config({
 
     'oc.lazyLoad': ['angular'],
 
-    'adminLte': ['ngRoute', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', 'ui.router', 'twitterBootstrap', 'tmh.dynamicLocale', 'oc.lazyLoad'],
+    'adminLte': [
+      'jquery-ui', 'jquery-migrate', 'twitterBootstrap', 'fastclick', 'sparkline', 'jvectormap', 'jvectormapWorld', 'slimScroll', 'chartjs',
+      'dataTables.responsive', 'ngRoute', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', 'ui.router',
+      'tmh.dynamicLocale', 'oc.lazyLoad'],
     'projectWeb': ['adminLte']
   }
 });

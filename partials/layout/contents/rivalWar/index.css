@@ -529,7 +529,9 @@ p.priview {
 .content{
   margin-top: -20px;
 }
-
+.sidebar-mini.sidebar-collapse .main-header .navbar{
+  margin-left: 0!important;
+}
 
 /* 미디어 쿼리 */
 @media all and (max-width:767px) {
@@ -571,9 +573,6 @@ p.priview {
 @media all and (max-width: 768px) {
   .timeline-item.compare-view .box-body .col-xs-12{
     width: 100%!important;
-    margin-left: 0!important;
-  }
-  .sidebar-mini.sidebar-collapse .main-header .navbar{
     margin-left: 0!important;
   }
   .content{

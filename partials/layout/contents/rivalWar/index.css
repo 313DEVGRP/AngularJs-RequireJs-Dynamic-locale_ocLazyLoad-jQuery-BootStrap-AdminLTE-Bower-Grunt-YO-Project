@@ -526,6 +526,9 @@ p.priview {
   line-height: 0;
   text-indent: -9999px;
 }
+.content{
+  margin-top: -20px;
+}
 
 
 /* 미디어 쿼리 */
@@ -569,6 +572,12 @@ p.priview {
   .timeline-item.compare-view .box-body .col-xs-12{
     width: 100%!important;
     margin-left: 0!important;
+  }
+  .sidebar-mini.sidebar-collapse .main-header .navbar{
+    margin-left: 0!important;
+  }
+  .content{
+    margin-top: 0!important;
   }
 }
 

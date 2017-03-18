@@ -2,10 +2,10 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarAsideModule = angular.module('rivalWarAsideControllerModule', []);
+  var rivalWarAsideModule = angular.module('rivalWarAsideControllerModule', ['rivalWarLayoutServiceModule']);
 
-  rivalWarAsideModule.controller('rivalWarAsideController',
-    function ($rootScope, $scope, $http, $q) {
+  rivalWarAsideModule.controller('rivalWarAsideController', ['rivalWarLayoutService', '$scope', '$http', '$q',
+    function (rivalWarLayoutService, $scope, $http, $q) {
 
       console.log('rivalWarAsideController');
 
@@ -20,12 +20,15 @@ define(['projectWeb'], function () {
             }
           }).success(function(response) {
             $scope.warList = response;
+            $('.repeatList > li').eq(0).addClass('on');
             def.resolve(response);
           }).finally(function() {
             console.log('good');
           });
         return def.promise;
       };
+      $scope.init();
 
-    });
+
+    }]);
 });

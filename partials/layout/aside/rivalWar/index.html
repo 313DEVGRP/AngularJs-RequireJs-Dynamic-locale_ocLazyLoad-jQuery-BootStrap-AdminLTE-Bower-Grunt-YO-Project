@@ -1,5 +1,5 @@
 <div oc-lazy-load="{ name: 'rivalWarAsideControllerModule', files: ['partials/layout/aside/rivalWar/asideController.js'] ,cache: false }">
-<section class="sidebar" data-ng-controller="rivalWarAsideController" data-ng-init="init()">
+<section class="sidebar" ng-controller="rivalWarAsideController">
 	{{text}}
 	<!-- Sidebar user panel -->
 	<div class="user-panel">
@@ -31,11 +31,11 @@
 		<li class="active treeview">
 			<a href="#">
 				<i class="fa fa-sitemap"></i>
-				<span>진행중인 비교보기</span>
+				<span>진행중인 비교</span>
 				<i class="fa fa-angle-left pull-right"></i>
 			</a>
 			<ul class="treeview-menu repeatList" ng-repeat="nowList in warList" ng-switch on="nowList.c_position">
-				<li ng-switch-when='0'>
+				<li ng-switch-when='0' class="on">
 					<a href="#StandardDevelopment#/dev">
 						<i class="fa text-aqua">{{$index+1}}</i>
 						{{nowList.c_title}}

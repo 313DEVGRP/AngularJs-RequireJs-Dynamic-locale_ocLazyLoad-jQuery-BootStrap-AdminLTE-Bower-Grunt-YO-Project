@@ -21,18 +21,16 @@ define(['projectWeb'], function () {
 
           $scope.timer = function () {
           };
-          var $rivalListOuterWrap = $('.rivalList-outerWrap'),
-            $rivalList = $('.rivalList-content li'),
-            idx = 0;
 
-          var relList = setInterval(function () {
+          var idx = 0;
+          setInterval(function () {
+            var $rivalList = $('.rivalList-content li');
             rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
-            idx += 1;
-            if (idx === $rivalList.length) {
-              idx = 0;
-              rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
-            }
-          }, 4000);
+            idx +=1;
+            if(idx === $rivalList.length) idx = 0;
+            rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
+          },4000);
+
           def.resolve(response);
 
         }).finally(function () {

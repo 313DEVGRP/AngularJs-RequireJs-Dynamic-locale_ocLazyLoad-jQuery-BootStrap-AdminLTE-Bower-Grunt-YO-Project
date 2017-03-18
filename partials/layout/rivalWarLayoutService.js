@@ -118,7 +118,7 @@ define(['projectWeb'], function() {
           }).trigger('resize');
         },
         addOn : function(select){
-          select.addClass('on').siblings().removeClass()
+          select.addClass('on').siblings().removeClass();
         },
         movement : function(el, index, s, e) {
           this.addOn(el.eq(index));

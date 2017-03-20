@@ -48,6 +48,10 @@ define(['projectWeb'],
                 files: ['partials/layout/rivalWarLayoutService.js'],
                 cache: false
               }, {
+                name: 'rivalWarDataServiceModule',
+                files: ['partials/layout/rivalWarDataService.js'],
+                cache: false
+              },{
                 name: 'rivalWarLayoutDirectiveModule',
                 files: ['partials/layout/rivalWarLayoutDirective.js'],
                 cache: false

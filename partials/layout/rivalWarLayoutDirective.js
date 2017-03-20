@@ -8,7 +8,7 @@ angular.module('projectWeb').directive('ngTranslateLanguageSelect',
       template: ''
       + '<div ng-if="visible" class="form-group">'
       + '<select class="form-control select2" ng-model="currentLocaleDisplayName"'
-      + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)" style="width: 100%;">'
+      + 'ng-options="localesDisplayName for localesDisplayName in localesDisplayNames" ng-change="changeLanguage(currentLocaleDisplayName)">'
       + '</select>' + '</div>'
       + '<!-- /.form-group -->',
       controller: function ($scope) {

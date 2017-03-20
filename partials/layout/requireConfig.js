@@ -79,8 +79,8 @@ require.config({
 
     'fastclick': ['twitterBootstrap'],
     'sparkline': ['twitterBootstrap'],
-    'jvectormap': ['twitterBootstrap'],
-    'jvectormapWorld': ['twitterBootstrap'],
+    'jvectormap': ['jquery'],
+    'jvectormapWorld': ['jquery'],
     'slimScroll': ['twitterBootstrap'],
     'chartjs': ['twitterBootstrap'],
     'dataTables.jquery': ['twitterBootstrap'],

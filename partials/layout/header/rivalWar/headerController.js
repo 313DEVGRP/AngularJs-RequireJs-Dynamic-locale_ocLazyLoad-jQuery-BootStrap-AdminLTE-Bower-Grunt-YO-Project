@@ -2,26 +2,23 @@
 
 define(['projectWeb'], function () {
 
-  var rivalWarHeaderControllerModule = angular.module('rivalWarHeaderControllerModule', ['rivalWarLayoutServiceModule']);
+  var rivalWarHeaderControllerModule = angular.module('rivalWarHeaderControllerModule', ['rivalWarLayoutServiceModule', 'rivalWarDataServiceModule']);
 
-  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['rivalWarLayoutService', '$scope', '$http', '$window', '$q',
-    function (rivalWarLayoutService, $scope, $http, $window, $q) {
+  rivalWarHeaderControllerModule.controller('rivalWarHeaderController', ['rivalWarLayoutService', 'rivalWarDataService', '$scope', '$window',
+    function (rivalWarLayoutService, rivalWarDataService, $scope, $window) {
 
       $scope.init = function () {
-        var def = $q.defer();
-        $http({
-          method: 'GET',
-          cache: false,
-          url: 'http://www.313.co.kr/com/ext/jstree/springHibernate/core/getChildNode.do?c_id=2',
-          headers: {
-            'X-Requested-With': ' XMLHttpRequest'
-          }
-        }).success(function (response) {
-          $scope.headerList = response;
 
+        $scope.headerList = null;
+        var url = 'http://www.313.co.kr/com/ext/jstree/springHibernate/core/getChildNode.do';
+        var param = {c_id:2};
+        rivalWarDataService.getData(url, param, function(dataResponse) {
+          //pure callback method
+          $scope.headerList = dataResponse;
+
+          //plus add callback
           $scope.timer = function () {
           };
-
           var idx = 0;
           setInterval(function () {
             var $rivalList = $('.rivalList-content li');
@@ -31,13 +28,9 @@ define(['projectWeb'], function () {
             rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
           },4000);
 
-          def.resolve(response);
-
-        }).finally(function () {
-          console.log('good');
         });
-        return def.promise;
       };
+
       $scope.init();
 
       console.log('rivalWarHeaderController');

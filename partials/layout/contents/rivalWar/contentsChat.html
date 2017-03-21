@@ -1,0 +1,99 @@
+<i class="fa fa-comments bg-yellow"></i>
+<a href="#" class="fa fa-bar-chart bg-green location-a"></a>
+<div class="timeline-item" oc-lazy-load="[{ name: 'contentsChatControllerModule', files: ['partials/layout/contents/rivalWar/contentsChatController.js'] ,cache: false }]">
+  <div ng-controller="contentsChatController">
+
+  <!-- Construct the box with style you want. Here we are using box-danger -->
+  <!-- Then add the class direct-chat and choose the direct-chat-* contexual class -->
+  <!-- The contextual class should match the box, so we are using direct-chat-danger -->
+  <div class="box box-danger direct-chat direct-chat-danger">
+    <div class="box-header with-border">
+      <h3 class="box-title">Direct Chat</h3>
+
+      <div class="box-tools pull-right">
+        <span data-toggle="tooltip" title="3 New Messages" class="badge bg-red">3</span>
+        <button class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+        <!-- In box-tools add this button if you intend to use the contacts pane -->
+        <!-- 대기
+        <button class="btn btn-box-tool" data-toggle="tooltip" title="Contacts" data-widget="chat-pane-toggle"><i class="fa fa-comments"></i></button>
+        <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+        -->
+      </div>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <!-- Conversations are loaded here -->
+      <ul class="direct-chat-messages clearfix">
+        <!-- Message. Default to the left -->
+        <li class="direct-chat-msg clearfix" ng-repeat="chat in directChatList">
+          <div class="direct-chat-box" ng-class="chat.support ? 'type-left' : 'type-right' ">
+            <div class="direct-chat-user">
+                          <span class="user-lev">
+                          <img ng-src="{{chat.userRank}}" alt="user level">
+                        </span>
+                          <span class="user-img">
+                          <img ng-src="{{chat.userImg}}" alt="message user image">
+                        </span>
+            </div>
+            <div class="direct-chat-text">
+              <div class="written-info">
+                <span class="direct-chat-name pull-left">{{chat.userName}}</span>
+                <span class="direct-chat-timestamp pull-right">{{chat.date}}</span>
+              </div>
+              <p>{{chat.text}}</p>
+
+              <div class="clearfix">
+                <button class="info-box-icon chat-type type-up"><i class="fa fa-thumbs-o-up"></i>2</button>
+                <button class="info-box-icon chat-type type-down"><i class="fa fa-thumbs-o-down"></i>0
+                </button>
+                <button class="info-box-icon chat-type type-reply" ng-click="goReply = !goReply"><i
+                  class="fa fa-comment-o"></i>답글
+                </button>
+              </div>
+              <ul class="reply-wrap" ng-show="goReply">
+                <li class="reply-msg clearfix" ng-repeat="reply in chatReplyList">
+                  <div class="reply-content">
+                    <div class="written-info">
+                                  <span class="user-img">
+                                  <img ng-src="{{reply.userImg}}" alt="message user image">
+                                </span>
+                      <span class="direct-chat-name pull-left">{{reply.userName}}</span>
+                      <span class="direct-chat-timestamp pull-right">{{reply.date}}</span>
+                    </div>
+                    <p>{{reply.text}}</p>
+
+                    <div class="clearfix">
+                      <button class="info-box-icon chat-type type-up">좋아요 2</button>
+                      <button class="info-box-icon chat-type type-reply" ng-click="replyTop = !replyTo">답글
+                        달기
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <!-- /.direct-chat-text -->
+          </div>
+        </li>
+        <!-- /.direct-chat-msg -->
+      </ul>
+      <!--/.direct-chat-messages-->
+    </div>
+    <!-- /.box-body -->
+    <div class="box-footer">
+      <div class="reply-to" ng-show="replyTo">
+        <p>*** 님께 댓글을 작성중입니다.</p>
+        <button class="btn btn-box-tool"><i class="fa fa-times"></i></button>
+      </div>
+      <div class="input-group">
+        <input type="text" name="message" placeholder="Type Message ..." class="form-control">
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-danger btn-flat">Send</button>
+                  </span>
+      </div>
+    </div>
+    <!-- /.box-footer-->
+  </div>
+  <!--/.direct-chat -->
+</div>
+</div>

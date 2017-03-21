@@ -1,0 +1,105 @@
+<a href="#" class="fa fa-bar-chart bg-green location-a"></a>
+<div class="timeline-item result-view" oc-lazy-load="[{ name: 'contentsAnalysisControllerModule', files: ['partials/layout/contents/rivalWar/contentsAnalysisController.js'] ,cache: false }]">
+<div ng-controller="contentsAnalysisController">
+  <div class="box box-warning">
+    <div class="box-header with-border">
+      <h3 class="box-title">누적집계결과</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn btn-success btn-xs">좀 더 자세한 결과보기</button>
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+      </div>
+      <!-- /.box-tools -->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="info-box item-A">
+            <span class="info-box-icon"><i class="fa fa-thumbs-o-down"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 1232<br>총 등록 글 : 5,230 총 등록된 해시 태그 : 1210</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 30%"></div>
+              </div>
+              <span class="progress-description">{{itemList.itemA.brand}} {{itemList.itemA.name}}(37%)</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="info-box item-C">
+            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 20%"></div>
+              </div>
+              <span class="progress-description">{{itemList.itemB.brand}} {{itemList.itemB.name}}(30%)</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-sm-4 col-xs-12">
+          <div class="info-box item-B">
+            <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
+
+            <div class="info-box-content">
+              <span class="info-box-text">우위 스펙 갯수: 6 좋아요 획득 갯수 : 3133<br>총 등록 글 : 10,490 총 등록된 해시 태그 : 4300</span>
+
+              <div class="progress">
+                <div class="progress-bar" style="width: 70%"></div>
+              </div>
+              <span class="progress-description">{{itemList.itemB.brand}} {{itemList.itemB.name}}(33%)</span>
+            </div>
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <!-- 그래프 영역 -->
+        <div class="compare-grap-box">
+          <div class="compare-grap">
+            <div class="left">
+              <span class="point">25,504 points</span>
+
+              <div class="item-A"></div>
+              <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+            </div>
+                        <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png"
+                                                     alt="logo"></span>
+
+            <div class="center">
+              <span class="point">25,504 points</span>
+
+              <div class="item-C"></div>
+              <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
+            </div>
+                        <span class="grap-logo"><img src="partials/layout/contents/rivalWar/img/img-grap-logo.png"
+                                                     alt="logo"></span>
+
+            <div class="right">
+              <span class="point">25,504 points</span>
+
+              <div class="item-B"></div>
+              <span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
+            </div>
+          </div>
+          <div class="compare-text">
+            등록된 글 총합 : 19,23, 좋아요 선택 총합 : 2,443(21.2%), 추가된 스펙개수: 7개 등록된 해시태그 총합 13,233개,
+            <br> 표중오차 : .64821, 평균 : 3.1234, 등분상 가정 유의확률: .124, 유의확률 : . 823, 99%, 신뢰구간 하한 : -.23134, 상한: .235421, T분포결과
+            : 8.423
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-body -->
+  </div>
+</div>
+</div>

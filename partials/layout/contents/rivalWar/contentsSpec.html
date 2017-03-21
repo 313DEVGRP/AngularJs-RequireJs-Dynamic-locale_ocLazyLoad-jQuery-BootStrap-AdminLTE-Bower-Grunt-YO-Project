@@ -1,0 +1,79 @@
+<i class="fa fa-balance-scale bg-blue"></i>
+<div class="timeline-item spec-view"
+     oc-lazy-load="[{ name: 'contentsSpecControllerModule', files: ['partials/layout/contents/rivalWar/contentsSpecController.js'] ,cache: false }]">
+  <div ng-controller="contentsSpecController">
+
+  <div class="box box-primary">
+    <div class="box-header with-border">
+      <h3 class="box-title">비교 상세스펙</h3>
+
+      <div class="box-tools pull-right">
+        <button type="button" class="btn bg-primary btn-xs">spec +192</button>
+        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+        </button>
+      </div>
+      <!-- /.box-tools -->
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+      <div class="box spec-con pull-left item-bd-A" ng-controller="specCtrlLeft">
+        <div class="box-header with-border bd-bottom-A">
+          <h3 class="box-title item-color-A">{{theme}}</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+            <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i
+              class="fa fa-minus"></i></button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="item-table">
+            <spec-table-reverse class="reverse"></spec-table-reverse>
+            <spec-table class="normal"></spec-table>
+          </div>
+        </div>
+      </div>
+      <div class="box spec-con pull-left item-bd-C" ng-controller="specCtrlLeft">
+        <div class="box-header with-border bd-bottom-C">
+          <h3 class="box-title item-color-C">{{theme}}</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+            <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i
+              class="fa fa-minus"></i></button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="item-table">
+            <spec-table-reverse class="reverse"></spec-table-reverse>
+            <spec-table class="normal"></spec-table>
+          </div>
+        </div>
+      </div>
+      <div class="box spec-con pull-left item-bd-B" ng-controller="specCtrlRight">
+        <div class="box-header with-border bd-bottom-B">
+          <h3 class="box-title item-color-B">{{theme}}</h3>
+
+          <div class="box-tools pull-right">
+            <button type="button" class="btn btn-xs">spec +{{filteredItems.length}}</button>
+            <button type="button" class="btn btn-box-tool btn-spec-view" data-widget="collapse"><i
+              class="fa fa-minus"></i></button>
+          </div>
+          <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <div class="item-table">
+            <spec-table></spec-table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- /.box-body -->
+  </div>
+</div>
+</div>

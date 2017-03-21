@@ -79,8 +79,8 @@ require.config({
 
     'fastclick': ['twitterBootstrap'],
     'sparkline': ['twitterBootstrap'],
-    'jvectormap': ['jquery'],
-    'jvectormapWorld': ['jquery'],
+    'jvectormap': ['twitterBootstrap'],
+    'jvectormapWorld': ['twitterBootstrap'],
     'slimScroll': ['twitterBootstrap'],
     'chartjs': ['twitterBootstrap'],
     'dataTables.jquery': ['twitterBootstrap'],
@@ -106,7 +106,7 @@ require.config({
     'oc.lazyLoad': ['angular'],
 
     'adminLte': [
-      'jquery-ui', 'jquery-migrate', 'twitterBootstrap', 'fastclick', 'sparkline', 'jvectormap', 'jvectormapWorld', 'slimScroll', 'chartjs',
+      'jquery-ui', 'jquery-migrate', 'twitterBootstrap', 'fastclick', 'sparkline', 'slimScroll', 'chartjs',
       'dataTables.responsive', 'ngRoute', 'ngAnimate', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTouch', 'ui.router',
       'tmh.dynamicLocale', 'oc.lazyLoad'],
     'projectWeb': ['adminLte']

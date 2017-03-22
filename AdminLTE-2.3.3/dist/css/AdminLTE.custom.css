@@ -1,8 +1,37 @@
-@import url("http://fonts.googleapis.com/earlyaccess/nanumgothic.css");
-@import url("http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css");
-@import url("http://fonts.googleapis.com/earlyaccess/nanumgothiccoding.css");
-@import url("http://fonts.googleapis.com/earlyaccess/nanummyeongjo.css");
-@import url("http://fonts.googleapis.com/earlyaccess/nanumpenscript.css");
+/*
+ * Nanum Gothic (Korean) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 400;
+  src: url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Regular.eot");
+  src: url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Regular.eot?#iefix") format('embedded-opentype'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Regular.woff2") format('woff2'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Regular.woff") format('woff'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Regular.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 700;
+  src: url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothi/NanumGothic-Bold.eot");
+  src: url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic//NanumGothic-Bold.eot?#iefix") format('embedded-opentype'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Bold.woff2") format('woff2'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Bold.woff") format('woff'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-Bold.ttf") format('truetype');
+}
+@font-face {
+  font-family: 'Nanum Gothic';
+  font-style: normal;
+  font-weight: 800;
+  src: url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic/NanumGothic-ExtraBold.eot");
+  src: url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic//NanumGothic-ExtraBold.eot?#iefix") format('embedded-opentype'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic//NanumGothic-ExtraBold.woff2") format('woff2'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic//NanumGothic-ExtraBold.woff") format('woff'),
+  url("http://www.313.co.kr/assets/project-web/partials/common/font/NanumGothic//NanumGothic-ExtraBold.ttf") format('truetype');
+}
+
 /*!
  *   AdminLTE v2.3.3
  *   Author: Almsaeed Studio

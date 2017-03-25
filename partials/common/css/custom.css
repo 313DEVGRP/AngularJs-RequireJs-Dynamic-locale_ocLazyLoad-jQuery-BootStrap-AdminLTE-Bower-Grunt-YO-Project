@@ -267,8 +267,11 @@ img {
   overflow:hidden;
 }
 .direct-chat-user .user-lev{
-  height:10px;
-  margin-top:3px;
+    margin-top: -15px;
+    width: 20px;
+    position: relative;
+    top: 10px;
+    left: 15px;
 }
 .direct-chat-user .user-img img,
 .direct-chat-user .user-lev img{

@@ -312,12 +312,10 @@ img {
 .direct-chat-box.type-left .direct-chat-text:before,
 .direct-chat-box.type-left .direct-chat-text:after{
   right:100%;
-  border-right-color:#fff;
 }
 .direct-chat-box.type-right .direct-chat-text:before,
 .direct-chat-box.type-right .direct-chat-text:after{
   left:100%;
-  border-left-color:#fff;
 }
 .written-info{
   margin-bottom:15px;

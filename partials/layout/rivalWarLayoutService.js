@@ -84,7 +84,6 @@ define(['projectWeb'], function() {
 
           $("#loading").remove();
           $(".requireLoadingText").remove();
-          $.AdminLTE.layout.activate();
 
           $(".sidebar-menu li a").click(function() {
             $('li .active').removeClass('active');

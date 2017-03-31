@@ -115,7 +115,9 @@ require.config({
 
 require(['projectWeb'], function(projectWeb) {
     $(document).ready(function() {
-      angular.bootstrap(document, ['projectWeb']);
+      angular.bootstrap(document, ['projectWeb']).end(function() {
+        $.AdminLTE.layout.activate();
+      });
     });
   }// $(document).ready end
 

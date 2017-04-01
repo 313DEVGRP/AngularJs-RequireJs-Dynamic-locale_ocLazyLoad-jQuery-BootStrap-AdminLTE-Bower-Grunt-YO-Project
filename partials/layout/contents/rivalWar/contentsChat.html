@@ -26,7 +26,7 @@
       <ul class="direct-chat-messages clearfix">
         <!-- Message. Default to the left -->
         <li class="direct-chat-msg clearfix" ng-repeat="chat in directChatList">
-          <div class="direct-chat-box" ng-class="chat.support ? 'type-left' : 'type-right' ">
+          <div class="direct-chat-box" ng-class="chat.support ? 'type-left' : 'type-center' : 'type-right' ">
             <div class="direct-chat-user">
                           <span class="user-lev">
                           <img ng-src="{{chat.userRank}}" alt="user level">

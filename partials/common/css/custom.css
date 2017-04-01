@@ -304,6 +304,10 @@ img {
 .direct-chat-box.type-right .direct-chat-text{
   float:right;
 }
+.direct-chat-box.type-center .direct-chat-user,
+.direct-chat-box.type-center .direct-chat-text{
+ margin: 0 auto;
+}
 .direct-chat-box.type-left .direct-chat-text{
   margin-left:10px;
   border-right:5px solid #fdbab1

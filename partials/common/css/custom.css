@@ -306,7 +306,8 @@ img {
 }
 .direct-chat-box.type-center .direct-chat-user,
 .direct-chat-box.type-center .direct-chat-text{
- margin: 0 auto;
+  float: left;
+  margin: 0 auto;
 }
 .direct-chat-box.type-left .direct-chat-text{
   margin-left:10px;

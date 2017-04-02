@@ -10,8 +10,8 @@ define(['projectWeb'], function () {
       $scope.init = function () {
 
         $scope.headerList = null;
-        var url = 'http://www.313.co.kr/com/ext/jstree/springHibernate/core/getChildNode.do';
-        var param = {c_id:2};
+        var url = 'http://www.313.co.kr/rivalWar/api/menu/getChildMenu.do';
+        var param = {c_id:10};
         rivalWarDataService.getData(url, param, function(dataResponse) {
           //pure callback method
           $scope.headerList = dataResponse;

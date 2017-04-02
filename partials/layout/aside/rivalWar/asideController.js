@@ -13,7 +13,7 @@ define(['projectWeb'], function () {
 
         $scope.warList = null;
         var url = 'http://www.313.co.kr/rivalWar/api/menu/getChildMenu.do';
-        var param = {c_id:2};
+        var param = {c_id:10};
         rivalWarDataService.getData(url, param, function(dataResponse) {
           //pure callback method
           $scope.warList = dataResponse;

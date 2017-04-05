@@ -2,11 +2,11 @@
 
 define(['projectWeb'], function () {
 
-    var rivalWarIndexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'rivalWarLayoutServiceModule']);
+    var rivalWarIndexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'rivalWarLayoutServiceModule', 'rivalWarDataServiceModule']);
 
     rivalWarIndexModule.controller('rivalWarLayoutController', [
-        '$scope', '$ocLazyLoad', 'rivalWarLayoutService', '$rootScope', '$window', '$translate', '$interval', '$stateParams',
-        function ($scope, $ocLazyLoad, rivalWarLayoutService, $rootScope, $window, $translate, $interval, $stateParams) {
+        '$scope', '$ocLazyLoad', 'rivalWarLayoutService', 'rivalWarDataService', '$rootScope', '$window', '$translate', '$interval', '$stateParams',
+        function ($scope, $ocLazyLoad, rivalWarLayoutService, rivalWarDataService, $rootScope, $window, $translate, $interval, $stateParams) {
 
             // 다국어 처리 부
             var pageTitleTranslationId = 'PAGE_TITLE';
@@ -65,7 +65,13 @@ define(['projectWeb'], function () {
 
             $scope.facebookLogin = function () {
                 console.log("facebook login");
-            }
+                $scope.headerList = null;
+                var url = 'http://www.313.co.kr/signin/facebook';
+                var param = {c_id:10};
+                rivalWarDataService.getData(url, 'POST', param, function(dataResponse) {
+                    console.log("facebook login test");
+                });
+            };
 
 
             $ocLazyLoad.load(['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])

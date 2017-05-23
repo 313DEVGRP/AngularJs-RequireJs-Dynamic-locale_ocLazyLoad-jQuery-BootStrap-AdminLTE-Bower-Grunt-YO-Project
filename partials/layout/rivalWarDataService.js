@@ -15,7 +15,7 @@ define(['projectWeb'], function () {
                     }).success(function (data) {
                         var tokenName = data._csrf_headerName;
                         var tokenValue = data._csrf_token;
-                        param[tokenName] = tokenValue;
+                        param['_csrf'] = tokenValue;
                         $http({
                             method: method,
                             url: url,

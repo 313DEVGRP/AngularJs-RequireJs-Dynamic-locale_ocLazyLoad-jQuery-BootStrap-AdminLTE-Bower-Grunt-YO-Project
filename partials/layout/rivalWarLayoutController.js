@@ -5,8 +5,8 @@ define(['projectWeb'], function () {
     var rivalWarIndexModule = angular.module('projectWeb', ['ui.router', 'oc.lazyLoad', 'rivalWarLayoutServiceModule', 'rivalWarDataServiceModule']);
 
     rivalWarIndexModule.controller('rivalWarLayoutController', [
-        '$scope', '$ocLazyLoad', 'rivalWarLayoutService', 'rivalWarDataService', '$rootScope', '$window', '$translate', '$interval', '$stateParams',
-        function ($scope, $ocLazyLoad, rivalWarLayoutService, rivalWarDataService, $rootScope, $window, $translate, $interval, $stateParams) {
+        '$scope', '$ocLazyLoad', 'rivalWarLayoutService', 'rivalWarDataService', '$rootScope', '$window', '$translate', '$interval', '$stateParams', '$location',
+        function ($scope, $ocLazyLoad, rivalWarLayoutService, rivalWarDataService, $rootScope, $window, $translate, $interval, $stateParams, $location) {
 
             // 다국어 처리 부
             var pageTitleTranslationId = 'PAGE_TITLE';
@@ -54,6 +54,25 @@ define(['projectWeb'], function () {
                     } else if (file === 'partials/layout/sidebar/rivalWar/') {
                         rivalWarLayoutService.fire();
                     }
+
+                  // 로그인 이후 모달
+                  $scope.showInfoIn = false;
+                  $scope.infoIn = function () {
+                    $scope.showInfoIn = !$scope.showInfoIn;
+                  };
+
+                    var param = "hostUrl";
+                    var result = window.location.search.match(
+                      new RegExp("(\\?|&)" + param + "(\\[\\])?=([^&]*)")
+                    );
+                    var getParam =  result ? result[3] : false;
+                    if(getParam){
+                      console.log("값 있음");
+                      $scope.showInfoIn = true;
+                    }else{
+                      console.log("값 없음");
+                    }
+
                 }
             );
 
@@ -62,6 +81,8 @@ define(['projectWeb'], function () {
             $scope.signIn = function () {
                 $scope.showSingIn = !$scope.showSingIn;
             };
+
+
 
             $scope.facebookLogin = function () {
                 console.log("facebook login");

@@ -67,7 +67,7 @@ define(['projectWeb'], function () {
                       var getParam =  result ? result[3] : false;
                       if(getParam){
                         console.log("값 있음");
-                        $scope.infoIn();
+                        $scope.showInfoIn = !$scope.showInfoIn;
                       }else{
                         console.log("값 없음");
                       }

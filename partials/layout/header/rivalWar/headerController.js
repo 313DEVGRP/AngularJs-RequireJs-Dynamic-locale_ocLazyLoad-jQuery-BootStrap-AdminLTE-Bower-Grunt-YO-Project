@@ -11,8 +11,8 @@ define(['projectWeb'], function () {
 
         $scope.headerList = null;
         var url = 'http://www.313.co.kr/rivalWar/api/menu/getChildMenu.do';
-        var param = {c_id:10};
-        rivalWarDataService.getData(url, 'GET', param, function(dataResponse) {
+        var param = {c_id: 10};
+        rivalWarDataService.getData(url, 'GET', param, function (dataResponse) {
           //pure callback method
           $scope.headerList = dataResponse;
 
@@ -23,15 +23,43 @@ define(['projectWeb'], function () {
           setInterval(function () {
             var $rivalList = $('.rivalList-content li');
             rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
-            idx +=1;
-            if(idx === $rivalList.length) idx = 0;
+            idx += 1;
+            if (idx === $rivalList.length) idx = 0;
             rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
-          },4000);
+          }, 4000);
+
+          // 로그인 이후 모달
+          $scope.showInfoIn = false;
+          $scope.infoIn = function () {
+            $scope.showInfoIn = !$scope.showInfoIn;
+          };
+
+          var param = "hostUrl";
+          var result = window.location.search.match(
+            new RegExp("(\\?|&)" + param + "(\\[\\])?=([^&]*)")
+          );
+          var getParam = result ? result[3] : false;
+          if (getParam) {
+            console.log("값 있음");
+            $scope.showInfoIn = !$scope.showInfoIn;
+          } else {
+            console.log("값 없음");
+          }
 
         });
       };
 
       $scope.init();
+
+      $scope.facebookLogin = function () {
+        console.log("facebook login");
+        $scope.headerList = null;
+        var url = 'http://www.313.co.kr/signin/facebook';
+        var param = {c_id: 10};
+        rivalWarDataService.getData(url, 'POST', param, function (dataResponse) {
+          console.log("facebook login test");
+        });
+      };
 
       console.log('rivalWarHeaderController');
 

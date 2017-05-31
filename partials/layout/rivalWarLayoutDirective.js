@@ -29,7 +29,7 @@ angular.module('projectWeb').directive('signInModal', function () {
     restrict: "A",
     replace: true,
     transclude: true,
-    templateUrl: '/uss/ion/fbk/facebookSignin.do',
+    templateUrl: './uss/ion/fbk/facebookSignin.do',
     scope: true,
     link: function postLink(scope, element, attrs) {
       scope.$watch(attrs.visible, function (value) {
@@ -57,7 +57,7 @@ angular.module('projectWeb').directive('infoInModal', function () {
     restrict: "A",
     replace: true,
     transclude: true,
-    templateUrl: './partials/layout/contents/rivalWar/signIn.html',
+    templateUrl: './partials/layout/header/rivalWar/signIn.html',
     scope: true,
     link: function postLink(scope, element, attrs) {
       scope.$watch(attrs.visible, function (value) {

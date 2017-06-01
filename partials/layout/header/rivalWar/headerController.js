@@ -16,24 +16,6 @@ define(['projectWeb'], function () {
           //pure callback method
           $scope.headerList = dataResponse;
 
-          // 로그인 이후 모달
-          $scope.showInfoIn = false;
-          $scope.infoIn = function () {
-            $scope.showInfoIn = !$scope.showInfoIn;
-          };
-
-          var param = "hostUrl";
-          var result = window.location.search.match(
-            new RegExp("(\\?|&)" + param + "(\\[\\])?=([^&]*)")
-          );
-          var getParam = result ? result[3] : false;
-          if (getParam) {
-            console.log("값 있음");
-            $scope.showInfoIn = !$scope.showInfoIn;
-          } else {
-            console.log("값 없음");
-          }
-
           //plus add callback
           $scope.timer = function () {
           };
@@ -50,12 +32,6 @@ define(['projectWeb'], function () {
       };
 
       $scope.init();
-
-      // 로그인
-      $scope.showSingIn = false;
-      $scope.signIn = function () {
-        $scope.showSingIn = !$scope.showSingIn;
-      };
 
       $scope.facebookLogin = function () {
         console.log("facebook login");

@@ -16,18 +16,6 @@ define(['projectWeb'], function () {
           //pure callback method
           $scope.headerList = dataResponse;
 
-          //plus add callback
-          $scope.timer = function () {
-          };
-          var idx = 0;
-          setInterval(function () {
-            var $rivalList = $('.rivalList-content li');
-            rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
-            idx += 1;
-            if (idx === $rivalList.length) idx = 0;
-            rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
-          }, 4000);
-
           // 로그인 이후 모달
           $scope.showInfoIn = false;
           $scope.infoIn = function () {
@@ -46,10 +34,28 @@ define(['projectWeb'], function () {
             console.log("값 없음");
           }
 
+          //plus add callback
+          $scope.timer = function () {
+          };
+          var idx = 0;
+          setInterval(function () {
+            var $rivalList = $('.rivalList-content li');
+            rivalWarLayoutService.movement($rivalList, idx, 0, "-100%");
+            idx += 1;
+            if (idx === $rivalList.length) idx = 0;
+            rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
+          }, 4000);
+
         });
       };
 
       $scope.init();
+
+      // 로그인
+      $scope.showSingIn = false;
+      $scope.signIn = function () {
+        $scope.showSingIn = !$scope.showSingIn;
+      };
 
       $scope.facebookLogin = function () {
         console.log("facebook login");

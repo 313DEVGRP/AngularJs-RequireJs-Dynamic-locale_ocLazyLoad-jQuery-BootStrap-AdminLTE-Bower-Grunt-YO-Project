@@ -57,24 +57,6 @@ define(['projectWeb'], function () {
                 }
             );
 
-            // 로그인
-            $scope.showSingIn = false;
-            $scope.signIn = function () {
-                $scope.showSingIn = !$scope.showSingIn;
-            };
-
-
-
-            $scope.facebookLogin = function () {
-                console.log("facebook login");
-                $scope.headerList = null;
-                var url = 'http://www.313.co.kr/signin/facebook';
-                var param = {c_id:10};
-                rivalWarDataService.getData(url, 'POST', param, function(dataResponse) {
-                    console.log("facebook login test");
-                });
-            };
-
 
             $ocLazyLoad.load(['partials/common/js/jstree-v.pre1.0/_lib/jquery.cookie.js'])
                 .then(function () {

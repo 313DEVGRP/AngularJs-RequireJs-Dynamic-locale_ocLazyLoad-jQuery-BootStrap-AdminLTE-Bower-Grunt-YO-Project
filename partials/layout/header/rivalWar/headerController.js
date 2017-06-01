@@ -28,24 +28,6 @@ define(['projectWeb'], function () {
             rivalWarLayoutService.movement($rivalList, idx, "100%", 0);
           }, 4000);
 
-          // 로그인 이후 모달
-          $scope.showInfoIn = false;
-          $scope.infoIn = function () {
-            $scope.showInfoIn = !$scope.showInfoIn;
-          };
-
-          var param = "hostUrl";
-          var result = window.location.search.match(
-            new RegExp("(\\?|&)" + param + "(\\[\\])?=([^&]*)")
-          );
-          var getParam = result ? result[3] : false;
-          if (getParam) {
-            console.log("값 있음");
-            $scope.showInfoIn = !$scope.showInfoIn;
-          } else {
-            console.log("값 없음");
-          }
-
         });
       };
 

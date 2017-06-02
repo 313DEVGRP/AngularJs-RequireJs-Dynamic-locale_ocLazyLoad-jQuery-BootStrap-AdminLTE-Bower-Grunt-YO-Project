@@ -467,7 +467,7 @@ header span{
   width: 30px;
   height: 30px;
   margin: 17px 15px;
-  background: url('../img/btn_topbnr_close2.png') no-repeat scroll 0 0 transparent;
+  background: url('../../layout/contents/rivalWar/img/btn_topbnr_close2.png') no-repeat scroll 0 0 transparent;
   background-size:contain;
 }
 .hiding {
@@ -512,7 +512,7 @@ header span{
   padding-bottom: 7px;
 }
 .top span.id_bu{
-  background: url('../img/btn_bullet.png') no-repeat;
+  background: url('../../layout/contents/rivalWar/img/btn_bullet.png') no-repeat;
   background-size: contain;
   padding-left: 30px;
   font-size: 22px;

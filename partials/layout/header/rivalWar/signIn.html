@@ -1,48 +1,22 @@
 <div class="modal fade rival-war-login" id="loginView">
   <div id="signIn" class="modal-dialog login-box">
     <div class="modal-content">
-      <div class="modal-header">
-        <img src="./partials/common/img/signIn/sing-in-header.jpg" alt="1. 소셜 로그인">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button>
-      </div>
-      <div class="modal-body login-box-body">
-        <p class="login-box-msg">
-          라이벌워는 개인정보 보호법을 준수합니다.
-        </p>
-        <div class="social-auth-links text-center">
-          <!--
-          <a href="#" class="btn btn-block btn-social btn-twitter">
-            <img src="./partials/common/img/signIn/sign-in-twitter.png" alt="트위터"/>
-            Twitter Login
-          </a>
-          -->
-          <a href="#" class="btn btn-block btn-social btn-facebook" ng-click="facebookLogin()">
-            <img src="./partials/common/img/signIn/sign-in-facebook.png" alt="페이스북"/>
-            Nick
-          </a>
-          <!--
-          <a href="#" class="btn btn-block btn-social btn-google">
-            <img src="./partials/common/img/signIn/sign-in-google.png" alt="구글"/>
-            Google Login
-          </a>
-
-          <a href="#" class="btn btn-block btn-social btn-naver">
-            <img src="./partials/common/img/signIn/sign-in-naver.png" alt="네이버"/>
-            Naver Login
-          </a>
-          <a href="#" class="btn btn-block btn-social btn-kakao">
-            <img src="./partials/common/img/signIn/sign-in-kakao.png" alt="카카오"/>
-            Kakao Login
-          </a>
-          -->
+      <div id="modal">
+        <header>
+          <span><img src="partials/layout/contents/rivalWar/img/rivalWarLogo.png" alt="라이벌 워 로고"></span>
+          <button type="button" title="닫기" class="bnr_close">
+          <span class="hiding">닫기</span>
+          </button>
+        </header>
+        <div class="modal_section">
+          <div class="top">
+            <p><span class="id_bu">곧미남</span> 님 로그인 되셨습니다.</p>
+          </div>
+          <div><img src="partials/layout/contents/rivalWar/img/welcome_words2.png" alt="라이벌 워 방문을 환영합니다!"></div>
+          <div class="bottom">
+            <p><input type="text" name="" placeholder="닉네임을 입력해주세요."></p>
+          </div>
         </div>
-        <p class="login-box-msg">
-          Copyright&copy; 2010-2017 313 DEV GRP.
-        </p>
-        <!-- /.social-auth-links -->
-        <!-- 로그인 닫기 -->
-        <!--<button type="button" class="btn btn-sm" data-widget="remove"><i class="fa fa-times"></i></button>-->
-       <!--  <button type="button" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-times"></i></button> -->
       </div>
     </div>
   </div>

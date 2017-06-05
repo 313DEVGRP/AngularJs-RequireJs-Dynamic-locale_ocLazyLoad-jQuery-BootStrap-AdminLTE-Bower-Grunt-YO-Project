@@ -443,16 +443,16 @@ img {
   width: 100%;
   margin: 0 auto;
 }
-header{
+#modal header{
   background: #1d292f;
   height: 65px;
 }
-header  img {
+#modal header  img {
   max-width: 100%;
   height: 43px;
   margin-top: 10px;
 }
-header span{
+#modal header span{
   display: block;
   text-align: center;
   vertical-align: middle;

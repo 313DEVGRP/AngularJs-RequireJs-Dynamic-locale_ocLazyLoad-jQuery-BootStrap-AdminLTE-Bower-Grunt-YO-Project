@@ -1,11 +1,11 @@
 @charset "utf-8";
 
-.content .top_titlie a {
+.content .top_title a {
     color: #fff;
     border-bottom: none;
     margin-left: 30px;
 }
-.content .top_titlie span{
+.content .top_title span{
   color: #009764;
   font-weight: bold;
 }

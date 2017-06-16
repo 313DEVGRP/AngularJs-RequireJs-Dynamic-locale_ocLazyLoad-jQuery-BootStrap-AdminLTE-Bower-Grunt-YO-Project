@@ -6,8 +6,12 @@
     margin-left: 30px;
 }
 .content .top_title span{
-  color: #009764;
-  font-weight: bold;
+  color: #fff;
+}
+.c-green {
+    color: #009764;
+    font-weight: bold;
+
 }
 .content .visits-chart{
     height: inherit;

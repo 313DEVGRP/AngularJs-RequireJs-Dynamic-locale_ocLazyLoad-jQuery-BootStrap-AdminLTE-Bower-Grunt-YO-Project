@@ -39,7 +39,7 @@
 }
 .news-list.stretchable .is-first-box{
     display: inline-block;
-    margin-left: 7px;
+    margin-left: 12px;
 }
 .news-list img{
     width: 100%;
@@ -49,7 +49,6 @@
     border: 2px solid;
 }
 .news-list .news-item-info{
-    margin-right: 4px;
     margin-left: 0;
 }
 .news-list .news-item-info > a{
@@ -62,11 +61,13 @@
 }
 .news-list.stretchable>li{
     height: auto;
-    width: 32%;
+    width: 31%;
     display:inline-block;
+    margin:0px -6px;
+    padding: 12px;
 }
 .widget.is-info{
-    padding: 15px 27px 0px;
+    padding: 15px 7px 0px;
 }
 .body.is-spec-box{
     width: 33%;
@@ -76,6 +77,9 @@
 .is-spec-box .progress.progress-small{
     position: relative;
     top: 11px;
+}
+.table.table-striped tr > th{
+    width: 16%;
 }
 
 

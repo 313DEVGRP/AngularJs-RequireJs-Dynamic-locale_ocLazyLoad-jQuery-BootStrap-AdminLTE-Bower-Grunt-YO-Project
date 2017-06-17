@@ -1,5 +1,8 @@
 @charset "utf-8";
 
+.logo {
+    left: 0px;
+}
 .logo h4 > img {
     width: 100%;
     max-width: 200px;
@@ -65,7 +68,7 @@
     display: block;
     clear: both;
     color: white;
-    padding: 5px 27px;
+    padding: 7px 0px;
     border-bottom: 1px solid gray;
     font-size: 15px;
 }
@@ -143,6 +146,7 @@
 }
 .news-item-info a > img {
     width: 24px;
+    height: inherit;
 }
 .small-box-footer {
     position: relative;
@@ -155,6 +159,17 @@
     background: rgba(0, 0, 0, 0.1);
     text-decoration: none;
 }
+.btn-social-icon > :first-child {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 32px;
+    line-height: 34px;
+    font-size: 1.6em;
+    text-align: center;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    }
 
 
 

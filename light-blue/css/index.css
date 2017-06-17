@@ -185,9 +185,9 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
- font-size: 18px;
- color:#00acee;
- border-bottom: 1px solid #00acee;
+   font-size: 18px;
+   color:#00acee;
+   border-bottom: 1px solid #00acee;
 }
 .chat-message .user-lev {
     position: absolute;
@@ -200,6 +200,33 @@ h3.item-C{
 }
 .chat-message .user-img img{
     width: 100%;
+}
+@media all and (max-width: 767px) {
+    .page-title{
+        margin: 8px 13px 10px;
+        font-size: 17px;
+    }
+    .logo h4 > img{
+        width: inherit;
+        max-width: 150px;
+    }
+    .box-tools.share-box.f-r{
+        padding: 5px 0px;
+    }
+    .news-list.stretchable .is-first-box{
+        margin-left: 0;
+    }
+    .news-list.stretchable>li{
+        width: 100%;
+        display: block;
+    }
+    .news-list .item-img img{
+        height: auto;
+    }
+    .body.is-spec-box{
+        width: 100%;
+        display: block;
+    }
 }
 
 

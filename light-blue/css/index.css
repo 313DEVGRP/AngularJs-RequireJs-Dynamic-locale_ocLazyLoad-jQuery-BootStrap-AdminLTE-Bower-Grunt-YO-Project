@@ -214,11 +214,12 @@ h3.item-C{
         padding: 5px 0px;
     }
     .news-list.stretchable .is-first-box{
-        margin-left: 0;
+        margin: 0 -12px;
     }
     .news-list.stretchable>li{
         width: 100%;
         display: block;
+        margin: 0 -12px;
     }
     .news-list .item-img img{
         height: auto;
@@ -226,6 +227,16 @@ h3.item-C{
     .body.is-spec-box{
         width: 100%;
         display: block;
+    }
+    .content .visits-chart .widget {
+        padding: 10px 5px 5px;
+    }
+    .content .visits-chart .widget .fa.un-like{
+        font-size: 40px;
+        width: 13%;
+    }
+    .content .visits-chart .widget  h4{
+        font-size: 13px;
     }
 }
 

@@ -185,9 +185,16 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
-   font-size: 18px;
-   color:#00acee;
-   border-bottom: 1px solid #00acee;
+ font-size: 18px;
+ color:#00acee;
+ border-bottom: 1px solid #00acee;
+}
+.chat-message .user-lev {
+    margin-top: -15px;
+    width: 20px;
+    position: relative;
+    top: 10px;
+    left: 15px;
 }
 
 

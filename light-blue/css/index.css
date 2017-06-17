@@ -34,7 +34,7 @@
 .info.txt-center {
     text-align: center;
 }
-.widget.o-hidden{
+.o-hidden{
     overflow: hidden;
 }
 .news-list.stretchable .is-first-box{

@@ -50,6 +50,7 @@
 }
 .news-list .news-item-info{
     margin-right: 4px;
+    margin-left: 0;
 }
 .news-list .news-item-info > a{
     display: block;
@@ -75,12 +76,6 @@
 .is-spec-box .progress.progress-small{
     position: relative;
     top: 11px;
-}
-.table.table-striped > canvas {
-    display: inline-block;
-    width: 150px;
-    height: 30px;
-    vertical-align: top;
 }
 
 

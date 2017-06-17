@@ -705,7 +705,7 @@
                                                                                     <img ng-src="img/custom/level1.png">
                                                                                 </span>
                                                                                 <div class="icon">
-                                                                                    <img src="img/user1.jpg" class="img-circle" alt="">
+                                                                                    <img src="img/custom/user1.jpg" class="img-circle" alt="">
                                                                                 </div>
                                                                                 <div class="time">
                                                                                     4 min
@@ -726,7 +726,7 @@
                                                                                     <img ng-src="img/custom/level2.png">
                                                                                 </span>
                                                                                 <div class="icon">
-                                                                                    <img src="img/user2.jpg" class="img-circle" alt="">
+                                                                                    <img src="img/custom/user2.jpg" class="img-circle" alt="">
                                                                                 </div>
                                                                                 <div class="time">
                                                                                     3 min
@@ -743,8 +743,11 @@
                                                                         </div>
                                                                         <div class="chat-message">
                                                                             <div class="sender pull-left">
+                                                                                <span class="user-lev">
+                                                                                    <img ng-src="img/custom/level1.png">
+                                                                                </span>
                                                                                 <div class="icon">
-                                                                                    <img src="img/2.jpg" class="img-circle" alt="">
+                                                                                    <img src="img/custom/user1.jpg" class="img-circle" alt="">
                                                                                 </div>
                                                                                 <div class="time">
                                                                                     2 min
@@ -761,8 +764,11 @@
                                                                         </div>
                                                                         <div class="chat-message">
                                                                             <div class="sender pull-right">
+                                                                                <span class="user-lev">
+                                                                                    <img ng-src="img/custom/level1.png">
+                                                                                </span>
                                                                                 <div class="icon">
-                                                                                    <img src="img/1.jpg" class="img-circle" alt="">
+                                                                                    <img src="img/custom/user2.jpg" class="img-circle" alt="">
                                                                                 </div>
                                                                                 <div class="time">
                                                                                     2 min
@@ -777,142 +783,127 @@
                                                                                 </div>
                                                                             </div>
                                                                         </div>
-                                                                        <div class="chat-message">
-                                                                            <div class="sender pull-left">
-                                                                                <div class="icon">
-                                                                                    <img src="img/2.jpg" class="img-circle" alt="">
-                                                                                </div>
-                                                                                <div class="time">
-                                                                                    1 min
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="chat-message-body">
-                                                                                <span class="arrow"></span>
-                                                                                <div class="sender"><a href="#">Tikhon Laninga</a></div>
-                                                                                <div class="text">
-                                                                                    Anyway sounds great! These cases are perfectly simple and easy to
-                                                                                    distinguish.
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div><div class="slimScrollBar ui-draggable" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 1px; opacity: 0.4; display: block; border-radius: 5px; z-index: 99; right: 1px; height: 149.61px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 5px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div></div>
-                                                                    <footer class="chat-footer row">
-                                                                        <div class="col-xs-9">
-                                                                            <input id="new-message" type="text" class="form-control input-transparent" placeholder="Enter your message..">
-                                                                        </div>
-                                                                        <div class="col-xs-3">
-                                                                            <button type="button" id="new-message-btn" class="btn btn-transparent btn-block">Send</button>
-                                                                        </div>
-                                                                    </footer>
+                                                                    </div>
+                                                                    <div class="slimScrollBar ui-draggable" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 1px; opacity: 0.4; display: block; border-radius: 5px; z-index: 99; right: 1px; height: 149.61px;"></div>
+                                                                    <div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: block; border-radius: 5px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
                                                                 </div>
+                                                                <footer class="chat-footer row">
+                                                                    <div class="col-xs-9">
+                                                                        <input id="new-message" type="text" class="form-control input-transparent" placeholder="Enter your message..">
+                                                                    </div>
+                                                                    <div class="col-xs-3">
+                                                                        <button type="button" id="new-message-btn" class="btn btn-transparent btn-block">Send</button>
+                                                                    </div>
+                                                                </footer>
                                                             </div>
-                                                        </section>
-                                                    </div>
-                                                    <!-- E: 다이렉트 채팅 -->
+                                                        </div>
+                                                    </section>
                                                 </div>
+                                                <!-- E: 다이렉트 채팅 -->
                                             </div>
                                         </div>
-                                        <!-- jquery and friends -->
-                                        <script src="lib/jquery/jquery-2.0.3.min.js"> </script>
-                                        <!-- jquery plugins -->
-                                        <script src="lib/icheck.js/jquery.icheck.js"></script>
-                                        <script src="lib/sparkline/jquery.sparkline.js"></script>
-                                        <script src="lib/jquery-ui-1.10.3.custom.js"></script>
-                                        <script src="lib/jquery.slimscroll.js"></script>
-                                        <!-- d3, nvd3-->
-                                        <script src="lib/nvd3/lib/d3.v2.js"></script>
-                                        <script src="lib/nvd3/nv.d3.custom.js"></script>
-                                        <!-- nvd3 models -->
-                                        <script src="lib/nvd3/src/models/scatter.js"></script>
-                                        <script src="lib/nvd3/src/models/axis.js"></script>
-                                        <script src="lib/nvd3/src/models/legend.js"></script>
-                                        <script src="lib/nvd3/src/models/multiBar.js"></script>
-                                        <script src="lib/nvd3/src/models/multiBarChart.js"></script>
-                                        <script src="lib/nvd3/src/models/line.js"></script>
-                                        <script src="lib/nvd3/src/models/lineChart.js"></script>
-                                        <script src="lib/nvd3/stream_layers.js"></script>
-                                        <!--backbone and friends -->
-                                        <script src="lib/backbone/underscore-min.js"></script>
-                                        <script src="lib/backbone/backbone-min.js"></script>
-                                        <script src="lib/backbone/backbone.localStorage-min.js"></script>
-                                        <!-- bootstrap default plugins -->
-                                        <script src="lib/bootstrap/transition.js"></script>
-                                        <script src="lib/bootstrap/collapse.js"></script>
-                                        <script src="lib/bootstrap/alert.js"></script>
-                                        <script src="lib/bootstrap/tooltip.js"></script>
-                                        <script src="lib/bootstrap/popover.js"></script>
-                                        <script src="lib/bootstrap/button.js"></script>
-                                        <script src="lib/bootstrap/tab.js"> </script>
-                                        <script src="lib/bootstrap/dropdown.js"></script>
-                                        <!-- basic application js-->
-                                        <script src="js/app.js"></script>
-                                        <script src="js/settings.js"></script>
-                                        <!-- page specific -->
-                                        <script src="js/index.js"></script>
-                                        <script src="js/chat.js"></script>
-                                        <script type="text/template" id="message-template">
-                                            <div class="sender pull-left">
-                                                <div class="icon">
-                                                    <img src="img/2.jpg" class="img-circle" alt="">
-                                                </div>
-                                                <div class="time">
-                                                    just now
-                                                </div>
+                                    </div>
+                                    <!-- jquery and friends -->
+                                    <script src="lib/jquery/jquery-2.0.3.min.js"> </script>
+                                    <!-- jquery plugins -->
+                                    <script src="lib/icheck.js/jquery.icheck.js"></script>
+                                    <script src="lib/sparkline/jquery.sparkline.js"></script>
+                                    <script src="lib/jquery-ui-1.10.3.custom.js"></script>
+                                    <script src="lib/jquery.slimscroll.js"></script>
+                                    <!-- d3, nvd3-->
+                                    <script src="lib/nvd3/lib/d3.v2.js"></script>
+                                    <script src="lib/nvd3/nv.d3.custom.js"></script>
+                                    <!-- nvd3 models -->
+                                    <script src="lib/nvd3/src/models/scatter.js"></script>
+                                    <script src="lib/nvd3/src/models/axis.js"></script>
+                                    <script src="lib/nvd3/src/models/legend.js"></script>
+                                    <script src="lib/nvd3/src/models/multiBar.js"></script>
+                                    <script src="lib/nvd3/src/models/multiBarChart.js"></script>
+                                    <script src="lib/nvd3/src/models/line.js"></script>
+                                    <script src="lib/nvd3/src/models/lineChart.js"></script>
+                                    <script src="lib/nvd3/stream_layers.js"></script>
+                                    <!--backbone and friends -->
+                                    <script src="lib/backbone/underscore-min.js"></script>
+                                    <script src="lib/backbone/backbone-min.js"></script>
+                                    <script src="lib/backbone/backbone.localStorage-min.js"></script>
+                                    <!-- bootstrap default plugins -->
+                                    <script src="lib/bootstrap/transition.js"></script>
+                                    <script src="lib/bootstrap/collapse.js"></script>
+                                    <script src="lib/bootstrap/alert.js"></script>
+                                    <script src="lib/bootstrap/tooltip.js"></script>
+                                    <script src="lib/bootstrap/popover.js"></script>
+                                    <script src="lib/bootstrap/button.js"></script>
+                                    <script src="lib/bootstrap/tab.js"> </script>
+                                    <script src="lib/bootstrap/dropdown.js"></script>
+                                    <!-- basic application js-->
+                                    <script src="js/app.js"></script>
+                                    <script src="js/settings.js"></script>
+                                    <!-- page specific -->
+                                    <script src="js/index.js"></script>
+                                    <script src="js/chat.js"></script>
+                                    <script type="text/template" id="message-template">
+                                        <div class="sender pull-left">
+                                            <div class="icon">
+                                                <img src="img/2.jpg" class="img-circle" alt="">
                                             </div>
-                                            <div class="chat-message-body">
-                                                <span class="arrow"></span>
-                                                <div class="sender">Tikhon Laninga</div>
-                                                <div class="text">
-                                                    <%- text %>
-                                                </div>
+                                            <div class="time">
+                                                just now
                                             </div>
-                                        </script>
-                                        <script type="text/template" id="settings-template">
-                                            <div class="setting clearfix">
-                                                <div>Background</div>
-                                                <div id="background-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
-                                                    <% dark = background == 'dark'; light = background == 'light';%>
-                                                    <button type="button" data-value="dark" class="btn btn-sm btn-transparent <%= dark? 'active' : '' %>">Dark</button>
-                                                    <button type="button" data-value="light" class="btn btn-sm btn-transparent <%= light? 'active' : '' %>">Light</button>
-                                                </div>
+                                        </div>
+                                        <div class="chat-message-body">
+                                            <span class="arrow"></span>
+                                            <div class="sender">Tikhon Laninga</div>
+                                            <div class="text">
+                                                <%- text %>
                                             </div>
-                                            <div class="setting clearfix">
-                                                <div>Sidebar on the</div>
-                                                <div id="sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
-                                                    <% onRight = sidebar == 'right'%>
-                                                    <button type="button" data-value="left" class="btn btn-sm btn-transparent <%= onRight? '' : 'active' %>">Left</button>
-                                                    <button type="button" data-value="right" class="btn btn-sm btn-transparent <%= onRight? 'active' : '' %>">Right</button>
-                                                </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/template" id="settings-template">
+                                        <div class="setting clearfix">
+                                            <div>Background</div>
+                                            <div id="background-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+                                                <% dark = background == 'dark'; light = background == 'light';%>
+                                                <button type="button" data-value="dark" class="btn btn-sm btn-transparent <%= dark? 'active' : '' %>">Dark</button>
+                                                <button type="button" data-value="light" class="btn btn-sm btn-transparent <%= light? 'active' : '' %>">Light</button>
                                             </div>
-                                            <div class="setting clearfix">
-                                                <div>Sidebar</div>
-                                                <div id="display-sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
-                                                    <% display = displaySidebar%>
-                                                    <button type="button" data-value="true" class="btn btn-sm btn-transparent <%= display? 'active' : '' %>">Show</button>
-                                                    <button type="button" data-value="false" class="btn btn-sm btn-transparent <%= display? '' : 'active' %>">Hide</button>
-                                                </div>
+                                        </div>
+                                        <div class="setting clearfix">
+                                            <div>Sidebar on the</div>
+                                            <div id="sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+                                                <% onRight = sidebar == 'right'%>
+                                                <button type="button" data-value="left" class="btn btn-sm btn-transparent <%= onRight? '' : 'active' %>">Left</button>
+                                                <button type="button" data-value="right" class="btn btn-sm btn-transparent <%= onRight? 'active' : '' %>">Right</button>
                                             </div>
-                                            <div class="setting clearfix">
-                                                <div>White Version</div>
-                                                <div>
-                                                    <a href="white/" class="btn btn-sm btn-transparent">&nbsp; Switch &nbsp;   <i class="fa fa-angle-right"></i></a>
-                                                </div>
+                                        </div>
+                                        <div class="setting clearfix">
+                                            <div>Sidebar</div>
+                                            <div id="display-sidebar-toggle" class="pull-left btn-group" data-toggle="buttons-radio">
+                                                <% display = displaySidebar%>
+                                                <button type="button" data-value="true" class="btn btn-sm btn-transparent <%= display? 'active' : '' %>">Show</button>
+                                                <button type="button" data-value="false" class="btn btn-sm btn-transparent <%= display? '' : 'active' %>">Hide</button>
                                             </div>
-                                        </script>
-                                        <script type="text/template" id="sidebar-settings-template">
-                                            <% auto = sidebarState == 'auto'%>
-                                            <% if (auto) {%>
-                                            <button type="button"
-                                            data-value="icons"
-                                            class="btn-icons btn btn-transparent btn-sm">Icons</button>
-                                            <button type="button"
-                                            data-value="auto"
-                                            class="btn-auto btn btn-transparent btn-sm">Auto</button>
-                                            <%} else {%>
-                                            <button type="button"
-                                            data-value="auto"
-                                            class="btn btn-transparent btn-sm">Auto</button>
-                                            <% } %>
-                                        </script>
-                                    </body>
-                                    </html>
+                                        </div>
+                                        <div class="setting clearfix">
+                                            <div>White Version</div>
+                                            <div>
+                                                <a href="white/" class="btn btn-sm btn-transparent">&nbsp; Switch &nbsp;   <i class="fa fa-angle-right"></i></a>
+                                            </div>
+                                        </div>
+                                    </script>
+                                    <script type="text/template" id="sidebar-settings-template">
+                                        <% auto = sidebarState == 'auto'%>
+                                        <% if (auto) {%>
+                                        <button type="button"
+                                        data-value="icons"
+                                        class="btn-icons btn btn-transparent btn-sm">Icons</button>
+                                        <button type="button"
+                                        data-value="auto"
+                                        class="btn-auto btn btn-transparent btn-sm">Auto</button>
+                                        <%} else {%>
+                                        <button type="button"
+                                        data-value="auto"
+                                        class="btn btn-transparent btn-sm">Auto</button>
+                                        <% } %>
+                                    </script>
+                                </body>
+                                </html>

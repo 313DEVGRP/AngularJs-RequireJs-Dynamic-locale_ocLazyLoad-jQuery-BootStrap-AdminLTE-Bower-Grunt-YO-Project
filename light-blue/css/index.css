@@ -191,7 +191,7 @@ h3.item-C{
 }
 .chat-message .user-lev {
     position: absolute;
-    top: 0px;
+    top: -10px;
     left: 0px;
     z-index: 2;
 }
@@ -201,6 +201,13 @@ h3.item-C{
 .chat-message .user-img img{
     width: 100%;
 }
+.sender.pull-left{
+    position: relative;
+}
+.chat-message{
+    margin-top: 20px;
+}
+
 @media all and (max-width: 767px) {
     .page-title{
         margin: 8px 13px 10px;

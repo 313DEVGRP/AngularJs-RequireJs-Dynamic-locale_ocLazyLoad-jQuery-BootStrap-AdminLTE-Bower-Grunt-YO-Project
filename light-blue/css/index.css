@@ -185,14 +185,13 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
-   font-size: 18px;
-   color:#00acee;
-   border-bottom: 1px solid #00acee;
+ font-size: 18px;
+ color:#00acee;
+ border-bottom: 1px solid #00acee;
 }
 .chat-message .user-lev {
     position: absolute;
     top: -10px;
-    left: 0px;
     z-index: 2;
 }
 .chat-message .user-lev img {
@@ -201,10 +200,11 @@ h3.item-C{
 .chat-message .user-img img{
     width: 100%;
 }
-.sender.pull-left{
-    position: relative;
-}
 .chat-message{
+    position: relative;
+    margin-top: 20px;
+}
+.chat-message+.chat-message{
     margin-top: 20px;
 }
 

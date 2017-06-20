@@ -177,9 +177,9 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
-   font-size: 18px;
-   color:#00acee;
-   border-bottom: 1px solid #00acee;
+ font-size: 18px;
+ color:#00acee;
+ border-bottom: 1px solid #00acee;
 }
 .chat-message .user-lev {
     position: absolute;
@@ -224,17 +224,19 @@ h3.item-C{
 }
 .rivalList-outerWrap{
     margin: 6px 20px 6px -40px;
-    color: #fff;
-    border-bottom: none;
 }
 .rivalList-outerWrap i.fa-bars{
     float: left;
     margin-top: 5px;
+    margin-right: 8px;
 }
 .rivalList-title{display: none;}
 .rivalList-outerWrap .highLight{
     color: #009764;
     font-weight: bold;
+}
+.rivalList-content a {
+    color: #fff;
 }
 
 @media all and (max-width: 767px) {

@@ -177,9 +177,9 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
- font-size: 18px;
- color:#00acee;
- border-bottom: 1px solid #00acee;
+   font-size: 18px;
+   color:#00acee;
+   border-bottom: 1px solid #00acee;
 }
 .chat-message .user-lev {
     position: absolute;
@@ -267,10 +267,9 @@ button.info-box-icon {
     margin-right: 5px;
     padding: 0 7px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 23px;
     color: #fff;
     border-radius: 3px;
-    border: 1px solid;
 }
 .direct-chat-name{
   font-weight:bold;
@@ -300,6 +299,7 @@ button.info-box-icon {
 .reply-wrap .chat-type{
   height:16px;
   line-height:16px;
+  padding-left: 0px;
 }
 .reply-wrap .type-up,
 .reply-wrap .type-reply{
@@ -309,11 +309,19 @@ button.info-box-icon {
   background-color:transparent;
 }
 .reply-wrap p{
-  margin-bottom:3px;
-  padding-left:7px;
+    margin-bottom: 10px;
+    padding-top: 7px;
+    overflow: hidden;
+    clear: both;
 }
 .btn_reply{
     margin-top: 10px;
+}
+.direct-chat-timestamp {
+    font-size: 11.05px;
+    line-height: 1.5em;
+    text-align: center;
+    color: #d2d2d2;
 }
 
 @media all and (max-width: 767px) {

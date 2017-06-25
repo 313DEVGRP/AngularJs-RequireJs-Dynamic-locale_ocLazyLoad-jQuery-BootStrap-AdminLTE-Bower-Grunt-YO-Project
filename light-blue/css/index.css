@@ -60,9 +60,12 @@
     display: block;
     clear: both;
     color: white;
-    padding: 7px 0px;
+    padding: 7px 5px;
     border-bottom: 1px solid gray;
     font-size: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 .news-list.stretchable>li{
     height: auto;
@@ -179,9 +182,9 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
- font-size: 18px;
- color:#00acee;
- border-bottom: 1px solid #00acee;
+   font-size: 18px;
+   color:#00acee;
+   border-bottom: 1px solid #00acee;
 }
 .chat-message .user-lev {
     position: absolute;
@@ -367,9 +370,14 @@ body {
     .content .visits-chart .widget .fa.un-like{
         font-size: 40px;
         width: 13%;
+        margin-right: 8px;
     }
     .content .visits-chart .widget  h4{
+        display: block;
         font-size: 13px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     span.social-icon-line{
         display: none;

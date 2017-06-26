@@ -49,9 +49,8 @@
 .news-list .item-img img{
     width: 100%;
     height: 400px;
-    /* overflow: hidden; */
     margin-bottom: 5px;
-    border: 2px solid;
+    border: 1px solid rgba(51,51,51,0.25);
 }
 .news-list .news-item-info{
     margin-left: 0;
@@ -335,6 +334,30 @@ body {
 .footer {
     padding: 15px;
     background-color: rgba(51,51,51,0.4);
+}
+.widget.new{
+    padding: 0px 0px 9px 0px;
+}
+.widget.new header{
+    padding: 5px 10px;
+    margin-left: 100px;
+}
+span.info-box-icon{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px;
+    display: block;
+    float: left;
+    height: 96px;
+    width: 96px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px;
+    background: rgba(0, 0, 0, 0.2);
+}
+.widget>header h4{
+    font-weight: normal;
 }
 
 @media all and (max-width: 767px) {

@@ -387,9 +387,6 @@ span.info-box-icon{
         width: 100%;
         display: block;
     }
-    .content .visits-chart .widget {
-        padding: 10px 5px 5px;
-    }
     .content .visits-chart .widget .fa.un-like{
         font-size: 40px;
         width: 13%;

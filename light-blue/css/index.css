@@ -411,6 +411,13 @@ span.info-box-icon{
         left: 10px;
     }
 }
+@media all and (max-width: 990px) {
+    .news-list.stretchable>li,
+    .body.is-spec-box {
+        width:100%;
+    }
+}
+
 
 
 

@@ -585,6 +585,14 @@ span.info-box-icon{
         width: 31%;
     }
 }
+@media (max-width: 600px)
+    .reduce-text {
+        display: none;
+    }
+    .compare-grap-box .grap-logo{
+        bottom: 43px;
+    }
+}
 
 
 

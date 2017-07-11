@@ -566,9 +566,6 @@ span.info-box-icon{
     .reduce-text {
         display: none;
     }
-    .compare-grap .grap-logo{
-        bottom: 43px;
-    }
 }
 @media (min-width: 568px) and (max-width:760px) {
     .rivalList-outerWrap{

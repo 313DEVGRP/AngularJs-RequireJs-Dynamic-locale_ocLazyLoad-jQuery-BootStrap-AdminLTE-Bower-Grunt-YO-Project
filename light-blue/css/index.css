@@ -182,9 +182,9 @@ h3.item-B{
     border-bottom: 1px solid #46c377;
 }
 h3.item-C{
-   font-size: 18px;
-   color:#00acee;
-   border-bottom: 1px solid #00acee;
+ font-size: 18px;
+ color:#00acee;
+ border-bottom: 1px solid #00acee;
 }
 .chat-message .user-lev {
     position: absolute;
@@ -362,6 +362,129 @@ span.info-box-icon{
     font-weight: normal;
 }
 
+.compare-grap-box {
+  padding: 0 15px;
+}
+
+.compare-grap {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 12px;
+}
+
+.compare-grap .left {
+  float: left;
+  width: 33%;
+}
+.compare-grap .center {
+    float: left;
+    width: 33%;
+}
+.compare-grap .right {
+  float: left;
+  width: 33%;
+}
+
+.compare-grap .item-A,
+.compare-grap .item-B,
+.compare-grap .item-C {
+  clear: both;
+  margin-top: 5px;
+  height: 10px;
+  width: 100%;
+}
+
+.compare-grap-box .text {
+  margin-bottom: 3px;
+  font-size: 12px;
+  float: left;
+}
+
+.compare-grap-box .point {
+  margin-bottom: 3px;
+  font-size: 12px;
+  float: left;
+}
+
+.compare-grap-box .center .point,
+.compare-grap-box .center .text {
+  margin-left: 15px;
+}
+
+.compare-grap-box .grap-logo {
+  position: absolute;
+  bottom: 22px;
+  margin-left: -16px;
+}
+
+.compare-grap-box .compare-text {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+.compare-grap-box .right {}
+
+.compare-grap-box .right .text {
+  float: right;
+}
+
+.compare-grap-box .right .point {
+  float: right;
+}
+.info-box {
+    display: block;
+    min-height: 90px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+}
+.info-box-content {
+    padding: 5px 10px;
+    margin-left: 90px;
+}
+.info-box-text {
+    text-transform: uppercase;
+}
+
+.progress-description, .info-box-text {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.info-box .progress {
+    background: rgba(0, 0, 0, 0.2);
+    margin: 5px -10px 5px -10px;
+    height: 2px;
+}
+.info-box .progress .progress-bar{
+    float: left;
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #337ab7;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+}
+.progress-description{
+    margin: 0;
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 
 @media all and (max-width: 767px) {
     .page-title{

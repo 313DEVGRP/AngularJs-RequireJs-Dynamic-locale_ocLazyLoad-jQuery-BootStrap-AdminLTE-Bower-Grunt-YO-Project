@@ -275,7 +275,7 @@ button.info-box-icon {
     height: 24px;
     margin-right: 5px;
     padding: 0 7px;
-    font-size: 16px;
+    font-size: 13px;
     line-height: 23px;
     color: #fff;
     border-radius: 3px;
@@ -515,7 +515,8 @@ span.info-box-icon{
     background-color: #fff;
 }
 
-.center .point, .center .text{
+.center .point, .center .text,
+    .right .point, .right .text{
     margin-left: 15px;
 }
 
@@ -561,6 +562,12 @@ span.info-box-icon{
     span.social-icon-line{
         display: none;
     }
+    .news-list.stretchable>li{
+        width: 30%;
+    }
+    .body.is-spec-box{
+        width: 31%;
+    }
 }
 @media (min-width: 568px) and (max-width:760px) {
     .rivalList-outerWrap{
@@ -568,12 +575,6 @@ span.info-box-icon{
         position: absolute;
         top:40px;
         left: 10px;
-    }
-     .news-list.stretchable>li{
-        width: 30%;
-    }
-    .body.is-spec-box{
-        width: 31%;
     }
 }
 @media all and (max-width: 990px) {

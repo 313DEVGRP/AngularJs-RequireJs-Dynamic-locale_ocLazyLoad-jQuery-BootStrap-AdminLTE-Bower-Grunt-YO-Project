@@ -523,7 +523,7 @@ span.info-box-icon{
 
 @media all and (max-width: 767px) {
     .page-title{
-        margin: 8px 13px 10px;
+        // margin: 8px 13px 10px;
         font-size: 17px;
     }
     .logo h4 > img{

@@ -68,7 +68,7 @@
 }
 .news-list.stretchable>li{
     height: auto;
-    width: 30%;
+    width: 31%;
     display:inline-block;
     margin:0px -6px;
     padding: 12px;
@@ -77,7 +77,7 @@
     padding: 15px 7px 0px;
 }
 .body.is-spec-box{
-    width: 31%;
+    width: 32%;
     display: inline-block;
     margin: 0 7px;
 }
@@ -184,10 +184,10 @@ h3.item-B{
     background: none;
 }
 h3.item-C{
- font-size: 18px;
- color:#00acee;
- border-bottom: 1px solid #00acee;
- background: none;
+   font-size: 18px;
+   color:#00acee;
+   border-bottom: 1px solid #00acee;
+   background: none;
 }
 
 .chat-message .user-lev {
@@ -515,7 +515,7 @@ span.info-box-icon{
     background-color: #fff;
 }
 
-.compare-grap-box .center .point, .compare-grap-box .center .text{
+.center .point, .center .text{
     margin-left: 15px;
 }
 
@@ -568,6 +568,12 @@ span.info-box-icon{
         position: absolute;
         top:40px;
         left: 10px;
+    }
+     .news-list.stretchable>li{
+        width: 30%;
+    }
+    .body.is-spec-box{
+        width: 31%;
     }
 }
 @media all and (max-width: 990px) {

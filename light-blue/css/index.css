@@ -175,16 +175,19 @@ h3.item-A {
   font-size: 18px;
   border-bottom: 1px solid #dd4b39;
   color: #DD4B3B;
+  background: none;
 }
 h3.item-B{
     font-size: 18px;
     color: #46c377;
     border-bottom: 1px solid #46c377;
+    background: none;
 }
 h3.item-C{
  font-size: 18px;
  color:#00acee;
  border-bottom: 1px solid #00acee;
+ background: none;
 }
 .chat-message .user-lev {
     position: absolute;
@@ -485,10 +488,10 @@ span.info-box-icon{
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.compare-grap-box .grap-logo img{
+.grap-logo img{
     width: 28px;
 }
-.compare-grap-box .grap-logo{
+.grap-logo{
     position: absolute;
     bottom: 22px;
     margin-left: -16px;

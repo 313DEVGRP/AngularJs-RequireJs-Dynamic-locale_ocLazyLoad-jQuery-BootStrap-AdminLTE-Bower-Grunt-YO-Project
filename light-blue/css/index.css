@@ -184,10 +184,10 @@ h3.item-B{
     background: none;
 }
 h3.item-C{
-   font-size: 18px;
-   color:#00acee;
-   border-bottom: 1px solid #00acee;
-   background: none;
+ font-size: 18px;
+ color:#00acee;
+ border-bottom: 1px solid #00acee;
+ background: none;
 }
 
 .chat-message .user-lev {
@@ -516,7 +516,7 @@ span.info-box-icon{
 }
 
 .center .point, .center .text,
-    .right .point, .right .text{
+.right .point, .right .text{
     margin-left: 15px;
 }
 
@@ -562,12 +562,6 @@ span.info-box-icon{
     span.social-icon-line{
         display: none;
     }
-    .news-list.stretchable>li{
-        width: 30%;
-    }
-    .body.is-spec-box{
-        width: 31%;
-    }
 }
 @media (min-width: 568px) and (max-width:760px) {
     .rivalList-outerWrap{
@@ -581,6 +575,14 @@ span.info-box-icon{
     .news-list.stretchable>li,
     .body.is-spec-box {
         width:100%;
+    }
+}
+@media (min-width: 990px) and (max-width:1525px) {
+     .news-list.stretchable>li{
+        width: 30%;
+    }
+    .body.is-spec-box{
+        width: 31%;
     }
 }
 

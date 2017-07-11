@@ -61,14 +61,14 @@
     color: white;
     padding: 7px 5px;
     border-bottom: 1px solid gray;
-    font-size: 15px;
+    font-size: 13px;
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
 }
 .news-list.stretchable>li{
     height: auto;
-    width: 31%;
+    width: 30%;
     display:inline-block;
     margin:0px -6px;
     padding: 12px;
@@ -77,10 +77,11 @@
     padding: 15px 7px 0px;
 }
 .body.is-spec-box{
-    width: 32%;
+    width: 31%;
     display: inline-block;
-    margin-right: 14px;
+    margin: 0 7px;
 }
+
 .is-spec-box .progress.progress-small{
     position: relative;
     top: 11px;
@@ -357,8 +358,10 @@ span.info-box-icon{
     background: rgba(0, 0, 0, 0.2);
 }
 .widget>header h4{
+    font-size: 13px;
     font-weight: normal;
 }
+
 
 @media all and (max-width: 767px) {
     .page-title{

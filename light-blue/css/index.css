@@ -576,10 +576,10 @@ span.info-box-icon{
     .reduce-text {
         display: none;
     }
-    .logo h4.logo-lg > img{
+    .logo h4.logo_lg > img{
         display: none;
     }
-    .logo h4.logo-mini > img{
+    .logo h4.logo_mini > img{
         display: block;
     }
 }

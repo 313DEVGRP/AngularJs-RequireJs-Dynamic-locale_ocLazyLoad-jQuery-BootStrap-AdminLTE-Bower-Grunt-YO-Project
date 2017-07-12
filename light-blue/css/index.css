@@ -576,11 +576,13 @@ span.info-box-icon{
     .reduce-text {
         display: none;
     }
-    .logo h4.logo_lg > img{
-        display: none;
-    }
-    .logo h4.logo_mini > img{
+}
+@media (min-width: 768px){
+    .logo_mini {
         display: block;
+    }
+    .logo_lg{
+        display: none;
     }
 }
 @media (min-width: 568px) and (max-width:760px) {

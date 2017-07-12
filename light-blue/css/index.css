@@ -529,11 +529,23 @@ span.info-box-icon{
 .item-color-C{
     color: #46c377;
 }
+
+@media (min-width: 768px){
+    .logo_mini {
+        display: block;
+        width: 48px;
+        margin-left: 11px;
+    }
+    .logo_lg{
+        display: none;
+    }
+}
+
 .logo_mini {
-    display: none!important;
+    display: none;
 }
 .logo_lg{
-    display: block!important;
+    display: block;
 }
 
 @media all and (max-width: 767px) {
@@ -584,16 +596,6 @@ span.info-box-icon{
     }
 }
 
-@media (min-width: 768px){
-    .logo_mini {
-        display: block;
-        width: 48px;
-        margin-left: 11px;
-    }
-    .logo_lg{
-        display: none;
-    }
-}
 @media (min-width: 568px) and (max-width:760px) {
     .rivalList-outerWrap{
         margin: 0!important;

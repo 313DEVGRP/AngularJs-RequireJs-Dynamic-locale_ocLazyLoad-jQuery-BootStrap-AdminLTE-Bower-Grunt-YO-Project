@@ -530,23 +530,24 @@ span.info-box-icon{
     color: #46c377;
 }
 
-@media (min-width: 768px){
-    .logo_mini {
-        display: block;
-        width: 48px;
-        margin-left: 11px;
-    }
-    .logo_lg{
-        display: none;
-    }
-}
-
 .logo_mini {
     display: none;
 }
 .logo_lg{
     display: block;
 }
+
+@media (min-width: 768px){
+    .background-dark .logo .logo_mini {
+        display: block;
+        width: 48px;
+        margin-left: 11px;
+    }
+    .background-dark .logo .logo_lg{
+        display: none;
+    }
+}
+
 
 @media all and (max-width: 767px) {
     .page-title{

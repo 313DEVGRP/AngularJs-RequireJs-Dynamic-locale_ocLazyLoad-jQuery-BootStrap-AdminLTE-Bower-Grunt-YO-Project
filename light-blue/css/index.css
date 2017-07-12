@@ -529,6 +529,9 @@ span.info-box-icon{
 .item-color-C{
     color: #46c377;
 }
+.logo_mini {
+    display: none;
+}
 
 @media all and (max-width: 767px) {
     .page-title{
@@ -605,12 +608,6 @@ span.info-box-icon{
     }
     .body.is-spec-box{
         width: 31%;
-    }
-    .logo_mini {
-        display: none;
-    }
-    .logo_lg{
-        display: block;
     }
 }
 

@@ -587,6 +587,9 @@ span.info-box-icon{
         width: 48px;
         margin-left: 11px;
     }
+    .logo_lg{
+        display: none;
+    }
 }
 @media (min-width: 568px) and (max-width:760px) {
     .rivalList-outerWrap{

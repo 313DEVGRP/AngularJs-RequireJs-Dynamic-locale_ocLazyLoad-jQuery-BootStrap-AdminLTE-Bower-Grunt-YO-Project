@@ -580,7 +580,9 @@ span.info-box-icon{
 
 @media (min-width: 768px){
     .logo_mini {
-        display: none;
+        display: block;
+        width: 48px;
+        margin-left: 11px;
     }
 }
 @media (min-width: 568px) and (max-width:760px) {
@@ -605,12 +607,10 @@ span.info-box-icon{
         width: 31%;
     }
     .logo_mini {
-        display: block;
-        width: 48px;
-        margin-left: 11px;
+        display: none;
     }
     .logo_lg{
-        display: none;
+        display: block;
     }
 }
 

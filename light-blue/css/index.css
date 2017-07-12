@@ -530,7 +530,10 @@ span.info-box-icon{
     color: #46c377;
 }
 .logo_mini {
-    display: none;
+    display: none!important;
+}
+.logo_lg{
+    display: block;
 }
 
 @media all and (max-width: 767px) {
@@ -588,7 +591,7 @@ span.info-box-icon{
         margin-left: 11px;
     }
     .logo_lg{
-        display: none;
+        display: none!important;
     }
 }
 @media (min-width: 568px) and (max-width:760px) {

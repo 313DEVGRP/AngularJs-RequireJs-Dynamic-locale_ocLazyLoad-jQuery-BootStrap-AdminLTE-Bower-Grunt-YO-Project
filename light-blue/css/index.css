@@ -537,6 +537,11 @@ span.info-box-icon{
     display: block;
 }
 
+.page-title img{
+    width: 100%;
+    max-width: 35px;
+}
+
 @media (min-width: 768px){
     .background-dark .logo .logo_mini {
         display: block;
@@ -622,9 +627,15 @@ span.info-box-icon{
    .news-list.stretchable>li{
     width: 30%;
 }
-.body.is-spec-box{
-    width: 31%;
+    .body.is-spec-box{
+        width: 31%;
+    }
 }
+@media (max-width: 480px) {
+    .page-title img {
+        max-width: 20px!important;
+        margin-top: 4px!important;
+        }
 }
 
 

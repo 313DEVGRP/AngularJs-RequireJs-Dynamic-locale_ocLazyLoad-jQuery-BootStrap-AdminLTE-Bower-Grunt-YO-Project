@@ -568,7 +568,7 @@ span.info-box-icon{
         max-width: 150px;
     }
     .box-tools.share-box.f-r{
-        padding: 5px 0px;
+        padding: 0px 0px;
     }
     .news-list.stretchable .is-first-box{
         margin: 0 -12px;
@@ -634,16 +634,3 @@ span.info-box-icon{
         margin-top: 4px!important;
         }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

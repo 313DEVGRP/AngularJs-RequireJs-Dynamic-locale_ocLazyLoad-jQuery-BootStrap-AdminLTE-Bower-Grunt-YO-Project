@@ -123,7 +123,7 @@ $(function(){
     });
 
     $("#chat-messages").slimscroll({
-        height: '240px',
+        height: '350px',
         size: '5px',
         alwaysVisible: true,
         railVisible: true

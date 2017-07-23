@@ -558,6 +558,9 @@ span.info-box-icon{
 input#new-message, button#new-message-btn{
   height: 60px;
 }
+.txt-left{
+  text-align: left;
+}
 
 @media (min-width: 768px){
     .background-dark .logo .logo_mini {

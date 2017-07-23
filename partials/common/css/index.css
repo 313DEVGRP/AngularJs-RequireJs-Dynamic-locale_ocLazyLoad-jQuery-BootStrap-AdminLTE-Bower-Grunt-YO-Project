@@ -186,8 +186,8 @@ h3.item-B{
 }
 h3.item-C{
    font-size: 18px;
-   color:#00acee;
-   border-bottom: 1px solid #00acee;
+   color: #46c377;
+   border-bottom: 1px solid #46c377;
    background: none;
 }
 
@@ -273,11 +273,11 @@ button.info-box-icon {
 }
 .info-box-icon.chat-type{
     width: auto;
-    height: 24px;
+    height: 22px;
     margin-right: 5px;
     padding: 0 7px;
-    font-size: 13px;
-    line-height: 23px;
+    font-size: 12px;
+    line-height: 20px;
     color: #fff;
     border-radius: 3px;
 }

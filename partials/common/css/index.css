@@ -601,9 +601,19 @@ input#new-message, button#new-message-btn{
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 30px;
-  background: #000000;
+  background: #23599d;
   text-align: center;
   padding-top: 10px;
+}
+.login-widget .facebook-login{
+  background: #201c1e;
+}
+.login-widget a{
+  color: #fff;
+}
+.login-widget img {
+  width: 25px;
+  height: 25px;
 }
 
 @media (min-width: 768px){

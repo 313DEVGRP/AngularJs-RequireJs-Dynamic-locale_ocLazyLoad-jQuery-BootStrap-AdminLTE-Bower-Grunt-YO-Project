@@ -43,11 +43,11 @@
     display: inline-block;
     margin-left: 12px;
 }
-.news-list .item-img img{
+.news-item-info .item-img{
     max-width: 100%;
     max-height: 100%;
 }
-.news-item-info .item-img{
+.news-item-info .item-img img{
   float: left;
   width: 400px;
   height: auto;
@@ -541,7 +541,10 @@ span.info-box-icon{
 .logo_lg{
     display: block;
 }
-
+.background-dark .logo img {
+    width: 100%;
+    max-width: 200px;
+}
 .page-title img{
     width: 100%;
     max-width: 30px;
@@ -585,9 +588,6 @@ span.info-box-icon{
         width: 100%;
         display: block;
         margin: 0 -12px;
-    }
-    .news-list .item-img img{
-        height: auto;
     }
     .body.is-spec-box{
         width: 100%;

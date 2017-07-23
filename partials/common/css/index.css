@@ -552,6 +552,12 @@ span.info-box-icon{
     width: 100%;
     max-width: 30px;
 }
+.widget.tiny-x2{
+  height: 450px;
+}
+input#new-message, button#new-message-btn{
+  height: 60px;
+}
 
 @media (min-width: 768px){
     .background-dark .logo .logo_mini {

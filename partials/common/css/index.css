@@ -560,6 +560,51 @@ input#new-message, button#new-message-btn{
 .txt-left{
   text-align: left;
 }
+.login-widget .naver-login {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 30px;
+  background: #00c723;
+  text-align: center;
+  padding-top: 10px;
+}
+.login-widget .kakao-login {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 30px;
+  background: #fff100;
+  text-align: center;
+  padding-top: 10px;
+}
+.login-widget .twitter-login {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 30px;
+  background: #00bcf8;
+  text-align: center;
+  padding-top: 10px;
+}
+.login-widget .linkedin-login {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 30px;
+  background: #0086c8;
+  text-align: center;
+  padding-top: 10px;
+}
+.login-widget .google-plus-login {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 30px;
+  background: #000000;
+  text-align: center;
+  padding-top: 10px;
+}
 
 @media (min-width: 768px){
     .background-dark .logo .logo_mini {

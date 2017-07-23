@@ -45,13 +45,12 @@
 }
 .news-item-info .item-img{
     float: left;
-    width: 400px;
-    height: auto;
+    width: 100%;
     border: 1px solid rgba(51,51,51,0.25);
 }
 .news-item-info .item-img img{
-    max-width: 100%;
-    max-height: 100%;
+    width: 100%;
+    min-height: 400px;
 }
 .news-list .news-item-info{
     margin-left: 0;
@@ -547,7 +546,7 @@ span.info-box-icon{
 }
 .logo {
   position: absolute;
-  left:17px;
+  left:10px;
 }
 .page-title img{
     width: 100%;
@@ -558,7 +557,6 @@ span.info-box-icon{
     .background-dark .logo .logo_mini {
         display: block;
         width: 48px;
-        margin-left: 11px;
     }
     .background-dark .logo .logo_lg{
         display: none;
@@ -578,7 +576,7 @@ span.info-box-icon{
         // margin: 8px 13px 10px;
         font-size: 17px;
     }
-    .logo h4 > img{
+    .background-dark .logo img{
         width: inherit;
         max-width: 150px;
     }

@@ -601,12 +601,12 @@ input#new-message, button#new-message-btn{
   -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 30px;
-  background: #23599d;
+  background: #201c1e;
   text-align: center;
   padding-top: 10px;
 }
 .login-widget .facebook-login{
-  background: #201c1e;
+  background: #23599d;
 }
 .login-widget a{
   color: #fff;
@@ -614,6 +614,9 @@ input#new-message, button#new-message-btn{
 .login-widget img {
   width: 25px;
   height: 25px;
+}
+.single-widget-container{
+  margin-top: -280px;
 }
 
 @media (min-width: 768px){

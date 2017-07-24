@@ -642,7 +642,7 @@ input#new-message, button#new-message-btn{
 
 @media (max-width: 767px) {
     .page-title{
-        margin: 8px 13px 10px;
+        //margin: 8px 13px 10px;
         font-size: 17px;
     }
     .background-dark .logo img{

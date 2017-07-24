@@ -699,6 +699,10 @@ input#new-message, button#new-message-btn{
         top:40px;
         left: 10px;
     }
+    .background-dark .logo{
+      position: absolute;
+      left: -10px;
+    }
 }
 @media all and (max-width: 990px) {
     .news-list.stretchable>li,

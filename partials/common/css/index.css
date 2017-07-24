@@ -608,8 +608,11 @@ input#new-message, button#new-message-btn{
 .login-widget .facebook-login{
   background: #23599d;
 }
-.login-widget a{
+.login-widget footer a{
   color: #fff;
+  text-align: left;
+  display: block;
+  padding-left: 120px;
 }
 .login-widget img {
   width: 25px;
@@ -637,9 +640,9 @@ input#new-message, button#new-message-btn{
     }
 }
 
-@media all and (max-width: 767px) {
+@media (max-width: 767px) {
     .page-title{
-        // margin: 8px 13px 10px;
+        margin: 8px 13px 10px;
         font-size: 17px;
     }
     .background-dark .logo img{
@@ -679,6 +682,13 @@ input#new-message, button#new-message-btn{
     }
     .reduce-text {
         display: none;
+    }
+    .background-dark .logo{
+      position: absolute;
+      left: -20px;
+    }
+    .login-widget footer a{
+      padding-left: 65px;
     }
 }
 

@@ -701,7 +701,7 @@ input#new-message, button#new-message-btn{
     }
     .background-dark .logo{
       position: absolute;
-      left: -10px;
+      left: 10px;
     }
 }
 @media all and (max-width: 990px) {

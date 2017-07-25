@@ -221,7 +221,7 @@ h3.item-C{
     border-left:2px solid #dd4b39;
 }
 .chat-message-body.msg-red .arrow {
-    border-right:5px solid #dd4b39;
+    border-right:5px solid #e5603b;
 }
 .chat-message-body.msg-green{
     border-left:2px solid #46c377;
@@ -502,7 +502,7 @@ span.info-box-icon{
     margin-left: -16px;
 }
 .item-A {
-  background-color: #dd4b39;
+  background-color: #e5603b;
   color: #fff;
 }
 

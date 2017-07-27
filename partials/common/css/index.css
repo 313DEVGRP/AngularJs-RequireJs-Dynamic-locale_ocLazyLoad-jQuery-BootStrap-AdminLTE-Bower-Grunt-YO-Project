@@ -633,7 +633,7 @@ input#new-message, button#new-message-btn{
 }
 @media (min-width: 1050px){
    .background-dark .logo .logo_mini {
-         display: none;
+        display: none;
     }
     .background-dark .logo .logo_lg{
         display: block;

@@ -18,7 +18,7 @@ function callAjax(form, url, target, Type, returnType) {
       $(target).html(responseText);
     },
     error: function() {
-      notifycationAlert("error");
+      //error callback
     },
     complete: function(){
       //notifycationAlert("success");

@@ -13,9 +13,26 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta charset="utf-8">
-  <script src="/light-blue/lib/jquery/jquery-2.0.3.min.js"> </script>
+  <script src="/light-blue/lib/jquery/jquery-2.0.3.min.js"></script>
   <script src="/light-blue/lib/backbone/underscore-min.js"></script>
-  <script src="/light-blue/js/settings.js"> </script>
+  <script src="/light-blue/js/settings.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      $.ajax({
+        async: false,
+        type: 'GET',
+        url: "/security/csrf.do",
+        success: function (r) {
+          var token = r._csrf_token;
+          var header = r._csrf_headerName;
+          $('_csrf').text(header);
+          $(document).ajaxSend(function (e, xhr, options) {
+            xhr.setRequestHeader(header, token);
+          });
+        }
+      });
+    });
+    </script>
 </head>
 <body>
 <div class="single-widget-container">
@@ -72,6 +89,7 @@
       <div class="facebook-login">
 
           <form name='facebookSocialloginForm' action="/auth/facebook?scope=email,user_about_me,user_birthday" method='POST'>
+            <input type="hidden" name="_csrf" value="" />
             <button type="submit">
               <span><i class="fa fa-face fa-lg"><img src="/partials/common/img/custom/facebook_ico.png" alt="페이스북"></i> LogIn with Facebook</span>
             </button>

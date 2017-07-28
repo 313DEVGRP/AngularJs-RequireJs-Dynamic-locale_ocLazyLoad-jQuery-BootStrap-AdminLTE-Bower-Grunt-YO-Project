@@ -18,19 +18,12 @@
   <script src="/light-blue/js/settings.js"></script>
   <script type="text/javascript">
     $(function() {
-      $.ajax({
-        async: false,
-        type: 'GET',
-        url: "/security/csrf.do",
-        success: function (r) {
-          var token = r._csrf_token;
-          var header = r._csrf_headerName;
-          $('_csrf').text(header);
-          $(document).ajaxSend(function (e, xhr, options) {
-            xhr.setRequestHeader(header, token);
-          });
-        }
+
+      $.getJSON("/security/csrf.do", function(json) {
+        var csrfValue = $("input[name=_csrf]:hidden");
+        csrfValue.val(json._csrf_token);
       });
+
     });
     </script>
 </head>

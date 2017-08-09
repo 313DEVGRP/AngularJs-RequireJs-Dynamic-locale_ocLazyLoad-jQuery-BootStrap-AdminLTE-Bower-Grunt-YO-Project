@@ -724,3 +724,16 @@ input#new-message, button#new-message-btn{
         margin-top: 4px!important;
         }
 }
+
+.loginButton {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+  color: #fff;
+  text-align: left;
+  display: block;
+  padding-left: 120px;
+}

@@ -13,17 +13,15 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta charset="utf-8">
-  <script src="/light-blue/lib/jquery/jquery-2.0.3.min.js"></script>
+  <script src="/lib/jquery/dist/jquery.min.js"></script>
   <script src="/light-blue/lib/backbone/underscore-min.js"></script>
   <script src="/light-blue/js/settings.js"></script>
   <script type="text/javascript">
     $(function() {
-
       $.getJSON("/security/csrf.do", function(json) {
         var csrfValue = $("input[name=_csrf]:hidden");
         csrfValue.val(json._csrf_token);
       });
-
     });
     </script>
 </head>
@@ -64,7 +62,7 @@
           </div>
         </fieldset>
         <div class="form-actions">
-          <button type="submit" class="btn btn-block btn-lg btn-danger">
+          <button type="submit">
             <span class="small-circle"><i class="fa fa-caret-right"></i></span>
             <small>Sign In</small>
           </button>
@@ -83,7 +81,7 @@
 
           <form name='facebookSocialloginForm' action="/auth/facebook?scope=email,user_about_me,user_birthday" method='POST'>
             <input type="hidden" name="_csrf" value="" />
-            <button type="submit">
+            <button type="submit" class="loginButton">
               <span><i class="fa fa-face fa-lg"><img src="/partials/common/img/custom/facebook_ico.png" alt="페이스북"></i> LogIn with Facebook</span>
             </button>
           </form>

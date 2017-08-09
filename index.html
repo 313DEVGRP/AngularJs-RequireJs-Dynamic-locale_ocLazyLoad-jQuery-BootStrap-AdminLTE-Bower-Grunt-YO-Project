@@ -1147,5 +1147,37 @@
   <% } %>
 </script>
 
+<script type="text/javascript">
+  $(function() {
+    $.getJSON("/security/csrf.do", function(json) {
+      var csrfValue = $("input[name=_csrf]:hidden");
+      csrfValue.val(json._csrf_token);
+    });
+
+    var getUrlParameter = function getUrlParameter(sParam) {
+      var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+        sURLVariables = sPageURL.split('&'),
+        sParameterName,
+        i;
+
+      for (i = 0; i < sURLVariables.length; i++) {
+        sParameterName = sURLVariables[i].split('=');
+
+        if (sParameterName[0] === sParam) {
+          return sParameterName[1] === undefined ? true : sParameterName[1];
+        }
+      }
+      return false;
+    };
+
+    var loginResult = getUrlParameter('loginResult');
+    if(loginResult){
+      alert("login complete");
+    }else{
+      //alert("");
+    }
+  });
+</script>
+
 </body>
 </html>

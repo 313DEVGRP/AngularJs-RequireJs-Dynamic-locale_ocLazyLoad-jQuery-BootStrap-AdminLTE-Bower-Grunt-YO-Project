@@ -11,7 +11,7 @@ define(['projectWeb'], function () {
                 getData: function (url, method, param, callbackFunc) {
                     $http({
                         method: 'GET',
-                        url: "http://www.313.co.kr/com/ext/jstree/springmyBatis/core/csrf.do",
+                        url: "/api/jsTreeServiceFramework/security/csrf.do",
                     }).success(function (data) {
                         var tokenName = data._csrf_headerName;
                         var tokenValue = data._csrf_token;

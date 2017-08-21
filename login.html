@@ -18,7 +18,7 @@
   <script src="/light-blue/js/settings.js"></script>
   <script type="text/javascript">
     $(function() {
-      $.getJSON("/security/csrf.do", function(json) {
+      $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function(json) {
         var csrfValue = $("input[name=_csrf]:hidden");
         csrfValue.val(json._csrf_token);
       });

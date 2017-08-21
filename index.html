@@ -82,12 +82,15 @@
 <nav id="sidebar" class="sidebar nav-collapse collapse">
   <ul id="side-nav" class="side-nav">
     <li class="active">
-      <a href="#"><i class="fa fa-home"></i> <span class="name">진행중인 비교</span></a>
+      <a href="#">
+        <i class="fa fa-home"></i> <span class="name" id="menuMainTitle">진행중인 비교</span>
+      </a>
     </li>
     <li class="panel">
-      <a class="accordion-toggle collapsed" data-toggle="collapse"
-         data-parent="#side-nav" href="#forms-collapse"><i class="fa fa-edit"></i> <span
-        class="name">이전비교 리스트</span></a>
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#forms-collapse">
+        <i class="fa fa-edit"></i> <span class="name" id="menuSubTitle">이전비교 리스트</span>
+      </a>
+
       <ul id="forms-collapse" class="panel-collapse collapse">
         <li><a href="#">의류/잡화/뷰티</a></li>
         <li><a href="#">식품/유아동</a></li>
@@ -1190,7 +1193,7 @@ spear네
 
 <script type="text/javascript">
   $(function () {
-    $.getJSON("/security/csrf.do", function (json) {
+    $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function (json) {
       var csrfValue = $("input[name=_csrf]:hidden");
       csrfValue.val(json._csrf_token);
     });
@@ -1203,7 +1206,6 @@ spear네
 
       for (i = 0; i < sURLVariables.length; i++) {
         sParameterName = sURLVariables[i].split('=');
-
         if (sParameterName[0] === sParam) {
           return sParameterName[1] === undefined ? true : sParameterName[1];
         }
@@ -1211,6 +1213,7 @@ spear네
       return false;
     };
 
+    // 로그인 트랜잭션
     var loginResult = getUrlParameter('loginResult');
     if (loginResult) {
       //alert("login complete");
@@ -1220,6 +1223,18 @@ spear네
       //alert("not login");
       $("#account").attr("href", "/login.html");
     }
+
+    // 메뉴 API
+    $.getJSON("/api/rivalWar/menu/getChildNode.do", function (json) {
+      $.each(json, function(entryIndex, entry) {
+        if(entryIndex == 0){
+          $("#menuMainTitle").html(entry.c_title);
+        }else if(entryIndex == 1){
+          $("#menuSubTitle").html(entry.c_title);
+        }
+      });
+    });
+
   });
 </script>
 

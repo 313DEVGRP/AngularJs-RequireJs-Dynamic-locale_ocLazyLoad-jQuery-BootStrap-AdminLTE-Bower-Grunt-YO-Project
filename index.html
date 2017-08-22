@@ -81,31 +81,22 @@
 </div>
 <nav id="sidebar" class="sidebar nav-collapse collapse">
   <ul id="side-nav" class="side-nav">
-    <li class="active">
-      <a href="#">
-        <i class="fa fa-home"></i> <span class="name" id="menuMainTitle"></span>
+    <li class="active panel">
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#recent-menu-levels-collapse">
+        <i class="fa fa-home"></i>
+        <span class="name" id="menuMainTitle"></span>
       </a>
+      <ul id="recent-menu-levels-collapse" class="panel-collapse collapse">
+
+      </ul>
     </li>
     <li class="panel">
-      <a class="accordion-toggle collapsed" data-toggle="collapse"
-         data-parent="#side-nav" href="#menu-levels-collapse"><i class="fa fa-code-fork"></i> <span class="name" id="menuSubTitle"></span></a>
+      <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#side-nav" href="#menu-levels-collapse">
+        <i class="fa fa-code-fork"></i>
+        <span class="name" id="menuSubTitle"></span>
+      </a>
       <ul id="menu-levels-collapse" class="panel-collapse collapse">
-        <li><a href="#">의류/잡화/뷰티</a></li>
-        <li><a href="#">식품/유아동</a></li>
-        <li><a href="#">가구/생필품</a></li>
-        <li><a href="#">레저/자동차</a></li>
-        <li><a href="#">디지털/가전/컴퓨터</a></li>
-        <li><a href="#">도서/여행</a></li>
-        <li><a href="#">취미/반려동물</a></li>
-        <li class="panel">
-          <a class="accordion-toggle collapsed" data-toggle="collapse"
-             data-parent="#menu-levels-collapse" href="#sub-menu-1-collapse">Item 1.3</a>
-          <ul id="sub-menu-1-collapse" class="panel-collapse collapse">
-            <li><a href="#">Item 2.1</a></li>
-            <li><a href="#">Item 2.2</a></li>
-            <li><a href="#">Item 2.3</a></li>
-          </ul>
-        </li>
+
       </ul>
     </li>
   </ul>
@@ -1216,12 +1207,59 @@
     }
 
     // 메뉴 API
-    $.getJSON("/api/rivalWar/menu/getChildNode.do", function (json) {
-      $.each(json, function(entryIndex, entry) {
+    $.getJSON("/api/rivalWar/menu/getRootNode.do", function (json) {
+      $.each(json, function(entryIndex, entryList) {
         if(entryIndex == 0){
-          $("#menuMainTitle").html(entry.c_title);
+          $("#menuMainTitle").html(entryList.c_title);
+
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+          $.getJSON("/api/rivalWar/menu/getRecentList.do", function(recentData) {
+            $('#recent-menu-levels-collapse').empty(); //패널(div)의 내용 초기화
+            var table = "";
+
+            //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
+            $.each(recentData, function(recentIndex, recentEntry) {
+              table += '<li><a href="#">' + recentEntry.c_title + '</a></li>';
+            });
+            table += "<li class='panel'>";
+            table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-1-collapse'>Item 1.3</a>";
+            table += "<ul id='sub-menu-1-collapse' class='panel-collapse collapse'>";
+            table += "<li><a href='#'>Item 2.1</a></li>";
+            table += "<li><a href='#'>Item 2.2</a></li>";
+            table += "<li><a href='#'>Item 2.3</a></li>";
+            table += "</ul>";
+            table += "</li>";
+
+            $('#recent-menu-levels-collapse').append(table); //패널에 추가하기
+          });
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+
+
         }else if(entryIndex == 1){
-          $("#menuSubTitle").html(entry.c_title);
+          $("#menuSubTitle").html(entryList.c_title);
+
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+          $.getJSON("/api/rivalWar/menu/getBranchNode.do", function(data) {
+            $('#menu-levels-collapse').empty(); //패널(div)의 내용 초기화
+            var table = "";
+
+            //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
+            $.each(data, function(index, entry) {
+              table += '<li><a href="#">' + entry.c_title + '</a></li>';
+            });
+            table += "<li class='panel'>";
+            table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-1-collapse'>Item 1.3</a>";
+            table += "<ul id='sub-menu-1-collapse' class='panel-collapse collapse'>";
+            table += "<li><a href='#'>Item 2.1</a></li>";
+            table += "<li><a href='#'>Item 2.2</a></li>";
+            table += "<li><a href='#'>Item 2.3</a></li>";
+            table += "</ul>";
+            table += "</li>";
+
+            $('#menu-levels-collapse').append(table); //패널에 추가하기
+          });
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+
         }
       });
     });

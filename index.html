@@ -1173,7 +1173,7 @@
       }
 
       // 메뉴 API
-      $.getJSON("/api/rivalWar/menu/getRootNode.do", function (json) {
+      $.getJSON("/api/rivalWar/menu/getRootMenuCategories.do", function (json) {
         $.each(json, function (entryIndex, entryList) {
           if (entryIndex == 0) {
             $("#menuMainTitle").html(entryList.c_title);
@@ -1205,7 +1205,7 @@
             $("#menuSubTitle").html(entryList.c_title);
 
             ///////////////////////////////////////////////////////////////////////////////////////////////
-            $.getJSON("/api/rivalWar/menu/getBranchNode.do", function (data) {
+            $.getJSON("/api/rivalWar/menu/getClassifiedMenu.do", function (data) {
               $('#menu-levels-collapse').empty(); //패널(div)의 내용 초기화
               var table = "";
 

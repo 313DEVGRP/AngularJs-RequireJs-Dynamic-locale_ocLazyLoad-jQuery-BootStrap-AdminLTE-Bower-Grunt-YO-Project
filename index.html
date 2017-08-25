@@ -1185,7 +1185,7 @@
 
               //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
               $.each(recentData, function (recentIndex, recentEntry) {
-                table += '<li><a href="#">' + recentEntry.c_title + '</a></li>';
+                table += "<li><a href='#'>" + recentEntry.c_title + " <span class='label label-important'>new</span></a></li>";
               });
               table += "<li class='panel'>";
               table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-1-collapse'>Item 1.3</a>";

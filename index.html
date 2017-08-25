@@ -1203,8 +1203,16 @@
 
               //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
               $.each(data, function (index, entry) {
-                if("NoChild" === JSON.stringify(entry.childcount)){
+                var compareStr = JSON.stringify(entry.childcount);
+                var checkStr = new String();
+                checkStr = compareStr.toString().replace(/"/g, "");
+
+                console.log(new String(checkStr).valueOf());
+                console.log(new String("NoChild").valueOf());
+                if("NoChild" == new String(checkStr).valueOf()){
+
                   table += "<li><a href='#'>" + entry.c_title + "</a></li>";
+
                 }else{
                   $.getJSON("/api/rivalWar/menu/getChildMenu.do?c_id="+entry.c_id, function (childData) {
                     table += "<li class='panel'>";

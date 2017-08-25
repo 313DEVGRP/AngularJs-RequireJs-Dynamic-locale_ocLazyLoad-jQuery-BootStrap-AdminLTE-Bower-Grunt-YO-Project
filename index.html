@@ -1207,12 +1207,8 @@
                 var checkStr = new String();
                 checkStr = compareStr.toString().replace(/"/g, "");
 
-                console.log(new String(checkStr).valueOf());
-                console.log(new String("NoChild").valueOf());
                 if("NoChild" == new String(checkStr).valueOf()){
-
                   table += "<li><a href='#'>" + entry.c_title + "</a></li>";
-
                 }else{
                   $.getJSON("/api/rivalWar/menu/getChildMenu.do?c_id="+entry.c_id, function (childData) {
                     table += "<li class='panel'>";

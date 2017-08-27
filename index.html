@@ -1213,7 +1213,7 @@
                   table += "<li class='panel'>";
                   table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-"+index+"-collapse'>"+entry.c_title+"</a>";
                   $.getJSON("/api/rivalWar/menu/getChildMenu.do?c_id="+entry.c_id, function (childData) {
-
+                    console.log("recursive getJson");
                     table += "<ul id='sub-menu-"+index+"-collapse' class='panel-collapse collapse'>";
                     $.each(childData, function (childIndex, childEntry) {
                       table += "<li><a href='#'>"+childEntry.c_title+"</a></li>";

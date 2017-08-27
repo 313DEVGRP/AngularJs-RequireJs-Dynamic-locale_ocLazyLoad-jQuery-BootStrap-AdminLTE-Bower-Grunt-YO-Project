@@ -1197,7 +1197,7 @@
             $("#menuSubTitle").html(entryList.c_title);
 
             ///////////////////////////////////////////////////////////////////////////////////////////////
-            $.getJSON("/api/rivalWar/menu/getClassifiedMenu.do", function (data) {
+            $.getJSON("/api/rivalWar/menu/getClassifiedMenu.do").done(function (data) {
               $('#menu-levels-collapse').empty(); //패널(div)의 내용 초기화
               var table = "";
 

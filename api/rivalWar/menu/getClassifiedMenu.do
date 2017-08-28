@@ -12,7 +12,7 @@
     "multiCounter" : 0,
     "status" : 0,
     "ajaxMessage" : null,
-    "childcount" : "NoChild",
+    "childcount" : "NoChild1",
     "searchStr" : null,
     "idif" : 0,
     "ldif" : 0,

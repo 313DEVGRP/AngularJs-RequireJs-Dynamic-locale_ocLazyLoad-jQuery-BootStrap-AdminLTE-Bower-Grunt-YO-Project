@@ -1140,6 +1140,164 @@
   </script>
 
   <script type="text/javascript">
+
+    function childMenuCallAjax(table, c_id) {
+
+
+      /*
+
+       $.getJSON("/api/rivalWar/menu/getChildMenu.do?c_id=" + entry.c_id, function (childData) {
+       console.log("recursive getJson");
+       table += "<ul id='sub-menu-" + index + "-collapse' class='panel-collapse collapse'>";
+       $.each(childData, function (childIndex, childEntry) {
+       table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
+       });
+       table += "</ul>";
+       });
+
+       */
+
+      $.ajax({
+        url : "/api/rivalWar/menu/getChildMenu.do?c_id=" + c_id,
+        dataType : 'json',
+        timeout : 7313,
+        global : false,
+        contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
+        beforeSend: null,
+        async : true,
+        cache: false,
+        success: function(childData) {
+          console.log("recursive getJson");
+          $.each(childData, function (childIndex, childEntry) {
+            table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
+          });
+
+        },
+        error: function() {
+          //error callback
+        },
+        complete: function(){
+          //notifycationAlert("success");
+        },
+        beforeSend: function(){
+          //notifycationAlert("notice");
+        },
+        statusCode: {
+          404: function() {
+            alert( "page not found" );
+          }
+        },
+        processDataBoolean: true,
+        ifModified : true
+      });
+      //dataType : xml , html , json , jsonp , script , text
+    }
+
+    function rootMenuAjaxCall(jsonData){
+      $(jsonData).each(function (entryIndex, entryList){
+        if (entryIndex == 0) {
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+          $("#menuMainTitle").html(entryList.c_title);
+          $.ajax({
+            url : '/api/rivalWar/menu/getRecentList.do',
+            dataType : 'json',
+            timeout : 7313,
+            global : false,
+            contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
+            beforeSend: null,
+            async : true,
+            cache: false,
+            success: function(recentData) {
+              $('#recent-menu-levels-collapse').empty(); //패널(div)의 내용 초기화
+              var table = "";
+              //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
+              $.each(recentData, function (recentIndex, recentEntry) {
+                table += "<li><a href='#'>" + recentEntry.c_title + " <span class='label label-important'>new</span></a></li>";
+              });
+              $('#recent-menu-levels-collapse').append(table); //패널에 추가하기
+            },
+            error: function() {
+              alert( "API Server Error" );
+            },
+            complete: function(){
+              //notifycationAlert("success");
+            },
+            beforeSend: function(){
+              //notifycationAlert("notice");
+            },
+            statusCode: {
+              404: function() {
+                alert( "page not found" );
+              }
+            },
+            processDataBoolean: true,
+            ifModified : true
+          });
+          //dataType : xml , html , json , jsonp , script , text
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+        } else if (entryIndex == 1) {
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+          $("#menuSubTitle").html(entryList.c_title);
+          $.ajax({
+            url : '/api/rivalWar/menu/getClassifiedMenu.do',
+            dataType : 'json',
+            timeout : 7313,
+            global : false,
+            contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
+            beforeSend: null,
+            async : true,
+            cache: false,
+            success: function(categoryData) {
+
+              $('#menu-levels-collapse').empty(); //패널(div)의 내용 초기화
+              var table = "";
+
+              //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
+              $.each(categoryData, function (categoryIndex, categoryEntry) {
+                var categoryCompareStr = JSON.stringify(categoryEntry.childcount);
+                var categoryCheckStr = new String();
+                categoryCheckStr = categoryCompareStr.toString().replace(/"/g, "");
+                console.log(categoryCheckStr);
+                if ("NoChild" == new String(categoryCheckStr).valueOf()) {
+
+                  table += "<li><a href='#'>" + categoryEntry.c_title + "</a></li>";
+
+                } else {
+                  table += "<li class='panel'>";
+                  table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-" + categoryIndex + "-collapse'>" + categoryEntry.c_title + "</a>";
+                  table += "<ul id='sub-menu-" + categoryIndex + "-collapse' class='panel-collapse collapse'>";
+
+                  childMenuCallAjax(table, categoryEntry.c_id);
+
+                  table += "</ul>";
+                  table += "</li>";
+                }
+              });
+              $('#menu-levels-collapse').append(table); //패널에 추가하기
+            },
+            error: function() {
+              alert( "API Server Error" );
+            },
+            complete: function(){
+              //notifycationAlert("success");
+            },
+            beforeSend: function(){
+              //notifycationAlert("notice");
+            },
+            statusCode: {
+              404: function() {
+                alert( "page not found" );
+              }
+            },
+            processDataBoolean: true,
+            ifModified : true
+          });
+          //dataType : xml , html , json , jsonp , script , text
+          ///////////////////////////////////////////////////////////////////////////////////////////////
+        }
+      });
+    }
+
     $(function () {
       $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function (json) {
         var csrfValue = $("input[name=_csrf]:hidden");
@@ -1173,64 +1331,38 @@
       }
 
       // 메뉴 API
-      $.getJSON("/api/rivalWar/menu/getRootMenuCategories.do", function (json) {
-        $.each(json, function (entryIndex, entryList) {
-          ///////////////////////////////////////////////////////////////////////////////////////////////
-          if (entryIndex == 0) {
 
-            $("#menuMainTitle").html(entryList.c_title);
-            $.getJSON("/api/rivalWar/menu/getRecentList.do", function (recentData) {
-
-              $('#recent-menu-levels-collapse').empty(); //패널(div)의 내용 초기화
-              var table = "";
-
-              //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
-              $.each(recentData, function (recentIndex, recentEntry) {
-                  table += "<li><a href='#'>" + recentEntry.c_title + " <span class='label label-important'>new</span></a></li>";
-              });
-              $('#recent-menu-levels-collapse').append(table); //패널에 추가하기
-            });
-            ///////////////////////////////////////////////////////////////////////////////////////////////
-
-
-          } else if (entryIndex == 1) {
-            $("#menuSubTitle").html(entryList.c_title);
-
-            ///////////////////////////////////////////////////////////////////////////////////////////////
-            $.getJSON("/api/rivalWar/menu/getClassifiedMenu.do").done(function (data) {
-              $('#menu-levels-collapse').empty(); //패널(div)의 내용 초기화
-              var table = "";
-
-              //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
-              $.each(data, function (index, entry) {
-                var compareStr = JSON.stringify(entry.childcount);
-                var checkStr = new String();
-                checkStr = compareStr.toString().replace(/"/g, "");
-
-                if("NoChild" == new String(checkStr).valueOf()){
-                  table += "<li><a href='#'>" + entry.c_title + "</a></li>";
-                }else{
-                  table += "<li class='panel'>";
-                  table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-"+index+"-collapse'>"+entry.c_title+"</a>";
-                  $.getJSON("/api/rivalWar/menu/getChildMenu.do?c_id="+entry.c_id, function (childData) {
-                    console.log("recursive getJson");
-                    table += "<ul id='sub-menu-"+index+"-collapse' class='panel-collapse collapse'>";
-                    $.each(childData, function (childIndex, childEntry) {
-                      table += "<li><a href='#'>"+childEntry.c_title+"</a></li>";
-                    });
-                    table += "</ul>";
-                  });
-                  table += "</li>";
-                }
-              });
-
-              $('#menu-levels-collapse').append(table); //패널에 추가하기
-            });
-            ///////////////////////////////////////////////////////////////////////////////////////////////
-
+      $.ajax({
+        url : '/api/rivalWar/menu/getRootMenuCategories.do',
+        dataType : 'json',
+        timeout : 7313,
+        global : false,
+        contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
+        beforeSend: null,
+        async : true,
+        cache: false,
+        success: function(jsonData) {
+          rootMenuAjaxCall(jsonData);
+        },
+        error: function() {
+          alert( "API Server Error" );
+        },
+        complete: function(){
+          //notifycationAlert("success");
+        },
+        beforeSend: function(){
+          //notifycationAlert("notice");
+        },
+        statusCode: {
+          404: function() {
+            alert( "page not found" );
           }
-        });
+        },
+        processDataBoolean: true,
+        ifModified : true
       });
+      //dataType : xml , html , json , jsonp , script , text
+
 
     });
   </script>

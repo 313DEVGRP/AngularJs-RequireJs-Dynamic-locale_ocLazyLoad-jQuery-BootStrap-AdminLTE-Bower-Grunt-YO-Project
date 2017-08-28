@@ -1144,19 +1144,7 @@
     function childMenuCallAjax(table, c_id) {
 
 
-      /*
-
-       $.getJSON("/api/rivalWar/menu/getChildMenu.do?c_id=" + entry.c_id, function (childData) {
-       console.log("recursive getJson");
-       table += "<ul id='sub-menu-" + index + "-collapse' class='panel-collapse collapse'>";
-       $.each(childData, function (childIndex, childEntry) {
-       table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
-       });
-       table += "</ul>";
-       });
-
-       */
-
+      var table = "";
       $.ajax({
         url : "/api/rivalWar/menu/getChildMenu.do?c_id=" + c_id,
         dataType : 'json',
@@ -1164,7 +1152,7 @@
         global : false,
         contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
         beforeSend: null,
-        async : true,
+        async : false,
         cache: false,
         success: function(childData) {
           console.log("recursive getJson");
@@ -1191,6 +1179,7 @@
         ifModified : true
       });
       //dataType : xml , html , json , jsonp , script , text
+      return table;
     }
 
     function rootMenuAjaxCall(jsonData){
@@ -1267,7 +1256,7 @@
                   table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-" + categoryIndex + "-collapse'>" + categoryEntry.c_title + "</a>";
                   table += "<ul id='sub-menu-" + categoryIndex + "-collapse' class='panel-collapse collapse'>";
 
-                  childMenuCallAjax(table, categoryEntry.c_id);
+                  table += childMenuCallAjax(table, categoryEntry.c_id);
 
                   table += "</ul>";
                   table += "</li>";

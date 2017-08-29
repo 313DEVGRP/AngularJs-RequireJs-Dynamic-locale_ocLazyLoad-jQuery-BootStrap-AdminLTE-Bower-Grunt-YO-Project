@@ -1,11 +1,11 @@
 function callAjax(paramType, param, url, Type, returnType, beforeSendCallback, successCallback, errorCallback, completeCallback) {
   var formQueryString;
-  if("html" == paramType){
+  if('html' == paramType){
     formQueryString = $(param).serialize();
-  }else if("json" == paramType){
+  }else if('json' == paramType){
     formQueryString = JSON.stringify(param);
   }else{
-    formQueryString = param;
+    url += '?'+paramType+'='+param;
   }
   $.ajax({
     url : url,

@@ -1144,43 +1144,22 @@
 
   <script type="text/javascript">
 
-    function childMenuCallAjax(target, c_id) {
+    function childMenuCallAjax(c_id) {
       var table = "";
-      $.ajax({
-        url : "/api/rivalWar/menu/getChildMenu.do?c_id=" + c_id,
-        dataType : 'json',
-        timeout : 7313,
-        global : false,
-        contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
-        beforeSend: null,
-        async : false,
-        cache: false,
-        success: function(childData) {
-          console.log("recursive getJson");
-          target();
-          $.each(childData, function (childIndex, childEntry) {
-            table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
-          });
-
-        },
-        error: function() {
-          //error callback
-        },
-        complete: function(){
-          //notifycationAlert("success");
-        },
-        beforeSend: function(){
-          //notifycationAlert("notice");
-        },
-        statusCode: {
-          404: function() {
-            alert( "page not found" );
-          }
-        },
-        processDataBoolean: true,
-        ifModified : true
-      });
-      //dataType : xml , html , json , jsonp , script , text
+      var ajaxParamType = 'c_id';
+      var ajaxParam = c_id;
+      var ajaxURL = '/api/rivalWar/menu/getChildMenu.do';
+      var ajaxType = 'GET';
+      var ajaxReturnType = 'json';
+      function beforeSendCallback(){ console.log("beforeSendCallback"); }
+      function successCallback (childData) {
+        $.each(childData, function (childIndex, childEntry) {
+          table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
+        });
+      }
+      function errorCallback(){ console.log("errorCallback"); }
+      function completeCallback(){ console.log("completeCallback"); }
+      callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
       return table;
     }
 
@@ -1304,9 +1283,7 @@
           table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-" + categoryIndex + "-collapse'>" + categoryEntry.c_title + "</a>";
           table += "<ul id='sub-menu-" + categoryIndex + "-collapse' class='panel-collapse collapse'>";
 
-          table += childMenuCallAjax(function target(){
-            console.log("check callback");
-          }, categoryEntry.c_id);
+          table += childMenuCallAjax(categoryEntry.c_id);
 
           table += "</ul>";
           table += "</li>";

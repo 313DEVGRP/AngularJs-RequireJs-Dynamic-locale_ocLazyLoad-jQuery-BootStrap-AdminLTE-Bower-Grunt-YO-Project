@@ -1062,6 +1062,9 @@
   <script src="light-blue/js/index.js"></script>
   <script src="light-blue/js/chat.js"></script>
 
+  <!-- jstree ajax api -->
+  <script src="/partials/common/js/callAjax.js"></script>
+
   <script type="text/template" id="message-template">
     <div class="sender pull-left">
       <div class="icon">
@@ -1141,7 +1144,7 @@
 
   <script type="text/javascript">
 
-    function childMenuCallAjax(table, c_id) {
+    function childMenuCallAjax(target, c_id) {
 
 
       var table = "";
@@ -1156,6 +1159,7 @@
         cache: false,
         success: function(childData) {
           console.log("recursive getJson");
+          target();
           $.each(childData, function (childIndex, childEntry) {
             table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
           });
@@ -1256,7 +1260,9 @@
                   table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-" + categoryIndex + "-collapse'>" + categoryEntry.c_title + "</a>";
                   table += "<ul id='sub-menu-" + categoryIndex + "-collapse' class='panel-collapse collapse'>";
 
-                  table += childMenuCallAjax(table, categoryEntry.c_id);
+                  table += childMenuCallAjax(function target(){
+                    console.log("check callback");
+                  }, categoryEntry.c_id);
 
                   table += "</ul>";
                   table += "</li>";
@@ -1321,37 +1327,18 @@
 
       // 메뉴 API
 
-      $.ajax({
-        url : '/api/rivalWar/menu/getRootMenuCategories.do',
-        dataType : 'json',
-        timeout : 7313,
-        global : false,
-        contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
-        beforeSend: null,
-        async : true,
-        cache: false,
-        success: function(jsonData) {
-          rootMenuAjaxCall(jsonData);
-        },
-        error: function() {
-          alert( "API Server Error" );
-        },
-        complete: function(){
-          //notifycationAlert("success");
-        },
-        beforeSend: function(){
-          //notifycationAlert("notice");
-        },
-        statusCode: {
-          404: function() {
-            alert( "page not found" );
-          }
-        },
-        processDataBoolean: true,
-        ifModified : true
-      });
-      //dataType : xml , html , json , jsonp , script , text
-
+      var ajaxParamType = 'noneParam';
+      var ajaxParam = '';
+      var ajaxURL = '/api/rivalWar/menu/getRootMenuCategories.do';
+      var ajaxType = 'GET';
+      var ajaxReturnType = 'json';
+      function beforeSendCallback(){ console.log("beforeSendCallback"); }
+      function successCallback (responseData) {
+        rootMenuAjaxCall(responseData);
+      }
+      function errorCallback(){ console.log("errorCallback"); }
+      function completeCallback(){ console.log("completeCallback"); }
+      callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
 
     });
   </script>

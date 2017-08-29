@@ -1,30 +1,34 @@
-function callAjax(form, url, target, Type, returnType) {
+function callAjax(paramType, param, url, Type, returnType, beforeSendCallback, successCallback, errorCallback, completeCallback) {
   var formQueryString;
-  if(form){
-    formQueryString = $(form).serialize();
+  if("html" == paramType){
+    formQueryString = $(param).serialize();
+  }else if("json" == paramType){
+    formQueryString = JSON.stringify(param);
+  }else{
+    formQueryString = param;
   }
   $.ajax({
     url : url,
-    type: Type,
+    type : Type,
     data : formQueryString,
     dataType : returnType,
     timeout : 7313,
     global : false,
     contentTypeString : 'application/x-www-form-urlencoded; charset=UTF-8',
     beforeSend: null,
-    async : true,
+    async : false,
     cache: false,
+    beforeSend: function(){
+      beforeSendCallback();
+    },
     success: function(responseText) {
-      $(target).html(responseText);
+      successCallback(responseText);
     },
     error: function() {
-      //error callback
+      errorCallback();
     },
     complete: function(){
-      //notifycationAlert("success");
-    },
-    beforeSend: function(){
-      //notifycationAlert("notice");
+      completeCallback();
     },
     statusCode: {
       404: function() {
@@ -34,13 +38,14 @@ function callAjax(form, url, target, Type, returnType) {
     processDataBoolean: true,
     ifModified : true
   });
+  //type // GET, POST, DELETE, PUT
   //dataType : xml , html , json , jsonp , script , text
 }
 
 /*
 function callAjax(callAjaxObj) {
 
-var form          = callAjaxObj.form || null;
+ var form          = callAjaxObj.form || null;
  var url           = callAjaxObj.url || null;
  var target        = callAjaxObj.target || null;
  var type          = callAjaxObj.type || 'get';
@@ -51,6 +56,7 @@ var form          = callAjaxObj.form || null;
  var processData   = callAjaxObj.processData || true;
  var crossDomain   = callAjaxObj.crossDomain || false;
  var async         = callAjaxObj.async || true;.
+
 accepts: The content type sent in the request header that tells the server what kind of response it will accept in return
 async: Set this options to false to perform a synchronous request
 beforeSend: A pre-request callback function that can be used to modify the jqXHR object before it is sent

@@ -1144,26 +1144,6 @@
 
   <script type="text/javascript">
 
-    function childMenuCallAjax(c_id) {
-      var table = "";
-      var ajaxParamType = 'c_id';
-      var ajaxParam = c_id;
-      var ajaxURL = '/api/rivalWar/menu/getChildMenu.do';
-      var ajaxType = 'GET';
-      var ajaxReturnType = 'json';
-      function beforeSendCallback(){ console.log("beforeSendCallback"); }
-      function successCallback (childData) {
-        $.each(childData, function (childIndex, childEntry) {
-          table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
-        });
-      }
-      function errorCallback(){ console.log("errorCallback"); }
-      function completeCallback(){ console.log("completeCallback"); }
-      callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
-      return table;
-    }
-
-
     $(function () {
       $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function (json) {
         var csrfValue = $("input[name=_csrf]:hidden");
@@ -1290,6 +1270,25 @@
         }
       });
       $('#menu-levels-collapse').append(table); //패널에 추가하기
+    }
+
+    function childMenuCallAjax(c_id) {
+      var table = "";
+      var ajaxParamType = 'c_id';
+      var ajaxParam = c_id;
+      var ajaxURL = '/api/rivalWar/menu/getChildMenu.do';
+      var ajaxType = 'GET';
+      var ajaxReturnType = 'json';
+      function beforeSendCallback(){ console.log("beforeSendCallback"); }
+      function successCallback (childData) {
+        $.each(childData, function (childIndex, childEntry) {
+          table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
+        });
+      }
+      function errorCallback(){ console.log("errorCallback"); }
+      function completeCallback(){ console.log("completeCallback"); }
+      callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
+      return table;
     }
   </script>
 

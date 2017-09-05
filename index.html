@@ -1189,6 +1189,20 @@
       function errorCallback(){ console.log("errorCallback"); }
       function completeCallback(){ console.log("completeCallback"); }
       callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
+
+      // Aggregate Result API
+      var aggregateParamType = 'noneParam';
+      var aggregateParam = '';
+      var aggregateURL = '/api/rivalWar/menu/getRootAggregateResult.do';
+      var aggregateType = 'GET';
+      var aggregateReturnType = 'json';
+      function aggregateBeforeSendCallback(){ console.log("beforeSendCallback"); }
+      function aggregateSuccessCallback (responseData) {
+        console.log(responseData)
+      }
+      function aggregateErrorCallback(){ console.log("errorCallback"); }
+      function aggregateCompleteCallback(){ console.log("completeCallback"); }
+      callAjax(aggregateParamType, aggregateParam, aggregateURL, aggregateType, aggregateReturnType, aggregateBeforeSendCallback, aggregateSuccessCallback, aggregateErrorCallback, aggregateCompleteCallback);
     });
 
     function rootMenuAjaxCall(jsonData){

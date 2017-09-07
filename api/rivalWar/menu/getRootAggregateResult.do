@@ -30,24 +30,34 @@
     "id" : "node_3"
   },
   "copyBooleanValue" : false,
+
+  "calTime" : "2017-09-06 15:13:00",
+
+  "topName" : "galxy 8",
   "topNumberOfAdvantages" : 0,
   "topLikeCount" : 0,
   "topTotalRegisteredPosts" : 0,
   "topRegisteredHashTag" : 0,
+  "topGraphPercent" : 0,
+  "topVersusScore" : 0,
+
+  "midName" : "LG V30",
   "midNumberOfAdvantages" : 0,
   "midLikeCount" : 0,
   "midTotalRegisteredPosts" : 0,
   "midRegisteredHashTag" : 0,
+  "midGraphPercent" : 0,
+  "midVersusScore" : 0,
+
+  "botName" : "iPhone 8",
   "botNumberOfAdvantages" : 0,
   "botLikeCount" : 0,
   "botTotalRegisteredPosts" : 0,
   "botRegisteredHashTag" : 0,
-  "topGraphPercent" : 0,
-  "midGraphPercent" : 0,
   "botGraphPercent" : 0,
-  "topVersusScore" : 0,
-  "midVersusScore" : 0,
   "botVersusScore" : 0,
+
+
   "totalTraffic" : 0,
   "uniqueVisit" : 0,
   "revisitCount" : 0,

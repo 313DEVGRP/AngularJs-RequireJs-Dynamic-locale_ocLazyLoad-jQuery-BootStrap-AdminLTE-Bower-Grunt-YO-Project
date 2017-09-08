@@ -275,9 +275,9 @@
                       <div class="info-box-content">
                         <span class="info-box-text" id="botNode"></span>
                         <div class="progress">
-                          <div class="progress-bar" style="width: 70%"></div>
+                          <div class="progress-bar" id="botNodeGraph"></div>
                         </div>
-                        <span class="progress-description"> (55%)</span>
+                        <span class="progress-description" id="botNodeTitle"></span>
                       </div>
                     </div>
                   </div>
@@ -290,9 +290,9 @@
                       <div class="info-box-content">
                         <span class="info-box-text" id="midNode"></span>
                         <div class="progress">
-                          <div class="progress-bar" style="width: 20%"></div>
+                          <div class="progress-bar" id="midNodeGraph"></div>
                         </div>
-                        <span class="progress-description"> (30%)</span>
+                        <span class="progress-description" id="midNodeTitle"></span>
                       </div>
                     </div>
                   </div>
@@ -303,11 +303,11 @@
                     <div class="info-box item-C">
                       <span class="info-box-icon"><i class="fa fa-thumbs-o-up"></i></span>
                       <div class="info-box-content">
-                        <span class="info-box-text" id="highNode"></span>
+                        <span class="info-box-text" id="topNode"></span>
                         <div class="progress">
-                          <div class="progress-bar" style="width: 70%"></div>
+                          <div class="progress-bar" id="topNodeGraph"></div>
                         </div>
-                        <span class="progress-description"> (15%)</span>
+                        <span class="progress-description" id="topNodeTitle"></span>
                       </div>
                     </div>
                   </div>
@@ -1199,9 +1199,18 @@
       function aggregateBeforeSendCallback(){ console.log("beforeSendCallback"); }
       function aggregateSuccessCallback (responseData) {
         console.log(responseData)
-        $("#highNode").html("우위 스펙 갯수: " + responseData.topNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.topLikeCount + "<br>총 등록 글 : " + responseData.topTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.topRegisteredHashTag);
+        $("#topNode").html("우위 스펙 갯수: " + responseData.topNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.topLikeCount + "<br>총 등록 글 : " + responseData.topTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.topRegisteredHashTag);
         $("#midNode").html("우위 스펙 갯수: " + responseData.midNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.midLikeCount + "<br>총 등록 글 : " + responseData.midTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.midRegisteredHashTag);
         $("#botNode").html("우위 스펙 갯수: " + responseData.botNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.botLikeCount + "<br>총 등록 글 : " + responseData.botTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.botRegisteredHashTag);
+
+        $("#topNodeTitle").html(responseData.topName + " (" + responseData.topGraphPercent + "%)");
+        $("#topNodeGraph").css("width", responseData.topGraphPercent+"%");
+
+        $("#midNodeTitle").html(responseData.midName + " (" + responseData.midGraphPercent + "%)");
+        $("#midNodeGraph").css("width", responseData.midGraphPercent+"%");
+
+        $("#botNodeTitle").html(responseData.botName + " (" + responseData.botGraphPercent + "%)");
+        $("#botNodeGraph").css("width", responseData.botGraphPercent+"%");
       }
       function aggregateErrorCallback(){ console.log("errorCallback"); }
       function aggregateCompleteCallback(){ console.log("completeCallback"); }

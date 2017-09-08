@@ -318,19 +318,19 @@
                 <!-- S: versus scroe chart -->
                 <div class="compare-grap">
                   <div class="left">
-                    <span class="point">25,504 points</span>
+                    <span class="point" id="botScore"></span>
                     <div class="item-A"></div>
                     <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
                   </div>
                   <span class="grap-logo"><img src="partials/common/img/custom/img-grap-logo01.png" alt="logo"></span>
                   <div class="center">
-                    <span class="point">25,504 points</span>
+                    <span class="point" id="midScore"></span>
                     <div class="item-B"></div>
                     <span class="text">Top50 <em class="reduce-text">Versus Score</em></span>
                   </div>
                   <span class="grap-logo"><img src="partials/common/img/custom/img-grap-logo02.png" alt="logo"></span>
                   <div class="right">
-                    <span class="point">25,504 points</span>
+                    <span class="point" id="topScore"></span>
                     <div class="item-C"></div>
                     <span class="text"><span>Top50 <em class="reduce-text">Versus Score</em></span></span>
                   </div>
@@ -344,19 +344,19 @@
                 <div class="row">
                   <div class="col-sm-3 col-xs-6">
                     <div class="key"><i class="eicon-users"></i> Total Traffic</div>
-                    <div class="value">24 541 <i class="fa fa-caret-up color-green"></i></div>
+                    <div class="value" id="totalTraffic"></div>
                   </div>
                   <div class="col-sm-3 col-xs-6">
-                    <div class="key"><i class="eicon-user"></i> Unique Visits</div>
-                    <div class="value">14 778 <i class="fa fa-caret-down color-red"></i></div>
+                    <div class="key"><i class="eicon-user"></i> Unique Visit</div>
+                    <div class="value" id="uniqueVisit"></div>
                   </div>
                   <div class="col-sm-3 col-xs-6">
-                    <div class="key"><i class="fa fa-plus-square"></i> Revenue</div>
-                    <div class="value">$3 583.18 <i class="fa fa-caret-up color-green"></i></div>
+                    <div class="key"><i class="fa fa-plus-square"></i> Revisit Count</div>
+                    <div class="value" id="revisitCount"></div>
                   </div>
                   <div class="col-sm-3 col-xs-6">
-                    <div class="key"><i class="fa fa-user"></i> Total Sales</div>
-                    <div class="value">$59 871.12 <i class="fa fa-caret-down color-red"></i></div>
+                    <div class="key"><i class="fa fa-user"></i> Page View</div>
+                    <div class="value" id="pageView"></div>
                   </div>
                 </div>
                 <!-- E: traffic table -->
@@ -1211,6 +1211,16 @@
 
         $("#botNodeTitle").html(responseData.botName + " (" + responseData.botGraphPercent + "%)");
         $("#botNodeGraph").css("width", responseData.botGraphPercent+"%");
+
+        $("#topScore").html(responseData.topVersusScore + " points");
+        $("#midScore").html(responseData.midVersusScore + " points");
+        $("#botScore").html(responseData.botVersusScore + " points");
+
+        $("#totalTraffic").html(responseData.totalTraffic + " <i class='fa fa-caret-up color-green'></i>");
+        $("#uniqueVisit").html(responseData.uniqueVisit + " <i class='fa fa-caret-down color-red'></i>");
+        $("#revisitCount").html(responseData.revisitCount + " <i class='fa fa-caret-up color-green'></i>");
+        $("#pageView").html(responseData.pageView + " <i class='fa fa-caret-down color-red'></i>");
+
       }
       function aggregateErrorCallback(){ console.log("errorCallback"); }
       function aggregateCompleteCallback(){ console.log("completeCallback"); }

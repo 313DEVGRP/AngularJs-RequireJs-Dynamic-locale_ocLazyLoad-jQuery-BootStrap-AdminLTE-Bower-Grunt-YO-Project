@@ -1220,16 +1220,16 @@
         $("#pageView").html(totalArticle.pageView + " <i class='fa fa-caret-down color-red'></i>");
 
 
-        $("totalArticle").html(responseData.totalArticle);
-        $("totalLikeCount").html(responseData.totalLikeCount);
-        $("totalSpecCount").html(responseData.totalSpecCount);
-        $("totalHashCount").html(responseData.totalHashCount);
-        $("standardError").html(responseData.standardError);
-        $("equilibriumAssumption").html(responseData.equilibriumAssumption);
-        $("probability").html(responseData.probability);
-        $("lowerLimit").html(responseData.lowerLimit);
-        $("higherLimit").html(responseData.higherLimit);
-        $("distributionTResult").html(responseData.distributionTResult);
+        $("#totalArticle").html(responseData.totalArticle);
+        $("#totalLikeCount").html(responseData.totalLikeCount);
+        $("#totalSpecCount").html(responseData.totalSpecCount);
+        $("#totalHashCount").html(responseData.totalHashCount);
+        $("#standardError").html(responseData.standardError);
+        $("#equilibriumAssumption").html(responseData.equilibriumAssumption);
+        $("#probability").html(responseData.probability);
+        $("#lowerLimit").html(responseData.lowerLimit);
+        $("#higherLimit").html(responseData.higherLimit);
+        $("#distributionTResult").html(responseData.distributionTResult);
       }
       function aggregateErrorCallback(){ console.log("errorCallback"); }
       function aggregateCompleteCallback(){ console.log("completeCallback"); }

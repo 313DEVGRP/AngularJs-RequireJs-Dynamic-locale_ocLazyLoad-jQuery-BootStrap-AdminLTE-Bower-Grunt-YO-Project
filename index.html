@@ -365,18 +365,16 @@
                 <div class="row">
                   <div class="col-sm-12">
                     <p class="txt-left">
-                      <span class="key">등록된 글 총합:</span> <span class="badge badge-important">19,23</span>
-                      <span class="key">좋아요 선택 총합:</span> <span class="badge badge-important">2,443(21.2%)</span>
-                      <span class="key">추가된 스펙개수:</span> <span class="badge badge-important">7개</span>
-                      <span class="key">등록된 해시태그 총합:</span> <span class="badge badge-important">13,233개</span>
-                      <span class="key">표준오차:</span> <span class="badge badge-important">64821</span>
-                    </p>
-                    <p class="txt-left">
-                      <span class="key">등분상 가정 유의확률:</span> <span class="badge badge-important">124</span>
-                      <span class="key">유의확률:</span> <span class="badge badge-important">823, 99%</span>
-                      <span class="key">신뢰구간 하한:</span> <span class="badge badge-important">-23134</span>
-                      <span class="key">상한:</span> <span class="badge badge-important">235421</span>
-                      <span class="key">T분포결과:</span> <span class="badge badge-important">8.423</span>
+                      <span class="key">등록된 글 총합:</span> <span id="totalArticle" class="badge badge-important"></span>
+                      <span class="key">좋아요 선택 총합:</span> <span id="totalLikeCount" class="badge badge-important"></span>
+                      <span class="key">추가된 스펙개수:</span> <span id="totalSpecCount" class="badge badge-important"></span>
+                      <span class="key">등록된 해시태그 총합:</span> <span id="totalHashCount" class="badge badge-important"></span>
+                      <span class="key">표준 오차:</span> <span id="standardError" class="badge badge-important"></span>
+                      <span class="key">등분상 가정 유의확률:</span> <span id="equilibriumAssumption" class="badge badge-important"></span>
+                      <span class="key">유의 확률:</span> <span id="probability" class="badge badge-important"></span>
+                      <span class="key">신뢰구간 하한:</span> <span id="lowerLimit" class="badge badge-important"></span>
+                      <span class="key">신뢰구간 상한:</span> <span id="higherLimit" class="badge badge-important"></span>
+                      <span class="key">T 분포결과:</span> <span id="distributionTResult" class="badge badge-important"></span>
                     </p>
                   </div>
                 </div>
@@ -1219,8 +1217,19 @@
         $("#totalTraffic").html(responseData.totalTraffic + " <i class='fa fa-caret-up color-green'></i>");
         $("#uniqueVisit").html(responseData.uniqueVisit + " <i class='fa fa-caret-down color-red'></i>");
         $("#revisitCount").html(responseData.revisitCount + " <i class='fa fa-caret-up color-green'></i>");
-        $("#pageView").html(responseData.pageView + " <i class='fa fa-caret-down color-red'></i>");
+        $("#pageView").html(totalArticle.pageView + " <i class='fa fa-caret-down color-red'></i>");
 
+
+        $("totalArticle").html(responseData.totalArticle);
+        $("totalLikeCount").html(responseData.totalLikeCount);
+        $("totalSpecCount").html(responseData.totalSpecCount);
+        $("totalHashCount").html(responseData.totalHashCount);
+        $("standardError").html(responseData.standardError);
+        $("equilibriumAssumption").html(responseData.equilibriumAssumption);
+        $("probability").html(responseData.probability);
+        $("lowerLimit").html(responseData.lowerLimit);
+        $("higherLimit").html(responseData.higherLimit);
+        $("distributionTResult").html(responseData.distributionTResult);
       }
       function aggregateErrorCallback(){ console.log("errorCallback"); }
       function aggregateCompleteCallback(){ console.log("completeCallback"); }

@@ -8,9 +8,9 @@ $(function () {
   function aggregateBeforeSendCallback(){ console.log("beforeSendCallback"); }
   function aggregateSuccessCallback (responseData) {
     console.log(responseData)
-    $("#topNode").html("우위 스펙 갯수: " + responseData.topNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.topLikeCount + "<br>총 등록 글 : " + responseData.topTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.topRegisteredHashTag);
-    $("#midNode").html("우위 스펙 갯수: " + responseData.midNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.midLikeCount + "<br>총 등록 글 : " + responseData.midTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.midRegisteredHashTag);
-    $("#botNode").html("우위 스펙 갯수: " + responseData.botNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.botLikeCount + "<br>총 등록 글 : " + responseData.botTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.botRegisteredHashTag);
+    $("#topNode").html("우위 스펙 갯수: " + $.number(responseData.topNumberOfAdvantages) + " 좋아요 획득 갯수 : " + $.number(responseData.topLikeCount) + "<br>총 등록 글 : " + $.number(responseData.topTotalRegisteredPosts) + " 총 등록된 해시 태그 : " + $.number(responseData.topRegisteredHashTag));
+    $("#midNode").html("중위 스펙 갯수: " + $.number(responseData.midNumberOfAdvantages) + " 좋아요 획득 갯수 : " + $.number(responseData.midLikeCount) + "<br>총 등록 글 : " + $.number(responseData.midTotalRegisteredPosts) + " 총 등록된 해시 태그 : " + $.number(responseData.midRegisteredHashTag));
+    $("#botNode").html("하위 스펙 갯수: " + $.number(responseData.botNumberOfAdvantages) + " 좋아요 획득 갯수 : " + $.number(responseData.botLikeCount) + "<br>총 등록 글 : " + $.number(responseData.botTotalRegisteredPosts) + " 총 등록된 해시 태그 : " + $.number(responseData.botRegisteredHashTag));
 
     $("#topNodeTitle").html(responseData.topName + " (" + responseData.topGraphPercent + "%)");
     $("#topNodeGraph").css("width", responseData.topGraphPercent+"%");
@@ -21,26 +21,26 @@ $(function () {
     $("#botNodeTitle").html(responseData.botName + " (" + responseData.botGraphPercent + "%)");
     $("#botNodeGraph").css("width", responseData.botGraphPercent+"%");
 
-    $("#topScore").html(responseData.topVersusScore + " points");
-    $("#midScore").html(responseData.midVersusScore + " points");
-    $("#botScore").html(responseData.botVersusScore + " points");
+    $("#topScore").html($.number(responseData.topVersusScore) + " points");
+    $("#midScore").html($.number(responseData.midVersusScore) + " points");
+    $("#botScore").html($.number(responseData.botVersusScore) + " points");
 
-    $("#totalTraffic").html(responseData.totalTraffic + " <i class='fa fa-caret-up color-green'></i>");
-    $("#uniqueVisit").html(responseData.uniqueVisit + " <i class='fa fa-caret-down color-red'></i>");
-    $("#revisitCount").html(responseData.revisitCount + " <i class='fa fa-caret-up color-green'></i>");
-    $("#pageView").html(responseData.pageView + " <i class='fa fa-caret-down color-red'></i>");
+    $("#totalTraffic").html($.number(responseData.totalTraffic) + " <i class='fa fa-caret-up color-green'></i>");
+    $("#uniqueVisit").html($.number(responseData.uniqueVisit) + " <i class='fa fa-caret-down color-red'></i>");
+    $("#revisitCount").html($.number(responseData.revisitCount) + " <i class='fa fa-caret-up color-green'></i>");
+    $("#pageView").html($.number(responseData.pageView) + " <i class='fa fa-caret-down color-red'></i>");
 
 
-    $("#totalArticle").html(responseData.totalArticle);
-    $("#totalLikeCount").html(responseData.totalLikeCount);
-    $("#totalSpecCount").html(responseData.totalSpecCount);
-    $("#totalHashCount").html(responseData.totalHashCount);
-    $("#standardError").html(responseData.standardError);
-    $("#equilibriumAssumption").html(responseData.equilibriumAssumption);
-    $("#probability").html(responseData.probability);
-    $("#lowerLimit").html(responseData.lowerLimit);
-    $("#higherLimit").html(responseData.higherLimit);
-    $("#distributionTResult").html(responseData.distributionTResult);
+    $("#totalArticle").html($.number(responseData.totalArticle));
+    $("#totalLikeCount").html($.number(responseData.totalLikeCount));
+    $("#totalSpecCount").html($.number(responseData.totalSpecCount));
+    $("#totalHashCount").html($.number(responseData.totalHashCount));
+    $("#standardError").html($.number(responseData.standardError));
+    $("#equilibriumAssumption").html($.number(responseData.equilibriumAssumption));
+    $("#probability").html($.number(responseData.probability));
+    $("#lowerLimit").html($.number(responseData.lowerLimit));
+    $("#higherLimit").html($.number(responseData.higherLimit));
+    $("#distributionTResult").html($.number(responseData.distributionTResult));
   }
   function aggregateErrorCallback(){ console.log("errorCallback"); }
   function aggregateCompleteCallback(){ console.log("completeCallback"); }

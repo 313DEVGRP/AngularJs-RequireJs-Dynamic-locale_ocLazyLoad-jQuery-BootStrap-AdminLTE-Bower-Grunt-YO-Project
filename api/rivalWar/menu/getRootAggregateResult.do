@@ -34,9 +34,9 @@
   "calTime" : "2017-09-06 15:13:00",
 
   "topName" : "galxy 8",
-  "topNumberOfAdvantages" : 31,
-  "topLikeCount" : 13,
-  "topTotalRegisteredPosts" : 33,
+  "topNumberOfAdvantages" : 31333,
+  "topLikeCount" : 1325,
+  "topTotalRegisteredPosts" : 33111,
   "topRegisteredHashTag" : 3,
   "topGraphPercent" : 63,
   "topVersusScore" : 1987,

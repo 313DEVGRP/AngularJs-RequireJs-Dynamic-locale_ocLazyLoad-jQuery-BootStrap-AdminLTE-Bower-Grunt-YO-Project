@@ -35,12 +35,12 @@ $(function () {
     $("#totalLikeCount").html($.number(responseData.totalLikeCount));
     $("#totalSpecCount").html($.number(responseData.totalSpecCount));
     $("#totalHashCount").html($.number(responseData.totalHashCount));
-    $("#standardError").html($.number(responseData.standardError));
-    $("#equilibriumAssumption").html($.number(responseData.equilibriumAssumption));
-    $("#probability").html($.number(responseData.probability));
-    $("#lowerLimit").html($.number(responseData.lowerLimit));
-    $("#higherLimit").html($.number(responseData.higherLimit));
-    $("#distributionTResult").html($.number(responseData.distributionTResult));
+    $("#standardError").html(responseData.standardError);
+    $("#equilibriumAssumption").html(responseData.equilibriumAssumption);
+    $("#probability").html(responseData.probability);
+    $("#lowerLimit").html(responseData.lowerLimit);
+    $("#higherLimit").html(responseData.higherLimit);
+    $("#distributionTResult").html(responseData.distributionTResult);
   }
   function aggregateErrorCallback(){ console.log("errorCallback"); }
   function aggregateCompleteCallback(){ console.log("completeCallback"); }

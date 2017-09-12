@@ -406,24 +406,24 @@
                 <li class="is-first-box">
                   <div class="news-item-info">
                     <div class="item-img">
-                      <img src="partials/common/img/custom/sm_mobile.png" width="430" alt="삼성 휴대폰">
+                      <img src="#" width="430" alt="하위 비교 이미지" id="botImage">
                     </div>
-                    <a href="http://www.samsung.com/sec/smartphones/" target="_blank" class="small-box-footer">
+                    <a href="#" target="_blank" class="small-box-footer" id="botVender">
                       Vender info<i class="fa fa-arrow-circle-right"></i>
                     </a>
-                    <a href="http://betanews.heraldcorp.com:8080/article/723960.html" target="_blank">
-                      <img src="partials/common/img/custom/news-icon01.png">새 갤럭시노트8 이미지 유출, 결국 지문인식 센서... '한숨'
+                    <a href="#" target="_blank" id="botPost1">
+
                     </a>
-                    <a href="http://www.queen.co.kr/news/articleView.html?idxno=208117" target="_blank">
+                    <a href="http://www.queen.co.kr/news/articleView.html?idxno=208117" target="_blank"  id="botPost2">
                       <img src="partials/common/img/custom/news-icon02.png">스마티아, 갤럭시노트7(FE) 리퍼폰 17만 원·갤럭시S8 플러스 33만 원 저렴해
                     </a>
-                    <a href="http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0800&key=20170723.99099003665" target="_blank">
+                    <a href="http://www.kookje.co.kr/news2011/asp/newsbody.asp?code=0800&key=20170723.99099003665" target="_blank"  id="botPost3">
                       <img src="partials/common/img/custom/news-icon03.png">갤럭시노트/갤럭시노트8, 내달 24일 뉴욕서 언팩... 3840×2160 아몰레드, 6GB 램 등 스펙
                     </a>
-                    <a href="http://news.joins.com/article/21780551" target="_blank">
+                    <a href="http://news.joins.com/article/21780551" target="_blank"  id="botPost4">
                       <img src="partials/common/img/custom/news-icon04.png">6.3인치 화면에 듀얼 카메라 장착 예상 … 올 하반기 판매량 1100만대 기대
                     </a>
-                    <a href="http://www.asiae.co.kr/news/view.htm?idxno=2017072212253076093" target="_blank">
+                    <a href="http://www.asiae.co.kr/news/view.htm?idxno=2017072212253076093" target="_blank"  id="botPost5">
                       <img src="partials/common/img/custom/news-icon01.png">美 삼성, 갤노트8 언팩 앞두고 갤s8 150달러 인하
                     </a>
                   </div>
@@ -1160,7 +1160,10 @@
       var compareInfoReturnType = 'json';
       function compareInfoBeforeSendCallback(){ console.log("beforeSendCallback"); }
       function compareInfoSuccessCallback (responseData) {
-        console.log(responseData)
+        console.log(responseData);
+        $("#botImage").attr("src", responseData.botImageUrl1);
+        $("#botPost1").attr("src", responseData.botPost1Url);
+        $("#botPost1").html("<img src='" + responseData.botPost1Icon + "'>"+ responseData.botPost1Text);
       }
       function compareInfoErrorCallback(){ console.log("errorCallback"); }
       function compareInfoCompleteCallback(){ console.log("completeCallback"); }

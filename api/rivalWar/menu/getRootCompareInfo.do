@@ -30,7 +30,7 @@
     "id" : "node_3"
   },
   "copyBooleanValue" : false,
-  "topImageUrl1" : "http",
+  "topImageUrl1" : "/partials/common/img/custom/sm_mobile.png",
   "topImageUrl2" : "http",
   "topImageUrl3" : "http",
   "topVenderUrl" : "http",
@@ -70,7 +70,7 @@
   "midPost5Icon" : "icon",
   "midPost5Url" : "http",
   "midPost5Text" : "text",
-  "botImageUrl1" : "http",
+  "botImageUrl1" : "/partials/common/img/custom/sm_mobile.png",
   "botImageUrl2" : "http",
   "botImageUrl3" : "http",
   "botVenderUrl" : "http",

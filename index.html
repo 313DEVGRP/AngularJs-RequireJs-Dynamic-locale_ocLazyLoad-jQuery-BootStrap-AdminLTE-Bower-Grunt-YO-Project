@@ -1063,6 +1063,12 @@
   <!-- jstree ajax api -->
   <script src="/partials/common/js/callAjax.js"></script>
 
+  <!-- rivalwar javascript -->
+  <script src="/partials/common/js/rivalWar/csrf.js"></script>
+  <script src="/partials/common/js/rivalWar/loginTransaction.js"></script>
+  <script src="/partials/common/js/rivalWar/menu.js"></script>
+  <script src="/partials/common/js/rivalWar/aggregateResult.js"></script>
+
   <script type="text/template" id="message-template">
     <div class="sender pull-left">
       <div class="icon">
@@ -1143,198 +1149,26 @@
   <script type="text/javascript">
 
     $(function () {
-      $.getJSON("/api/jsTreeServiceFramework/security/csrf.do", function (json) {
-        var csrfValue = $("input[name=_csrf]:hidden");
-        csrfValue.val(json._csrf_token);
-      });
 
-      var getUrlParameter = function getUrlParameter(sParam) {
-        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
-          sURLVariables = sPageURL.split('&'),
-          sParameterName,
-          i;
 
-        for (i = 0; i < sURLVariables.length; i++) {
-          sParameterName = sURLVariables[i].split('=');
-          if (sParameterName[0] === sParam) {
-            return sParameterName[1] === undefined ? true : sParameterName[1];
-          }
-        }
-        return false;
-      };
-
-      // 로그인 트랜잭션
-      var loginResult = getUrlParameter('loginResult');
-      if (loginResult) {
-        //alert("login complete");
-        $("#account").addClass("dropdown-toggle");
-        $("#account").attr("data-toggle", "dropdown");
-      } else {
-        //alert("not login");
-        $("#account").attr("href", "/login.html");
-      }
-
-      // 메뉴 API
-      var ajaxParamType = 'noneParam';
-      var ajaxParam = '';
-      var ajaxURL = '/api/rivalWar/menu/getRootMenuCategories.do';
-      var ajaxType = 'GET';
-      var ajaxReturnType = 'json';
-      function beforeSendCallback(){ console.log("beforeSendCallback"); }
-      function successCallback (responseData) {
-        rootMenuAjaxCall(responseData);
-      }
-      function errorCallback(){ console.log("errorCallback"); }
-      function completeCallback(){ console.log("completeCallback"); }
-      callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
-
-      // Aggregate Result API
-      var aggregateParamType = 'noneParam';
-      var aggregateParam = '';
-      var aggregateURL = '/api/rivalWar/menu/getRootAggregateResult.do';
-      var aggregateType = 'GET';
-      var aggregateReturnType = 'json';
-      function aggregateBeforeSendCallback(){ console.log("beforeSendCallback"); }
-      function aggregateSuccessCallback (responseData) {
+      // Compare Info API
+      var compareInfoParamType = 'noneParam';
+      var compareInfoParam = '';
+      var compareInfoURL = '/api/rivalWar/menu/getRootCompareInfo.do';
+      var compareInfoType = 'GET';
+      var compareInfoReturnType = 'json';
+      function compareInfoBeforeSendCallback(){ console.log("beforeSendCallback"); }
+      function compareInfoSuccessCallback (responseData) {
         console.log(responseData)
-        $("#topNode").html("우위 스펙 갯수: " + responseData.topNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.topLikeCount + "<br>총 등록 글 : " + responseData.topTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.topRegisteredHashTag);
-        $("#midNode").html("우위 스펙 갯수: " + responseData.midNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.midLikeCount + "<br>총 등록 글 : " + responseData.midTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.midRegisteredHashTag);
-        $("#botNode").html("우위 스펙 갯수: " + responseData.botNumberOfAdvantages + " 좋아요 획득 갯수 : " + responseData.botLikeCount + "<br>총 등록 글 : " + responseData.botTotalRegisteredPosts + " 총 등록된 해시 태그 : " + responseData.botRegisteredHashTag);
-
-        $("#topNodeTitle").html(responseData.topName + " (" + responseData.topGraphPercent + "%)");
-        $("#topNodeGraph").css("width", responseData.topGraphPercent+"%");
-
-        $("#midNodeTitle").html(responseData.midName + " (" + responseData.midGraphPercent + "%)");
-        $("#midNodeGraph").css("width", responseData.midGraphPercent+"%");
-
-        $("#botNodeTitle").html(responseData.botName + " (" + responseData.botGraphPercent + "%)");
-        $("#botNodeGraph").css("width", responseData.botGraphPercent+"%");
-
-        $("#topScore").html(responseData.topVersusScore + " points");
-        $("#midScore").html(responseData.midVersusScore + " points");
-        $("#botScore").html(responseData.botVersusScore + " points");
-
-        $("#totalTraffic").html(responseData.totalTraffic + " <i class='fa fa-caret-up color-green'></i>");
-        $("#uniqueVisit").html(responseData.uniqueVisit + " <i class='fa fa-caret-down color-red'></i>");
-        $("#revisitCount").html(responseData.revisitCount + " <i class='fa fa-caret-up color-green'></i>");
-        $("#pageView").html(totalArticle.pageView + " <i class='fa fa-caret-down color-red'></i>");
-
-
-        $("#totalArticle").html(responseData.totalArticle);
-        $("#totalLikeCount").html(responseData.totalLikeCount);
-        $("#totalSpecCount").html(responseData.totalSpecCount);
-        $("#totalHashCount").html(responseData.totalHashCount);
-        $("#standardError").html(responseData.standardError);
-        $("#equilibriumAssumption").html(responseData.equilibriumAssumption);
-        $("#probability").html(responseData.probability);
-        $("#lowerLimit").html(responseData.lowerLimit);
-        $("#higherLimit").html(responseData.higherLimit);
-        $("#distributionTResult").html(responseData.distributionTResult);
       }
-      function aggregateErrorCallback(){ console.log("errorCallback"); }
-      function aggregateCompleteCallback(){ console.log("completeCallback"); }
-      callAjax(aggregateParamType, aggregateParam, aggregateURL, aggregateType, aggregateReturnType, aggregateBeforeSendCallback, aggregateSuccessCallback, aggregateErrorCallback, aggregateCompleteCallback);
+      function compareInfoErrorCallback(){ console.log("errorCallback"); }
+      function compareInfoCompleteCallback(){ console.log("completeCallback"); }
+      callAjax(compareInfoParamType, compareInfoParam, compareInfoURL, compareInfoType, compareInfoReturnType, compareInfoBeforeSendCallback, compareInfoSuccessCallback, compareInfoErrorCallback, compareInfoCompleteCallback);
+
+
     });
 
-    function rootMenuAjaxCall(jsonData){
-      $(jsonData).each(function (entryIndex, entryList){
-        if (entryIndex == 0) {
-          ///////////////////////////////////////////////////////////////////////////////////////////////
-          //recentChild Menu create
-          $("#menuMainTitle").html(entryList.c_title);
 
-          var recentParamType = 'noneParam';
-          var recentParam = '';
-          var recentURL = '/api/rivalWar/menu/getRecentList.do';
-          var recentType = 'GET';
-          var recentReturnType = 'json';
-          function beforeSendCallback(){ console.log("beforeSendCallback"); }
-          function successCallback (recentData) {
-            recentMenuAjaxCall(recentData);
-          }
-          function errorCallback(){ console.log("errorCallback"); }
-          function completeCallback(){ console.log("completeCallback"); }
-          callAjax(recentParamType, recentParam, recentURL, recentType, recentReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
-
-          ///////////////////////////////////////////////////////////////////////////////////////////////
-        } else if (entryIndex == 1) {
-          ///////////////////////////////////////////////////////////////////////////////////////////////
-          //classified Menu create
-          $("#menuSubTitle").html(entryList.c_title);
-
-          var classifiedParamType = 'noneParam';
-          var classifiedParam = '';
-          var classifiedURL = '/api/rivalWar/menu/getClassifiedMenu.do';
-          var classifiedType = 'GET';
-          var classifiedReturnType = 'json';
-          function beforeSendCallback(){ console.log("beforeSendCallback"); }
-          function successCallback (classifiedData) {
-            classifiedMenuAjaxCall(classifiedData);
-          }
-          function errorCallback(){ console.log("errorCallback"); }
-          function completeCallback(){ console.log("completeCallback"); }
-          callAjax(classifiedParamType, classifiedParam, classifiedURL, classifiedType, classifiedReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
-          ///////////////////////////////////////////////////////////////////////////////////////////////
-        }
-      });
-    }
-
-    function recentMenuAjaxCall(recentData){
-      $('#recent-menu-levels-collapse').empty(); //패널(div)의 내용 초기화
-      var table = "";
-      //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
-      $.each(recentData, function (recentIndex, recentEntry) {
-        table += "<li><a href='#'>" + recentEntry.c_title + " <span class='label label-important'>new</span></a></li>";
-      });
-      $('#recent-menu-levels-collapse').append(table); //패널에 추가하기
-    }
-
-    function classifiedMenuAjaxCall(categoryData){
-      $('#menu-levels-collapse').empty(); //패널(div)의 내용 초기화
-      var table = "";
-
-      //data를 탐색 : each() 메서드를 사용해서 데이터가 있는 만큼 반복
-      $.each(categoryData, function (categoryIndex, categoryEntry) {
-        var categoryCompareStr = JSON.stringify(categoryEntry.childcount);
-        var categoryCheckStr = new String();
-        categoryCheckStr = categoryCompareStr.toString().replace(/"/g, "");
-        console.log(categoryCheckStr);
-        if ("NoChild" == new String(categoryCheckStr).valueOf()) {
-
-          table += "<li><a href='#'>" + categoryEntry.c_title + "</a></li>";
-
-        } else {
-          table += "<li class='panel'>";
-          table += "<a class='accordion-toggle collapsed' data-toggle='collapse' data-parent='#menu-levels-collapse' href='#sub-menu-" + categoryIndex + "-collapse'>" + categoryEntry.c_title + "</a>";
-          table += "<ul id='sub-menu-" + categoryIndex + "-collapse' class='panel-collapse collapse'>";
-
-          table += childMenuCallAjax(categoryEntry.c_id);
-
-          table += "</ul>";
-          table += "</li>";
-        }
-      });
-      $('#menu-levels-collapse').append(table); //패널에 추가하기
-    }
-
-    function childMenuCallAjax(c_id) {
-      var table = "";
-      var ajaxParamType = 'c_id';
-      var ajaxParam = c_id;
-      var ajaxURL = '/api/rivalWar/menu/getChildNode.do';
-      var ajaxType = 'GET';
-      var ajaxReturnType = 'json';
-      function beforeSendCallback(){ console.log("beforeSendCallback"); }
-      function successCallback (childData) {
-        $.each(childData, function (childIndex, childEntry) {
-          table += "<li><a href='#'>" + childEntry.c_title + "</a></li>";
-        });
-      }
-      function errorCallback(){ console.log("errorCallback"); }
-      function completeCallback(){ console.log("completeCallback"); }
-      callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
-      return table;
-    }
   </script>
   <!-- ANALYTICS START -->
   <!-- https://www.google.com/analytics/settings/home?scid=18527803 web log Analyzer  -->

@@ -391,7 +391,7 @@
               <h4>
                 <i class="fa fa-shopping-cart"></i> 비교 현황 및 정보
                 <small>
-                  <span style="font-size:0.9em">2017-07-21 19:08:31</span>
+                  <span style="font-size:0.9em" id="compareInfoTime">2017-07-21 19:08:31</span>
                 </small>
               </h4>
               <div class="actions">
@@ -1125,6 +1125,8 @@
       function compareInfoBeforeSendCallback(){ console.log("beforeSendCallback"); }
       function compareInfoSuccessCallback (responseData) {
         console.log(responseData);
+        $("#compareInfoTime").text(responseData.calTime);
+
         $("#botImage").attr("src", responseData.botImageUrl1);
 
         $("#botVender").attr("src", responseData.botVenderUrl);

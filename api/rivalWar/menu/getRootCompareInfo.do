@@ -77,7 +77,7 @@
   "botVenderUrl" : "http",
   "botVenderText" : "text",
   "botPost1Icon" : "icon",
-  "botPost1Url" : "http://www.viva100.com/main/view.php?key=20170723010008433",
+  "botPost1Url" : "http",
   "botPost1Text" : "text",
   "botPost2Icon" : "icon",
   "botPost2Url" : "http",

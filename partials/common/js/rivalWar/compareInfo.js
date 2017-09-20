@@ -10,24 +10,24 @@ $(function () {
     console.log(responseData);
     $("#compareInfoTime").text(responseData.calTime);
 
-    $("#botImage").attr("src", responseData.botImageUrl1);
+    $("#botImage").attr("href", responseData.botImageUrl1);
 
-    $("#botVender").attr("src", responseData.botVenderUrl);
+    $("#botVender").attr("href", responseData.botVenderUrl);
     $("#botVender").html(responseData.botVenderText + " <i class='fa fa-arrow-circle-right'></i>");
 
-    $("#botPost1").attr("src", responseData.botPost1Url);
+    $("#botPost1").attr("href", responseData.botPost1Url);
     $("#botPost1").html("<img src='" + responseData.botPost1Icon + "'> "+ responseData.botPost1Text);
 
-    $("#botPost2").attr("src", responseData.botPost2Url);
+    $("#botPost2").attr("href", responseData.botPost2Url);
     $("#botPost2").html("<img src='" + responseData.botPost2Icon + "'> "+ responseData.botPost2Text);
 
-    $("#botPost3").attr("src", responseData.botPost3Url);
+    $("#botPost3").attr("href", responseData.botPost3Url);
     $("#botPost3").html("<img src='" + responseData.botPost3Icon + "'> "+ responseData.botPost3Text);
 
-    $("#botPost4").attr("src", responseData.botPost4Url);
+    $("#botPost4").attr("href", responseData.botPost4Url);
     $("#botPost4").html("<img src='" + responseData.botPost4Icon + "'> "+ responseData.botPost4Text);
 
-    $("#botPost5").attr("src", responseData.botPost5Url);
+    $("#botPost5").attr("href", responseData.botPost5Url);
     $("#botPost5").html("<img src='" + responseData.botPost5Icon + "'> "+ responseData.botPost5Text);
 
     //mid

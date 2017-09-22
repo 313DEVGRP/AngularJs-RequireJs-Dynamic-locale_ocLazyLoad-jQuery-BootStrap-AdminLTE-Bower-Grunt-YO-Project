@@ -391,7 +391,7 @@
               <h4>
                 <i class="fa fa-shopping-cart"></i> 비교 현황 및 정보
                 <small>
-                  <span style="font-size:0.9em" id="compareInfoTime">2017-07-21 19:08:31</span>
+                  <span style="font-size:0.9em" id="compareInfoTime"></span>
                 </small>
               </h4>
               <div class="actions">
@@ -459,16 +459,16 @@
               <h4>
                 <i class="fa fa-shopping-cart"></i>비교 상세 스펙
                 <small>
-                  <span style="font-size:0.9em">2017-07-22 11:08:31</span>
+                  <span style="font-size:0.9em" id="compareSpecTime"></span>
                 </small>
               </h4>
               <div class="actions">
-                <button class="btn btn-transparent btn-xs">Spec +313</button>
+                <button class="btn btn-transparent btn-xs">자세한 스펙 보기</button>
               </div>
             </header>
             <!-- S: red data -->
             <div class="body is-spec-box">
-              <h3 class="item-A">iPhone 7</h3>
+              <h3 class="item-A" id="botSpecName"></h3>
               <table class="table table-striped no-margin sources-table">
                 <thead>
                 <tr>
@@ -480,56 +480,56 @@
                 </thead>
                 <tbody>
                 <tr>
-                  <td><span class="label label-important">Direct</span></td>
-                  <td>713</td>
-                  <td><strong class="color-green">+53</strong></td>
-                  <td class="hidden-xs">+12</td>
+                  <td><span class="label label-important" id="botSpec1Title"></span></td>
+                  <td id="botSpec1Amount"></td>
+                  <td><strong class="color-green" id="botSpec1Percent"></strong></td>
+                  <td class="hidden-xs" id="botSpec1Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="botSpec1Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-warning">Refer</span></td>
-                  <td>562</td>
-                  <td><strong>+84</strong></td>
-                  <td class="hidden-xs">+64</td>
+                  <td><span class="label label-warning" id="botSpec2Title"></span></td>
+                  <td id="botSpec2Amount"></td>
+                  <td><strong id="botSpec2Percent"></strong></td>
+                  <td class="hidden-xs" id="botSpec2Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="botSpec2Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-success">Social</span></td>
-                  <td>148</td>
-                  <td><strong class="color-red">-12</strong></td>
-                  <td class="hidden-xs">+3</td>
+                  <td><span class="label label-success" id="botSpec3Title"></span></td>
+                  <td id="botSpec3Amount"></td>
+                  <td><strong class="color-red" id="botSpec3Percent"></strong></td>
+                  <td class="hidden-xs" id="botSpec3Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="botSpec3Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-info">Search</span></td>
-                  <td>653</td>
-                  <td><strong class="color-green">+23</strong></td>
-                  <td class="hidden-xs">+43</td>
+                  <td><span class="label label-info" id="botSpec4Title"></span></td>
+                  <td id="botSpec4Amount"></td>
+                  <td><strong class="color-green" id="botSpec4Percent"></strong></td>
+                  <td class="hidden-xs" id="botSpec4Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="botSpec4Graph"></div>
                     </div>
                 </tr>
                 <tr>
-                  <td><span class="label label-inverse">Internal</span></td>
-                  <td>976</td>
-                  <td><strong>+101</strong></td>
-                  <td class="hidden-xs">-7</td>
+                  <td><span class="label label-inverse" id="botSpec5Title"></span></td>
+                  <td id="botSpec5Amount"></td>
+                  <td><strong id="botSpec5Percent"></strong></td>
+                  <td class="hidden-xs" id="botSpec5Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="botSpec5Graph"></div>
                     </div>
                   </td>
                 </tr>
@@ -540,47 +540,47 @@
 
             <!-- S: yellow data -->
             <div class="body is-spec-box">
-              <h3 class="item-B">Galaxy 7</h3>
+              <h3 class="item-B" id="midSpecName"></h3>
               <table class="table table-striped no-margin sources-table">
                 <thead>
                 <tr>
                   <th class="source-col-header">Spec</th>
                   <th>Amount</th>
-                  <th class="hidden-xs">Percent.,%</th>
+                  <th class="hidden-xs">Percent</th>
                   <th class="chart-col-header">Trend</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td><span class="label label-important">Direct</span></td>
-                  <td>713</td>
-                  <td><strong class="color-green">+53</strong></td>
-                  <td class="hidden-xs">+12</td>
+                  <td><span class="label label-important" id="midSpec1Title"></span></td>
+                  <td id="midSpec1Amount"></td>
+                  <td><strong class="color-green" id="midSpec1Percent"></strong></td>
+                  <td class="hidden-xs" id="midSpec1Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="midSpec1Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-warning">Refer</span></td>
-                  <td>562</td>
-                  <td><strong>+84</strong></td>
-                  <td class="hidden-xs">+64</td>
+                  <td><span class="label label-warning" id="midSpec2Title"></span></td>
+                  <td id="midSpec2Amount"></td>
+                  <td><strong id="midSpec2Percent"></strong></td>
+                  <td class="hidden-xs" id="midSpec2Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="midSpec2Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-success">Social</span></td>
-                  <td>148</td>
-                  <td><strong class="color-red">-12</strong></td>
-                  <td class="hidden-xs">+3</td>
+                  <td><span class="label label-success" id="midSpec3Title"></span></td>
+                  <td id="midSpec3Amount"></td>
+                  <td><strong id="midSpec3Percent"></strong></td>
+                  <td class="hidden-xs" id="midSpec3Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="midSpec3Graph"></div>
                     </div>
                   </td>
                 </tr>
@@ -1116,7 +1116,198 @@
 
     $(function () {
 
+      // CompareSpec API
+      var compareSpecParamType = 'noneParam';
+      var compareSpecParam = '';
+      var compareSpecURL = '/api/rivalWar/menu/getRootcompareSpec.do';
+      var compareSpecType = 'GET';
+      var compareSpecReturnType = 'json';
+      function compareSpecBeforeSendCallback(){ console.log("beforeSendCallback"); }
+      function compareSpecSuccessCallback (responseData) {
+        console.log(responseData);
+        $("#compareSpecTime").text(responseData.calTime);
 
+        [ {
+          "c_id" : 3,
+          "c_parentid" : 2,
+          "c_position" : 0,
+          "c_left" : 3,
+          "c_right" : 4,
+          "c_level" : 2,
+          "c_title" : "Leaf Node",
+          "c_type" : "default",
+          "ref" : 0,
+          "copy" : 0,
+          "multiCounter" : 0,
+          "status" : 0,
+          "ajaxMessage" : null,
+          "childcount" : "NoChild",
+          "searchStr" : null,
+          "idif" : 0,
+          "ldif" : 0,
+          "spaceOfTargetNode" : 0,
+          "c_idsByChildNodeFromNodeById" : null,
+          "fixCopyId" : 0,
+          "fixCopyPosition" : 0,
+          "rightPositionFromNodeByRef" : 0,
+          "nodeById" : null,
+          "idifLeft" : 0,
+          "idifRight" : 0,
+          "id" : 0,
+          "attr" : {
+            "rel" : "default",
+            "id" : "node_3"
+          },
+          "copyBooleanValue" : false,
+          "calTime" : null,
+          "topSpecName" : "상위 스펙 명",
+          "topSpec1Title" : "상위 스펙 이름1",
+          "topSpec1Amount" : 313,
+          "topSpec1Percent" : 31.0,
+          "topSpec1Trend" : 31,
+          "topSpec1Graph" : 31.0,
+          "topSpec2Title" : "상위 스펙 이름2",
+          "topSpec2Amount" : 313,
+          "topSpec2Percent" : 31.0,
+          "topSpec2Trend" : 31,
+          "topSpec2Graph" : 31.0,
+          "topSpec3Title" : "상위 스펙 이름3",
+          "topSpec3Amount" : 313,
+          "topSpec3Percent" : 31.0,
+          "topSpec3Trend" : 31,
+          "topSpec3Graph" : 31.0,
+          "topSpec4Title" : "상위 스펙 이름4",
+          "topSpec4Amount" : 313,
+          "topSpec4Percent" : 31.0,
+          "topSpec4Trend" : 31,
+          "topSpec4Graph" : 31.0,
+          "topSpec5Title" : "상위 스펙 이름5",
+          "topSpec5Amount" : 313,
+          "topSpec5Percent" : 31.0,
+          "topSpec5Trend" : 31,
+          "topSpec5Graph" : 31.0,
+          "midSpecName" : "중위 스펙 명",
+          "midSpec1Title" : "중위 스펙 이름1",
+          "midSpec1Amount" : 313,
+          "midSpec1Percent" : 13.0,
+          "midSpec1Trend" : 31,
+          "midSpec1Graph" : 13.0,
+          "midSpec2Title" : "중위 스펙 이름2",
+          "midSpec2Amount" : 313,
+          "midSpec2Percent" : 13.0,
+          "midSpec2Trend" : 31,
+          "midSpec2Graph" : 13.0,
+          "midSpec3Title" : "중위 스펙 이름3",
+          "midSpec3Amount" : 313,
+          "midSpec3Percent" : 13.0,
+          "midSpec3Trend" : 31,
+          "midSpec3Graph" : 13.0,
+          "midSpec4Title" : "중위 스펙 이름4",
+          "midSpec4Amount" : 313,
+          "midSpec4Percent" : 13.0,
+          "midSpec4Trend" : 31,
+          "midSpec4Graph" : 13.0,
+          "midSpec5Title" : "중위 스펙 이름5",
+          "midSpec5Amount" : 313,
+          "midSpec5Percent" : 13.0,
+          "midSpec5Trend" : 31,
+          "midSpec5Graph" : 13.0,
+          "botSpecName" : "하위 스펙 명",
+          "botSpec1Title" : "하위 스펙 이름1",
+          "botSpec1Amount" : 313,
+          "botSpec1Percent" : 3.0,
+          "botSpec1Trend" : 31,
+          "botSpec1Graph" : 3.0,
+          "botSpec2Title" : "하위 스펙 이름2",
+          "botSpec2Amount" : 313,
+          "botSpec2Percent" : 3.0,
+          "botSpec2Trend" : 31,
+          "botSpec2Graph" : 3.0,
+          "botSpec3Title" : "하위 스펙 이름3",
+          "botSpec3Amount" : 313,
+          "botSpec3Percent" : 3.0,
+          "botSpec3Trend" : 31,
+          "botSpec3Graph" : 3.0,
+          "botSpec4Title" : "하위 스펙 이름4",
+          "botSpec4Amount" : 313,
+          "botSpec4Percent" : 3.0,
+          "botSpec4Trend" : 31,
+          "botSpec4Graph" : 3.0,
+          "botSpec5Title" : "하위 스펙 이름5",
+          "botSpec5Amount" : 313,
+          "botSpec5Percent" : 3.0,
+          "botSpec5Trend" : 31,
+          "botSpec5Graph" : 3.0,
+          "copied" : false,
+          "data" : "Leaf Node",
+          "state" : "leafNode"
+        } ]
+
+        $("#botImage").attr("src", responseData.botImageUrl1);
+
+        $("#botVender").attr("src", responseData.botVenderUrl);
+        $("#botVender").html(responseData.botVenderText + " <i class='fa fa-arrow-circle-right'></i>");
+
+        $("#botPost1").attr("src", responseData.botPost1Url);
+        $("#botPost1").html("<img src='" + responseData.botPost1Icon + "'> "+ responseData.botPost1Text);
+
+        $("#botPost2").attr("src", responseData.botPost2Url);
+        $("#botPost2").html("<img src='" + responseData.botPost2Icon + "'> "+ responseData.botPost2Text);
+
+        $("#botPost3").attr("src", responseData.botPost3Url);
+        $("#botPost3").html("<img src='" + responseData.botPost3Icon + "'> "+ responseData.botPost3Text);
+
+        $("#botPost4").attr("src", responseData.botPost4Url);
+        $("#botPost4").html("<img src='" + responseData.botPost4Icon + "'> "+ responseData.botPost4Text);
+
+        $("#botPost5").attr("src", responseData.botPost5Url);
+        $("#botPost5").html("<img src='" + responseData.botPost5Icon + "'> "+ responseData.botPost5Text);
+
+        //mid
+        $("#midImage").attr("src", responseData.midImageUrl1);
+
+        $("#midVender").attr("src", responseData.midVenderUrl);
+        $("#midVender").html(responseData.midVenderText + " <i class='fa fa-arrow-circle-right'></i>");
+
+        $("#midPost1").attr("src", responseData.midPost1Url);
+        $("#midPost1").html("<img src='" + responseData.midPost1Icon + "'> "+ responseData.midPost1Text);
+
+        $("#midPost2").attr("src", responseData.midPost2Url);
+        $("#midPost2").html("<img src='" + responseData.midPost2Icon + "'> "+ responseData.midPost2Text);
+
+        $("#midPost3").attr("src", responseData.midPost3Url);
+        $("#midPost3").html("<img src='" + responseData.midPost3Icon + "'> "+ responseData.midPost3Text);
+
+        $("#midPost4").attr("src", responseData.midPost4Url);
+        $("#midPost4").html("<img src='" + responseData.midPost4Icon + "'> "+ responseData.midPost4Text);
+
+        $("#midPost5").attr("src", responseData.midPost5Url);
+        $("#midPost5").html("<img src='" + responseData.midPost5Icon + "'> "+ responseData.midPost5Text);
+
+        //top
+        $("#topImage").attr("src", responseData.topImageUrl1);
+
+        $("#topVender").attr("src", responseData.topVenderUrl);
+        $("#topVender").html(responseData.topVenderText + " <i class='fa fa-arrow-circle-right'></i>");
+
+        $("#topPost1").attr("src", responseData.topPost1Url);
+        $("#topPost1").html("<img src='" + responseData.topPost1Icon + "'> "+ responseData.topPost1Text);
+
+        $("#topPost2").attr("src", responseData.topPost2Url);
+        $("#topPost2").html("<img src='" + responseData.topPost2Icon + "'> "+ responseData.topPost2Text);
+
+        $("#topPost3").attr("src", responseData.topPost3Url);
+        $("#topPost3").html("<img src='" + responseData.topPost3Icon + "'> "+ responseData.topPost3Text);
+
+        $("#topPost4").attr("src", responseData.topPost4Url);
+        $("#topPost4").html("<img src='" + responseData.topPost4Icon + "'> "+ responseData.topPost4Text);
+
+        $("#topPost5").attr("src", responseData.topPost5Url);
+        $("#topPost5").html("<img src='" + responseData.topPost5Icon + "'> "+ responseData.topPost5Text);
+      }
+      function compareSpecErrorCallback(){ console.log("errorCallback"); }
+      function compareSpecCompleteCallback(){ console.log("completeCallback"); }
+      callAjax(compareSpecParamType, compareSpecParam, compareSpecURL, compareSpecType, compareSpecReturnType, compareSpecBeforeSendCallback, compareSpecSuccessCallback, compareSpecErrorCallback, compareSpecCompleteCallback);
 
 
     });

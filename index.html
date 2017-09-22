@@ -585,23 +585,23 @@
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-info">Search</span></td>
-                  <td>653</td>
-                  <td><strong class="color-green">+23</strong></td>
-                  <td class="hidden-xs">+43</td>
+                  <td><span class="label label-info" id="midSpec4Title"></span></td>
+                  <td id="midSpec4Amount"></td>
+                  <td><strong class="color-green" id="midSpec4Percent"></strong></td>
+                  <td class="hidden-xs" id="midSpec4Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="midSpec4Graph"></div>
                     </div>
                 </tr>
                 <tr>
-                  <td><span class="label label-inverse">Internal</span></td>
-                  <td>976</td>
-                  <td><strong>+101</strong></td>
-                  <td class="hidden-xs">-7</td>
+                  <td><span class="label label-inverse" id="midSpec5Title"></span></td>
+                  <td id="midSpec5Amount"></td>
+                  <td><strong id="midSpec5Percent"></strong></td>
+                  <td class="hidden-xs" id="midSpec5Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="midSpec5Graph"></div>
                     </div>
                   </td>
                 </tr>
@@ -612,68 +612,68 @@
 
             <!-- S: blue data -->
             <div class="body is-spec-box">
-              <h3 class="item-C">Nexus 7</h3>
+              <h3 class="item-B" id="topSpecName"></h3>
               <table class="table table-striped no-margin sources-table">
                 <thead>
                 <tr>
                   <th class="source-col-header">Spec</th>
                   <th>Amount</th>
-                  <th class="hidden-xs">Percent.,%</th>
+                  <th class="hidden-xs">Percent</th>
                   <th class="chart-col-header">Trend</th>
                 </tr>
                 </thead>
                 <tbody>
                 <tr>
-                  <td><span class="label label-important">Direct</span></td>
-                  <td>713</td>
-                  <td><strong class="color-green">+53</strong></td>
-                  <td class="hidden-xs">+12</td>
+                  <td><span class="label label-important" id="topSpec1Title"></span></td>
+                  <td id="topSpec1Amount"></td>
+                  <td><strong class="color-green" id="topSpec1Percent"></strong></td>
+                  <td class="hidden-xs" id="topSpec1Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="topSpec1Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-warning">Refer</span></td>
-                  <td>562</td>
-                  <td><strong>+84</strong></td>
-                  <td class="hidden-xs">+64</td>
+                  <td><span class="label label-warning" id="topSpec2Title"></span></td>
+                  <td id="topSpec2Amount"></td>
+                  <td><strong id="topSpec2Percent"></strong></td>
+                  <td class="hidden-xs" id="topSpec2Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="topSpec2Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-success">Social</span></td>
-                  <td>148</td>
-                  <td><strong class="color-red">-12</strong></td>
-                  <td class="hidden-xs">+3</td>
+                  <td><span class="label label-success" id="topSpec3Title"></span></td>
+                  <td id="topSpec3Amount"></td>
+                  <td><strong id="topSpec3Percent"></strong></td>
+                  <td class="hidden-xs" id="topSpec3Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="topSpec3Graph"></div>
                     </div>
                   </td>
                 </tr>
                 <tr>
-                  <td><span class="label label-info">Search</span></td>
-                  <td>653</td>
-                  <td><strong class="color-green">+23</strong></td>
-                  <td class="hidden-xs">+43</td>
+                  <td><span class="label label-info" id="topSpec4Title"></span></td>
+                  <td id="topSpec4Amount"></td>
+                  <td><strong class="color-green" id="topSpec4Percent"></strong></td>
+                  <td class="hidden-xs" id="topSpec4Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="topSpec4Graph"></div>
                     </div>
                 </tr>
                 <tr>
-                  <td><span class="label label-inverse">Internal</span></td>
-                  <td>976</td>
-                  <td><strong>+101</strong></td>
-                  <td class="hidden-xs">-7</td>
+                  <td><span class="label label-inverse" id="topSpec5Title"></span></td>
+                  <td id="topSpec5Amount"></td>
+                  <td><strong id="topSpec5Percent"></strong></td>
+                  <td class="hidden-xs" id="topSpec5Trend"></td>
                   <td class="chart-cell">
                     <div class="progress progress-small">
-                      <div class="progress-bar progress-bar-danger" style="width: 70%;"></div>
+                      <div class="progress-bar progress-bar-danger" id="topSpec5Graph"></div>
                     </div>
                   </td>
                 </tr>
@@ -1119,129 +1119,13 @@
       // CompareSpec API
       var compareSpecParamType = 'noneParam';
       var compareSpecParam = '';
-      var compareSpecURL = '/api/rivalWar/menu/getRootcompareSpec.do';
+      var compareSpecURL = '/api/rivalWar/menu/getRootCompareSpec.do';
       var compareSpecType = 'GET';
       var compareSpecReturnType = 'json';
       function compareSpecBeforeSendCallback(){ console.log("beforeSendCallback"); }
       function compareSpecSuccessCallback (responseData) {
         console.log(responseData);
         $("#compareSpecTime").text(responseData.calTime);
-
-        [ {
-          "c_id" : 3,
-          "c_parentid" : 2,
-          "c_position" : 0,
-          "c_left" : 3,
-          "c_right" : 4,
-          "c_level" : 2,
-          "c_title" : "Leaf Node",
-          "c_type" : "default",
-          "ref" : 0,
-          "copy" : 0,
-          "multiCounter" : 0,
-          "status" : 0,
-          "ajaxMessage" : null,
-          "childcount" : "NoChild",
-          "searchStr" : null,
-          "idif" : 0,
-          "ldif" : 0,
-          "spaceOfTargetNode" : 0,
-          "c_idsByChildNodeFromNodeById" : null,
-          "fixCopyId" : 0,
-          "fixCopyPosition" : 0,
-          "rightPositionFromNodeByRef" : 0,
-          "nodeById" : null,
-          "idifLeft" : 0,
-          "idifRight" : 0,
-          "id" : 0,
-          "attr" : {
-            "rel" : "default",
-            "id" : "node_3"
-          },
-          "copyBooleanValue" : false,
-          "calTime" : null,
-          "topSpecName" : "상위 스펙 명",
-          "topSpec1Title" : "상위 스펙 이름1",
-          "topSpec1Amount" : 313,
-          "topSpec1Percent" : 31.0,
-          "topSpec1Trend" : 31,
-          "topSpec1Graph" : 31.0,
-          "topSpec2Title" : "상위 스펙 이름2",
-          "topSpec2Amount" : 313,
-          "topSpec2Percent" : 31.0,
-          "topSpec2Trend" : 31,
-          "topSpec2Graph" : 31.0,
-          "topSpec3Title" : "상위 스펙 이름3",
-          "topSpec3Amount" : 313,
-          "topSpec3Percent" : 31.0,
-          "topSpec3Trend" : 31,
-          "topSpec3Graph" : 31.0,
-          "topSpec4Title" : "상위 스펙 이름4",
-          "topSpec4Amount" : 313,
-          "topSpec4Percent" : 31.0,
-          "topSpec4Trend" : 31,
-          "topSpec4Graph" : 31.0,
-          "topSpec5Title" : "상위 스펙 이름5",
-          "topSpec5Amount" : 313,
-          "topSpec5Percent" : 31.0,
-          "topSpec5Trend" : 31,
-          "topSpec5Graph" : 31.0,
-          "midSpecName" : "중위 스펙 명",
-          "midSpec1Title" : "중위 스펙 이름1",
-          "midSpec1Amount" : 313,
-          "midSpec1Percent" : 13.0,
-          "midSpec1Trend" : 31,
-          "midSpec1Graph" : 13.0,
-          "midSpec2Title" : "중위 스펙 이름2",
-          "midSpec2Amount" : 313,
-          "midSpec2Percent" : 13.0,
-          "midSpec2Trend" : 31,
-          "midSpec2Graph" : 13.0,
-          "midSpec3Title" : "중위 스펙 이름3",
-          "midSpec3Amount" : 313,
-          "midSpec3Percent" : 13.0,
-          "midSpec3Trend" : 31,
-          "midSpec3Graph" : 13.0,
-          "midSpec4Title" : "중위 스펙 이름4",
-          "midSpec4Amount" : 313,
-          "midSpec4Percent" : 13.0,
-          "midSpec4Trend" : 31,
-          "midSpec4Graph" : 13.0,
-          "midSpec5Title" : "중위 스펙 이름5",
-          "midSpec5Amount" : 313,
-          "midSpec5Percent" : 13.0,
-          "midSpec5Trend" : 31,
-          "midSpec5Graph" : 13.0,
-          "botSpecName" : "하위 스펙 명",
-          "botSpec1Title" : "하위 스펙 이름1",
-          "botSpec1Amount" : 313,
-          "botSpec1Percent" : 3.0,
-          "botSpec1Trend" : 31,
-          "botSpec1Graph" : 3.0,
-          "botSpec2Title" : "하위 스펙 이름2",
-          "botSpec2Amount" : 313,
-          "botSpec2Percent" : 3.0,
-          "botSpec2Trend" : 31,
-          "botSpec2Graph" : 3.0,
-          "botSpec3Title" : "하위 스펙 이름3",
-          "botSpec3Amount" : 313,
-          "botSpec3Percent" : 3.0,
-          "botSpec3Trend" : 31,
-          "botSpec3Graph" : 3.0,
-          "botSpec4Title" : "하위 스펙 이름4",
-          "botSpec4Amount" : 313,
-          "botSpec4Percent" : 3.0,
-          "botSpec4Trend" : 31,
-          "botSpec4Graph" : 3.0,
-          "botSpec5Title" : "하위 스펙 이름5",
-          "botSpec5Amount" : 313,
-          "botSpec5Percent" : 3.0,
-          "botSpec5Trend" : 31,
-          "botSpec5Graph" : 3.0,
-          "copied" : false,
-          "data" : "Leaf Node",
-          "state" : "leafNode"
-        } ]
 
         $("#botImage").attr("src", responseData.botImageUrl1);
 

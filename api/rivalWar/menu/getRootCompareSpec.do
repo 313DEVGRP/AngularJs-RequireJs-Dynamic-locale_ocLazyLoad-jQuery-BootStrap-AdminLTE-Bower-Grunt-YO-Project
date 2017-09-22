@@ -30,7 +30,7 @@
     "id" : "node_3"
   },
   "copyBooleanValue" : false,
-  "calTime" : null,
+  "calTime" : "2017-09-22 17:30:29",
   "topSpecName" : "상위 스펙 명",
   "topSpec1Title" : "상위 스펙 이름1",
   "topSpec1Amount" : 313,

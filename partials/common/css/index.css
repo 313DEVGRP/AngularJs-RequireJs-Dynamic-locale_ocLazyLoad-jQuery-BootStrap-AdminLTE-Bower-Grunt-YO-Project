@@ -687,7 +687,7 @@ input#new-message, button#new-message-btn{
       position: absolute;
       left: -20px;
     }
-    .login-widget footer a{
+    .login-widget footer a, .loginButton{
       padding-left: 65px;
     }
 }

@@ -4,6 +4,8 @@ function callAjax(paramType, param, url, Type, returnType, beforeSendCallback, s
     formQueryString = $(param).serialize();
   }else if('json' == paramType){
     formQueryString = JSON.stringify(param);
+  }else if('noneParam' == paramType) {
+    console.log("noneParam");
   }else{
     url += '?'+paramType+'='+param;
   }

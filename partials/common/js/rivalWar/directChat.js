@@ -69,7 +69,7 @@ function directChatAjaxCall(jsonData){
     table += "      </button>";
     table += "    </div>";
 
-    table += replyChatAjaxCall(chatList, table);
+    table += replyChatAjaxCall(chatList);
 
     table += "  </div>";
     table += "</div>";
@@ -78,10 +78,10 @@ function directChatAjaxCall(jsonData){
   $('#chat-messages').append(table); //패널에 추가하기
 }
 
-function replyChatAjaxCall(chatList, table){
+function replyChatAjaxCall(chatList){
 
   console.log("replyChatAjaxCall script done");
-
+  var table = "";
   // 메뉴 API
   var ajaxParamType = 'noneParam';
   var ajaxParam = '';
@@ -97,7 +97,7 @@ function replyChatAjaxCall(chatList, table){
 
     var collection = responseData.result;
 
-    table += "<ul class='reply-wrap'>";
+    table = "<ul class='reply-wrap'>";
     $(collection).each(function (replyIndex, replyList){
 
       table += "  <li class='reply-msg clearfix'>";

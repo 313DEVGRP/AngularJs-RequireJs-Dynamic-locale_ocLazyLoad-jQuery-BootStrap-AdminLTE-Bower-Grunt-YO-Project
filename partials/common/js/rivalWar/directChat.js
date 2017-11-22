@@ -96,8 +96,9 @@ function replyChatAjaxCall(chatList, table){
   function successCallback(responseData) {
 
     table += "<ul class='reply-wrap'>";
+    var collection = responseData.result;
 
-    $(responseData.result).each(function (replyIndex, replyList){
+    $(collection).each(function (replyIndex, replyList){
 
       table += "  <li class='reply-msg clearfix'>";
       table += "    <div class='reply-content'>";

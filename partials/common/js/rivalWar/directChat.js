@@ -69,7 +69,7 @@ function directChatAjaxCall(jsonData){
     table += "      </button>";
     table += "    </div>";
 
-    replyChatAjaxCall(chatList, table);
+    table += replyChatAjaxCall(chatList, table);
 
     table += "  </div>";
     table += "</div>";
@@ -80,7 +80,7 @@ function directChatAjaxCall(jsonData){
 
 function replyChatAjaxCall(chatList, table){
 
-  console.log("menu script done");
+  console.log("replyChatAjaxCall script done");
 
   // 메뉴 API
   var ajaxParamType = 'noneParam';
@@ -95,9 +95,9 @@ function replyChatAjaxCall(chatList, table){
 
   function successCallback(responseData) {
 
-    table += "<ul class='reply-wrap'>";
     var collection = responseData.result;
 
+    table += "<ul class='reply-wrap'>";
     $(collection).each(function (replyIndex, replyList){
 
       table += "  <li class='reply-msg clearfix'>";
@@ -118,7 +118,6 @@ function replyChatAjaxCall(chatList, table){
       table += "  </li>";
 
     });
-
     table += "</ul>";
 
   }
@@ -132,5 +131,5 @@ function replyChatAjaxCall(chatList, table){
   }
 
   callAjax(ajaxParamType, ajaxParam, ajaxURL, ajaxType, ajaxReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
-
+  return table;
 }

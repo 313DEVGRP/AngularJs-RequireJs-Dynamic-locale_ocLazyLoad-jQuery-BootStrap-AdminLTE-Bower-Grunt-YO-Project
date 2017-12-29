@@ -215,7 +215,23 @@ $(function(){
 
     addOne: function(message) {
       var view = new MessageView({model: message});
-      this.$("#chat-messages").append(view.render().el);
+
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////// ajax
+      //ref=10&c_position=0&c_title=test&c_type=default
+      var insertChatParamType = 'noneParam';
+      var insertChatParam = '';
+      var insertChatURL = '/api/rivalWar/ROLE_USER/directChat/addNode.do';
+      var insertChatType = 'GET';
+      var insertChatReturnType = 'json';
+      function beforeSendCallback(){ console.log("beforeSendCallback"); }
+      function successCallback (insertChatData) {
+        console.log(JSON.stringify(insertChatData));
+        this.$("#chat-messages").prepend(view.render().el);
+      }
+      function errorCallback(){ console.log("errorCallback"); }
+      function completeCallback(){ console.log("completeCallback"); }
+      callAjax(insertChatParamType, insertChatParam, insertChatURL, insertChatType, insertChatReturnType, beforeSendCallback, successCallback, errorCallback, completeCallback);
+      ////////////////////////////////////////////////////////////////////////////////////////////////////////// ajax
     },
 
     createOnEnter: function(e) {

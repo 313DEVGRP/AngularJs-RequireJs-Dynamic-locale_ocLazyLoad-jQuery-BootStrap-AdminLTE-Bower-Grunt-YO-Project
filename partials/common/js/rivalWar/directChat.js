@@ -4,7 +4,7 @@ $(function () {
   // 메뉴 API
   var ajaxParamType = 'noneParam';
   var ajaxParam = '';
-  var ajaxURL = '/api/rivalWar/directChat/getPaginatedChildNode.do?c_id=2&pageIndex=1&pageUnit=1&pageSize=10';
+  var ajaxURL = '/api/rivalWar/directChat/getPaginatedChildNode.do?c_id=2&pageIndex=1&pageUnit=10&pageSize=10';
   var ajaxType = 'GET';
   var ajaxReturnType = 'json';
 

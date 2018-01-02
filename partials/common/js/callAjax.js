@@ -6,8 +6,13 @@ function callAjax(paramType, param, url, Type, returnType, beforeSendCallback, s
     formQueryString = JSON.stringify(param);
   }else if('noneParam' == paramType) {
     console.log("noneParam");
+  }else if('objectPut' == paramType) {
+    //var obj = { width:1680, height:1050 };
+    formQueryString = $.param( param ); // 자바스크립트 객체(리터럴)을 쿼리스트링으로 만들어준다.
+    console.log(formQueryString);          // 결과 : width=1680&height=1050
+
   }else{
-    url += '?'+paramType+'='+param;
+    url += '?' + paramType + '=' + param;
   }
   $.ajax({
     url : url,

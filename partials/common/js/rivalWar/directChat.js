@@ -219,7 +219,7 @@ $(function(){
       ////////////////////////////////////////////////////////////////////////////////////////////////////////// ajax
       //ref=10&c_position=0&c_title=test&c_type=default
       var insertChatParamType = 'noneParam';
-      var insertChatParam = '';
+      var insertChatParam = { ref:10, c_position:0, c_type:'default', c_title: message};
       var insertChatURL = '/api/rivalWar/ROLE_USER/directChat/addNode.do';
       var insertChatType = 'GET';
       var insertChatReturnType = 'json';

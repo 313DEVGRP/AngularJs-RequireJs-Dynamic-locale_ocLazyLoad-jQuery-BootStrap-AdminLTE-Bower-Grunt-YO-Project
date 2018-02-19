@@ -55,16 +55,16 @@ require.config({
     'css': 'lib/require-css/css.min',
 
     // module
-    'fastclick': 'AdminLTE-2.3.3/plugins/fastclick/fastclick',
-    'sparkline': 'AdminLTE-2.3.3/plugins/sparkline/jquery.sparkline.min',
-    'jvectormap': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
-    'jvectormapWorld': 'AdminLTE-2.3.3/plugins/jvectormap/jquery-jvectormap-world-mill-en',
-    'slimScroll': 'AdminLTE-2.3.3/plugins/slimScroll/jquery.slimscroll.min',
-    'chartjs': 'AdminLTE-2.3.3/plugins/chartjs/Chart.min',
-    'adminLte': 'AdminLTE-2.3.3/dist/js/app.min',
-    'dataTables.jquery': 'AdminLTE-2.3.3/plugins/datatables/jquery.dataTables.min',
-    'dataTables.bootstrap': 'AdminLTE-2.3.3/plugins/datatables/dataTables.bootstrap.min',
-    'dataTables.responsive': 'AdminLTE-2.3.3/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min',
+    'fastclick': 'AdminLTE-2.3.11/plugins/fastclick/fastclick',
+    'sparkline': 'AdminLTE-2.3.11/plugins/sparkline/jquery.sparkline.min',
+    'jvectormap': 'AdminLTE-2.3.11/plugins/jvectormap/jquery-jvectormap-1.2.2.min',
+    'jvectormapWorld': 'AdminLTE-2.3.11/plugins/jvectormap/jquery-jvectormap-world-mill-en',
+    'slimScroll': 'AdminLTE-2.3.11/plugins/slimScroll/jquery.slimscroll.min',
+    'chartjs': 'AdminLTE-2.3.11/plugins/chartjs/Chart.min',
+    'adminLte': 'AdminLTE-2.3.11/dist/js/app.min',
+    'dataTables.jquery': 'AdminLTE-2.3.11/plugins/datatables/jquery.dataTables.min',
+    'dataTables.bootstrap': 'AdminLTE-2.3.11/plugins/datatables/dataTables.bootstrap.min',
+    'dataTables.responsive': 'AdminLTE-2.3.11/plugins/datatables/extensions/Responsive/js/dataTables.responsive.min',
 
     //'callAjax' : 'partials/common/js/callAjax',
 
